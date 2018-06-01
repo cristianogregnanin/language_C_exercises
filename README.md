@@ -1,7 +1,7 @@
 to compile: 
 
-```gcc exercise.c -o exercise```
+```$ gcc exercise.c -o exercise```
 
 to execute:
 
-```./exercise```
+```$ ./exercise```
