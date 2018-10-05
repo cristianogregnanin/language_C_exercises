@@ -2,22 +2,21 @@
 
 int main(){
 	
-	int a = 1,b = 1;
-	double r = 0;
+	int a,b;
+	double r;
 	
-	while(a != 0 || b!=0 ){
+	do {
 		printf("inserisci a\n");
 		scanf("%d",&a);
-		printf("%d",a);
 		printf("inserisci b\n");
 		scanf("%d",&b);
-		printf("%d",b);
 		
 		if(a>b)
-			r = b/a;
+			r = (double)b/(double)a;
 		else
-			r = a/b;
-		printf("\n\tIl risultato è: %lf\n\n", r);
-	}
+			r = (double)a/(double)b;
+		printf("\n\tIl risultato è: %f\n\n", r);
+	}while(a == 0 && b == 0);
+	
 	return 0;
 }
