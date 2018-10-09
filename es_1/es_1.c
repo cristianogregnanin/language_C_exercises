@@ -16,7 +16,7 @@ int main(){
 		else
 			r = (double)a/(double)b;
 		printf("\n\tIl risultato è: %f\n\n", r);
-	}while(a == 0 && b == 0);
+	}while(a != 0 && b != 0);
 	
 	return 0;
 }

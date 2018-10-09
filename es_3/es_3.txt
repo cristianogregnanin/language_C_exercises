@@ -1,0 +1,4 @@
+Progettare un algoritmo che effettui la lettura da tastiera di una serie di valori numerici. Il
+programma termina quando il dato immesso è pari a zero. Calcolare e stampare la media dei valori
+inseriri. Inoltre, stampare la sequenza di valori in ordine inverso rispetto a quello di inserimento. Un
+valore dovrà essere stampato soltanto se maggiore della media calcolata.
