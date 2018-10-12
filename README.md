@@ -5,3 +5,7 @@ to compile:
 to execute:
 
 ```$ ./exercise```
+
+to compile with the math.h library:
+
+```$ gcc exercise.c -o exercise -lm```
