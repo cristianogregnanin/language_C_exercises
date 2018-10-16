@@ -1,0 +1,6 @@
+Progettare un algoritmo che effettui le seguenti operazioni:
+• legga da tastiera una coppia di valori intero A e B;
+• continui a leggere da tastiera una serie di valori interi, terminando 
+quando il valore letto è al di fuori dell’intervallo [A, B];
+• conteggi la media dei valori letti;
+• prima di terminare, stampi il valore calcolato.
