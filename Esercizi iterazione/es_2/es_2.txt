@@ -1,0 +1,2 @@
+Dato N un numero intero positivo, generare e visualizzare in ordine crescente i primi N numeri
+interi positivi. Descrivere il problema mediante flow chart
