@@ -1,0 +1,2 @@
+Dati due numeri si scriva in linguaggio C una funzione di tipo void denominata scambia,
+che dati in input 2 numeri li scambi.

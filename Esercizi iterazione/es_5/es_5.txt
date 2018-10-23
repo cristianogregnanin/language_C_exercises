@@ -1,0 +1,4 @@
+Dati due numeri interi positivi N1 e N2 con N2>N1, generare e
+visualizzare in ordine crescente i numeri interi compresi
+nell'intervallo chiuso [N1,N2]. 
+Descrivere il problema mediante flow chart
