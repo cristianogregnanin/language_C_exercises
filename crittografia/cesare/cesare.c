@@ -2,12 +2,17 @@
 #include <string.h>
 #define DIM 100
 
-void cesare(char s, int salto){
-	char alfabeto[21] = {'a','b',......}
-	....
-	....
-	....
-
+void cesare(char s[], int salto){
+	char alfabeto[21] = {'a','b','d','f','g'}
+	int i, posizione;
+	
+	for (i=0;i<strlen(s);i++){
+		posizione = ricerca(s[i], alfabeto);
+		
+		posizione = calcola(posizione);
+		
+		s[i] = alfabeto[posizione]; 
+	}
 }
 
 
@@ -17,14 +22,10 @@ int main(){
 
 	printf("inserisci una stringa");
 	scanf("%s",s);
-
-	int lunghezza = strlen(s);
 	
-	for(int i=0;i<lunghezza;i++){
-		cesare(s[i],3);
-		
-	}
+	cesare(s, 3)
 
+	printf("La stringa codificata è: %s\n", s);		
 	
 	return 0;
 }
