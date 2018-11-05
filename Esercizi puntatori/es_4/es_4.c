@@ -2,7 +2,19 @@
 #include <limits.h>
 
 void popola(int array[], int *n){	
-	}
+	int valore;
+	do{
+		printf("inserisci un valore. Premi -1 per terminare l'inserimento\n");	
+		scanf("%d", &valore);
+		array[*n] = valore;
+		*n++;
+	}while(valore!=-1);
+}
+
+void stampa(int array[], int n){	
+
+
+}
 	
 	
 	
@@ -44,7 +56,7 @@ void menu(int array[], int n){
 
 int main(){
 	
-	int array[INT_MAX];
+	int array[SHRT_MAX];
 	int n;
 	
 	popola(array, &n);
