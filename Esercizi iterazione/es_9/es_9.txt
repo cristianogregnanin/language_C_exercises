@@ -1,0 +1,2 @@
+Dati due numeri interi e positivi N1 e N2 con N2>N1, generare e
+visualizzare in ordine decrescente i numeri compresi tra N1 e N2. 

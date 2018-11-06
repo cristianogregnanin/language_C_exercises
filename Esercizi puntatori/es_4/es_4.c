@@ -37,6 +37,13 @@ int ricerca(int array[], int n){
 	return posizione;
 }
 	
+void inserisci(int array[], int n){
+	
+	int numero;
+	printf("inserisci un numero: ");
+	scanf("%d", &numero);
+	array[n+1] = numero;
+}
 	
 	
 void esegui_operazione(int s, int a[], int n){
@@ -44,7 +51,7 @@ void esegui_operazione(int s, int a[], int n){
 	if(s==1)
 		stampa(a,n);
 	if(s==2)
-		//inserisci(a,n);
+		inserisci(a,n);
 	if(s==3)
 		//modifica(a,n);	
 	if(s==4)

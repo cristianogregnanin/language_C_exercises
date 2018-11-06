@@ -1,0 +1,2 @@
+Dato N un numero intero positivo maggiore di 1, generare e visualizzare
+il numero precedente. 
