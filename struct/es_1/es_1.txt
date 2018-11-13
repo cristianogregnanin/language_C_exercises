@@ -1,0 +1,6 @@
+dati 3 array:
+	char *names[] = {"Luca","Lorenzo","Davide", "Luca"};
+	char *surnames[] = {"Montini","Canali","Fiorini", "Greggio"};
+	int age[] = {22,24,24,26};
+	
+mostrare in output il nome della persona più vecchia
