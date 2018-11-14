@@ -1,0 +1,24 @@
+Data una classe di 4 studenti, si vuole visualizzare il nome e il cognome
+dello studente con la media più alta. Le materie su cui calcolare la 
+media sono: italiano, storia, informatica. Per ogni materia si memorizzi
+la coppia di valori [nome materia , voto].
+Possono essere utili le seguenti strutture dati:
+
+typedef struct{
+	char nome[20];
+	int voto;
+} materia_t;
+
+typedef struct{
+	char nome[20];
+	char cognome[20];
+	materia_t materie[3];
+} studente_t;
+
+Per accedere ad una struttura dati annidata vale la seguente sintassi:
+studente.materie[i].voto
+studente.materie[i].nome
+
+
+
+
