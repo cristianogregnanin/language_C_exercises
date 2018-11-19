@@ -1,0 +1,1 @@
+Dato un numero intero positivo N verificare se N è un numero primo.
