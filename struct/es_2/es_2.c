@@ -3,26 +3,24 @@
 #define DIM 3
 
 typedef struct{
-		
-		char nome[20];
-		int voto;
-
-}tipo_materia;
+	char nome[20];
+	char docente[20];
+} materia_t;
 
 typedef struct{
-
-		char nome[20];
-		char cognome[20];
-		tipo_materia materie[3];	
-		
-}tipo_studente;
+	char nome[20];
+	char cognome[20];
+} studente_t;
 
 typedef struct{
+	materia_t materia;
+	int voti[4];
+}materia_con_voto_t
 
-		tipo_studente studente;
-		double media;
-		
-}tipo_studente_con_media;
+typedef struct{
+	studente_t studente;
+	materie_con_voto_t a[3];			
+}studente_con_voti;
 
 
 
