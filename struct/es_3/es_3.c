@@ -15,7 +15,7 @@ typedef struct{
 } studente_t;
 
 typedef struct{
-	materia_t nome;
+	materia_t materia;
 	int voti[DIM_VOTI];
 }materia_con_voto_t;
 
@@ -46,14 +46,52 @@ int calcola_massimo(){
 	return minimo;
 }
 
+studente_con_voti_t crea_studente(){
+		
+	materia_t materia, materie[DIM_MATERIE];
+	strcpy(materie[0].nome, "Italiano");
+	strcpy(materie[1].nome, "Storia");
+	strcpy(materie[2].nome, "Informatica");
+	
+	for(i=0;i<DIM_MATERIE;i++){
+		materia = materie[i].nome
+		printf("Inserisci il nome del docente di %s", materia.nome);
+		scanf("%s", materia.docente);
+		materie[i] = materia;		
+	}
+	
+	studente_t studente;
+	studente_con_voti_t studente_con_voti;
+	materia_con_voto_t materia_con_voto;
+	
+	printf("Inserisci il nome dello studente");
+	scanf("%s",studente.nome);
+
+	printf("Inserisci il cognome dello studente");
+	scanf("%s",studente.cognome);	
+	
+	studente_con_voti.studente = studente;
+	
+	for (i=0;i<DIM_MATERIE;i++){
+		materia_con_voto.materia = materie[i];
+		for(j=0;j<DIM_VOTI;j++){
+			printf("Inserisci il voto di %s",materia_con_voto.materia.nome);
+			scanf("%d",materia_con_voto.voti[j]);
+		}
+		
+		studente_con_voti.materie_con_voto[i] = materia_con_voto;	
+	}
+		
+	return studente_con_voti;
+}
+
 
 int main(){
-	
-	
-	tipo_studente studenti[DIM_STUDENTI], studente;
-	
+		
+	studente_t studenti[DIM_STUDENTI], studente;
 	int i,j,massimo,minimo;
 	
+	popola_materia();
 	
 	//TODO fare l'inseriemento
 	for(i=0;i<DIM_STUDENTI;i++){
@@ -65,7 +103,7 @@ int main(){
 		
 	for(i=0;i<DIM_STUDENTI;i++){
 		printf("\n\n%s,%s: \n", studenti_con_voti[i].studente.nome, studenti_con_voti[i].studente.cognome);
-		for(j=0;j<3;j++){
+		for(j=0;j<DIM_MATERIE;j++){
 				materia = studenti_con_voti[i].materie_con_voto[j];
 				massimo = calcola_massimo(materia.voti);
 				minimo = calcola_minimo(materia.voti);
