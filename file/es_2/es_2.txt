@@ -1,0 +1,9 @@
+Chiedere in input l'eta e il nome di 5 persone. Salvarle in un'apposita
+struttura dati. Calcolare il più vecchio e scrivere l'output sia a video
+che in un file di testo chiamato "vecchio.txt".
+Si utilizzi la seguente struttura dati:
+
+typedef struct{
+	char nome[30];
+	int eta;
+}persona;

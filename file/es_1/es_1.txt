@@ -1,0 +1,1 @@
+Leggere il file testo.txt e mostrane il contenuto a video.
