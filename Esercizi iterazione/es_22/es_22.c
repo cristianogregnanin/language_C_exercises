@@ -2,23 +2,20 @@
 
 int main(){
 	
-	int n1, n2; 
+	int n,j=1,i;
 	
 	do{ 
 		printf("Inserisci un numero > 0 : ");
-		scanf("%d", &n1); 
-	}while(n1<1); 
+		scanf("%d", &n); 
+	}while(n<0); 
 
-	do{ 
-		printf("Inserisci un numero > 0 : ");
-		scanf("%d", &n2); 
-	}while(n2<1);	
-
-	if(n1==(n2*n2))
-		printf("%d è il quadrato di %d\n\n",n1,n2);
-	else
-		printf("%d non è il quadrato di %d\n\n",n1,n2);
-
+	i=n - 1;
 	
+	do{
+		printf("%d+%d=%d\n",j,i,n);
+		j++;
+		i--;		
+	}while(j<=n);
+
 	return 0;
 }

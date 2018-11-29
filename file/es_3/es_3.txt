@@ -1,0 +1,10 @@
+Leggere il file studenti.txt e mostrare a video il nome e il cognome
+dello studente piu vecchio e la media dell'eta degli studenti.
+Si usi la seguente struttura dati per memorizzare le informazioni 
+dello studente
+
+typedef struct{
+	char nome[20];
+	char cognome[20];
+	int eta;
+}studente_t;

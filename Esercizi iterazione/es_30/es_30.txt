@@ -1,0 +1,2 @@
+Dati due numeri interi positivi N1 e N2, verificare se N1 è il quadrato 
+di N2. 

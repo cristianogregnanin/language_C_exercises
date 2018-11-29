@@ -1,2 +1,2 @@
-Dati due numeri interi positivi N1 e N2, verificare se N1 è il quadrato 
-di N2. 
+Dato un numero N calcolare e visualizzare tutte le coppie di numeri che
+danno per somma il numero stesso.

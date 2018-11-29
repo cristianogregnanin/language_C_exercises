@@ -11,7 +11,7 @@
 #include <ctype.h>
 
 
-#define SERVER_PORT 1313
+#define SERVER_PORT 40000
 #define SOCKET_ERROR ((int)-1)
 #define DIMBUFF 512
 
