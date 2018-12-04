@@ -7,7 +7,7 @@ int main(){
 		printf("Inserisci un numero positivo: ");
 		scanf("%d",&s1);
 				
-	}while(n<1);
+	}while(s1<1);
 		
 	m = s1 / 60;
 	s = s1 % 60;
