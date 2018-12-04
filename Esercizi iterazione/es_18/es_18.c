@@ -2,15 +2,15 @@
 
 int main(){
 	
-	int n,h,m,s;
+	int s1,h,m,s;
 	do{
 		printf("Inserisci un numero positivo: ");
-		scanf("%d",&n);
+		scanf("%d",&s1);
 				
 	}while(n<1);
 		
-	m = n / 60;
-	s = n % 60;
+	m = s1 / 60;
+	s = s1 % 60;
 	h = m / 60;
 	m = m % 60;
 	
@@ -20,4 +20,4 @@ int main(){
 	
 	
 	return 0;
-	}
+}

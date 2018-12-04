@@ -31,14 +31,18 @@ double calcola_media(studente_t studenti[], int n){
 }
 
 
-int main(){
+int main(int argc, char **argv){
 	FILE * fd;
 	char str[MAXCHAR], nome[20], *token;
 	int eta, i=0;
 	studente_t studente, studenti[5], vecchio;
 	double media;
 	
-	fd = fopen("studenti.txt", "r");	
+	printf("sono presenti %d argomenti\n\n", argc);
+	printf("il nome del programma in esecuzione è: %s\n\n", argv[0]);
+	printf("il nome del file da leggere è: %s\n\n", argv[1]);	
+	
+	fd = fopen(argv[1], "r");	
 	
     while (fgets(str, MAXCHAR, fd) != NULL){
         
