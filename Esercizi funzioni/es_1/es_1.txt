@@ -1,0 +1,1 @@
+Leggere in input da tastiera due numeri maggiori di 0 e farne la somma. 
