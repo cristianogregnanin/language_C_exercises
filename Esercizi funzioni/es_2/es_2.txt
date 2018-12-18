@@ -1,0 +1,5 @@
+Si crei un programma che nel momento dell'esecuzione popoli l'array
+argv[] con una serie di numeri. Esempio: $ ./a.out 1 5 9 6
+Il programma deve calcolare la media dei numeri inseriti da riga di 
+comando.
+Suggerimento: si usi una funzione per calcolare la somma dei numeri.
