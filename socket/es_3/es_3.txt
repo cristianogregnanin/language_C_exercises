@@ -1,0 +1,11 @@
+Si progetti in linguaggio C un applicazione client server cosi
+strutturata:
+il client legge una stringa dal file testo.txt e un carattere a piacere
+inserito dall'utente.
+Invia al server la stringa e il carattere.
+il server conta quante volte il carattere compare nella stringa e ritorna 
+il risultato al client.
+
+Esempio di esecuzione con file testo.txt contente la stringa "ciao":
+$ ./client.out "testo.txt" c
+	il carattere c compare 1 volta nella stringa ciao
