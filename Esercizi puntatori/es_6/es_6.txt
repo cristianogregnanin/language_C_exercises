@@ -1,0 +1,13 @@
+Si scriva una funzione in linguaggio C che prenda in input una stringa
+e un carattere.
+La funzione deve contare le occorrenze del carattere all'interno della
+stringa.
+La funzione deve necessariamente essere di tipo void.
+Nel main si richiami la funzione e si mostri a video il risultato.
+
+Esempio di esecuzione:
+$ ./a.out pippo p
+Il carattere p compare 3 volte in pippo
+
+$ ./a.out ciao b
+Il carattere b compare 0 volte in ciao
