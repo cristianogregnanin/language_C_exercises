@@ -1,0 +1,6 @@
+Data una stringa letta da riga di comando si scriva un programma in linguaggio C
+che istanzi un processo figlio il quale converta la stringa da minuscolo a maiuscolo
+
+esempio di esecuzione:
+$./a.out ciao
+la stringa in maiuscolo è CIAO
