@@ -1,0 +1,4 @@
+Scriva un programma C che dato un array prestabilito, prenda in input da
+riga di comando un numero e lo ricerchi all'interno dell'array.
+La ricerca deve essere demandata ad un processo figlio e deve essere
+implementata attraverso un'apposita funzione di nome ricerca.
