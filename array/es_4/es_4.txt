@@ -1,0 +1,6 @@
+Si legga da riga di comando una stringa e la si mostri in output
+invertita. Per fare l'inversione si implementi la funzione inverti.
+
+Esempio:
+$./a.out ciao
+oaic
