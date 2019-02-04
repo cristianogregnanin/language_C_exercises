@@ -1,0 +1,11 @@
+Si scriva un programma in linguaggio C che implementi una funzione
+denominata palindroma che prenda in input una stringa e restituisca
+1 se la stringa è palindroma altrimenti -1
+
+esempio:
+$ ./a.out anna
+$ anna è una stringa palindroma
+
+esempio:
+$ ./a.out ciao
+$ ciao non è una stringa palindroma
