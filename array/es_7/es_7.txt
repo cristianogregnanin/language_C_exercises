@@ -1,0 +1,7 @@
+Scrivere un programma in linguaggio C che dato un array di interi mostri
+in output se l'array è pari.
+Esempio:
+[1,1,2,1,2,1,2,2] => è pari
+[1,1,2] => dispari
+[3,3,4,5] => dispari
+[1,2,1,2] => pari
