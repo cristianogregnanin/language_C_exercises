@@ -1,0 +1,4 @@
+Ogni calciatore è caratterizzato da uno nome, un ruolo, e una squadra.
+Si inseriscano a video 5 calciatori e si mostrino tutti i calciatori
+appartenenti alla squadra 'milan' e tutti i calciatori il cui nome
+inizia con il carattere 'c'
