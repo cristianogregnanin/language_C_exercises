@@ -1,0 +1,5 @@
+Uno studente è caratterizzato da un nome un eta e il numero di matricola.
+Si inseriscano 3 studenti, si chieda quindi il numero di matricola di uno
+studente che si vuole modificare. Se lo studente esiste allora il programma
+deve richiedere i dati aggiornati per quel dato studente.
+
