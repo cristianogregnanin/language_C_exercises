@@ -2,6 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 #define DIM 100
+#define DIM_ALFABETO 21
 
 int ricerca(char s,char a[]){
 	for(int i=0;i<strlen(a);i++){
@@ -14,8 +15,9 @@ int ricerca(char s,char a[]){
 }
 
 int calcola(int pos,int s){
-	if(pos>=18)
-		return (21%pos)-1;
+	int border = DIM_ALFABETO - s;
+	if(pos>=border)
+		return pos%border;
 	else
 		return pos+s;	
 }
@@ -28,12 +30,11 @@ void cesare(char s[], int salto){
 	{	
 		posizione = ricerca(s[i],alfabeto);
 		
-		if (posizione>0){
+		if (posizione>=0){
 			posizione = calcola(posizione,salto);
 
 			s[i]=alfabeto[posizione];
-		}
-		
+		}		
 	}
 }
 
@@ -45,7 +46,7 @@ int main(){
 	printf("inserisci una stringa\n");
 	scanf("%[^\n]s",s);
 	
-	cesare(s,3);
+	cesare(s,4);
 	
 	printf("La stringa codificata è: %s\n", s);
 	
