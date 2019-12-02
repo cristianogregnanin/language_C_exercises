@@ -52,10 +52,12 @@ int main(int argc, char **argv){
 	
     //scrittura del carattere all'interno della socket
     write(socketfd, str, strlen(str));
+    read(socketfd,&nread,sizeof(int));
+    
     write(socketfd, carattere, sizeof(carattere));
 		
 	//ricevere i dati dal client
-	read(socketfd,occorrenze,sizeof(occorrenze));
+	read(socketfd,&occorrenze,sizeof(occorrenze));
 				
 	//chiusura socket
 	close(socketfd);

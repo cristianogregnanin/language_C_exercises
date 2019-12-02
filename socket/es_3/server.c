@@ -1,16 +1,10 @@
 #include <stdio.h>		
-#include <stdlib.h>		
+#include <string.h>
 #include <sys/types.h>	
 #include <sys/socket.h>	
+#include <unistd.h>
 #include <netinet/in.h>	
 #include <netdb.h>		
-#include <string.h>
-#include <fcntl.h>	
-#include <signal.h>
-#include <errno.h>
-#include <ctype.h>
-#include <unistd.h>
-
 
 #define SERVER_PORT 1313
 #define SOCKET_ERROR ((int)-1)
@@ -33,7 +27,9 @@ int main(){
 	struct sockaddr_in servizio, rem_indirizzo;
 	struct hostent * host;
 	int nread,soa,socketfd,client_len,fd,on=1, fromlen=sizeof(servizio);
-	char str[DIMBUFF]="";
+	char carattere, str[DIMBUFF]="",buffer[DIMBUFF]="";
+	int ct=0,i,len;
+	
 
   	memset((char *)&servizio,0,sizeof(servizio));
 
@@ -51,6 +47,8 @@ int main(){
 
 	//attensa del client
 	for(;;){
+		ct=0;
+		buffer[0] = '\0';
 		printf("\n\nServer in ascolto...");
 
 		//accept
@@ -64,15 +62,26 @@ int main(){
 		nread = read(soa,&str,sizeof(str));
 			
 		printf("\n\tRicevuta stringa %s dimensione: %d\n",str, nread);
+		write(soa,&nread,sizeof(nread));
 
-		int len = strlen(str);
-		char newstr[len]; 
-		inverti(str, newstr, len);
+		nread = read(soa,&carattere,sizeof(carattere));
+		printf("\n\tRicevuto carattere %c dimensione: %d\n",carattere, nread);
 
-		printf("\n\tstringa invertita: %s\n\n",newstr);
+		len = strlen(str);
+		for(i=0;i<len;i++){
+			if(str[i]==carattere)
+				ct++;
+		}
+		
+		
+
+		snprintf(buffer, DIMBUFF, "%d", ct);
+	
+		write(soa,buffer,sizeof(buffer));
+		
+		printf("\n\tIl carattere %c compare %d volte in %s\n\n",carattere,ct,str);
 			
-        //scrittura dell stringa all'interno della socket
-		write(soa,newstr,sizeof(newstr));
+		
 		
 		//chiusura socket
 		close(soa);
