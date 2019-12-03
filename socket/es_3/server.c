@@ -77,7 +77,7 @@ int main(){
 
 		snprintf(buffer, DIMBUFF, "%d", ct);
 	
-		write(soa,buffer,sizeof(buffer));
+		write(soa,buffer,strlen(buffer));
 		
 		printf("\n\tIl carattere %c compare %d volte in %s\n\n",carattere,ct,str);
 			
