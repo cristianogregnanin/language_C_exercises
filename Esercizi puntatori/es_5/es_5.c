@@ -8,7 +8,6 @@ void indirizzamento_variabile(int m){
 void indirizzamento_array(int a[]){
 	printf("l'indirizzo di a dentro alla funzione è: %p\n", a);
 	printf("l'indirizzo di a dentro alla funzione è: %p\n\n", &a[0]);
-
 }
 
 int main(){
