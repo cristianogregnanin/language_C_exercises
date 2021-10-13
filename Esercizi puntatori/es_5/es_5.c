@@ -2,7 +2,7 @@
 
 void indirizzamento_variabile(int m){
 	printf("m dentro alla funzione vale: %d\n", m);
-	printf("l'indirizzo di m dentro alla funzioen è: %p\n\n", &m);
+	printf("l'indirizzo di m dentro alla funzione è: %p\n\n", &m);
 }
 
 void indirizzamento_array(int a[]){
