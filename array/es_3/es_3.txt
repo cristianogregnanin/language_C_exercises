@@ -1,6 +1,7 @@
 Chiedere in input 10 interi e inserirli in un array.
 Stampare a video prima tutti i numeri pari e 
 in seguito tutti i numeri dispari
+
 Esempio: 
 input 5 6 9 11 12 13 14 10 8 21
 output
