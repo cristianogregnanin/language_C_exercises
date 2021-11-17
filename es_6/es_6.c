@@ -9,8 +9,7 @@ int main(){
 	scanf("%d",&a);
 	printf("inserisci b\n");
 	scanf("%d",&b);
-	n = a;
-	
+		
 	do {
 		printf("inserisci un numero\n");
 		scanf("%d",&n);
