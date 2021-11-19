@@ -1,0 +1,4 @@
+Definire un tipo di dato persona_t che è composto da 3 campi, in seguito definire un array di persona_t e popolarlo con 4 persone.
+Mostrare quindi a video il nome della persona più vecchia.
+
+Obbligatoriamente scrivere 2 funzioni: Inserisci e vecchio.
