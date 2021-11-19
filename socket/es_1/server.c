@@ -40,7 +40,8 @@ int main()
 	//attensa del client
 	for (;;)
 	{
-		printf("\n\nServer in ascolto...");
+		printf("\n\nServer in ascolto...\n");
+		fflush(stdout);
 
 		//accept
 		soa = accept(socketfd, (struct sockaddr *)&rem_indirizzo, &fromlen);
