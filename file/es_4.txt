@@ -1,0 +1,27 @@
+Scrivere un programma in linguaggio C che legge in input un file di testo che rappresenta una rubrica telefonica.
+La rubrica è composta da nome, cognome, numero di telefono.
+
+Esempio di file testo:
+
+$ cat rubrica.txt
+francesco veronese 3405625874
+marco bisco 3654215847
+
+Attraverso un menu si vogliono poter eseguire le seguenti operazioni:
+
+1) mostrare la rubrica a video
+2) aggiungere un contatto alla rubrica
+3) eliminare un contatto dalla rubrica dopo averlo ricercato con il suo numero di telefono
+
+
+Osservazioni: si strutturi il programma usando le funzioni, si adoperi un’opportuna struct per mappare la rubrica telefonica.
+
+Il programma deve dare l’opportunità all’utente di decidere se sovrascrivere la rubrica con I nuovi dati oppure se scrivere in un nuovo file di testo.
+
+
+Esempi di utilizzo del programma:
+
+1) $ ./rubrica.out rubrica.txt
+2) $ ./rubrica.out rubrica.txt -f output.txt
+
+Nel caso 1) il programma sovrascrive il file in argv[1]. Nel caso 2) il programma scrive nel file argv[3]
