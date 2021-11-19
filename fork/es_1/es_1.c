@@ -10,16 +10,13 @@
 int main()
 {
 
-	char c;
 	int pid;
-	printf("Inserisci un carattere: \n");
-	scanf("%c", &c);
 
 	pid = fork();
 
 	if (pid == 0)
 	{
-		printf("Il carattere in maiuscolo è: %c\n", toupper(c));
+		printf("Il carattere in maiuscolo è: %c\n", toupper(argv[1][0]));
 		sleep(5);
 		exit(2);
 	}
