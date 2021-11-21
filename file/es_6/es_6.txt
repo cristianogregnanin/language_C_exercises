@@ -1,0 +1,6 @@
+Si scriva un programma che sostituisca un carattere dentro ad un file di testo, ogni volta che questo compare. Al termine della sostituzione il programma deve scrivere su un nuovo file di testo l’array con i caratteri sostituiti. 
+
+esempio di invocazione
+$./prg.out input.txt output.txt -s p c
+
+Se in argv[3] compare -s si sostituirà il carattere in argv[4] con quello presente argv[5]
