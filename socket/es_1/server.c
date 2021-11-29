@@ -26,8 +26,7 @@ int main()
 	memset((char *)&servizio, 0, sizeof(servizio));
 
 	servizio.sin_family = AF_INET;
-	è
-		servizio.sin_addr.s_addr = htonl(INADDR_ANY);
+	servizio.sin_addr.s_addr = htonl(INADDR_ANY);
 	servizio.sin_port = htons(SERVER_PORT);
 
 	socketfd = socket(AF_INET, SOCK_STREAM, 0);
