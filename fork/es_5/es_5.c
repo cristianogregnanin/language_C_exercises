@@ -17,7 +17,7 @@ typedef struct
     char ruolo[RUOLO_LENGHT];
 } Giocatore_t;
 
-int LeggiFile(char nomeFile[], int *numGiocatori, Giocatore_t giocatori[])
+void LeggiFile(char nomeFile[], int *numGiocatori, Giocatore_t giocatori[])
 {
     FILE *stream;
     if ((stream = fopen(nomeFile, "r")) == NULL)
@@ -32,8 +32,6 @@ int LeggiFile(char nomeFile[], int *numGiocatori, Giocatore_t giocatori[])
     }
 
     fclose(stream);
-
-    return 0;
 }
 
 void main(int argc, char *argv[])
