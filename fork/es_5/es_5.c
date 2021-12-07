@@ -27,7 +27,7 @@ int LeggiFile(char nomeFile[], int *numGiocatori, Giocatore_t giocatori[])
 
     for (int i = 0; !feof(stream); i++)
     {
-        fscanf(stream, "%s %s %s\n", giocatori[*numGiocatori].nome, giocatori[*numGiocatori].cognome, giocatori[*numGiocatori].ruolo);
+        fscanf(stream, "%s %s %s\n", giocatori[i].nome, giocatori[i].cognome, giocatori[i].ruolo);
         (*numGiocatori)++;
     }
 
