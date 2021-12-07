@@ -1,0 +1,29 @@
+Scrivere un programma in linguaggio C che legge in input un file di testo che 
+rappresenta una squadra di calcio.
+La squadra è composta da nome, cognome, ruolo.
+
+Esempio di file testo:
+
+$ cat milan.txt
+Daniel Maldini attaccante
+Mike Maignan portiere
+
+Nel processo padre si legga il file di testo attraverso un’apposita funzione e 
+si proceda ad inserire i giocatori in un apposito array di tipo Giocatore_T,
+si strutturi opportunamente il tipo di dato Giocatore_T.
+
+
+Si generi quindi un processo figlio che ha il compito di mostrare a video 
+tutti gli attaccanti. 
+Nel mentre il processo padre deve attendere la terminazione del figlio e 
+quindi a sua volta terminare. 
+
+Si strutturi il programma usando le funzioni, si adoperi un’opportuna struct 
+per mappare la squadra di calcio.
+
+
+Esempio di utilizzo del programma:
+$ ./calciatori milan.txt
+
+
+Si verifichi che argv e argc siano coerenti con l'utilizzo del programma.

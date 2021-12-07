@@ -4,7 +4,6 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
-
 #define NOME_LENGHT 21
 #define COGNOME_LENGHT 21
 #define RUOLO_LENGHT 21
