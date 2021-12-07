@@ -44,7 +44,7 @@ void main(int argc, char *argv[])
         exit(0);
     }
 
-    int pid, numGiocatori;
+    int pid, numGiocatori = 0;
     Giocatore_t giocatori[MAX_LENGHT];
 
     LeggiFile(argv[1], &numGiocatori, giocatori);
