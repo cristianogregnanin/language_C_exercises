@@ -1,0 +1,7 @@
+giocatore uno attaccante
+giocatore tre attaccante
+giocatore due attaccante
+giocatore cinque centrocampista
+giocatore sei attaccante
+giocatore sette portiere
+giocatore otto difensore
