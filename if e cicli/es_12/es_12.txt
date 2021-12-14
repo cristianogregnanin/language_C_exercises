@@ -1,0 +1,7 @@
+Si scriva un programma che calcoli l’elevazione a potenza del valore intero
+passato come primo argomento per il secondo argomento intero.
+
+Esempio:
+
+$./es 2 3 
+2 ^ 3 = 8
