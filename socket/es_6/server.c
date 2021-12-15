@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
         exit(2);
     }
     struct sockaddr_in server_addr, client_addr;
-    int soa, socketfd, client_len, fd, on = 1, fromlen = sizeof(server_addr);
+    int soa, socketfd, on = 1, fromlen = sizeof(server_addr);
 
     struct hostent *host;
     memset((char *)&server_addr, 0, sizeof(server_addr));
