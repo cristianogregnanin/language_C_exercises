@@ -5,8 +5,6 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 
-
-
 void leggiFile(char nomeFile[], char testo[100][100], int *numParole)
 {
     FILE *stream;
@@ -27,7 +25,7 @@ int main(int argc, char **argv)
 {
     struct sockaddr_in servizio;
     char stringa[20], testo[100][100];
-    int cnt = 0, numParole = 0, nread, socketfd;
+    int cnt = 0, numParole = 0, socketfd;
 
     if (argc != 5)
     {
