@@ -15,10 +15,9 @@ void contaOccorrenze(char testo[100][100], char stringa[], int *cnt, int numParo
 
 int main(int argc, char *argv[])
 {
-    char stringa[20];
-    char testo[100][100];
-    int numParole = 0;
-    int cnt = 0;
+    char stringa[20], testo[100][100];
+    int numParole = 0, cnt = 0;
+
     if (argc != 3)
     {
         printf("Numero di argomenti errato\n");
