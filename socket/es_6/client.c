@@ -26,11 +26,8 @@ void leggiFile(char nomeFile[], char testo[100][100], int *numParole)
 int main(int argc, char **argv)
 {
     struct sockaddr_in servizio;
-    char stringa[20];
-    char testo[100][100];
-    int cnt = 0;
-    int numParole = 0;
-    int nread, socketfd;
+    char stringa[20], testo[100][100];
+    int cnt = 0, numParole = 0, nread, socketfd;
 
     if (argc != 5)
     {
@@ -56,4 +53,6 @@ int main(int argc, char **argv)
     read(socketfd, &cnt, sizeof(cnt));
     printf("La parola %s e' presente %d volte\n", stringa, cnt);
     close(socketfd);
+
+    return 0;
 }
