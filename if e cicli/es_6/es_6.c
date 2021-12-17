@@ -5,12 +5,14 @@ int main()
 
 	int i = 0, somma = 0, a, b, n;
 	double media;
-
-	printf("inserisci a\n");
-	scanf("%d", &a);
-	printf("inserisci b\n");
-	scanf("%d", &b);
-
+	do
+	{
+		printf("inserisci a\n");
+		scanf("%d", &a);
+		printf("inserisci b\n");
+		scanf("%d", &b);
+	} while (b < a);
+	
 	do
 	{
 		printf("inserisci un numero\n");
