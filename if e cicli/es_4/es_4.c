@@ -15,7 +15,7 @@ int main()
 		printf("inserisci b\n");
 		scanf("%d", &b);
 
-		if (a > b)
+		if (a < b)
 			r = (double)b / (double)a;
 		else
 			r = (double)a / (double)b;
