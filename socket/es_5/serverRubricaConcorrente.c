@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     }
 
     struct sockaddr_in server_addr, client_addr;
-    int serverPort, n1read, n2read, n, soa, socketfd, clientlen = sizeof(client_addr), fd, on = 1;
+    int serverPort, n, soa, socketfd, clientlen = sizeof(client_addr), fd, on = 1;
     Contatto_t contatti[MAX_LENGHT];
 
     memset((char *)&server_addr, 0, sizeof(server_addr));
@@ -80,9 +80,9 @@ int main(int argc, char *argv[])
         int pid = fork();
         if (pid == 0)
         {
-
-            n1read = read(soa, &n, sizeof(n));
-            n2read = read(soa, contatti, sizeof(contatti));
+            close(socketfd);
+            read(soa, &n, sizeof(n));
+            read(soa, contatti, sizeof(contatti));
 
             ordinaRubrica(contatti, n);
 
