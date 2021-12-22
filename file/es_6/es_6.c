@@ -15,11 +15,11 @@ void sostituisciCarattere(char parole[DIM][DIM], char carattere, char sostituto,
     }
 }
 
-void scriviFile(char parole[DIM][DIM], int n, char *argv[])
+void scriviFile(char parole[DIM][DIM], int n, char fileName[])
 {
     FILE *stream;
 
-    if ((stream = fopen(argv[2], "w")) == NULL)
+    if ((stream = fopen(fileName, "w")) == NULL)
     {
         printf("errore nell'apertura del file output");
         exit(4);
@@ -46,7 +46,7 @@ void leggiFile(char fileName[], char parole[DIM][DIM], int *n)
     while (!feof(stream))
     {
         fscanf(stream, "%s ", parole[*n]);
-        ++(*n);
+        (*n)++;
     }
 
     fclose(stream);
@@ -61,7 +61,7 @@ void controllaArgomenti(int argc, char *argv[])
         exit(1);
     }
 
-    if (argv[3][1] != 's')
+    if (strcmp(argv[3],"-s")!=0)
     {
         printf("Metodo errato");
         exit(2);
@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
     leggiFile(argv[1], parole, &n);
 
     sostituisciCarattere(parole, argv[4][0], argv[5][0], n);
-    scriviFile(parole, n, argv);
+    scriviFile(parole, n, argv[2]);
 
     return 0;
 }
