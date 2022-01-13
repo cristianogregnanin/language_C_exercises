@@ -1,0 +1,15 @@
+Si scriva un programma di tipo client server dove il server riceve una stringa 
+e un carattere. Il server rimuove quindi dalla stringa il carattere ogni volta che esso compare.
+Il server deve inviare al client la stringa senza il carattere.
+Si controllino opportunamente argc e argv sia nel client che nel server
+
+Esempio
+$./server <server-ip> -p <porta>
+$./server 127.0.0.1 -p 50000
+
+$./client <server-ip> -p <porta> <stringa> <carattere>
+$./client 192.168.2.75 -p 50000 tutti t
+
+
+Opzionale:
+realizzare un server concorrente

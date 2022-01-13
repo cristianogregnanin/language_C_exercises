@@ -1,0 +1,13 @@
+Scrivere un programma client server in cui il server riceva in input 1 stringa e,
+dopo aver effettuato gli opportuni controlli, rispedisca al client 2 stringhe
+contenenti una le vocali e una le consonanti ottenute dalla stringa di partenza.
+
+esempio di invocazione del server:
+$./server -p 50000
+
+esempio di invocazione del client:
+$./client <ip-server> <porta-server> <stringa>
+$./client 192.168.2.75 50000 ciao
+
+
+
