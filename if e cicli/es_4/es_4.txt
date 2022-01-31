@@ -4,5 +4,5 @@ Per ciascuna coppia, l’algoritmo deve calcolare e stampare il valore
 della radice quadrata del rapporto tra il valore maggiore e quello
 minore dei due. Il programma termina quando vengono inseriti dei valori
 che non permettono di svolgere il calcolo nel dominio dei numeri reali.
-Prima di terminare si richiede di stampare un messaggio che indichi la
+Il programma prima di terminare si richiede di stampare un messaggio che indichi la
 ragione per cui non è stato possibile svolgere il calcolo.
