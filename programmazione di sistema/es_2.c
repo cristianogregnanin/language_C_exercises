@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
         dup(piped[0]);
         close(piped[1]);
         close(piped[0]);
-        execl("/bin/wc", "wc", (char *)0);
+        execl("/bin/more", "more", (char *)0);
     }
     
     wait(&pid);
