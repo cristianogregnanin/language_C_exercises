@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
 
-    int piped[2], pid, status;
+    int piped[2], pid;
     pipe(piped);
 
     pid = fork();
@@ -29,8 +29,7 @@ int main(int argc, char *argv[])
         execl("/bin/wc", "wc", (char *)0);
     }
 
-    wait(&status);
-    wait(&status);
+
     close(piped[1]);
     close(piped[0]);
 
