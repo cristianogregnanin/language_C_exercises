@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <sys/wait.h>
 
 
 int main(int argc, char *argv[])
@@ -30,7 +31,7 @@ int main(int argc, char *argv[])
         execl("/bin/wc", "wc", (char *)0);
     }
 
-
+    wait(&pid);
     close(piped[1]);
     close(piped[0]);
 
