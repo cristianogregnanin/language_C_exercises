@@ -29,6 +29,8 @@ int main(int argc, char *argv[])
         execl("/bin/wc", "wc", (char *)0);
     }
 
+    wait(&pid);
+    wait(&pid);
     close(piped[1]);
     close(piped[0]);
 
