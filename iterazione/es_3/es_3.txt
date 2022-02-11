@@ -1,2 +1,2 @@
 Dato N un numero intero positivo, generare e visualizzare in ordine crescente i numeri dispari
-minori o uguali a N. Descrivere il problema mediante flow chart
+minori o uguali a N.

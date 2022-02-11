@@ -1,2 +1,2 @@
 Dato N un numero intero positivo, generare e visualizzare il numero 
-successivo. Descrivere il problema mediante flow chart
+successivo.
