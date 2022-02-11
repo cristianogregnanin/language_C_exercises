@@ -3,20 +3,19 @@
 int main()
 {
 
-	int n, i = 0; //dichiarazione variabili di tipo intero
+	int n, i = 0; 
+	do
+	{									   
+		printf("inserisci un numero: \n");
+		scanf("%d", &n);				   
+	} while (n <= 0);					   
 
 	do
-	{									   //ripeti
-		printf("inserisci un numero: \n"); //Scrivi inserisci un numero
-		scanf("%d", &n);				   //leggi n
-	} while (n <= 0);					   //finche n<=0
+	{					   
+		i++;			   
+		printf("%d\n", i); 
 
-	do
-	{					   //ripeti
-		i++;			   //i:=i+1
-		printf("%d\n", i); //scrivi i
+	} while (i < n); 
 
-	} while (i < n); //finche i>n
-
-	return 0; //la funzione main deve ritornare un valore int
+	return 0; 
 }
