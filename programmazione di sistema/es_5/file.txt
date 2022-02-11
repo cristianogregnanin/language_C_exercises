@@ -1,0 +1,12 @@
+AB123 pagato 20,00
+AB123 insoluto 120,00
+AC123 insoluto 120,00
+AD123 insoluto 120,00
+AB123 pagato 20,00
+AB123 pagato 200,00
+AE123 pagato 204,00
+AF123 pagato 220,00
+AF123 insoluto 220,00
+AF123 insoluto 210,00
+AF123 insoluto 230,00
+AD123 pagato 120,00

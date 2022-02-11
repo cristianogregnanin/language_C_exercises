@@ -1,0 +1,15 @@
+Si scriva un’applicazione concorrente che presenti la seguente interfaccia:
+
+cercaStringhe FileIn
+
+dove FileIn è un nome assoluto di file.
+
+L’applicazione deve contare il numero di volte in cui un insieme di stringhe
+che l’utente inserisce da terminale (una alla volta) compaiono all’interno
+del file passato come parametro in argv[1].
+Se in una riga del file una parola compare più volte, al fine del conteggio,
+considerare solamente la prima occorrenza. 
+L’applicazione termina quando l’utente inserisce la stringa “fine”.
+L’applicazione deve visualizzare il numero di volte in cui ogni stringa
+compare nel file e anche, al termine dell’esecuzione, il numero totale di
+stringhe trovate nel file.
