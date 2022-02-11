@@ -22,6 +22,6 @@ int main()
 	do
 	{
 		printf("%d\n", n1);
-		n1++; //i=i+1
+		n1++;
 	} while (n1 <= n2);
 }
