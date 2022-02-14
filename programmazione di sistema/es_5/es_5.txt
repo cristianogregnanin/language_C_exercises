@@ -9,7 +9,7 @@ le ha pagate tutte.
 Nel file passato come parametro sono memorizzate tutte le fatture, una per
 ogni riga. Ogni riga è composta dal nome del cliente (un codice di 5 caratteri
 alfanumerico che identifica univocamente ogni cliente), da un campo che 
-contiene la stringa “pagato” per le fatture saldate oppure “da pagare”
+contiene la stringa “pagato” per le fatture saldate oppure “insoluto”
 per quelle ancora insolute, più altri campi con altre informazioni.
 
 L’addetto dell’azienda inserisce a terminale il codice dei clienti (uno alla
@@ -17,6 +17,6 @@ volta) di cui vuole controllare lo stato dei pagamenti. Per ogni cliente
 inserito, l’applicazione deve visualizzare il nome del cliente stesso e il
 numero di fatture di tale cliente che risultano ancora da pagare.
 
-Quando l’applicazione termina (a causa dell’inserimento della stringa “esci”)
+Quando l’applicazione termina,a causa dell’inserimento della stringa “esci”,
 il programma deve visualizzare il numero totale di richieste di servizio
 eseguite fino a quel momento.
