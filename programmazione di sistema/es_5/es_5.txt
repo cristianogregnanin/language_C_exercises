@@ -1,5 +1,5 @@
 Un’applicazione multiprocesso in C deve presentare la seguente interfaccia:
-controlloFatture nomeFileFatture
+controlloFatture nomeFileFatture 
 dove nomeFileFatture è un nome assoluto di file.
 
 A questo fine, l’addetto dell’azienda deve verificare, sul file passato 
