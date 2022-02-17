@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 {
     if (argc != 2)
     {
-        printf("Argomenti errati. inserire primo argomento il nome di un file\n");
+        printf("Argomenti errati. Inserire come primo argomento il nome di un file\n");
         exit(0);
     }
     char stringa[1000], codice[5];
