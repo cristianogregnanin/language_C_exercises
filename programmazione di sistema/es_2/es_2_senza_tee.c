@@ -3,14 +3,18 @@
 #include <stdlib.h>
 #include <fcntl.h>
 
+/* In questa soluzione si usano le system call per scrivere nel file wc.txt*/
+
 int main(int argc, char *argv[])
 {
-    if(argc!=2){
+    if (argc != 2)
+    {
         printf("Numero argomenti sbagliato");
         exit(1);
     }
 
-    int fd, piped[2], pid, p2p0[2];
+    int fd, piped[2], pid, p2p0[2], nread;
+    char buff[1000];
     pipe(piped);
 
     pid = fork();
@@ -30,8 +34,8 @@ int main(int argc, char *argv[])
     {
         close(0);
         dup(piped[0]);
-        close(piped[1]);
         close(piped[0]);
+        close(piped[1]);
 
         close(1);
         dup(p2p0[1]);
@@ -44,16 +48,13 @@ int main(int argc, char *argv[])
     close(piped[0]);
     close(p2p0[1]);
 
-    close(0);
-    dup(p2p0[0]);
-    close(p2p0[0]);
-
     fd = open("wc.txt", O_WRONLY | O_CREAT, 0777);
-    close(1);
-    dup(fd);
+    while (nread = read(p2p0[0], buff, 1024 > 0))
+    {
+        write(fd, buff, nread);
+    }
+    close(p2p0[0]);
     close(fd);
-
-    execl("/usr/bin/tee","tee",(char *)0);
 
     return 0;
 }

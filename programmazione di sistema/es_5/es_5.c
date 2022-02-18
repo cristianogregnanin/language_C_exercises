@@ -16,16 +16,21 @@ int main(int argc, char *argv[])
     }
     char stringa[1000], codice[5];
     int p1p0[2], tot = 0, p1;
+
     pipe(p1p0);
     while (1)
     {
         printf("Inserisci codice:\n");
         scanf("%s", codice);
+
         if (strcmp("esci", codice) == 0)
         {
             printf("sono stati trovati: %d insoluti\n", tot);
+            close(p1p0[READ]);
+            close(p1p0[WRITE]);
             exit(0);
         }
+
         p1 = fork();
         if (p1 == 0)
         {
@@ -39,7 +44,6 @@ int main(int argc, char *argv[])
         }
         if (p1 > 0)
         {
-            wait(&p1);
             read(p1p0[READ], stringa, sizeof(stringa));
             printf("Sono stati trovati %d insoluti\n", atoi(stringa));
             tot = tot + atoi(stringa);
@@ -49,5 +53,6 @@ int main(int argc, char *argv[])
             printf("Errore durante la generazione del figlio");
         }
     }
+    
     return 0;
 }

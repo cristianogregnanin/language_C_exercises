@@ -6,37 +6,45 @@
 
 int main(int argc, char *argv[])
 {
-    char stringa[1000];
-    int channel[2];
-    pipe(channel);
-    char cnt[1000];
-    int cnttot = 0;
+    if (argc != 2)
+    {
+        printf("Numero parametri errato\n");
+        exit(1);
+    }
 
-    do
+    char stringa[1000], cnt[1000];
+    int piped[2], cnttot = 0;
+
+    pipe(piped);
+    while (1)
     {
         printf("Che parola vuoi cercare? ");
         scanf("%s", stringa);
 
-        if (strcmp(stringa, "fine") != 0)
+        if (strcmp(stringa, "fine") == 0)
         {
-            int pid = fork();
-
-            if (pid == 0)
-            {
-                close(channel[0]);
-                close(1);
-                dup(channel[1]);
-                close(channel[1]);
-                execl("/usr/bin/grep", "grep", "-c", stringa, argv[1], (char *)0);
-                return -1;
-            }
-            wait(&pid);
-            read(channel[0], cnt, sizeof(cnt));
-            printf("Il file ha %d '%s' \n", atoi(cnt), stringa);
-            cnttot += atoi(cnt);
+            close(piped[1]);
+            close(piped[0]);
+            printf("Numero di parole trovate: %d\n", cnttot);
+            exit(1);
         }
-    } while (strcmp(stringa, "fine") != 0);
 
-    printf("Numero di parole trovate: %d\n", cnttot);
+        int pid = fork();
+
+        if (pid == 0)
+        {
+            close(piped[0]);
+            close(1);
+            dup(piped[1]);
+            close(piped[1]);
+
+            execl("/usr/bin/grep", "grep", "-c", stringa, argv[1], (char *)0);
+            return -1;
+        }
+        read(piped[0], cnt, sizeof(cnt));
+        printf("Il file ha %d '%s' \n", atoi(cnt), stringa);
+        cnttot += atoi(cnt);
+    }
+
     return 0;
 }

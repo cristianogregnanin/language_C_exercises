@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <sys/wait.h>
 
 int main(int argc, char *argv[])
 {
@@ -29,10 +30,10 @@ int main(int argc, char *argv[])
         execl("/bin/more", "more", (char *)0);
     }
     
-    wait(&pid);
-    wait(&pid);
     close(piped[1]);
     close(piped[0]);
+    wait(&pid);
+    wait(&pid);
 
     return 0;
 }
