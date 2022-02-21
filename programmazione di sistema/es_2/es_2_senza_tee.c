@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     }
 
     int fd, piped[2], pid, p2p0[2], nread;
-    char buff[1000];
+    char buff[1024];
     pipe(piped);
 
     pid = fork();
