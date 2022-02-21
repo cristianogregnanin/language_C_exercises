@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
     close(p2p0[1]);
 
     fd = open("wc.txt", O_WRONLY | O_CREAT, 0777);
-    while (nread = read(p2p0[0], buff, 1024 > 0))
+    while (nread = read(p2p0[0], buff, 1024) > 0))
     {
         write(fd, buff, nread);
     }
