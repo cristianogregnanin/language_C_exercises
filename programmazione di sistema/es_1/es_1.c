@@ -6,32 +6,34 @@
 int main(int argc, char *argv[])
 {
 
-    int piped[2], pid;
-    pipe(piped);
+    int p1p0[2], pid;
+    pipe(p1p0);
 
     pid = fork();
 
     if (pid == 0)
     {
         close(1);
-        dup(piped[1]);
-        close(piped[1]);
-        close(piped[0]);
+        dup(p1p0[1]);
+        close(p1p0[1]);
+        close(p1p0[0]);
         execl("/bin/cat", "cat", "file.txt", (char *)0);
+        return -1;
     }
 
     pid = fork();
     if (pid == 0)
     {
         close(0);
-        dup(piped[0]);
-        close(piped[1]);
-        close(piped[0]);
+        dup(p1p0[0]);
+        close(p1p0[1]);
+        close(p1p0[0]);
         execl("/bin/more", "more", (char *)0);
+        return -1;
     }
-    
-    close(piped[1]);
-    close(piped[0]);
+
+    close(p1p0[1]);
+    close(p1p0[0]);
     wait(&pid);
     wait(&pid);
 
