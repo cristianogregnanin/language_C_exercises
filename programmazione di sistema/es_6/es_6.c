@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    int fd, p1p0[2], pid, p2p0[2], nread;
+    int fd, p1p0[2], pid, p2p0[2];
     double totale = 0;
     char buffer[1], *ptr, strimporto[100];
 
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     close(p1p0[0]);
     close(p2p0[1]);
 
-    while (nread = read(p2p0[0], buffer, 1) > 0)
+    while (read(p2p0[0], buffer, 1) > 0)
     {
 
         strncat(strimporto, &buffer[0], sizeof(buffer[0]));
