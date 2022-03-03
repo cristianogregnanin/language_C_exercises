@@ -12,20 +12,20 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    int fd, p1p0[2], pid, p2p0[2];
+    int fd, p1p2[2], pid, p2p0[2];
     double totale = 0;
     char buffer[1], *ptr, strimporto[100];
 
-    pipe(p1p0);
+    pipe(p1p2);
 
     pid = fork();
 
     if (pid == 0)
     {
         close(1);
-        dup(p1p0[1]);
-        close(p1p0[1]);
-        close(p1p0[0]);
+        dup(p1p2[1]);
+        close(p1p2[1]);
+        close(p1p2[0]);
         execl("/bin/cat", "cat", argv[1], (char *)0);
         return -1;
     }
@@ -35,9 +35,9 @@ int main(int argc, char *argv[])
     if (pid == 0)
     {
         close(0);
-        dup(p1p0[0]);
-        close(p1p0[1]);
-        close(p1p0[0]);
+        dup(p1p2[0]);
+        close(p1p2[1]);
+        close(p1p2[0]);
 
         close(1);
         dup(p2p0[1]);
@@ -48,8 +48,8 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    close(p1p0[1]);
-    close(p1p0[0]);
+    close(p1p2[1]);
+    close(p1p2[0]);
     close(p2p0[1]);
 
     while (read(p2p0[0], buffer, 1) > 0)
