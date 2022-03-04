@@ -26,7 +26,7 @@ Come si può vedere dall'esempio la prima riga non è utile, e il primo tempo ut
 Note operative: 
 p0 crea il processo p1 che chiama il comando cat e inoltra il suo output a p2
 p2 estrapola la quarta colonna e la inoltra a p3
-p3 chiama il comando tailn -n +2 per escludere la prima riga, fatto cio inoltra l'output a p0
+p3 chiama il comando tail -n +2 per escludere la prima riga, fatto cio inoltra l'output a p0
 p0 somma tutti i tempi di accesso e al termine mostra il tempo totale che un pacchetto ha impiegato lungo il percorso
 
 
