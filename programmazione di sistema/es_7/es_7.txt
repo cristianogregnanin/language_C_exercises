@@ -30,4 +30,8 @@ p3 chiama il comando tail -n +2 per escludere la prima riga, fatto cio inoltra l
 p0 somma tutti i tempi di accesso e al termine mostra il tempo totale che un pacchetto ha impiegato lungo il percorso
 
 
+Osservazione importante:
+Al fine di rendere l'esercizio facilmente testabile si è deciso di utilizzare il file f.txt in modo da avere un risultato riproducibile. Dopo aver testato il software si consiglia di sostituire al comando cat il comando traceroute in modo da realizzare un software il cui funzionamento è reale.
+Esempio di utilizzo reale: $./a.out google.com
+
 
