@@ -54,14 +54,14 @@ int main(int argc, char *argv[])
     if (pid == 0)
     {
 
+        close(p2p3[1]);
         close(0);
         dup(p2p3[0]);
         close(p2p3[0]);
-        close(p2p3[1]);
 
+        close(p3p0[0]);
         close(1);
         dup(p3p0[1]);
-        close(p3p0[0]);
         close(p3p0[1]);
 
         execl("/usr/bin/tail", "tail", "-n", "+2", (char *)0);
@@ -84,6 +84,6 @@ int main(int argc, char *argv[])
     }
 
     close(p3p0[0]);
-    printf("\nIl tempo totale impiegato è: %.2lf\n", totale);
+    printf("\nIl tempo totale impiegato è: %.2lf ms\n", totale);
     return 0;
 }
