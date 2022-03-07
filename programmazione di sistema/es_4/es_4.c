@@ -7,7 +7,7 @@
 int main(int argc, char *argv[])
 {
     char stringa[100], cnt[100];
-    int cnttot = 0, p1p0[2], p2p0[2], p1, p2;
+    int cnttot = 0, p1p0[2], p2p0[2], pid;
 
     if (argc != 2)
     {
@@ -30,32 +30,32 @@ int main(int argc, char *argv[])
             exit(1);
         }
 
-        p1 = fork();
+        pid = fork();
 
-        if (p1 == 0)
+        if (pid == 0)
         {
+            close(p1p0[0]);
             close(1);
             dup(p1p0[1]);
             close(p1p0[1]);
-            close(p1p0[0]);
             execl("/usr/bin/grep", "grep", "-ow", stringa, argv[1], (char *)0);
             return -1;
         }
 
         pipe(p2p0);
-        p2 = fork();
+        pid = fork();
 
-        if (p2 == 0)
+        if (pid == 0)
         {
+            close(p1p0[1]);
             close(0);
             dup(p1p0[0]);
             close(p1p0[0]);
-            close(p1p0[1]);
 
+            close(p2p0[0]);
             close(1);
             dup(p2p0[1]);
             close(p2p0[1]);
-            close(p2p0[0]);
             execl("/usr/bin/wc", "wc", "-l", (char *)0);
             return -1;
         }
