@@ -5,7 +5,7 @@ void inverti(char s[])
 {
 
 	char tmp;
-	int i, length = strlen(s), j = length - 1;
+	int i, j = strlen(s) - 1;
 
 	for (i = 0; i < j; i++)
 	{
