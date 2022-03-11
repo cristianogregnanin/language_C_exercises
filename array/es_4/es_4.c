@@ -18,16 +18,17 @@ void inverti(char s[])
 	}
 }
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
+	if (argc != 2)
+	{
+		printf("Numero argomenti errato\n");
+		return -1;
+	}
 
-	char stringa[strlen(argv[1])];
+	inverti(argv[1]);
 
-	strcpy(stringa, argv[1]);
-
-	inverti(stringa);
-
-	printf("stringa invertita: %s\n", stringa);
+	printf("stringa invertita: %s\n", argv[1]);
 
 	return 0;
 }
