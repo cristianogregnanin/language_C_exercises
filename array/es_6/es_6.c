@@ -17,14 +17,16 @@ int palindroma(char parola[])
 
 int main(int argc, char **argv)
 {
+	if (argc != 2)
+	{
+		printf("Numero argomenti sbagliato\n");
+		return -1;
+	}
 
-	char parola[strlen(argv[1])];
-	strcpy(parola, argv[1]);
-
-	if (palindroma(parola) > 0)
-		printf("%s è una parola palindroma\n", parola);
+	if (palindroma(argv[1]) > 0)
+		printf("%s è una parola palindroma\n", argv[1]);
 	else
-		printf("%s non è una parola palindroma\n", parola);
+		printf("%s non è una parola palindroma\n", argv[1]);
 
 	return 0;
 }
