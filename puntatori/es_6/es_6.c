@@ -11,7 +11,7 @@ void ricerca(char string[], char carattere, int *k)
 			++(*k);
 }
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 
 	int contatore = 0;

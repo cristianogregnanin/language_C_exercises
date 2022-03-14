@@ -21,7 +21,7 @@ void leggiFile(char nomeFile[], char testo[100][100], int *numParole)
     fclose(stream);
 }
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     struct sockaddr_in servizio;
     char stringa[20], testo[100][100];

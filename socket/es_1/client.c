@@ -14,7 +14,7 @@
 #define DIMBUFF 512
 #define SERVER_PORT 1313
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 
 	struct sockaddr_in servizio;

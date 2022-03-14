@@ -33,7 +33,7 @@ double calcola_media(studente_t studenti[], int n)
 	return (double)somma / (double)i;
 }
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	FILE *fd;
 	char str[MAXCHAR], nome[20], *token;

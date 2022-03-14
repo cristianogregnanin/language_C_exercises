@@ -23,7 +23,7 @@ int ricerca(int numeri[], int n, int numero)
 	return -1;
 }
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 
 	int numeri[] = {10, 20, 30};

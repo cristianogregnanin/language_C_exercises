@@ -21,7 +21,7 @@ int cerca(char matricola[], studente_t studenti[])
 	return -1;
 }
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 
 	char matricola[5];

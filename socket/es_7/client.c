@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     struct sockaddr_in servizio;
     int socketfd, dimvocali, dimconsonanti;

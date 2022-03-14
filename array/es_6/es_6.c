@@ -15,7 +15,7 @@ int palindroma(char parola[])
 	return 1;
 }
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	if (argc != 2)
 	{
