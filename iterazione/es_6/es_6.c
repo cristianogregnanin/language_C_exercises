@@ -4,7 +4,7 @@
  * visualizzare in ordine crescente i numeri compresi
  * maggiori uguali di -N e minori uguali di N.
 * */
-int main()
+int main(int argc, char *argv[])
 {
 
 	int i;

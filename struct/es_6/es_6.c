@@ -66,7 +66,7 @@ Person_T findOldest(Person_T people[])
  * \param Person_T oldest: The oldest person of the array
  * \param people[DIM]: An array of people, which size is defined by DIM
 */
-int main()
+int main(int argc, char *argv[])
 {
     Person_T oldest;
     Person_T people[DIM];

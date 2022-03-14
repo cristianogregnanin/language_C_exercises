@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main()
+int main(int argc, char *argv[])
 {
 	int a, b, c, diff, nulli = 0, pari = 0, dispari = 0;
 

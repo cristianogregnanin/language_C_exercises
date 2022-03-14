@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main()
+int main(int argc, char *argv[])
 {
 
 	int i = 0, somma = 0, a, b, n;

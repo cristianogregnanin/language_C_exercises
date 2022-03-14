@@ -97,7 +97,7 @@ studente_con_voti_t crea_studente()
 	return studente_con_voti;
 }
 
-int main()
+int main(int argc, char *argv[])
 {
 
 	studente_t studenti[DIM_STUDENTI], studente;

@@ -88,7 +88,7 @@ tipo_studente_con_media calcola_vincitore(tipo_studente_con_media medie[])
 	return massimo;
 }
 
-int main()
+int main(int argc, char *argv[])
 {
 
 	tipo_studente studenti[DIM], studente;

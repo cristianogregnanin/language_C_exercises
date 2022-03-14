@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main()
+int main(int argc, char *argv[])
 {
 
 	int m = 11;

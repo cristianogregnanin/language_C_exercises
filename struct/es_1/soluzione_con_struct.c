@@ -44,7 +44,7 @@ studente_t crea_studente()
 	return studente;
 }
 
-int main()
+int main(int argc, char *argv[])
 {
 
 	studente_t studenti[DIM];

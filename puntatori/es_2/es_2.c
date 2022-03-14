@@ -7,7 +7,7 @@ void scambia(int *a, int *b)
 	*b = swap;
 }
 
-int main()
+int main(int argc, char *argv[])
 {
 
 	int a = 10, b = 15;

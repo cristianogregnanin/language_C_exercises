@@ -33,7 +33,7 @@ void LeggiFile(char nomeFile[], int *numGiocatori, Giocatore_t giocatori[])
     fclose(stream);
 }
 
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
     if (argc != 2)
     {

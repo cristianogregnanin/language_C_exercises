@@ -21,7 +21,7 @@ int isPari(int a[], int n)
 	return 0;
 }
 
-int main()
+int main(int argc, char *argv[])
 {
 
 	int pari[4];

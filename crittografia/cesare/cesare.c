@@ -21,7 +21,7 @@ void cesare(char s[], int salto)
 	}
 }
 
-int main()
+int main(int argc, char *argv[])
 {
 
 	char s[DIM];

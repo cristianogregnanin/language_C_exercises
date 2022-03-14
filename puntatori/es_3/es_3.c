@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define DIM 20
 
-int main()
+int main(int argc, char *argv[])
 {
 	int a[DIM];
 

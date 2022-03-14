@@ -17,7 +17,7 @@ void calcola_min_max(int a, int b, int c, int *min, int *max)
 	}
 }
 
-int main()
+int main(int argc, char *argv[])
 {
 	int a, b, c;
 	int min = INT_MAX, max = 0;

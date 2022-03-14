@@ -157,7 +157,7 @@ void menu(int array[], int *n)
 	esegui_operazione(scelta, array, &n);
 }
 
-int main()
+int main(int argc, char *argv[])
 {
 
 	int array[SHRT_MAX];

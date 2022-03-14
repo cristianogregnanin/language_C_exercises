@@ -9,7 +9,7 @@ typedef struct
 	char squadra[20];
 } calciatore_t;
 
-int main()
+int main(int argc, char *argv[])
 {
 
 	calciatore_t calciatori[DIM];

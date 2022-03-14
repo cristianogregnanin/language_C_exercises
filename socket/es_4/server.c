@@ -44,7 +44,7 @@ void concatena(char str1[], char str2[], char newstr[])
 	}
 }
 
-int main()
+int main(int argc, char *argv[])
 {
 
 	struct sockaddr_in servizio, rem_indirizzo;

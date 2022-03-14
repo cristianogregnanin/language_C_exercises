@@ -12,7 +12,7 @@ void indirizzamento_array(int a[])
 	printf("l'indirizzo di a dentro alla funzione è: %p\n\n", &a[0]);
 }
 
-int main()
+int main(int argc, char *argv[])
 {
 	int m = 11;
 	printf("m vale: %d\n", m);

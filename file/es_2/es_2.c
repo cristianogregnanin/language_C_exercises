@@ -41,7 +41,7 @@ persona_t calcola_vecchio(persona_t persone[])
 	return vecchio;
 }
 
-int main()
+int main(int argc, char *argv[])
 {
 
 	persona_t persone[PERSONE], persona, vecchio;

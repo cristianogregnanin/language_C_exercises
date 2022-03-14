@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define DIM 100
 
-int main()
+int main(int argc, char *argv[])
 {
 
 	int somma = 0, i = 0, k, numero, numeri[DIM];

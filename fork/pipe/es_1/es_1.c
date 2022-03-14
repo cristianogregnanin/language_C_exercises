@@ -4,7 +4,7 @@
 
 #define DIM 3
 
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
     int pid, canale1[2], canale2[2];
 

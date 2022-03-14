@@ -26,7 +26,7 @@ void inverti(char str[], char newstr[], int n)
 	}
 }
 
-int main()
+int main(int argc, char *argv[])
 {
 
 	struct sockaddr_in servizio, rem_indirizzo;

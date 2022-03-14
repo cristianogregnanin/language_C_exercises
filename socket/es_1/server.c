@@ -15,7 +15,7 @@
 #define SOCKET_ERROR ((int)-1)
 #define DIMBUFF 512
 
-int main()
+int main(int argc, char *argv[])
 {
 
 	struct sockaddr_in servizio, rem_indirizzo;

@@ -18,7 +18,7 @@ int older(int a[], int n)
 	return pos;
 }
 
-int main()
+int main(int argc, char *argv[])
 {
 
 	char *names[] = {"Luca", "Lorenzo", "Davide", "Luca"};

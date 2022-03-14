@@ -7,7 +7,7 @@
 #include <sys/fcntl.h>
 #include <ctype.h>
 
-int main()
+int main(int argc, char *argv[])
 {
 
 	int pid;
