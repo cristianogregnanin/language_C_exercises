@@ -1,0 +1,6 @@
+Si scriva un programma che legga da riga di comando una stringa di 8 numeri
+che rappresenta la data di nascita di uno studente, si verifichi che gli 8 numeri
+siano coerenti con il formato di una data, quindi i primi 2 caratteri non devono
+essere maggiori di 31, la seconda coppia di caretteri non deve essere maggiore da 12
+e i restanti 4 caratteri non devono essere maggiori dell'anno corrente.
+Si stampi a video la data nel seguente formato: %d/%m/%Y
