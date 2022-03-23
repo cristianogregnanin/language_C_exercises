@@ -9,7 +9,7 @@ P1 deve interagire con l'utente, richiedendo delle stringhe (di lunghezza
 massima pari a 50 caratteri) che provvede ad inviare a P2 utilizzando una pipe.
 Il processo P1 continua a ricevere stringhe fin quando non riceve la stringa
 "esci".
-Il processo P2 legge le stringe dalla pipe e le scrive in
+Il processo P2 legge le stringhe dalla pipe e le scrive in
 ordine alfabetico nel file risultati.txt 
 
 
