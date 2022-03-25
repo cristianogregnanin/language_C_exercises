@@ -57,7 +57,6 @@ int main(int argc, char *argv[])
     close(p1p2[0]);
 
     wait(&pid);
-    wait(&pid);
 
     return 0;
 }
