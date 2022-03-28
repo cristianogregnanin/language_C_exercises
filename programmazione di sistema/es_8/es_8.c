@@ -37,11 +37,11 @@ int main(int argc, char *argv[])
             write(p1p2[1], stringa, strlen(stringa));
         }
     }
+    close(p1p2[1]);
 
     pid = fork();
     if (pid == 0)
     {
-        close(p1p2[1]);
         close(0);
         dup(p1p2[0]);
         close(p1p2[0]);
@@ -53,7 +53,6 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    close(p1p2[1]);
     close(p1p2[0]);
 
     wait(&pid);
