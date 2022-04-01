@@ -1,4 +1,4 @@
-Date una serie di stringhe lette da riga di comando scrivere un programma che
+Data una serie di stringhe lette da riga di comando scrivere un programma che
 conta quante sono le consonanti e conta quante sono le vocali.
 Al termine del programma si vuole visualizzare in output i due conteggi.
 
