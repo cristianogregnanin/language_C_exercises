@@ -3,7 +3,7 @@ conta quante sono le consonanti e conta quante sono le vocali.
 Al termine del programma si vuole visualizzare in output i due conteggi.
 
 Osservazione:
-si strutturi il programma usando due funzioni: conta_vocali e conta_consonanti
+si strutturi il programma usando almeno una funzione
 
 Nota:
 per semplicità si decide che un carattere può essere una vocale oppure una 

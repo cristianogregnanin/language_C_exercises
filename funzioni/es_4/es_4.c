@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 {
     if (argc == 1)
     {
-        printf("Numero argomenti sbagliato");
+        printf("Numero argomenti sbagliato\n");
         return -1;
     }
 
