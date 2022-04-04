@@ -1,4 +1,6 @@
-Dato un array di dimensione massima pari a MAX_INT, inserire in input un numero arbitrario di interi positivi. L'inserimento termina quando viene inserito il valore -1.
+Dato un array di dimensione massima pari a MAX_INT,
+inserire in input un numero arbitrario di interi positivi.
+L'inserimento termina quando viene inserito il valore -1.
 Si mostri quindi un menu cosi strutturato:
 	premere 1 per mostrare il contenuto dell'array
 	premere 2 per inserire un elemento
