@@ -4,17 +4,18 @@ L'inserimento termina quando viene inserito il valore -1.
 Si mostri quindi un menu cosi strutturato:
 	premere 1 per mostrare il contenuto dell'array
 	premere 2 per inserire un elemento in coda
-	premere 3 per modificare un elemento
-	premere 4 per eliminare un elemento
+	premere 3 per modificare un elemento, se presente
+	premere 4 per eliminare un elemento, se presente
 	premere 5 per ricercare un elemento
-	premere 6 per aggiungere in ulemento in una data 
+	premere 6 per aggiungere in elemento in una data 
 	posizione chiesta in input
 	premere 7 per mostrare il contenuto dell'array in ordine
 	inverso
 	premere 0 per terminare
 	
 Osservazione:
-MAX_INT è dichiarata in limits.h
+MAX_INT è dichiarata in limits.h, si presti attenzione in 
+fase di inserimento a non superare tale valore 
 
 Vincolo: 
 è obbligatorio strutturare il programma in funzioni
