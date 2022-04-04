@@ -7,10 +7,17 @@ Si mostri quindi un menu cosi strutturato:
 	premere 3 per modificare un elemento
 	premere 4 per eliminare un elemento
 	premere 5 per ricercare un elemento
+	premere 6 per aggiungere in ulemento in una data 
+	posizione chiesta in input
+	premere 7 per mostrare il contenuto dell'array in ordine
+	inverso
 	premere 0 per terminare
 	
-osservazione:
+Osservazione:
 MAX_INT è dichiarata in limits.h
+
+Vincolo: 
+è obbligatorio strutturare il programma in funzioni
 
 
 
