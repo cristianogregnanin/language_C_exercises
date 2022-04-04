@@ -1,4 +1,4 @@
-Si scriva una funzione in linguaggio C che prenda in input una stringa
+Si scriva una funzione in linguaggio C che riceva in input una stringa
 e un carattere.
 La funzione deve contare le occorrenze del carattere all'interno della
 stringa.
