@@ -8,6 +8,9 @@ Si mostri quindi un menu cosi strutturato:
 	premere 4 per eliminare un elemento
 	premere 5 per ricercare un elemento
 	premere 0 per terminare
+	
+osservazione:
+MAX_INT è dichiarata in limits.h
 
 
 
