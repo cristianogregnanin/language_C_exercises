@@ -3,12 +3,9 @@
 
 void ricerca(char string[], char carattere, int *k)
 {
-
-	int i;
-	printf("ricerco occorrenze di %c in %s:\n\n", carattere, string);
-	for (i = 0; i < strlen(string); i++)
+	for (int i = 0; i < strlen(string); i++)
 		if (string[i] == carattere)
-			++(*k);
+			(*k)++;
 }
 
 int main(int argc, char *argv[])
