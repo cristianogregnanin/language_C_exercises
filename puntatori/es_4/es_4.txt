@@ -1,4 +1,4 @@
-Dato un array di dimensione massima pari a MAX_INT,
+Dato un array di dimensione massima pari a SHRT_MAX,
 inserire in input un numero arbitrario di interi positivi.
 L'inserimento termina quando viene inserito il valore -1.
 Si mostri quindi un menu cosi strutturato:
@@ -10,7 +10,7 @@ Si mostri quindi un menu cosi strutturato:
 	premere 0 per terminare
 	
 osservazione:
-MAX_INT è dichiarata in limits.h
+SHRT_MAX è dichiarata in limits.h
 
 
 
