@@ -7,6 +7,8 @@ Si mostri quindi un menu cosi strutturato:
 	premere 3 per modificare un elemento
 	premere 4 per eliminare un elemento
 	premere 5 per ricercare un elemento
+	premere 6 per inserire un elemento in una certa posizione
+	premere 7 per mostrare il contenuto dell'array all'inverso
 	premere 0 per terminare
 	
 osservazione:
