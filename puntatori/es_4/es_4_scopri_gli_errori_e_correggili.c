@@ -4,18 +4,17 @@
 int popola(int numeri[])
 {
 	int valore = 0, n = 0;
-	while (1)
+	while (valore!=-1)
 	{
 		printf("inserisci un valore. Premi -1 per terminare l'inserimento\n");
 		scanf("%d", &valore);
-		if (valore == -1)
+		if (valore != -1)
 		{
-			return n;
-		}
-
-		numeri[n] = valore;
-		n++;
+			numeri[n] = valore;
+			n++;
+		}				
 	}
+	return n;
 }
 
 void stampa(int array[], int n)
@@ -26,7 +25,7 @@ void stampa(int array[], int n)
 
 void stampa_inversa(int array[], int n)
 {
-	for (int i = n; i >= 0; i--)
+	for (int i = n-1; i >= 0 && i<n; i--)
 		printf("Il valore in posizione %d è: %d\n", i, array[i]);
 }
 
@@ -35,12 +34,11 @@ int ricerca(int array[], int n, int valore)
 
 	for (int i = 0; i < n; i++)
 	{
-		if (array[i] == valore)
+		if (valore==array[i])
 		{
 			return i;
 		}
 	}
-
 	return -1;
 }
 
@@ -57,10 +55,10 @@ int inserisci_in_posizione(int array[], int *n, int posizione, int valore)
 }
 
 int inserisci_in_coda(int array[], int *n, int numero)
-{
-
+{	
+	
+	array[*n] = numero;	
 	(*n)++;
-	array[*n] = numero;
 	return *n;
 }
 
@@ -92,7 +90,7 @@ void esegui_operazione(int s, int numeri[], int *n)
 	if (s == 2)
 	{
 		int numero, posizione;
-		printf("inserisci un numero: ");
+		printf("inserisci un numero: \n");
 		scanf("%d", &numero);
 		posizione = inserisci_in_coda(numeri, n, numero);
 		printf("Valore inserito in posizione: %d", posizione);
@@ -100,47 +98,48 @@ void esegui_operazione(int s, int numeri[], int *n)
 	if (s == 3)
 	{
 		int valore, posizione;
-		printf("Inserisci il valore da sostituire: ");
+		printf("Inserisci il valore da sostituire: \n");
 		scanf("%d", &valore);
-
-		if (posizione = ricerca(numeri, *n, valore) > -1)
+		posizione = ricerca(numeri, *n, valore);
+		if ( posizione > -1)
 		{
-			printf("Inserisci il nuovo valore: ");
+			printf("Inserisci il nuovo valore: \n");
 			scanf("%d", &valore);
 			modifica(numeri, posizione, valore);
 		}
 		else
 		{
-			printf("valore non esistente");
+			printf("valore non esistente\n");
 		}
 	}
 	if (s == 4)
 	{
 		int valore, posizione;
-		printf("Inserisci il valore da eliminare: ");
+		printf("Inserisci il valore da eliminare: \n");
 		scanf("%d", &valore);
-
-		if (posizione = ricerca(numeri, *n, valore) > -1)
+		posizione = ricerca(numeri, *n, valore);
+		if ( posizione > -1)
 		{
 			elimina(numeri, n, posizione);
 		}
 		else
 		{
-			printf("valore non esistente");
+			printf("valore non esistente\n");
 		}
 	}
 	if (s == 5)
 	{
 		int posizione, valore;
-		printf("Inserisci il valore da ricercare: ");
+		printf("Inserisci il valore da ricercare: \n");
 		scanf("%d", &valore);
-		if (posizione = ricerca(numeri, *n, valore) > -1)
+		posizione = ricerca(numeri, *n, valore);
+		if ( posizione > -1)
 		{
 			printf("valore trovato in posizione %d", posizione);
 		}
 		else
 		{
-			printf("valore non esistente");
+			printf("valore non trovato\n");
 		}
 	}
 
@@ -169,9 +168,7 @@ void esegui_operazione(int s, int numeri[], int *n)
 
 int menu()
 {
-
 	int scelta;
-
 	printf("\n\npremere 1 per mostrare il contenuto dell'array\n");
 	printf("premere 2 per inserire un elemento in coda\n");
 	printf("premere 3 per modificare un elemento\n");
