@@ -26,42 +26,34 @@ void stampa(int array[], int n)
 
 void stampa_inversa(int array[], int n)
 {
-	for (int i = n; i >= 0; i--)
+	for (int i = n-1; i >= 0; i--)
 		printf("Il valore in posizione %d è: %d\n", i, array[i]);
 }
 
 int ricerca(int array[], int n, int valore)
 {
-
-	for (int i = 0; i < n; i++)
-	{
-		if (array[i] == valore)
-		{
-			return i;
-		}
-	}
-
+	for(int i=0;i<n;i++)
+        if(array[i]==valore)            
 	return -1;
 }
 
 int inserisci_in_posizione(int array[], int *n, int posizione, int valore)
 {
 
-	(*n)++;
+	
 	for (int i = *n; i > posizione; i--)
 	{
 		array[i] = array[i - 1];
-	}
+	} 
 	array[posizione] = valore;
 	return posizione;
 }
 
 int inserisci_in_coda(int array[], int *n, int numero)
 {
-
-	(*n)++;
 	array[*n] = numero;
-	return *n;
+    (*n)++;
+	return *n-1;
 }
 
 int modifica(int array[], int posizione, int valore)
@@ -74,7 +66,7 @@ int modifica(int array[], int posizione, int valore)
 int elimina(int array[], int *n, int posizione)
 {
 
-	for (int i = posizione; i < *n; i++)
+	for (int i = posizione+1; i < *n; i++)
 	{
 		array[i] = array[i + 1];
 	}
@@ -154,7 +146,7 @@ void esegui_operazione(int s, int numeri[], int *n)
 
 		if (posizione < *n)
 		{
-			inserisci_in_posizione(numeri, n, posizione, valore);
+			inserisci_in_posizione(numeri, n, posizione,valore );
 		}
 		else
 		{
@@ -172,7 +164,7 @@ int menu()
 
 	int scelta;
 
-	printf("\n\npremere 1 per mostrare il contenuto dell'array\n");
+	printf("\npremere 1 per mostrare il contenuto dell'array\n");
 	printf("premere 2 per inserire un elemento in coda\n");
 	printf("premere 3 per modificare un elemento\n");
 	printf("premere 4 per eliminare un elemento\n");
@@ -197,9 +189,8 @@ int main(int argc, char *argv[])
 
 		if (scelta == 0)
 		{
-			printf("\tprogramma terminato\n");
+			printf("programma terminato");
 			return 0;
 		}
 		esegui_operazione(scelta, numeri, &n);
 	}
-}
