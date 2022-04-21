@@ -6,7 +6,6 @@ int popola(int numeri[])
 	int valore = 0, n = 0;
 	while (1)
 	{
-		printf("inserisci un valore. Premi -1 per terminare l'inserimento\n");
 		scanf("%d", &valore);
 		if (valore == -1)
 		{
@@ -26,13 +25,12 @@ void stampa(int array[], int n)
 
 void stampa_inversa(int array[], int n)
 {
-	for (int i = n; i >= 0; i--)
+	for (int i = n - 1; i >= 0; i--)
 		printf("Il valore in posizione %d è: %d\n", i, array[i]);
 }
 
 int ricerca(int array[], int n, int valore)
 {
-
 	for (int i = 0; i < n; i++)
 	{
 		if (array[i] == valore)
@@ -44,7 +42,7 @@ int ricerca(int array[], int n, int valore)
 	return -1;
 }
 
-int inserisci_in_posizione(int array[], int *n, int posizione, int valore)
+void inserisci_in_posizione(int array[], int *n, int posizione, int valore)
 {
 
 	(*n)++;
@@ -53,25 +51,22 @@ int inserisci_in_posizione(int array[], int *n, int posizione, int valore)
 		array[i] = array[i - 1];
 	}
 	array[posizione] = valore;
-	return posizione;
 }
 
 int inserisci_in_coda(int array[], int *n, int numero)
 {
-
-	(*n)++;
 	array[*n] = numero;
+	(*n)++;
 	return *n;
 }
 
-int modifica(int array[], int posizione, int valore)
+void modifica(int array[], int posizione, int valore)
 {
 
 	array[posizione] = valore;
-	return posizione;
 }
 
-int elimina(int array[], int *n, int posizione)
+void elimina(int array[], int *n, int posizione)
 {
 
 	for (int i = posizione; i < *n; i++)
@@ -79,7 +74,6 @@ int elimina(int array[], int *n, int posizione)
 		array[i] = array[i + 1];
 	}
 	(*n)--;
-	return posizione;
 }
 
 void esegui_operazione(int s, int numeri[], int *n)
@@ -89,7 +83,7 @@ void esegui_operazione(int s, int numeri[], int *n)
 	{
 		stampa(numeri, *n);
 	}
-	if (s == 2)
+	else if (s == 2)
 	{
 		int numero, posizione;
 		printf("inserisci un numero: ");
@@ -97,13 +91,13 @@ void esegui_operazione(int s, int numeri[], int *n)
 		posizione = inserisci_in_coda(numeri, n, numero);
 		printf("Valore inserito in posizione: %d", posizione);
 	}
-	if (s == 3)
+	else if (s == 3)
 	{
 		int valore, posizione;
 		printf("Inserisci il valore da sostituire: ");
 		scanf("%d", &valore);
-
-		if (posizione = ricerca(numeri, *n, valore) > -1)
+		posizione = ricerca(numeri, *n, valore);
+		if (posizione > -1)
 		{
 			printf("Inserisci il nuovo valore: ");
 			scanf("%d", &valore);
@@ -114,13 +108,13 @@ void esegui_operazione(int s, int numeri[], int *n)
 			printf("valore non esistente");
 		}
 	}
-	if (s == 4)
+	else if (s == 4)
 	{
 		int valore, posizione;
 		printf("Inserisci il valore da eliminare: ");
 		scanf("%d", &valore);
-
-		if (posizione = ricerca(numeri, *n, valore) > -1)
+		posizione = ricerca(numeri, *n, valore);
+		if (posizione > -1)
 		{
 			elimina(numeri, n, posizione);
 		}
@@ -129,12 +123,13 @@ void esegui_operazione(int s, int numeri[], int *n)
 			printf("valore non esistente");
 		}
 	}
-	if (s == 5)
+	else if (s == 5)
 	{
 		int posizione, valore;
 		printf("Inserisci il valore da ricercare: ");
 		scanf("%d", &valore);
-		if (posizione = ricerca(numeri, *n, valore) > -1)
+		posizione = ricerca(numeri, *n, valore);
+		if (posizione > -1)
 		{
 			printf("valore trovato in posizione %d", posizione);
 		}
@@ -143,8 +138,7 @@ void esegui_operazione(int s, int numeri[], int *n)
 			printf("valore non esistente");
 		}
 	}
-
-	if (s == 6)
+	else if (s == 6)
 	{
 		int valore, posizione;
 		printf("Inserisci il valore da aggiungere: ");
@@ -161,17 +155,14 @@ void esegui_operazione(int s, int numeri[], int *n)
 			printf("valore non esistente");
 		}
 	}
-	if (s == 7)
+	else if (s == 7)
 	{
 		stampa_inversa(numeri, *n);
 	}
 }
 
-int menu()
+int menu(int scelta)
 {
-
-	int scelta;
-
 	printf("\n\npremere 1 per mostrare il contenuto dell'array\n");
 	printf("premere 2 per inserire un elemento in coda\n");
 	printf("premere 3 per modificare un elemento\n");
@@ -188,16 +179,16 @@ int menu()
 
 int main(int argc, char *argv[])
 {
-
+	printf("Inserisci una serie di valori. Per terminare l'inserimento inserisci -1\n");
 	int scelta, numeri[SHRT_MAX], n = popola(numeri);
 
 	while (1)
 	{
-		scelta = menu();
+		scelta = menu(scelta);
 
 		if (scelta == 0)
 		{
-			printf("\tprogramma terminato\n");
+			printf("\tProgramma terminato\n");
 			return 0;
 		}
 		esegui_operazione(scelta, numeri, &n);
