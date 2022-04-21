@@ -26,7 +26,7 @@ void stampa(int array[], int n)
 
 void stampa_inversa(int array[], int n)
 {
-	for (int i = n; i >= 0; i--)
+	for (int i = n-1; i >= 0; i--)
 		printf("Il valore in posizione %d è: %d\n", i, array[i]);
 }
 
@@ -47,7 +47,6 @@ int ricerca(int array[], int n, int valore)
 int inserisci_in_posizione(int array[], int *n, int posizione, int valore)
 {
 
-	(*n)++;
 	for (int i = *n; i > posizione; i--)
 	{
 		array[i] = array[i - 1];
@@ -58,10 +57,9 @@ int inserisci_in_posizione(int array[], int *n, int posizione, int valore)
 
 int inserisci_in_coda(int array[], int *n, int numero)
 {
-
-	(*n)++;
 	array[*n] = numero;
-	return *n;
+	(*n)++;
+	return *n-1;
 }
 
 int modifica(int array[], int posizione, int valore)
@@ -74,7 +72,7 @@ int modifica(int array[], int posizione, int valore)
 int elimina(int array[], int *n, int posizione)
 {
 
-	for (int i = posizione; i < *n; i++)
+	for (int i = posizione+1; i < *n; i++)
 	{
 		array[i] = array[i + 1];
 	}
