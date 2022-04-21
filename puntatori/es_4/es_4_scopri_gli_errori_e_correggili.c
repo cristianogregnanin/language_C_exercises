@@ -21,12 +21,14 @@ int popola(int numeri[])
 void stampa(int array[], int n)
 {
 	for (int i = 0; i < n; i++)
-		printf("Il valore in posizione %d è: %d\n", i, array[i]);
+		printf("Il valore in posizione %d è: %d\n", i+1, array[i]);
+		//printf("Il valore in posizione %d è: %d\n", i, array[i]);
 }
 
 void stampa_inversa(int array[], int n)
 {
-	for (int i = n; i >= 0; i--)
+	//for (int i = n; i >= 0; i--)
+	for (int i = n-1; i >= 0; i--)
 		printf("Il valore in posizione %d è: %d\n", i, array[i]);
 }
 
@@ -59,8 +61,9 @@ int inserisci_in_posizione(int array[], int *n, int posizione, int valore)
 int inserisci_in_coda(int array[], int *n, int numero)
 {
 
-	(*n)++;
+	//(*n)++;
 	array[*n] = numero;
+	(*n)++;
 	return *n;
 }
 
@@ -103,7 +106,9 @@ void esegui_operazione(int s, int numeri[], int *n)
 		printf("Inserisci il valore da sostituire: ");
 		scanf("%d", &valore);
 
-		if (posizione = ricerca(numeri, *n, valore) > -1)
+		posizione = ricerca(numeri, *n, valore);
+		//if(posizione = ricerca(numeri, *n, valore) > -1)
+		if (posizione > -1)
 		{
 			printf("Inserisci il nuovo valore: ");
 			scanf("%d", &valore);
@@ -120,7 +125,9 @@ void esegui_operazione(int s, int numeri[], int *n)
 		printf("Inserisci il valore da eliminare: ");
 		scanf("%d", &valore);
 
-		if (posizione = ricerca(numeri, *n, valore) > -1)
+		posizione = ricerca(numeri, *n, valore);
+		//if (posizione = ricerca(numeri, *n, valore) > -1)
+		if (posizione > -1)
 		{
 			elimina(numeri, n, posizione);
 		}
@@ -134,9 +141,13 @@ void esegui_operazione(int s, int numeri[], int *n)
 		int posizione, valore;
 		printf("Inserisci il valore da ricercare: ");
 		scanf("%d", &valore);
-		if (posizione = ricerca(numeri, *n, valore) > -1)
+
+		posizione = ricerca(numeri, *n, valore);
+		//if (posizione = ricerca(numeri, *n, valore) > -1)
+		if (posizione > -1)
 		{
-			printf("valore trovato in posizione %d", posizione);
+			printf("valore trovato in posizione %d", posizione+1);
+			//printf("valore trovato in posizione %d", posizione);
 		}
 		else
 		{
@@ -151,7 +162,7 @@ void esegui_operazione(int s, int numeri[], int *n)
 		scanf("%d", &valore);
 		printf("Inserisci la posizione: ");
 		scanf("%d", &posizione);
-
+		posizione--;
 		if (posizione < *n)
 		{
 			inserisci_in_posizione(numeri, n, posizione, valore);
