@@ -4,18 +4,18 @@
 int popola(int numeri[])
 {
 	int valore = 0, n = 0;
-	while (1)
+	do
 	{
-		printf("inserisci un valore. Premi -1 per terminare l'inserimento\n");
+		
 		scanf("%d", &valore);
 		if (valore == -1)
 		{
 			return n;
-		}
+		} 
 
 		numeri[n] = valore;
 		n++;
-	}
+	}while (valore != -1);
 }
 
 void stampa(int array[], int n)
@@ -58,16 +58,17 @@ int inserisci_in_posizione(int array[], int *n, int posizione, int valore)
 
 int inserisci_in_coda(int array[], int *n, int numero)
 {
-
-	(*n)++;
 	array[*n] = numero;
+	(*n)++;
 	return *n;
 }
 
 int modifica(int array[], int posizione, int valore)
 {
-
+	if(posizione <0){
 	array[posizione] = valore;
+	
+	}
 	return posizione;
 }
 
@@ -190,8 +191,10 @@ int main(int argc, char *argv[])
 {
 
 	int scelta, numeri[SHRT_MAX], n = popola(numeri);
-
-	while (1)
+	
+	printf("inserisci un valore. Premi -1 per terminare l'inserimento\n");
+	popola( numeri);
+	while (scelta != 0)
 	{
 		scelta = menu();
 
