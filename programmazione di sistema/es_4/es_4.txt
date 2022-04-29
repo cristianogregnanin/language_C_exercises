@@ -15,5 +15,5 @@ stringhe trovate nel file.
 
 L'applicazione dovrà tenere conto dell'eventuale molteplicità di una parola
 dentro alla stessa stringa, per fare questo si consiglia di invocare grep
-con il flag -o e redirezionare il suo output in wc .
+con il flag -ow e redirezionare il suo output in wc (invocato con il flag -l).
 
