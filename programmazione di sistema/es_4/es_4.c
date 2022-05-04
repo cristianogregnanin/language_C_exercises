@@ -16,7 +16,6 @@ int main(int argc, char *argv[])
 
     while (1)
     {
-        pipe(p1p0);
 
         printf("Che parola vuoi cercare?");
         scanf("%s", stringa);
@@ -24,11 +23,10 @@ int main(int argc, char *argv[])
         if (strcmp(stringa, "fine") == 0)
         {
             printf("Numero di parole trovate: %d\n", cnttot);
-            close(p1p0[1]);
-            close(p1p0[0]);
+
             exit(1);
         }
-
+        pipe(p1p0);
         pid = fork();
 
         if (pid == 0)
