@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h>
+
 
 int ricerca(int prodotti[], int n, int codice)
 {
@@ -54,7 +54,7 @@ void stampa(int prodotti[], int n)
 int main(int argc, char *argv[])
 {
 
-    int codice, posizione, prodotti[50], n = popola(prodotti);
+    int codice, posizione, prodotti[100], n = popola(prodotti);
 
     printf("Inserisci il codice del prodotto che vuoi eliminare: \n");
     scanf("%d", &codice);
