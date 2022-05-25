@@ -1,0 +1,4 @@
+AB123 pagato 20,00
+AB123 insoluto 120,00
+AC123 insoluto 120,00
+AC123 insoluto 100,00
