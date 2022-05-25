@@ -65,7 +65,7 @@ void stampa(prodotto_t prodotti[], int n)
     {
         printf("codice: %s\n", prodotti[i].codice);
         printf("prezzo: %.2f\n", prodotti[i].prezzo);
-        printf("quantita: %d\n", prodotti[i].quantita);
+        printf("quantita: %d\n\n", prodotti[i].quantita);
     }
 }
 
