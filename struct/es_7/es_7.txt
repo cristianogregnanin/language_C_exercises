@@ -1,0 +1,14 @@
+La ditta coders.io sta realizzando un modulo software per la gestione di un
+magazzino composto da massimo 100 prodotti.
+Ogni prodotto è caratterizzato da un codice (char codice[5]), un prezzo
+(double prezzo) e una quantita (int quantita).
+Si modelli un prodotto usando una struct.
+
+Si vuole progettare e implementare una funzionalità atta a tenere traccia 
+dei prodotti presenti, in particolare si scriva un programma in linguaggio
+C che chieda in input una serie di prodotti (uno per volta) e li inserisca
+in una lista, per terminare l’inserimento si utilizzi il codice -1. 
+
+Al termine dell’inserimento si vuole poter eliminare un prodotto
+preventivamente ricercato e quindi stampare la lista a video.
+Se il prodotto ricercato non esiste stampare a video un messaggio di errore.
