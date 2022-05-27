@@ -5,6 +5,11 @@
 
 int main(int argc, char *argv[])
 {
+    if (argc != 2)
+    {
+        printf("Numero argomenti sbagliato\n");
+        exit(1);
+    }
 
     int p1p0[2], pid;
     pipe(p1p0);
