@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     close(p1p2[0]);
     close(p2p0[1]);
 
-    while (read(p2p0[0], buffer, 1) > 0)
+    while (read(p2p0[0], buffer, sizeof(buffer)) > 0)
     {
 
         strncat(strimporto, &buffer[0], sizeof(buffer[0]));

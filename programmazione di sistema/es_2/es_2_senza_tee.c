@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <fcntl.h>
 
+#define DIM_BUFFER 1024
+
 /* In questa soluzione si usano le system call per scrivere nel file wc.txt*/
 
 int main(int argc, char *argv[])
@@ -14,7 +16,7 @@ int main(int argc, char *argv[])
     }
 
     int fd, p1p0[2], pid, p2p0[2], nread;
-    char buff[1024];
+    char buff[DIM_BUFFER];
     pipe(p1p0);
 
     pid = fork();
@@ -51,7 +53,7 @@ int main(int argc, char *argv[])
     close(p2p0[1]);
 
     fd = open("wc.txt", O_WRONLY | O_CREAT, 0777);
-    while (nread = read(p2p0[0], buff, 1024) > 0)
+    while (nread = read(p2p0[0], buff, sizeof(buff)) > 0)
     {
         write(fd, buff, nread);
     }
