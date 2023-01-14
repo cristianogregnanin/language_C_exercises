@@ -1,4 +1,1 @@
-Si realizzi un programma C in cui due processi, uno padre e l'altro figlio, interagiscono.
-Il processo popola un array di 3 numeri interi (usare il modo che si preferisce per popolare l'array) e li passa al figlio.
-Il processo figlio esegue la somma dei numeri passati dal padre e gli restituisce il risultato.
-Il processo padre stampa a video il risultato.
+Scrivere un programma in linguaggio C dove il processo figlio manda una stringa al processo padre e quest'ultimo lo stampa a video.
