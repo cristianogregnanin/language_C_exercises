@@ -1,0 +1,12 @@
+Il padre crea 2 figli: P1 e P2.
+P1 chiede in input da tastiera un numero intero e lo manda al processo P2
+usando una pipe p1p2.
+Il processo P2 calcola il quadrato e lo stampa a video usando la system
+call write.
+
+Suggerimento: usare la funzione sprintf per convertire da intero a stringa
+
+Esempio:
+./a.out                                                                                     master ✗
+Inserisci un numero: 4
+16
