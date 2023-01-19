@@ -3,6 +3,8 @@ P1 chiede in input da tastiera un numero intero e lo manda al processo P2
 usando una pipe p1p2.
 Il processo P2 calcola il quadrato e lo stampa a video usando la system
 call write.
+Il processo P2 invia al padre (P0) il quadrato il quale lo scrive in un
+file /tmp.quadrato.txt che risiede in argv[1]
 
 Suggerimento: usare la funzione sprintf per convertire da intero a stringa
 
