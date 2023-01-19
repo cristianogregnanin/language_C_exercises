@@ -9,7 +9,7 @@ file /tmp/quadrato.txt che risiede in argv[1]
 Suggerimento: usare la funzione sprintf per convertire da intero a stringa
 
 Esempio:
-$ ./a.out /tmp/quadratp.txt                                                                                     master ✗
+$ ./a.out /tmp/quadrato.txt                                                                                     master ✗
 Inserisci un numero: 4
 16
 

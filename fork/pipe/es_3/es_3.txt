@@ -7,6 +7,6 @@ call write.
 Suggerimento: usare la funzione sprintf per convertire da intero a stringa
 
 Esempio:
-./a.out                                                                                     master ✗
+$ ./a.out                                                                                     master ✗
 Inserisci un numero: 4
 16
