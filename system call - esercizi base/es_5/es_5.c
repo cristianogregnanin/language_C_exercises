@@ -17,7 +17,7 @@ int calcola_lunghezza_stringa_files(int argc, char *argv[])
 
 void componi_stringa_files(int argc, char *argv[], char str[])
 {
-    str[0] = '\0';
+    str[0] = '\0'; //resetto l'array cancellando tutto il contenuto 
     for (int i = 1; i < argc - 2; i++)
     {
         strcat(str, argv[i]);
