@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
     int dim = calcola_lunghezza_stringa_files(argc, argv);
     int fd, ct = 0;
-    char carattere, output[80], stringa_files[dim];
+    char carattere, output[dim+50], stringa_files[dim];
 
     componi_stringa_files(argc, argv, stringa_files);
 
