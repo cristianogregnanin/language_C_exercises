@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    int fd, ct = 0, nread;
+    int fd, ct = 0;
     char carattere, output[80];
 
     for (int i = 1; i < argc - 2; i++)
