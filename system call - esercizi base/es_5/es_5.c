@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
     {
         fd = open(argv[i], O_RDONLY);
 
-        while (nread = read(fd, &carattere, sizeof(carattere)))
+        while (read(fd, &carattere, sizeof(carattere)) > 0)
         {
             if (carattere == argv[argc - 2][0])
             {

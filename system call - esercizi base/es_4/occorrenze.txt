@@ -1,1 +1,1 @@
-Il carattere t compare 1 volte nei files: file1.txt file2.txt file3.txt
+Il carattere k compare 7 volte nei files: file1.txt file2.txt file3.txt
