@@ -34,11 +34,11 @@ int main(int argc, char *argv[])
 
     sprintf(output, "Il carattere %s compare %d volte nei files: %s %s %s\n", argv[argc - 2], ct, argv[1], argv[2], argv[3]);
 
+    write(1, output, strlen(output));
+
     fd = open(argv[argc - 1], O_WRONLY | O_CREAT | O_TRUNC, 0644);
     write(fd, output, strlen(output));
     close(fd);
-
-    write(1, output, strlen(output));
 
     return 0;
 }
