@@ -6,6 +6,12 @@
 int main(int argc, char *argv[])
 {
 
+   if (argc != 2)
+   {
+      printf("Numero argomenti sbagliato\n");
+      exit(1);
+   }
+
    int fd, nread;
    char buff;
 

@@ -26,7 +26,7 @@ void swap(int argc, char *argv[])
 int main(int argc, char **argv)
 {
 
-    if (argc < 3)
+    if (argc < 2)
     {
         printf("Numero argomenti sbagliato\n");
         exit(1);

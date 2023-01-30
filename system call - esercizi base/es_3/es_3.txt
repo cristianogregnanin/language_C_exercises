@@ -1,6 +1,6 @@
-Scrivere un programma in linguaggio C che legge da argv una serie di stringhe
-li ordina usando un algoritmo di ordinamento a scelta e scrive il risultato sia a
-video che su un file il cui nome risiede in argv[1].
+Scrivere un programma in linguaggio C che legge da argv una serie di stringhe,
+le ordina usando un algoritmo di ordinamento a scelta e scrive il risultato
+sia a video che su un file il cui nome risiede in argv[1].
 
 Esempio:
 
