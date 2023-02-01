@@ -15,12 +15,18 @@ int main(int argc, char *argv[])
 		diff = a - b;
 
 		if (diff == 0)
+		{
 			nulli++;
+		}
 
 		if (diff % 2 == 0)
+		{
 			pari++;
+		}
 		else
+		{
 			dispari++;
+		}
 
 	} while (a + b >= c);
 
