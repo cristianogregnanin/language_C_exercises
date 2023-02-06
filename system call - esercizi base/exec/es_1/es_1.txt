@@ -4,4 +4,3 @@ presente in argv[1]
 
 esempio:
 $ ./a.out costituzione.txt
-ciao a tutti
