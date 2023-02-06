@@ -3,5 +3,5 @@ della shell cat per mostrare a video un file di testo
 presente in argv[1]
 
 esempio:
-$ ./a.out file.txt
+$ ./a.out costituzione.txt
 ciao a tutti
