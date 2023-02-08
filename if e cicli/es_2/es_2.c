@@ -19,4 +19,6 @@ int main(int argc, char *argv[])
 	} while (a != 0 && b != 0);
 
 	printf("la somma è: %d\n\n", somma);
+
+	return 0;
 }
