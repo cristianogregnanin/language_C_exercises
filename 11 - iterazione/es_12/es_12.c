@@ -3,7 +3,7 @@
 int main(int argc, char *argv[])
 {
 
-	int n, i, somma;
+	int n, i = 0, somma = 0;
 	do
 	{
 		printf("Inserisci un numero positivo: \n");
@@ -11,8 +11,6 @@ int main(int argc, char *argv[])
 
 	} while (n < 0);
 
-	somma = 0;
-	i = 0;
 	do
 	{
 		somma = somma + i;

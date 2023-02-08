@@ -15,5 +15,5 @@ int main(int argc, char *argv[])
 
 	printf("Il numero precedente è: %d", n);
 
-	return 0; // fine
+	return 0; 
 }

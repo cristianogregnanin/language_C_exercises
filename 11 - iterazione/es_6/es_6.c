@@ -1,14 +1,9 @@
 #include <stdio.h>
-/*
- * Dato N un numero intero positivo, generare e
- * visualizzare in ordine crescente i numeri compresi
- * maggiori uguali di -N e minori uguali di N.
-* */
+
 int main(int argc, char *argv[])
 {
 
-	int i;
-	int n;
+	int i, n;
 
 	do
 	{

@@ -3,7 +3,7 @@
 int main(int argc, char *argv[])
 {
 
-	int n1, n2, i, prodotto;
+	int n1, n2, i = 0, prodotto = 0;
 	do
 	{
 		printf("Inserisci n1 >= 1 : ");
@@ -17,8 +17,6 @@ int main(int argc, char *argv[])
 	} while (n2 < 1);
 	printf("\n\n");
 
-	i = 0;
-	prodotto = 0;
 	do
 	{
 		prodotto = prodotto + n1;
