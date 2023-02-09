@@ -15,10 +15,10 @@ int main(int argc, char *argv[])
     int pids[argc - 2];
     for (int i = 1; i < argc; i++)
     {
-        pids[i] = fork();
-        if (pids[i] == 0)
+        pids[i - 1] = fork();
+        if (pids[i - 1] == 0)
         {
-            execl("/usr/bin/rm", "cp", argv[i], NULL);
+            execl("/usr/bin/rm", "rm", argv[i], NULL);
             printf("Exec ha terminato con errori");
             return -1;
         }
