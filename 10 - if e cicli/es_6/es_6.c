@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 		printf("inserisci b\n");
 		scanf("%d", &b);
 	} while (b < a);
-	
+
 	do
 	{
 		printf("inserisci un numero\n");

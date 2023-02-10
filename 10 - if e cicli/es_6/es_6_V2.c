@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
             break;
         }
     }
-    
+
     media = (double)somma / (double)i;
 
     printf("\nla media è: %f\n\n", media);

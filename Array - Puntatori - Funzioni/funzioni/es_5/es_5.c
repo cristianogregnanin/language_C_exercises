@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 int ricerca(int prodotti[], int n, int codice)
 {
 

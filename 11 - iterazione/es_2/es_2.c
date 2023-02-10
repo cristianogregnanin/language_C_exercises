@@ -3,19 +3,19 @@
 int main(int argc, char *argv[])
 {
 
-	int n, i = 0; 
+	int n, i = 0;
 	do
-	{									   
+	{
 		printf("inserisci un numero: \n");
-		scanf("%d", &n);				   
-	} while (n <= 0);					   
+		scanf("%d", &n);
+	} while (n <= 0);
 
 	do
-	{					   
-		i++;			   
-		printf("%d\n", i); 
+	{
+		i++;
+		printf("%d\n", i);
 
-	} while (i < n); 
+	} while (i < n);
 
-	return 0; 
+	return 0;
 }
