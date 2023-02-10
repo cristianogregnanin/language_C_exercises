@@ -17,7 +17,7 @@ int calcola_lunghezza_stringa_files(int argc, char *argv[])
 
 void componi_stringa_files(int argc, char *argv[], char str[])
 {
-    str[0] = '\0'; //resetto l'array cancellando tutto il contenuto 
+    str[0] = '\0'; // resetto l'array cancellando tutto il contenuto
     for (int i = 1; i < argc - 2; i++)
     {
         strcat(str, argv[i]);
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
     int dim = calcola_lunghezza_stringa_files(argc, argv);
     int fd, ct = 0;
-    char carattere, output[dim+50], stringa_files[dim];
+    char carattere, output[dim + 50], stringa_files[dim];
 
     componi_stringa_files(argc, argv, stringa_files);
 
