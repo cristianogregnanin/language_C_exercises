@@ -3,50 +3,44 @@
 
 int main(int argc, char *argv[])
 {
-    char tipologia[12];
-    double importo, mediaBevande, mediaRistorazioni, sommaBevande = 0, sommaRistorazione = 0;
-    int bevande = 0, ristorazione = 0;
-
+    int contMB = 0, contMR = 0, contB = 0, contR = 0;
+    float sommaBevande = 0, sommaRistorazioni = 0, bevande, ristorazioni;
+    float mBevande = 0, mRistorazioni = 0;
+    char stringa[20];
     do
     {
-        do
+        printf("Inserisci il tipo di azione che vuoi effettuare: Bevande o Ristorazioni. Scrivi esci per uscire \n");
+        scanf("%s", stringa);
+        if (strcmp(stringa,"ristorazioni")==0)
         {
-            printf("Inserisci la tipologia: \n");
-            scanf("%s", tipologia);
-        } while (strcmp("esci", tipologia) != 0 && strcmp(tipologia, "bevande") != 0 && strcmp(tipologia, "ristorazione") != 0);
-
-        do
-        {
-            printf("Inserisci l' importo: \n");
-            scanf("%f", &importo);
-        } while (importo <= 0);
-
-        if (strcmp(tipologia, "bevande") == 0)
-        {
-            bevande++;
-            sommaBevande = sommaBevande + importo;
+            contR++;
+            contMR++;
+            printf("Inserisci l'importo della ristorazione \n");
+            scanf("%f", &ristorazioni);
+            sommaRistorazioni = sommaRistorazioni + ristorazioni;
         }
-
-        if (strcmp(tipologia, "ristorazione") == 0)
+        if (strcmp(stringa,"bevande")==0)
         {
-            ristorazione++;
-            sommaRistorazione = sommaRistorazione + importo;
+            contB++;
+            contMB++;
+            printf("Inserisci l'importo delle bevande \n");
+            scanf("%f", &bevande);
+            sommaBevande = sommaBevande + bevande;
         }
-
-    } while (strcmp("esci", tipologia) != 0);
-
-    if (ristorazione > bevande)
+    } while (strcmp(stringa,"esci")!=0);
+    mBevande = sommaBevande / contMB;
+    mRistorazioni = sommaRistorazioni / contMR;
+    printf("La media delle bevande è %1.f \n", mBevande);
+    printf("La media delle ristorazioni è %1.f \n", mRistorazioni);
+    printf("La somma delle ristorazioni è %1.f \n", sommaRistorazioni);
+    printf("La somma delle bevande è %1.f \n", sommaBevande);
+    if (contB > contR)
     {
-        printf("Sono state vendute più ristorazioni");
+        printf("Sono state vendute più bevande \n");
     }
     else
     {
-        printf("Sono state vendute più bevande");
+        printf("Sono state vendute più ristorazioni \n");
     }
-
-    mediaBevande = sommaBevande / (double)bevande;
-    mediaRistorazioni = sommaRistorazione / (double)ristorazione;
-
-    printf("La media delle bevande è: %f\n", mediaBevande);
-    printf("La media delle ristorazioni è: %f\n", mediaRistorazioni);
+    return 0;
 }
