@@ -72,4 +72,5 @@ int main(int argc, char *argv[])
             printf("il guadagno è uguale\n");
         }
     }
+    return 0;
 }
