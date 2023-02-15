@@ -1,52 +1,53 @@
+
 #include <stdio.h>
 #include <string.h>
 
-int main(int argc, char *argv[])
+int main(int argv, char *argc[])
 {
-    char tipologia[12];
-    double importo, mediaBevande, mediaRistorazioni, sommaBevande = 0, sommaRistorazione = 0;
-    int bevande = 0, ristorazione = 0;
-
-    do
+    float bev = 0, rist = 0;
+    int bevC = 0, ristC = 0;
+    char risp[20];
+    printf("Inserire la tipologia di consumazione(bevande/ristorazione/esci):\n");
+    scanf("%s", risp);
+    while (strcmp(risp, "esci") != 0)
     {
-        do
+        if (strcmp(risp, "bevande") == 0)
         {
-            printf("Inserisci la tipologia: \n");
-            scanf("%s", tipologia);
-        } while (strcmp("esci", tipologia) != 0 && strcmp(tipologia, "bevande") != 0 && strcmp(tipologia, "ristorazione") != 0);
-
-        do
-        {
-            printf("Inserisci l' importo: \n");
-            scanf("%f", &importo);
-        } while (importo <= 0);
-
-        if (strcmp(tipologia, "bevande") == 0)
-        {
-            bevande++;
-            sommaBevande = sommaBevande + importo;
+            printf("Inserire l'importo della bevanda:\n");
+            scanf("%f", &bev);
+            bev += bev;
+            bevC++;
         }
-
-        if (strcmp(tipologia, "ristorazione") == 0)
+        else if (strcmp(risp, "ristorazione") == 0)
         {
-            ristorazione++;
-            sommaRistorazione = sommaRistorazione + importo;
+            printf("Inserire l'importo della ristorazione:\n");
+            scanf("%f", &rist);
+            rist += rist;
+            ristC++;
         }
+        else
+        {
+            printf("E' stata inserita un operazione non disponibile\nRipetere l'inserimento dell'operazione");
+        }
+        printf("Inserire la tipologia di consumazione (bevande/ristorazione/esci)\n");
+        scanf("%s", risp);
+    }
 
-    } while (strcmp("esci", tipologia) != 0);
-
-    if (ristorazione > bevande)
+    if (bevC < ristC)
     {
-        printf("Sono state vendute più ristorazioni");
+        printf("Sono state consumate più ristorazoni");
+        printf("La media delle bevande è: %.2f\n", bev / (float)bevC);
+        printf("La media delle Ristorazione è: %.2f\n", rist / (float)ristC);
+    }
+    else if (bevC > ristC)
+    {
+        printf("Sono state consumate più bevande");
+        printf("La media delle bevande è: %.2f\n", bev / bevC);
+        printf("La media delle Ristorazione è: %.2f\n", rist / ristC);
     }
     else
     {
-        printf("Sono state vendute più bevande");
+        printf("Non sono state inserite conumazioni");
     }
-
-    mediaBevande = sommaBevande / (double)bevande;
-    mediaRistorazioni = sommaRistorazione / (double)ristorazione;
-
-    printf("La media delle bevande è: %f\n", mediaBevande);
-    printf("La media delle ristorazioni è: %f\n", mediaRistorazioni);
+    return 0;
 }
