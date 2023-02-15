@@ -5,8 +5,8 @@
 int main(int argc, char *argv[])
 {
     char tipologia[12];
-    double importo, mediaBevande, mediaRistorazioni, sommaBevande = 0, sommaRistorazione = 0;
-    int bevande = 0, ristorazione = 0;
+    double conto, mediaBibite, mRistoro, sBibite = 0, sRistoro = 0;
+    int bibite = 0, ristoro = 0;
 
     do
     {
@@ -14,40 +14,41 @@ int main(int argc, char *argv[])
         {
             printf("Inserisci la tipologia: \n");
             scanf("%s", tipologia);
-        } while (strcmp("esci", tipologia) != 0 && strcmp(tipologia, "bevande") != 0 && strcmp(tipologia, "ristorazione") != 0);
+        } while (strcmp("esci", tipologia) != 0 && strcmp(tipologia, "bibite") != 0 && strcmp(tipologia, "ristoro") != 0);
 
         do
         {
             printf("Inserisci l' importo: \n");
-            scanf("%f", &importo);
-        } while (importo <= 0);
+            scanf("%f", &conto);
+        } while (conto <= 0);
 
-        if (strcmp(tipologia, "bevande") == 0)
+        if (strcmp(tipologia, "bibite") == 0)
         {
-            bevande++;
-            sommaBevande = sommaBevande + importo;
+            bibite++;
+            sBibite = sBibite + conto;
         }
 
-        if (strcmp(tipologia, "ristorazione") == 0)
+        if (strcmp(tipologia, "ristoro") == 0)
         {
-            ristorazione++;
-            sommaRistorazione = sommaRistorazione + importo;
+            ristoro++;
+            sRistoro = sRistoro + conto;
         }
 
     } while (strcmp("esci", tipologia) != 0);
 
-    if (ristorazione > bevande)
+    if (ristoro > bibite)
     {
-        printf("Sono state vendute più ristorazioni");
+        printf("Sono state vendute più ristori");
     }
     else
     {
-        printf("Sono state vendute più bevande");
+        printf("Sono state vendute più bibite");
     }
 
-    mediaBevande = sommaBevande / (double)bevande;
-    mediaRistorazioni = sommaRistorazione / (double)ristorazione;
+    mBibite = sBibite / (double)bibite;
+    mRistoro = sRistoro / (double)ristoro;
 
-    printf("La media delle bevande è: %f\n", mediaBevande);
-    printf("La media delle ristorazioni è: %f\n", mediaRistorazioni);
+    printf("La media delle bibite è: %f\n", mBibite);
+    printf("La media delle ristorazioni è: %f\n", mRistoro);
+    return0;
 }
