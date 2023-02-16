@@ -25,5 +25,6 @@ int main(int argc, char *argv[])
         risultato = base * risultato;
     }
 
-    printf("Il risultato di %d ^ %d è: %d\n", base, esponente, risultato);
+    printf("Il risultato di %d ^ %d è: %d\n", base, esponente, risultato);+
+    return0;
 }
