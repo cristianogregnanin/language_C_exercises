@@ -49,4 +49,3 @@ int main(int argc, char *argv[])
 
     printf("La media delle bevande è: %f\n", mediaBevande);
     printf("La media delle ristorazioni è: %f\n", mediaRistorazioni);
-}
