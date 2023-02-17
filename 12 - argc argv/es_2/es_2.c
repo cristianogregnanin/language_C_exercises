@@ -19,6 +19,11 @@ int main(int argc, char *argv[])
         printf("Inserire numeri positivi 0\n");
         exit(0);
     }
+    if (base == 0 && esponente == 0)
+    {
+        printf("Impossibile fare 0 alla 0\n");
+        exit(0);
+    }
 
     for (int i = 0; i < esponente; i++)
     {
@@ -26,4 +31,5 @@ int main(int argc, char *argv[])
     }
 
     printf("Il risultato di %d ^ %d è: %d\n", base, esponente, risultato);
+    return 0;
 }
