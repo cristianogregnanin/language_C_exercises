@@ -11,13 +11,13 @@ int main(int argc, char *argv[])
     {
         do
         {
-            printf("Inserisci la tipologia: \n");
+            printf("Inserire il tipo \n");
             scanf("%s", tipologia);
-        } while (strcmp("esci", tipologia) != 0 && strcmp(tipologia, "bevande") != 0 && strcmp(tipologia, "ristorazione") != 0);
+        } while (strcmp("esci", tipologia) != 0 && strcmp(tipologia, "bevande") != 0 &&        strcmp(tipologia, "ristorazione") != 0);
 
         do
         {
-            printf("Inserisci l' importo: \n");
+            printf("Inserire l' importo: \n");
             scanf("%f", &importo);
         } while (importo <= 0);
 
@@ -37,16 +37,17 @@ int main(int argc, char *argv[])
 
     if (ristorazione > bevande)
     {
-        printf("Sono state vendute più ristorazioni");
+        printf("Sono state vendute molte ristorazioni.");
     }
     else
     {
-        printf("Sono state vendute più bevande");
+        printf("Sono state vendute molte bevande.");
     }
 
     mediaBevande = sommaBevande / (double)bevande;
     mediaRistorazioni = sommaRistorazione / (double)ristorazione;
 
-    printf("La media delle bevande è: %f\n", mediaBevande);
-    printf("La media delle ristorazioni è: %f\n", mediaRistorazioni);
+    printf("La media delle bevande è uguale a %f\n", mediaBevande);
+    printf("La media delle ristorazioni è uguale a %f\n", mediaRistorazioni);
+
 }
