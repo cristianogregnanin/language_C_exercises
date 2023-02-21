@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
         printf("Il file ha %d '%s' \n", atoi(cnt), stringa);
         cnttot += atoi(cnt);
 
-    } while (strcmp(stringa, "fine") == 0);
+    } while (strcmp(stringa, "fine") != 0);
     close(p1p0[1]);
     close(p1p0[0]);
     printf("Numero di parole trovate: %d\n", cnttot);
