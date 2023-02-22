@@ -2,7 +2,7 @@
 #include <stdlib.h>
 int main(int argc, char *argv[])
 {
-    if (argc > 3)
+    if (argc >= 3)
     {
         printf("Valore non valido");
         exit(0);
