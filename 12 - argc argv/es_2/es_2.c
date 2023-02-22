@@ -14,11 +14,19 @@ int main(int argc, char *argv[])
     int esponente = atoi(argv[2]);
     int risultato = 1;
 
-    if (base < 0 || esponente < 0)
+    if ((base < 0 || esponente < 0) && (base == 0 && esponente == 0))
     {
         printf("Inserire numeri positivi 0\n");
         exit(0);
     }
+
+    if (base == 0 && esponente == 0)
+    {
+        printf("Il risultato di %d ^ %d è indeterminato\n", base, esponente);
+    }
+
+    else
+    {
 
     for (int i = 0; i < esponente; i++)
     {
@@ -26,4 +34,7 @@ int main(int argc, char *argv[])
     }
 
     printf("Il risultato di %d ^ %d è: %d\n", base, esponente, risultato);
+    }
+
+    return 0;
 }
