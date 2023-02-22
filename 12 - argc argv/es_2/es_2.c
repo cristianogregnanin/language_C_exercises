@@ -14,14 +14,9 @@ int main(int argc, char *argv[])
     int esponente = atoi(argv[2]);
     int risultato = 1;
 
-    if (base < 0 || esponente < 0)
+    if (base <= 0 || esponente <= 0)
     {
-        printf("Inserire numeri positivi 0\n");
-        exit(0);
-    }
-    if (base == 0 && esponente == 0)
-    {
-        printf("Impossibile fare 0 alla 0\n");
+        printf("Inserire numeri positivi e diversi da 0\n");
         exit(0);
     }
 
