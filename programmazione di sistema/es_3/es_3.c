@@ -6,44 +6,47 @@
 
 int main(int argc, char *argv[])
 {
-    if (argc != 2)
+    if (argc < 2)
     {
         printf("Numero parametri errato\n");
         exit(1);
     }
 
-    char stringa[1000], cnt[1000];
-    int p1p0[2], cnttot = 0;
+    char ricerca[1000];
+    char conta[5];
+    int p1p0[2];
+    int contaTOT = 0;
 
     pipe(p1p0);
     while (1)
     {
         printf("Che parola vuoi cercare? ");
-        scanf("%s", stringa);
+        scanf("%s", ricerca);
 
-        if (strcmp(stringa, "fine") == 0)
+        if (strcmp(stringa, "fine") == 0) //chiusura del programma nel caso venga digitato FINE
         {
             close(p1p0[1]);
             close(p1p0[0]);
-            printf("Numero di parole trovate: %d\n", cnttot);
-            exit(1);
+            printf("Trovate %d parole dentro %s\n", contaTOT,argv[1]);
+            break;
         }
-
+        
         int pid = fork();
-
         if (pid == 0)
         {
             close(p1p0[0]);
-            close(1);
-            dup(p1p0[1]);
+            close(1);//chiusura STDOUT
+            dup(p1p0[1]);//duplicazione del canale di scrittura di p1p0 utilizzato come STDOUT
             close(p1p0[1]);
-
-            execl("/usr/bin/grep", "grep", "-c", stringa, argv[1], (char *)0);
-            return -1;
+            //execl di GREP -C: viene scritto nel STDOUT il numero di volte la stringa RICERCA nel file inserito in ARGV[1]
+            execl("/usr/bin/grep", "grep", "-c", ricerca, argv[1], (char *)0);
+            return -1;//STDERR
         }
-        read(p1p0[0], cnt, sizeof(cnt));
-        printf("Il file ha %d '%s' \n", atoi(cnt), stringa);
-        cnttot += atoi(cnt);
+        
+        wait(&pid);
+        read(p1p0[0], conta, sizeof(cnt)); //leggo il numero di volte che la stringa compare nel file
+        printf("Trovato '%s' %d volta/e '%s' \n", ricerca, atoi(conta));
+        contaTOT += atoi(conta);
     }
 
     return 0;
