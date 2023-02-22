@@ -12,23 +12,14 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    char stringa[1000], cnt[1000];
-    int p1p0[2], cnttot = 0;
+    char stringa[10000], cont[10000];
+    int p1p0[2], tot = 0;
 
     pipe(p1p0);
-    while (1)
+    while (!strcmp(stringa, "fine") == 0)
     {
         printf("Che parola vuoi cercare? ");
         scanf("%s", stringa);
-
-        if (strcmp(stringa, "fine") == 0)
-        {
-            close(p1p0[1]);
-            close(p1p0[0]);
-            printf("Numero di parole trovate: %d\n", cnttot);
-            exit(1);
-        }
-
         int pid = fork();
 
         if (pid == 0)
@@ -38,13 +29,18 @@ int main(int argc, char *argv[])
             dup(p1p0[1]);
             close(p1p0[1]);
 
-            execl("/usr/bin/grep", "grep", "-c", stringa, argv[1], (char *)0);
+            execl("/usr/bin/grep", "grep", "-c", stringa, argv[1], NULL);
             return -1;
         }
-        read(p1p0[0], cnt, sizeof(cnt));
-        printf("Il file ha %d '%s' \n", atoi(cnt), stringa);
-        cnttot += atoi(cnt);
+        read(p1p0[0], cont, sizeof(cont));
+        printf("Il file ha %d '%s' \n", atoi(cont), stringa);
+        tot += atoi(cont);
     }
+           
+            close(p1p0[1]);
+            close(p1p0[0]);
+            printf("Numero di parole trovate: %d\n", tot);
+            exit(1);
 
-    return 0;
+  
 }
