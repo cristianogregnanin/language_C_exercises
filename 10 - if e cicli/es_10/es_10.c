@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[])//nicolo Malaman
 {
     char tipologia[12];
     double importo, mediaBevande, mediaRistorazioni, sommaBevande = 0, sommaRistorazione = 0;
