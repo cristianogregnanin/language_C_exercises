@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     int esponente = atoi(argv[2]);
     int risultato = 1;
 
-    if (base < 0 || esponente < 0)
+    if (base < 1 || esponente < 0)
     {
         printf("Inserire numeri positivi\n");
         exit(0);
