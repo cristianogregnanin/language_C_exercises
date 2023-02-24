@@ -37,4 +37,6 @@ int main(int argc, char *argv[])
 	for (i = 0; i < DIM; i++)
 		if (calciatori[i].nome[0] == 'c')
 			printf("\t%s\n", calciatori[i].nome);
+
+	return 0;
 }

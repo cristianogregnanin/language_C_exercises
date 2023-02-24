@@ -1,0 +1,6 @@
+Scrivere un programma in linguaggio C che usa il comando 
+della shell cp per copiare un file da una posizione 
+sorgente ad una posizione destinazione
+
+esempio:
+$ ./a.out costituzione.txt /tmp/costituzione.txt

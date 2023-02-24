@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
 
 	popola_materia();
 
-	//TODO fare l'inseriemento
+	// TODO fare l'inseriemento
 	for (i = 0; i < DIM_STUDENTI; i++)
 	{
 		studente = crea_studente();

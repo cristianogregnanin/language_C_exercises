@@ -1,7 +1,7 @@
 Il file.txt rappresenta le fatture dell’ultimo mese della ditta ProgrammatoriHero srl
 e contiene 3 campi: codice, “pagato” o “insoluto”, l’importo
 
-Si vuole realizzare un programma concorrente in linguaggio C che mostri a video il l'importo totale delle fatture emesse.
+Si vuole realizzare un programma concorrente in linguaggio C che mostri a video l'importo totale delle fatture emesse.
 
 Si usi la seguente procedura: 
 Si generi un processo figlio P1 che legge il file e lo manda al processo P2 il quale
