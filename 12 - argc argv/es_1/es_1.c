@@ -24,11 +24,11 @@ int main(int argc, char *argv[])
         {
             if (k > 0 && i > 0 && k < n - 1 && i < n - 1)
             {
-                printf("* ");
+                printf(" ");
             }
             else
             {
-                printf("  ");
+                printf("* ");
             }
         }
         printf("\n");
