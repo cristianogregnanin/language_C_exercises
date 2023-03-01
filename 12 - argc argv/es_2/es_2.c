@@ -9,12 +9,12 @@ int main(int argc, char *argv[])
         printf("Errore argomenti\n");
         exit(0);
     }
-
+    
     int base = atoi(argv[1]);
     int esponente = atoi(argv[2]);
     int risultato = 1;
 
-    if (base < 0 || esponente < 0)
+    if (base <= 0 || esponente < 0)
     {
         printf("Inserire numeri positivi\n");
         exit(0);
