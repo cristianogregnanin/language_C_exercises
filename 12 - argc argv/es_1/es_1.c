@@ -1,43 +1,33 @@
 #include <stdio.h>
-#include <stdlib.h>
-
+#include <string.h>
 int main(int argc, char *argv[])
 {
+    int N;
 
-    if (argc != 2)
+    do
     {
-        printf("Errore argomenti\n");
-        exit(0);
-    }
-
-    int n = atoi(argv[1]);
-
-    if (n <= 0)
-    {
-        printf("argv[1] deve essere maggiore di 0\n");
-        exit(0);
-    }
-
-    for (int i = 0; i < n; i++)
-    {
-        if (i == 0 || i == n - 1)
+        printf("Inserisci N \n");
+        scanf("%d", &N);
+        if (N <= 0)
         {
-            for (int k = 0; k < n; k++)
+            printf("Numero non valido. REINSERIRLO");
+        }
+    } while (N <= 0);
+    for (int r = 1; r <= N; r++)
+    {
+        for (int c = 1; c <= N; c++)
+        {
+            if (r == 1 || r == N || c == 1 || c == N)
             {
-                printf("* ");
+                printf("*");
+            }
+            else
+            {
+                printf(" ");
             }
         }
-        else
-        {
-            for (int k = 0; k < n; k++)
-            {
-                if (k == 0 || k == n - 1)
-                    printf("* ");
-                else
-                    printf("  ");
-            }
-        }
-
         printf("\n");
     }
+
+    return 0;
 }
