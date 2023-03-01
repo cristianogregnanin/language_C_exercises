@@ -22,10 +22,14 @@ int main(int argc, char *argv[])
     {
         for (int k = 0; k < n; k++)
         {
-            if (i >0  && k > 0 && i < n - 1 && k < n - 1)
+            if (i > 0 && k > 0 && i < n - 1 && k < n - 1)
+            {
                 printf(" ");
+            }
             else
+            {
                 printf("* ");
+            }
         }
         printf("\n");
     }
