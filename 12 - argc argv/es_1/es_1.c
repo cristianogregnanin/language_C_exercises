@@ -3,7 +3,7 @@
 
 int main(int argc, char *argv[])
 {
-/*
+
     if (argc != 2)
     {
         printf("Errore argomenti\n");
@@ -16,8 +16,7 @@ int main(int argc, char *argv[])
     {
         printf("argv[1] deve essere maggiore di 0\n");
         exit(0);
-    }*/
-    int n = 4;
+    }
     for (int i = 0; i < n; i++)
     {
         for (int k = 0; k < n; k++)
