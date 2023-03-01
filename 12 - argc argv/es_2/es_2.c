@@ -16,8 +16,18 @@ int main(int argc, char *argv[])
 
     if (base <= 0 || esponente < 0)
     {
-        printf("Inserire numeri positivi 0\n");
+        printf("Inserire numeri positivi\n");
         exit(0);
+    }
+
+    if (base == 0)
+    {
+        if (esponente == 0)
+        {
+            printf("Non puoi elevare 0 per se stesso\n");
+            exit(0);
+        }
+        risultato = 0;
     }
 
     for (int i = 0; i < esponente; i++)
