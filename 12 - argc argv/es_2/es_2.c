@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -14,10 +15,20 @@ int main(int argc, char *argv[])
     int esponente = atoi(argv[2]);
     int risultato = 1;
 
-    if (base <= 0 || esponente <= 0)
+    if (base < 0 || esponente < 0)
     {
-        printf("Inserire numeri positivi e diversi da 0\n");
+        printf("Inserire numeri positivi\n");
         exit(0);
+    }
+
+    if (base == 0)
+    {
+        if (esponente == 0)
+        {
+            printf("Non puoi elevare 0 per se stesso\n");
+            exit(0);
+        }
+        risultato = 0;
     }
 
     for (int i = 0; i < esponente; i++)
