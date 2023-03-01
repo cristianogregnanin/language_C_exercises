@@ -11,33 +11,48 @@ int main(int argc, char *argv[])
     }
 
     int n = atoi(argv[1]);
+    int c = 0;
 
     if (n <= 0)
     {
         printf("argv[1] deve essere maggiore di 0\n");
         exit(0);
     }
+    if (n == 2)
+    {
+        for(int i = 0; i < n; i++)
+        {
+            printf("*");
+        }
+        printf("\n");
+        for(int i = 0; i < n; i++)
+        {
+            printf("*");
+        }
+    }
+    else
+    {
+    for (int i = 0; i < n; i++)
+    {
+        printf("*");
+    }
+    do
+    {
+        printf("\n");
+        printf("*");
+        for (int i = 0; i < n - 2; i++)
+        {
+            printf(" ");
+        }
+        printf("*");
+        c++;
+    } while (c < n - 2);
+        printf("\n");
 
     for (int i = 0; i < n; i++)
     {
-        if (i == 0 || i == n - 1)
-        {
-            for (int k = 0; k < n; k++)
-            {
-                printf("* ");
-            }
-        }
-        else
-        {
-            for (int k = 0; k < n; k++)
-            {
-                if (k == 0 || k == n - 1)
-                    printf("* ");
-                else
-                    printf("  ");
-            }
-        }
-
-        printf("\n");
+        printf("*");
     }
+    }
+    return 0;
 }
