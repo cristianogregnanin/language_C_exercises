@@ -20,17 +20,19 @@ int main(int argc, char *argv[])
 
     for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < n; j++)
+        for (int t = 0; t < n; t++) 
         {
-            if (i == 0 || i == n - 1 || j == 0 || j == n - 1) 
+            if (t == 0 || i == 0 || t == n - 1 || i == n - 1) 
             {
-                printf(" *");
+                printf("*");
             }
             else 
             {
-                printf("  ");
+                printf(" ");
             }
+
         }
         printf("\n");
     }
+    return 0;
 }
