@@ -22,15 +22,17 @@ int main(int argc, char *argv[])
     {
         for (int j = 0; j < n; j++)
         {
-            if (i == 0 || i == n - 1 || j == 0 || j == n - 1) 
+            if (i == 0 || i == n - 1 || j == 0 || j == n - 1)
             {
                 printf(" *");
             }
-            else 
+            else
             {
                 printf("  ");
             }
         }
         printf("\n");
     }
+
+    return 0;
 }
