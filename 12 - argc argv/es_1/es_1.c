@@ -3,14 +3,16 @@
 
 int main(int argc, char *argv[])
 {
+int j, i, n;
 
     if (argc != 2)
     {
-        printf("Errore argomenti\n");
+        printf("argc = %d\n", argc);
+        printf("il numero di argumenti (argc) deve risultare uguale a 2\n");
         exit(0);
     }
 
-    int n = atoi(argv[1]);
+    n = atoi(argv[1]);
 
     if (n <= 0)
     {
@@ -18,19 +20,20 @@ int main(int argc, char *argv[])
         exit(0);
     }
 
-    for (int i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
     {
-        for (int j = 0; j < n; j++)
+        for (j = 0; j < n; j++)
         {
-            if (i == 0 || i == n - 1 || j == 0 || j == n - 1) 
-            {
-                printf(" *");
-            }
-            else 
+            if (i != 0 && j < n - 1 && j != 0 && i < n - 1)
             {
                 printf("  ");
+            }
+            else
+            {
+                printf(" *");
             }
         }
         printf("\n");
     }
+    return 0;
 }
