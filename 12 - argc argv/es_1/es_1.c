@@ -22,13 +22,13 @@ int main(int argc, char *argv[])
     {
         for (int j = 0; j < n; j++)
         {
-            if (i == 0 || i == n - 1 || j == 0 || j == n - 1) // condizione per determinare il bordo del rettangolo
+            if (i == 0 || i == n - 1 || j == 0 || j == n - 1) 
             {
-                printf("*");
+                printf(" *");
             }
-            else // dove non è un bordo metto uno spazio
+            else 
             {
-                printf(" ");
+                printf("  ");
             }
         }
         printf("\n");
