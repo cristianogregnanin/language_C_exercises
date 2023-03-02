@@ -1,36 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 int main(int argc, char *argv[])
 {
-
-    if (argc != 2)
+    
+    if (argc != 2) 
     {
-        printf("Errore argomenti\n");
-        exit(0);
+        printf("Errore argomenti \n");
+        exit (0);
     }
-
-    int n = atoi(argv[1]);
-
-    if (n <= 0)
+    
+    int N=atoi(argv[1]);
+    if (N<0) 
     {
-        printf("argv[1] deve essere maggiore di 0\n");
-        exit(0);
+        printf ("Devi inserire un numero maggiore di 0\n");
+        exit (0);
     }
-
-    for (int i = 0; i < n; i++)
+    for (int r = 1; r <= N; r++)
     {
-        for (int j = 0; j < n; j++)
+        for (int c = 1; c <= N; c++)
         {
-            if (i == 0 || i == n - 1 || j == 0 || j == n - 1) 
+            if (r == 1 || r == N || c == 1 || c == N)
             {
-                printf(" *");
+                printf("*");
             }
-            else 
+            else
             {
-                printf("  ");
+                printf(" ");
             }
         }
-        printf("\n");
     }
+    return 0;
 }
