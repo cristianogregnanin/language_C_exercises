@@ -18,9 +18,10 @@ Osservazione:
 strncat(strimporto, &buffer[0], sizeof(buffer[0]))
 Aggiunge in coda alla stringa strimporto il carattere buffer[0] la cui dimensione è sizeof(buffer[0])
 
-Osservazione: 
-char *ptr; strtod(strimporto, &ptr);
-converte la stringa strimporto in double. 
+Osservazione:
+char *ptr;
+double x = strtod(strimporto, &ptr);
+strtod converte la stringa strimporto in double. 
 
 Osservazione:
 strimporto[0] = '\0';
