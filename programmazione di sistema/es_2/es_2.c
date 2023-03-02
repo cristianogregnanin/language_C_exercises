@@ -51,10 +51,8 @@ int main(int argc, char *argv[])
     dup(p2p0[0]);
     close(p2p0[0]);
 
-    fd = open("wc.txt", O_WRONLY | O_CREAT, 0777);
     close(1);
-    dup(fd);
-    close(fd);
+    open("wc.txt", O_WRONLY | O_CREAT, 0777);
 
     execl("/usr/bin/tee", "tee", (char *)0);
 

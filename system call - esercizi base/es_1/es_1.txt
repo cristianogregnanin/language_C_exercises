@@ -1,0 +1,5 @@
+Utilizzando le system call open, read, write, close leggere il file rfc1918.txt e stamparlo a video.
+Il programa deve essere cosi invocato:
+$./a.out rfc1918.txt
+
+Consiglio: leggere un carratere per volta 

@@ -42,25 +42,25 @@ int main(int argc, char *argv[])
 
 	socketfd = socket(AF_INET, SOCK_STREAM, 0);
 
-	//Bind
+	// Bind
 	setsockopt(socketfd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
 	bind(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
 
 	listen(socketfd, 10);
 
-	//attensa del client
+	// attensa del client
 	for (;;)
 	{
 		printf("\n\nServer in ascolto...");
 
-		//accept
+		// accept
 		soa = accept(socketfd, (struct sockaddr *)&rem_indirizzo, &fromlen);
 
-		//risoluzione del client
+		// risoluzione del client
 		host = gethostbyaddr((char *)&rem_indirizzo.sin_addr, sizeof(rem_indirizzo.sin_addr), AF_INET);
 		printf("\n\n Stabilita la connessione con il client %s", host->h_name);
 
-		//ricevere i dati dal client
+		// ricevere i dati dal client
 		nread = read(soa, &str, sizeof(str));
 
 		printf("\n\tRicevuta stringa %s dimensione: %d\n", str, nread);
@@ -71,10 +71,10 @@ int main(int argc, char *argv[])
 
 		printf("\n\tstringa invertita: %s\n\n", newstr);
 
-		//scrittura dell stringa all'interno della socket
+		// scrittura dell stringa all'interno della socket
 		write(soa, newstr, sizeof(newstr));
 
-		//chiusura socket
+		// chiusura socket
 		close(soa);
 	}
 

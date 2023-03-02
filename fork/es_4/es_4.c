@@ -10,13 +10,12 @@
 
 int ricerca(int numeri[], int n, int numero)
 {
-	int posizione = -1;
 
-	for (posizione = 0; posizione < n; posizione++)
+	for (int i = 0; i < n; i++)
 	{
-		if (numeri[posizione] == numero)
+		if (numeri[i] == numero)
 		{
-			return posizione;
+			return i;
 		}
 	}
 
@@ -28,7 +27,7 @@ int main(int argc, char *argv[])
 
 	int numeri[] = {10, 20, 30};
 	int numero = atoi(argv[1]);
-	int posizione = -1;
+	int posizione;
 
 	int pid = fork();
 
@@ -43,10 +42,8 @@ int main(int argc, char *argv[])
 
 		exit(1);
 	}
-	else
-	{
-		wait(&pid);
-	}
+
+	wait(&pid);
 
 	return 0;
 }

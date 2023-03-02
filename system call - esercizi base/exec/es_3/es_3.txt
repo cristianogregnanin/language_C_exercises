@@ -1,0 +1,6 @@
+Scrivere un programma in linguaggio C che usa il comando 
+della shell rm per eliminare tutti files presenti
+nell'intervallo [argv[1], argv[argc-1]]
+
+esempio:
+$ ./a.out /tmp/1.txt /tmp/3.txt /tmp/2.txt

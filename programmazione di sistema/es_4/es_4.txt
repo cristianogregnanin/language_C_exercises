@@ -1,8 +1,8 @@
 Si scriva un’applicazione concorrente che presenti la seguente interfaccia:
 
-cercaStringhe FileIn
+cercaStringhe FileIn.txt
 
-dove FileIn è un nome assoluto di file.
+dove FileIn.txt è un nome assoluto di file.
 
 L’applicazione deve contare il numero di volte in cui un insieme di stringhe
 che l’utente inserisce da terminale (una alla volta) compaiono all’interno
@@ -15,5 +15,5 @@ stringhe trovate nel file.
 
 L'applicazione dovrà tenere conto dell'eventuale molteplicità di una parola
 dentro alla stessa stringa, per fare questo si consiglia di invocare grep
-con il flag -o e redirezionare il suo output in wc .
+con il flag -ow e redirezionare il suo output in wc (invocato con il flag -l).
 

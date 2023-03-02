@@ -32,16 +32,16 @@ int main(int argc, char *argv[])
 
 	connect(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
 
-	//scrittura del carattere all'interno della socket
-	//carattere = 'a';//argv[1];
+	// scrittura del carattere all'interno della socket
+	// carattere = 'a';//argv[1];
 	strcpy(carattere, argv[1]);
 
 	write(socketfd, &carattere, sizeof(carattere));
 
-	//ricevere i dati dal client
+	// ricevere i dati dal client
 	nread = read(socketfd, &carattere, sizeof(carattere));
 
-	//chiusura socket
+	// chiusura socket
 	close(socketfd);
 
 	printf("\n\n\t\tconvertito %s in %s\n\n", argv[1], carattere);
