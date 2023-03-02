@@ -18,19 +18,21 @@ int main(int argc, char *argv[])
         exit(0);
     }
 
-    for (int i = 0; i < n; i++)
+    for (int y = 0; y < n; y++)
     {
-        for (int j = 0; j < n; j++)
+        for (int x = 0; x < n; x++)
         {
-            if (i == 0 || i == n - 1 || j == 0 || j == n - 1) 
-            {
-                printf(" *");
-            }
-            else 
+            if (y != 0 && y < n - 1 && x != 0 && x < n - 1)
             {
                 printf("  ");
+            }
+            else
+            {
+                printf(" *");
             }
         }
         printf("\n");
     }
+
+    return 0;
 }
