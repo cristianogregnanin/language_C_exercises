@@ -1,18 +1,20 @@
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 int main(int argc, char *argv[])
 {
-    int N;
-
-    do
+    
+    if (argc != 2) 
     {
-        printf("Inserisci N \n");
-        scanf("%d", &N);
-        if (N <= 0)
-        {
-            printf("Numero non valido. REINSERIRLO");
-        }
-    } while (N <= 0);
+        printf("Errore argomenti \n");
+        exit (0);
+    }
+    
+    int N=atoi(argv[1]);
+    if (N<0) 
+    {
+        printf ("Devi inserire un numero maggiore di 0\n");
+        exit (0);
+    }
     for (int r = 1; r <= N; r++)
     {
         for (int c = 1; c <= N; c++)
@@ -27,4 +29,5 @@ int main(int argc, char *argv[])
             }
         }
     }
+    return 0;
 }
