@@ -1,0 +1,2 @@
+Il carattere o compare 18 volte nei files: file1.txt file2.txt file3.txt /tmp/file3.txt 
+

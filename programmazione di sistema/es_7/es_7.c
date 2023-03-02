@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     }
 
     int p1p2[2], p2p3[2], p3p0[2], pid;
-    char buffer[1], *ptr, strimporto[100];
+    char buffer, *ptr, strimporto[100];
     double totale = 0;
 
     pipe(p1p2);
@@ -72,10 +72,10 @@ int main(int argc, char *argv[])
     close(p2p3[1]);
     close(p3p0[1]);
 
-    while (read(p3p0[0], buffer, 1) > 0)
+    while (read(p3p0[0], buffer, sizeof(buffer)) > 0)
     {
-        strncat(strimporto, &buffer[0], sizeof(buffer[0]));
-        if (buffer[0] == '\n')
+        strncat(strimporto, &buffer, sizeof(buffer));
+        if (buffer == '\n')
         {
             printf("Tempo parziale: %s", strimporto);
             totale = totale + strtod(strimporto, &ptr);

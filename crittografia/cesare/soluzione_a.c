@@ -25,12 +25,12 @@ int main(int argc, char *argv[])
 	int i, lung;
 	printf("Inserisci una stringa:\n");
 	scanf("%s", s);
-	lung = strlen(s); //alla variabile lung assegno il valore ritornato dalla funzione strlen() (funzione inclusa nella libreria <limits.h>) della stringa s
+	lung = strlen(s); // alla variabile lung assegno il valore ritornato dalla funzione strlen() (funzione inclusa nella libreria <limits.h>) della stringa s
 
 	/*Effettuo un ciclo che utilizzi la funzione cesare() per ogni lettera della stringa s*/
 	for (i = 0; i < lung; ++i)
 	{
-		cesare(s[i], 3); //richiamo la funzione cesare() con salto 3
+		cesare(s[i], 3); // richiamo la funzione cesare() con salto 3
 	}
 	printf("\n");
 	return 0;

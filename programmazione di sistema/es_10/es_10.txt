@@ -1,0 +1,5 @@
+Realizzare il comando cat file.txt | sort in linguaggio C utilizzando
+le pipe e la programmazione concorrente
+
+Osservazione: 
+P0 generi P1 e successivamente generi P2

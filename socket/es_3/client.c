@@ -26,13 +26,13 @@ int main(int argc, char *argv[])
 
 	FILE *fd;
 
-	//apro file
+	// apro file
 	fd = fopen(argv[1], "r");
 
-	//leggo il file
+	// leggo il file
 	fscanf(fd, "%s", str);
 
-	//chiudo il file
+	// chiudo il file
 	fclose(fd);
 
 	printf("il contenuto del file è: %s\n\n\n", str);
@@ -48,16 +48,16 @@ int main(int argc, char *argv[])
 
 	connect(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
 
-	//scrittura del carattere all'interno della socket
+	// scrittura del carattere all'interno della socket
 	write(socketfd, str, strlen(str));
 	read(socketfd, &nread, sizeof(int));
 
 	write(socketfd, carattere, sizeof(carattere));
 
-	//ricevere i dati dal client
+	// ricevere i dati dal client
 	read(socketfd, &occorrenze, sizeof(occorrenze));
 
-	//chiusura socket
+	// chiusura socket
 	close(socketfd);
 
 	printf("\n\til carattere %s compare %s volte nella stringa %s\n\n", carattere, occorrenze, str);
