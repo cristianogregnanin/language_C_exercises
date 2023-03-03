@@ -1,87 +1,70 @@
-/*
-Questa soluzione usa due processi che lanciano grep
-*/
-
 #include <stdio.h>
 #include <unistd.h>
-#include <string.h>
 #include <stdlib.h>
+#include <fcntl.h>
 #include <sys/wait.h>
-
-#define READ 0
-#define WRITE 1
+#include <string.h>
+#include <ctype.h>
 
 int main(int argc, char *argv[])
 {
-    if (argc != 2)
-    {
-        printf("Argomenti errati. Inserire come primo argomento il nome di un file\n");
-        exit(0);
-    }
-    char stringa[1000], codice[5];
-    int p1p2[2], tot = 0, pid, p2p0[2];
 
-    pipe(p1p2);
-    pipe(p2p0);
-    while (1)
-    {
-        printf("Inserisci codice:\n");
-        scanf("%s", codice);
+    int p1p0[2], p2p0[2];
+    char buff[10], importo[10], *punt;
+    double tot = 0;
+
     
-        if (strcmp("esci", codice) == 0)
+    pipe(p1p0);
+    int pid1 = fork();
+    if (pid1 == 0)
+    {
+        close(p1p0[0]);
+        close(1);
+        dup(p1p0[1]);
+        close(p1p0[1]);
+        execl("/bin/cat", "cat", argv[1], NULL);
+
+        return -1;
+    }
+pipe(p2p0);
+    pid1 = fork();
+
+    
+    if (pid1 == 0)
+    {
+        close(p1p0[1]);
+        close(0);
+        dup(p1p0[0]);
+        close(p1p0[0]);
+
+        close(p2p0[0]);
+        close(1);
+        dup(p2p0[1]);
+        close(p2p0[1]);
+
+        execl("/bin/awk", "awk", "{print $3}", NULL);
+        return -1;
+    }
+
+    close(p1p0[1]);
+    close(p1p0[0]);
+    close(p2p0[1]);
+
+    while (read(p2p0[0], buff, sizeof(buff)) > 0)
+    {
+
+        strncat(importo, &buff[0], sizeof(buff[0]));
+
+        if (buff[0] == '\n')
         {
-            printf("sono stati trovati: %d insoluti\n", tot);
-            close(p1p2[READ]);
-            close(p1p2[WRITE]);
-            close(p2p0[READ]);
-            close(p2p0[WRITE]);
-            exit(0);
-        }
-
-        pid = fork();
-
-        if (pid == 0)
-        {
-            close(p2p0[READ]);
-            close(p2p0[WRITE]);
-
-            close(p1p2[READ]);
-            close(WRITE);
-            dup(p1p2[WRITE]);
-            close(p1p2[WRITE]);
-
-            execl("/bin/grep", "grep", codice, argv[1], NULL);
-            return -1;
-        }
-
-        pid = fork();
-        if (pid == 0)
-        {
-
-            close(p1p2[WRITE]);
-            close(p2p0[READ]);
-
-            close(READ);
-            dup(p1p2[READ]);
-            close(p1p2[READ]);
-
-            close(WRITE);
-            dup(p2p0[WRITE]);
-            close(p2p0[WRITE]);
-
-            execl("/bin/grep", "grep", "-c", "insoluto", NULL);
-            return -1;
-        }
-
-        read(p2p0[READ], stringa, sizeof(stringa));
-        printf("Sono stati trovati %d insoluti\n", atoi(stringa));
-        tot = tot + atoi(stringa);
-
-        if (pid < 0)
-        {
-            printf("Errore durante la generazione del figlio");
+            printf("%s", importo);
+            tot = tot + strtod(importo, &punt);
+            importo[0] = '\0';
         }
     }
 
+    close(p2p0[0]);
+
+    printf("Il totale delle fatture è: %.2lf\n", tot);
     return 0;
 }
