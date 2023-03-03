@@ -17,7 +17,6 @@ int main(int argc, char *argv[])
     char stringa[1000], codice[5];
     int p1p2[2], tot = 0, pid, p2p0[2];
 
-    pipe(p2p0);
     while (1)
     {
         printf("Inserisci codice:\n");
