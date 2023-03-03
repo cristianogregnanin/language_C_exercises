@@ -1,7 +1,3 @@
-/*
-Questa soluzione usa due processi che lanciano grep
-*/
-
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
@@ -18,13 +14,17 @@ int main(int argc, char *argv[])
         printf("Argomenti errati. Inserire come primo argomento il nome di un file\n");
         exit(0);
     }
+    
     char stringa[1000], codice[5];
     int p1p2[2], tot = 0, pid, p2p0[2];
 
-    pipe(p1p2);
-    pipe(p2p0);
+    
+    
     while (1)
     {
+        pipe(p1p2);
+        pipe(p2p0);
+        
         printf("Inserisci codice:\n");
         scanf("%s", codice);
     
@@ -68,11 +68,15 @@ int main(int argc, char *argv[])
             close(WRITE);
             dup(p2p0[WRITE]);
             close(p2p0[WRITE]);
-
+            
             execl("/bin/grep", "grep", "-c", "insoluto", NULL);
             return -1;
         }
-
+        
+        close(p1p2[READ]);
+        close(p1p2[WRITE]);
+        close(p2p0[WRITE]);
+            
         read(p2p0[READ], stringa, sizeof(stringa));
         printf("Sono stati trovati %d insoluti\n", atoi(stringa));
         tot = tot + atoi(stringa);
