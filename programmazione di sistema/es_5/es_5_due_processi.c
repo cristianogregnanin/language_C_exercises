@@ -94,6 +94,9 @@ int main(int argc, char *argv[])
             printf("Errore durante la generazione del figlio");
         }
     }
-
+    close(p1p2[WRITE]);
+    close(p2p0[READ]);
+    close(p2p0[WRITE]);
+    close(p1p2[READ]);
     return 0;
 }
