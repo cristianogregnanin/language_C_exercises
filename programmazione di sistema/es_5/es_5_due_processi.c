@@ -13,21 +13,33 @@ Questa soluzione usa due processi che lanciano grep
 
 int main(int argc, char *argv[])
 {
-    if (argc != 2)
+    /*if (argc != 2)
     {
         printf("Argomenti errati. Inserire come primo argomento il nome di un file\n");
         exit(0);
-    }
-    char stringa[1000], codice[5];
+    }*/
+    char stringa[1000];
     int p1p2[2], tot = 0, pid, p2p0[2];
-
+    char c;
     pipe(p1p2);
     pipe(p2p0);
+
     while (1)
     {
-        printf("Inserisci codice:\n");
-        scanf("%s", codice);
-    
+        printf("Inserisci codice: ");
+        fflush(stdout); // Assicura che il messaggio venga stampato sullo standard output
+        //while ((c = getchar()) != '\n' && c != EOF);// Pulisce il buffer di input
+                    
+        /*printf("Debug1");
+        fflush(stdout);
+        fflush(stdin);*/
+        char codice[100] = "";
+        //scanf("%s", codice);
+        fgets(codice, 5, stdin); //IL PROGRAMMA SI BLOCCA QUI, quando si fa il debug codice contiene solo \0
+        fflush(stdout);
+        fflush(stdin);
+        printf("Debug2"); 
+        
         if (strcmp("esci", codice) == 0)
         {
             printf("sono stati trovati: %d insoluti\n", tot);
