@@ -1,6 +1,3 @@
-/*
-Questa soluzione usa due processi che lanciano grep
-*/
 
 #include <stdio.h>
 #include <unistd.h>
@@ -25,7 +22,7 @@ int main(int argc, char *argv[])
     pipe(p2p0);
     while (1)
     {
-        printf("Inserisci codice:\n");
+        printf("Inserisci codice fattura:\n");
         scanf("%s", codice);
     
         if (strcmp("esci", codice) == 0)
@@ -55,6 +52,7 @@ int main(int argc, char *argv[])
         }
 
         pid = fork();
+        
         if (pid == 0)
         {
 
@@ -79,7 +77,7 @@ int main(int argc, char *argv[])
 
         if (pid < 0)
         {
-            printf("Errore durante la generazione del figlio");
+            printf("Figlio non generato");
         }
     }
 
