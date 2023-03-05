@@ -1,7 +1,3 @@
-/*
-Questa soluzione usa due processi che lanciano grep
-*/
-
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
@@ -58,7 +54,8 @@ int main(int argc, char *argv[])
         if (pid == 0)
         {
 
-            close(p1p2[WRITE]);
+            close(p2p0[WRITE]);
+            close(p1p2[READ]);
             close(p2p0[READ]);
 
             close(READ);
