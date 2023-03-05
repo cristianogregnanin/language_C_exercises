@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
         printf("Argomenti errati. Inserire come primo argomento il nome di un file\n");
         exit(0);
     }
-    char stringa[1000], codice[10];
+    char stringa[1000], codice[14];
     int p1p0[2], tot = 0, pid;
 
     pipe(p1p0);
