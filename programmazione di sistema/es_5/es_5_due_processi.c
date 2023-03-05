@@ -23,9 +23,9 @@ int main(int argc, char *argv[])
 
     pipe(p1p2);
     pipe(p2p0);
-    do
+    while (strcmp("esci", codice) != 0)
     {
-        printf("Inserisci codice:\n");
+        printf("inserisci il codice \n");
         scanf("%s", codice);
 
         pid = fork();
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
         {
             printf("Errore durante la generazione del figlio");
         }
-    } while (strcmp("esci", codice) != 0);
+    } 
     printf("sono stati trovati: %d insoluti\n", tot);
     close(p1p2[READ]);
     close(p1p2[WRITE]);
@@ -85,3 +85,4 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+
