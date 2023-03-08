@@ -1,89 +1,100 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <unistd.h>
-#include <sys/wait.h>
+#include <stdlib.h>
+#include <fcntl.h>
 #include <string.h>
+
+#define READ 0
+#define WRITE 1
+
 
 int main(int argc, char *argv[])
 {
+   int p0p1[2], p1p2[2],p2p3[2], pid;
+   char *punt,tempo[10];
+   double tot;
+   char stringa;
+   
     if (argc != 2)
     {
         printf("Numero argomenti sbagliato\n");
         exit(1);
     }
 
-    int p1p2[2], p2p3[2], p3p0[2], pid;
-    char buffer, *ptr, strimporto[100];
-    double totale = 0;
+pipe(p0p1);
+pid = fork();
 
-    pipe(p1p2);
-    pid = fork();
-    if (pid == 0)
-    {
-        close(p1p2[0]);
-        close(1);
-        dup(p1p2[1]);
-        close(p1p2[1]);
-        execl("/usr/sbin/traceroute", "traceroute", argv[1], NULL);
+if (pid == 0)
+{
+  close(p0p1[READ]);                // 0 = lettura 1 = scrittura
+  close(WRITE);
+  dup(p0p1[WRITE]);
+  close(p0p1[WRITE]);
+  execl("/usr/sbin/traceroute", "traceroute", argv[1], NULL);
+
+  return -1;
+}
+
+pipe(p1p2);
+pid = fork();
+
+if(pid == 0)
+{
+close(p0p1[WRITE]);
+close(READ);
+dup(p0p1[READ]);
+close(p0p1[READ]);
+
+close(p1p2[READ]);
+close(WRITE);
+dup(p1p2[WRITE]);
+close(p1p2[WRITE]);
+
+ execl("/usr/bin/awk", "awk", "{print $4}", NULL);
+ return -1;
+}
+
+close(p0p1[READ]);
+close(p0p1[WRITE]);
+
+pipe(p2p3);
+pid = fork();
+
+if(pid == 0)
+{
+close(p1p2[WRITE]);
+close(READ);
+dup(p1p2[READ]);
+close(p1p2[READ]);
+
+close(p2p3[READ]);
+close(WRITE);
+dup(p2p3[WRITE]);
+close(p2p3[WRITE]);
+
+  execl("/usr/bin/tail", "tail", "-n", "+2", NULL);
         return -1;
-    }
+}
+close(p1p2[WRITE]);
+close(p1p2[READ]);
+close(p2p3[WRITE]);
 
-    pipe(p2p3);
-    pid = fork();
-    if (pid == 0)
+ while (read(p2p3[0], &stringa, sizeof(stringa)) > 0)
     {
-        close(p1p2[1]);
-        close(0);
-        dup(p1p2[0]);
-        close(p1p2[0]);
-
-        close(p2p3[0]);
-        close(1);
-        dup(p2p3[1]);
-        close(p2p3[1]);
-
-        execl("/usr/bin/awk", "awk", "{print $4}", (char *)0);
-        return -1;
-    }
-
-    close(p1p2[1]);
-    close(p1p2[0]);
-
-    pipe(p3p0);
-    pid = fork();
-    if (pid == 0)
-    {
-
-        close(p2p3[1]);
-        close(0);
-        dup(p2p3[0]);
-        close(p2p3[0]);
-
-        close(p3p0[0]);
-        close(1);
-        dup(p3p0[1]);
-        close(p3p0[1]);
-
-        execl("/usr/bin/tail", "tail", "-n", "+2", (char *)0);
-        return -1;
-    }
-
-    close(p2p3[0]);
-    close(p2p3[1]);
-    close(p3p0[1]);
-
-    while (read(p3p0[0], buffer, sizeof(buffer)) > 0)
-    {
-        strncat(strimporto, &buffer, sizeof(buffer));
-        if (buffer == '\n')
+        strncat(tempo, &stringa, sizeof(stringa));
+        if (stringa == '\n')
         {
-            printf("Tempo parziale: %s", strimporto);
-            totale = totale + strtod(strimporto, &ptr);
-            strimporto[0] = '\0';
+            printf("Tempo parziale: %s", tempo);
+            tot = tot + strtod(tempo, &punt);
+            tempo[0] = '\0';
         }
     }
 
-    close(p3p0[0]);
-    printf("\nIl tempo totale impiegato è: %.2lf ms\n", totale);
+    close(p2p3[0]);
+    printf("\nIl tempo totale impiegato è: %.2lf ms\n", tot);
+    return 0;
+
+
+
     return 0;
 }
