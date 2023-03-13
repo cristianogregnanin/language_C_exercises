@@ -13,24 +13,20 @@ Questa soluzione usa due processi che lanciano grep
 
 int main(int argc, char *argv[])
 {
-    if (argc != 2)
-    {
-        printf("Argomenti errati. Inserire come primo argomento il nome di un file\n");
-        exit(0);
-    }
-    char stringa[1000], codice[5];
-    int p1p2[2], tot = 0, pid, p2p0[2];
+    char conta[10], codice[50];
+    int p1p2[2], p2p0[2];
+    int pid, contaTOT = 0;
 
     pipe(p1p2);
     pipe(p2p0);
     while (1)
     {
-        printf("Inserisci codice:\n");
+        printf("Inserisci codice: ");
         scanf("%s", codice);
-    
+
         if (strcmp("esci", codice) == 0)
         {
-            printf("sono stati trovati: %d insoluti\n", tot);
+            printf("Trovati %d insoluti in tutte le ricerche.\n", contaTOT);
             close(p1p2[READ]);
             close(p1p2[WRITE]);
             close(p2p0[READ]);
@@ -39,7 +35,6 @@ int main(int argc, char *argv[])
         }
 
         pid = fork();
-
         if (pid == 0)
         {
             close(p2p0[READ]);
@@ -50,38 +45,29 @@ int main(int argc, char *argv[])
             dup(p1p2[WRITE]);
             close(p1p2[WRITE]);
 
-            execl("/bin/grep", "grep", codice, argv[1], NULL);
-            return -1;
+            execl("/bin/grep", "grep", codice, "file5pipe.txt", NULL);
+            return -1;//stderr
         }
-
         pid = fork();
         if (pid == 0)
         {
-
             close(p1p2[WRITE]);
             close(p2p0[READ]);
 
-            close(READ);
+            close(READ);//stdin
             dup(p1p2[READ]);
             close(p1p2[READ]);
 
-            close(WRITE);
+            close(WRITE);//stdout
             dup(p2p0[WRITE]);
             close(p2p0[WRITE]);
 
             execl("/bin/grep", "grep", "-c", "insoluto", NULL);
-            return -1;
+            return -1;//sterr
         }
 
-        read(p2p0[READ], stringa, sizeof(stringa));
-        printf("Sono stati trovati %d insoluti\n", atoi(stringa));
-        tot = tot + atoi(stringa);
-
-        if (pid < 0)
-        {
-            printf("Errore durante la generazione del figlio");
-        }
+        read(p2p0[READ], conta, sizeof(conta));
+        printf("Trovati %d insoluti\n", atoi(conta));
+        contaTOT += atoi(conta);
     }
-
-    return 0;
 }
