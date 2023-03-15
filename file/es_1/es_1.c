@@ -6,13 +6,13 @@ int main(int argc, char *argv[])
 	FILE *fd;
 	char contenuto[5];
 
-	//apro file
+	// apro file
 	fd = fopen("testo.txt", "r");
 
-	//leggo il file
+	// leggo il file
 	fscanf(fd, "%s", contenuto);
 
-	//chiudo il file
+	// chiudo il file
 	fclose(fd);
 	printf("Il contenuto del file è: %s\n\n", contenuto);
 

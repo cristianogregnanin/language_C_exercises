@@ -1,1 +1,2 @@
-Scrivere un programma in linguaggio C dove il processo figlio manda una stringa al processo padre e quest'ultimo lo stampa a video.
+Scrivere un programma in linguaggio C dove il processo figlio manda una stringa
+al processo padre e quest'ultimo lo stampa a video.

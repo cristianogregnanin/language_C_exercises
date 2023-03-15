@@ -2,15 +2,15 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#define DIM 3
+#define DIM 4
 
 int main(int argc, char *argv[])
 {
-    int pid, canale1[2], canale2[2];
-    int numeri[] = {1, 2, 3}, somma = 0;
+    int pid, p0p1[2], p1p0[2];
+    int numeri[] = {1, 2, 3, 4}, somma = 0;
 
-    pipe(canale1);
-    pipe(canale2);
+    pipe(p0p1);
+    pipe(p1p0);
 
     pid = fork();
 
@@ -19,27 +19,27 @@ int main(int argc, char *argv[])
 
         int numeri[DIM];
 
-        close(canale1[1]);
-        close(canale2[0]);
+        close(p0p1[1]);
+        close(p1p0[0]);
 
-        read(canale1[0], numeri, sizeof(numeri));
+        read(p0p1[0], numeri, sizeof(numeri));
 
         for (int i = 0; i < DIM; i++)
         {
             somma = somma + numeri[i];
         }
         printf("FIGLIO: somma %d\n", somma);
-        write(canale2[1], &somma, sizeof(somma));
+        write(p1p0[1], &somma, sizeof(somma));
 
         exit(0);
     }
 
-    close(canale1[0]);
-    close(canale2[1]);
+    close(p0p1[0]);
+    close(p1p0[1]);
 
-    write(canale1[1], numeri, sizeof(numeri));
+    write(p0p1[1], numeri, sizeof(numeri));
 
-    read(canale2[0], (void *)&somma, sizeof(somma));
+    read(p1p0[0], (void *)&somma, sizeof(somma));
     printf("PADRE: somma %d\n", somma);
     return 0;
 }

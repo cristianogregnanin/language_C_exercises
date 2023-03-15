@@ -22,11 +22,12 @@ int main(int argc, char *argv[])
         close(1);
         dup(p1p0[1]);
         close(p1p0[1]);
-        execl("/bin/cat", "cat", "file.txt", (char *)0);
+        execl("/bin/cat", "cat", argv[1], (char *)0);
         return -1;
     }
 
     pid = fork();
+
     if (pid == 0)
     {
         close(p1p0[1]);

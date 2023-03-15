@@ -61,7 +61,7 @@ void controllaArgomenti(int argc, char *argv[])
         exit(1);
     }
 
-    if (strcmp(argv[3],"-s")!=0)
+    if (strcmp(argv[3], "-s") != 0)
     {
         printf("Metodo errato");
         exit(2);

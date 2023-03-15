@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
         exit(2);
     }
 
-    //apro stream input
+    // apro stream input
 
     if ((stream = fopen(argv[1], "r")) == NULL)
     {
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
         exit(3);
     }
 
-    //prelevo stringa da  stream input
+    // prelevo stringa da  stream input
 
     for (numParole; !feof(stream); numParole++)
     {

@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 	}
 
 	struct sockaddr_in server_addr, client_addr;
-	int serverPort,n1read, n2read, n, soa, socketfd, clientlen = sizeof(client_addr), fd, on = 1;
+	int serverPort, n1read, n2read, n, soa, socketfd, clientlen = sizeof(client_addr), fd, on = 1;
 	Contatto_t contatti[MAX_LENGHT];
 
 	memset((char *)&server_addr, 0, sizeof(server_addr));
@@ -62,7 +62,6 @@ int main(int argc, char *argv[])
 	server_addr.sin_family = AF_INET;
 	server_addr.sin_port = htons(atoi(argv[2]));
 	server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
-
 
 	socketfd = socket(AF_INET, SOCK_STREAM, 0);
 
