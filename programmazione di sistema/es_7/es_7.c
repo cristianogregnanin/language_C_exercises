@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
     close(p2p3[1]);
     close(p3p0[1]);
 
-    while (read(p3p0[0], buffer, sizeof(buffer)) > 0)
+    while (read(p3p0[0], &buffer, sizeof(buffer)) > 0)
     {
         strncat(strimporto, &buffer, sizeof(buffer));
         if (buffer == '\n')
