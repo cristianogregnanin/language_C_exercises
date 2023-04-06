@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
             char ricerca[5];
             printf("Inserisci numero articolo da ricercare : ");
             scanf("%s",ricerca);
-            
+
             if (strcmp(ricerca, "esci") == 0) // chiusura di P1
             {
                 close(p1p2[WRITE]);
