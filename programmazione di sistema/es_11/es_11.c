@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
                 sprintf(articolo_finale, "ART. %d.", (atoi(ricerca) + 1));
                 sprintf(argomento_grep, "-P '(?<=%s)(?s).*(?=%s)", articolo_iniziale, articolo_finale);
 
-                execl("usr/bin/grep", "grep", "-z", "-o", argomento_grep, argv[1], NULL);
+                execl("/usr/bin/grep", "grep", "-z", "-o", argomento_grep, argv[1], NULL);
                 return -1;
             }
         }
