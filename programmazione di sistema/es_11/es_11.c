@@ -16,19 +16,18 @@ int main(int argc, char *argv[])
     if (fork() == 0)//apertura P1
     {
         int p1p2[2]; // pipe utilizzata per salvare l'articolo da ricercare
+        pipe(p1p2);
 
         while (1)
         {
-            pipe(p1p2);
 
-            close(p1p2[READ]);
-
-            char ricerca[5];
+            char ricerca[4];
             printf("Inserisci numero articolo da ricercare : ");
             scanf("%s",ricerca);
 
             if (strcmp(ricerca, "esci") == 0) // chiusura di P1
             {
+                close(p1p2[READ]);
                 close(p1p2[WRITE]);
                 printf("Chiusura del programma.");
                 exit(0);
@@ -40,7 +39,7 @@ int main(int argc, char *argv[])
             {
                 close(p1p2[WRITE]);
 
-                read(p1p2[READ], ricerca, 5);
+                read(p1p2[READ], ricerca, sizeof(ricerca));
 
                 // Controllo del range degli articoli. In più, viene controllato se atoi va a buon fine o meno
                 //(la funzione atoi ritorna 0 in caso di conversione in int non riuscita).
