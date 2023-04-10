@@ -1,0 +1,74 @@
+Si vuole scrivere un programma concorrente in linguaggio C che vuole cercare e mostrare uno specifico articolo della costituzione italiana.
+
+Esempio di costituzione: 
+$ cat costituzione.txt
+ART. 1.
+
+L'Italia è una Repubblica democratica, fondata sul lavoro.
+La sovranità appartiene al popolo, che la esercita nelle forme e nei limiti dell
+a Costituzione.
+
+ART. 2.
+
+La  Repubblica  riconosce  e  garantisce  i  diritti  inviolabili  dell'uomo,  s
+ia come singolo sia nelle formazioni sociali ove si svolge la sua personalità, e
+  richiede  l'adempimento  dei  doveri  inderogabili  di  solidarietà  politica,
+ economica e sociale.
+
+ART. 3.
+…..
+…..
+…..
+
+
+
+Il programma deve istanziare un un processo figlio P1 il quale richiede una stringa in input e la invia al processo P2 che si occuperà di ricercare l’articolo all’interno del file “costituzione.txt” presente in argv[1]. Se l’articolo viene trovato P2 lo mostra a video.
+
+Il processo P1 deve continuare a richiedere stringhe fino a quando non viene inserita una stringa “esci”.
+
+Il processo P2 usa grep per cercare. 
+Grep deve essere parametrizzato in questo modo: 
+grep -z -o -P '(?<=articolo_iniziale)(?s).*(?=articolo_finale)' argv[1] 
+
+dove “articolo_iniziale” e “articolo_finale” sono due stringhe che rappresentano l’estremo superiore e l’estremo inferiore dell’intervallo di ricerca e devono rispettare il seguente pattern: ART. X. ART. X+1. 
+
+Si utilizzi la funzione sprintf() per comporre le stringhe articolo_iniziale e articolo_finale a partire dall’input inserito dall’utente. 
+
+Si utilizzi sprintf per comporre il pattern di ricerca -P '(?<=articolo_iniziale)(?s).*(?=articolo_finale)'
+
+Si usi execl con questo pattern: 
+
+execl("/usr/bin/grep", "-z", "-o", argomento_grep, argv[1], (char *)0);
+
+dove argomento_grep è la stringa precedentemente preparata. 
+
+
+
+Esempio:
+$ ./a.out costituzione.txt
+Inserisci il numero dell’articolo che vuoi ricercare:
+-1
+
+
+Inserisci il numero dell’articolo che vuoi ricercare:
+1
+L'Italia è una Repubblica democratica, fondata sul lavoro.
+La sovranità appartiene al popolo, che la esercita nelle forme e nei limiti della Costituzione.
+
+
+
+Inserisci il numero dell’articolo che vuoi ricercare:
+11
+L'Italia ripudia la guerra come strumento di offesa alla libertà degli altri po-
+poli e come mezzo di risoluzione delle controversie internazionali; con-
+sente, in condizioni di parità con gli altri Stati, alle limitazioni di sovranità
+necessarie  ad  un  ordinamento  che  assicuri  la  pace  e  la  giustizia  fra  le
+Nazioni; promuove e favorisce le organizzazioni internazionali rivolte a tale
+scopo.
+
+
+Inserisci il numero dell’articolo che vuoi ricercare:
+Esci
+
+$
+
