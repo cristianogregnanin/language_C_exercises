@@ -2,21 +2,17 @@
 
 int main(int argc, char *argv[])
 {
+    int n;
+    do
+    {
+        printf("Inserisci N: ");
+        scanf("%d", &n);
+    } while (n <= 0);
 
-	int i, n;
+    for (int i = -n; i <= n; i++)
+    {
+        printf("%d\n", i);
+    }
 
-	do
-	{
-		printf("Inserisci un numero >= 0 : ");
-		scanf("%d", &n);
-	} while (n < 0);
-
-	i = -n;
-	do
-	{
-		printf("il numero vale: %d\n", i);
-		i = i + 1;
-	} while (i <= n);
-
-	return 0;
+    return 0;
 }
