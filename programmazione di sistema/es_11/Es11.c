@@ -1,67 +1,64 @@
 #include <stdio.h>
-#include <unistd.h>
-#include <string.h>
 #include <stdlib.h>
-#include <fcntl.h>
+#include <unistd.h>
 #include <sys/wait.h>
-#include <sys/types.h>
-
-#define READ 0
-#define WRITE 1
-
+#include <string.h>
 
 int main(int argc, char *argv[])
 {
-    char articolo_iniziale[18], articolo_finale[18];
-    char argomento_grep[56];
-    int pid;
-    int p1p2[2]; 
+    if (argc != 2)
+    {
+        printf("Errone nell'inserimento dei parametri\n");
+        return -1;
+    }
+
+    int pid, p1p2[2];
+    char argomento_grep[100], articolo_iniziale[10], articolo_finale[10], buff[4];
     pipe(p1p2);
-    pid=fork();
+    pid = fork();
+
     if (pid == 0)
     {
-       
-        close(p1p2[0]);
+        char articolo[4];
+
         while (1)
         {
+            printf("Inserisci il numero dell’articolo che vuoi ricercare:\n");
+            scanf("%s", articolo);
 
-            char ricerca[4];
-            printf("Inserisci numero articolo da ricercare : ");
-            scanf("%s",ricerca);
-
-            if (strcmp(ricerca, "esci") == 0) 
+            if (strcmp(articolo, "esci") == 0)
             {
                 close(p1p2[0]);
                 close(p1p2[1]);
-                printf("Chiusura del programma.");
                 exit(0);
             }
 
-            write(p1p2[1], ricerca, sizeof(ricerca));
-        }
-    }
-    pid=fork();
-    if (pid == 0) 
-    {
-        close(p1p2[1]);
-        char buff[4];
-        read(p1p2[0], &buff, sizeof(buff));
+            write(p1p2[1], articolo, sizeof(articolo));
 
+            pid = fork();
+            if (pid == 0)
+            {
+                close(p1p2[1]);
                 
-        if (atoi(buff) < 1 || atoi(buff) > 32)
-        {
-            printf("Articolo non esistente.");
-            exit(1);
+                read(p1p2[0], buff, sizeof(buff));
+                close(p1p2[0]);
+
+                sprintf(articolo_iniziale, "ART. %d.", atoi(buff));
+                sprintf(articolo_finale, "ART. %d.", atoi(buff) + 1);
+                sprintf(argomento_grep, "(?<=%s)(?s).*(?=%s)", articolo_iniziale, articolo_finale);
+
+                execl("/usr/bin/grep", "grep", "-z", "-o","-P", argomento_grep, argv[1], NULL);
+                return -1;
+            }
+
+            wait(&pid);
+          
         }
-        sprintf(articolo_iniziale, "ART. %d.", atoi(buff));
-        sprintf(articolo_finale, "ART. %d.", (atoi(buff) + 1));
-        sprintf(argomento_grep, "-P'(?<=%s)(?s).*(?=%s)'", articolo_iniziale, articolo_finale);
-        execl("/usr/bin/grep", "grep", "-z", "-o", argomento_grep, argv[1], NULL);
-        return -1;
     }
-    
+
+    wait(&pid);
     close(p1p2[0]);
     close(p1p2[1]);
-
     return 0;
 }
+
