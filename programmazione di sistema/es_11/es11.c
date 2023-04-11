@@ -16,7 +16,8 @@ int main(int argc, char *argv[])
         {
             
             printf("Inserisci il numero dell'articolo");
-            scanf("%d",&p1p2[1]);
+            scanf("%s",stringa);
+            write(p1p2[1],stringa,sizeof(stringa));
             close(p1p2[0]);
             exit(1);
         }
