@@ -13,20 +13,18 @@
 
 int main(int argc, char *argv[])
 {
+    if(argc != 2)
+    {
+        printf("Numero argomenti non valido.\n");
+        exit(1);
+    }
+
     char ricerca[4];
     int p1p2[2]; // pipe utilizzata per salvare l'articolo da ricercare
     pipe(p1p2);
 
     while (1)
     {
-        if (strcmp(ricerca, "esci") == 0) //uscita dal ciclo e conseguente chiusura del programma
-        {
-            printf("Chiusura del programma.\n");
-            close(p1p2[READ]);
-            close(p1p2[WRITE]);
-            break;
-        }
-
         int pid = fork();
         if (pid == 0) // apertura P1
         {
@@ -38,6 +36,15 @@ int main(int argc, char *argv[])
             exit(0);
         }
         wait(&pid);
+
+        read(p1p2[READ],ricerca,sizeof(ricerca));
+        if (strcmp(ricerca, "esci") == 0) //uscita dal ciclo e conseguente chiusura del programma
+        {
+            printf("Chiusura del programma.\n");
+            close(p1p2[READ]);
+            close(p1p2[WRITE]);
+            break;
+        }
 
         pid = fork();
         if (pid == 0) // apertura P2
