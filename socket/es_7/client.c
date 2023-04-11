@@ -42,7 +42,6 @@ int main(int argc, char *argv[])
     printf("vocali: %s\n", vocali);
     printf("consonanti: %s\n", consonanti);
 
-
     close(socketfd);
 
     return 0;

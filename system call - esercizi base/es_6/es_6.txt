@@ -1,0 +1,26 @@
+Scrivere un programma in linguaggio C che legge da argv una serie di stringhe,
+le ordina in senso crescente o decrescente in funzione del flag usato in argv[2].
+Si utilizzi un algoritmo di ordinamento a scelta. Si scriva il risultato
+sia a video che su un file il cui nome risiede in argv[1].
+
+Esempio:
+$ ./a.out file.txt --asc ciao a tutti
+a
+ciao
+tutti
+
+$ cat file.txt 
+a
+ciao
+tutti
+
+Esempio:
+$ ./a.out file.txt --desc ciao a tutti
+tutti
+ciao
+a
+
+$ cat file.txt 
+tutti
+ciao
+a

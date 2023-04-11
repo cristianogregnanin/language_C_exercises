@@ -1,4 +1,4 @@
 Scrivere un programma concorrente che realizzi il seguente comando:
 
-cat file.txt | more
+cat costituzione.txt | more
 

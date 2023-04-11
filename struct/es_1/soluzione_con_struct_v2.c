@@ -12,10 +12,9 @@ typedef struct
 studente_t older(studente_t a[], int n)
 {
 
-	int i, max, pos;
 	studente_t studente = a[0];
 
-	for (i = 1; i < n; i++)
+	for (int i = 1; i < n; i++)
 		if (a[i].eta > studente.eta)
 			studente = a[i];
 
@@ -43,9 +42,8 @@ int main(int argc, char *argv[])
 {
 
 	studente_t studenti[DIM];
-	int i;
 
-	for (i = 0; i < DIM; i++)
+	for (int i = 0; i < DIM; i++)
 		studenti[i] = crea_studente();
 
 	studente_t studente = older(studenti, DIM);

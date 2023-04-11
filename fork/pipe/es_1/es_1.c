@@ -2,46 +2,29 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#define DIM 3
-
 int main(int argc, char *argv[])
 {
-    int pid, canale1[2], canale2[2];
+    int pid, p1p0[2];
+    char buffer[80];
 
-    pipe(canale1);
-    pipe(canale2);
+    pipe(p1p0);
 
     pid = fork();
-    if (pid > 0)
-    {
-        int numeri[] = {1, 2, 3}, somma = 0;
 
-        close(canale1[0]);
-        close(canale2[1]);
-
-        write(canale1[1], numeri, sizeof(numeri));
-
-        read(canale2[0], (void *)&somma, sizeof(somma));
-        printf("PADRE: somma %d\n", somma);
-        exit(0);
-    }
-    else
+    if (pid == 0)
     {
 
-        int somma = 0, numeri[DIM];
-
-        close(canale1[1]);
-        close(canale2[0]);
-
-        read(canale1[0], numeri, sizeof(numeri));
-
-        for (int i = 0; i < DIM; i++)
-        {
-            somma = somma + numeri[i];
-        }
-        printf("FIGLIO: somma %d\n", somma);
-        write(canale2[1], &somma, sizeof(somma));
+        close(p1p0[0]);
+        char stringa[] = "Hello, world!\n";
+        write(p1p0[1], stringa, sizeof(stringa));
 
         exit(0);
     }
+
+    close(p1p0[1]);
+
+    read(p1p0[0], buffer, sizeof(buffer));
+
+    printf("PADRE: ricevuta stringa dal processo figlio: %s\n", buffer);
+    return 0;
 }
