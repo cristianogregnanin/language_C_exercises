@@ -5,7 +5,7 @@ essere invocato nel seguente modo:
 dove risultati.txt è un nome assoluto di file.
 
 Il processo P0 deve generare 2 processi figli: P1 e P2. 
-P1 deve interagire con l'utente, richiedendo delle stringhe (di lunghezza
+P1 deve interagire con l'utente, richiedendo delle stringhe (ogni stringa di lunghezza
 massima pari a 50 caratteri) che provvede ad inviare a P2 utilizzando una pipe.
 Il processo P1 continua a ricevere stringhe fin quando non riceve la stringa
 "esci".
