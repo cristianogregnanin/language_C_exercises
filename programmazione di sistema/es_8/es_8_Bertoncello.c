@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     pipe(p1p2);        // creazione della pipe p1p2
 
     pid = fork();
-    if (pid == 0) // processo p1
+    if (pid == 0) // processo p1              
     {
         close(p1p2[0]); // chiudiamo canale di lettura della pipe
 
