@@ -7,12 +7,8 @@
 
 int main(int argc, char *argv[])
 {
-    int p1p2[2];
-    int p2p0[2];
-    int pid;
-    char articolo_iniziale[30];
-    char articolo_finale[30];
-    char argomento_grep[30]
+    int p1p2[2], p2p0[2], pid;
+    char articolo_iniziale[30], articolo_finale[30], argomento_grep[30];
     char str[50];
 
     if (argc != 2)
