@@ -17,27 +17,31 @@ int main(int argc, char *argv[])
             
             printf("Inserisci il numero dell'articolo");
             scanf("%s",stringa);
+            if(strcmp(stringa,"esci")==0)
+            {
+                close(p1p2[1]);
+                close(p1p2[0]);
+                exit(1);
+            }
+        
             write(p1p2[1],stringa,sizeof(stringa));
             close(p1p2[0]);
             exit(1);
         }
+        wait(&pid);
         pid=fork();
         if(pid==0)
         {
-            tmp=p1p2[0];
+            read(p1p2[0],stringa,sizeof(stringa));
+            tmp=atoi(stringa);
             tmp++;
-            close(p1p2[1]);
             sprintf(stringa,"(?<=%d)(?s).*(?=%d)",p1p2[1],tmp);
             close(p1p2[1]);
+            close(p1p2[0]);
             execl("/usr/bin/grep", "-z", "-o", stringa, argv[1], (char *)0);
             return -1;
         }
-        sprintf(stringa,"%d",p1p2[0]);
-        if(strcmp(stringa,"esci")==0)
-            {
-                exit(1);
-            }
-        close(p1p2[1]);
-        close(p1p2[0]);
+        
+        
     }
 }
