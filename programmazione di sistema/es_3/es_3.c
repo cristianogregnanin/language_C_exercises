@@ -6,30 +6,23 @@
 
 int main(int argc, char *argv[])
 {
-    if (argc != 2)
-    {
-        printf("Numero parametri errato\n");
-        exit(1);
-    }
-
-    char stringa[1000], cnt[1000];
-    int p1p0[2], cnttot = 0;
-
+    char stringa[1000];
+    char conta[1000];
+    int p1p0[2];
+    int contatot = 0;
+    int pid = fork();
     pipe(p1p0);
     while (1)
     {
-        printf("Che parola vuoi cercare? ");
+        printf("Inserire la parola ");
         scanf("%s", stringa);
 
         if (strcmp(stringa, "fine") == 0)
         {
             close(p1p0[1]);
-            close(p1p0[0]);
-            printf("Numero di parole trovate: %d\n", cnttot);
+            close(p1p0[0]);           
             exit(1);
         }
-
-        int pid = fork();
 
         if (pid == 0)
         {
@@ -38,12 +31,12 @@ int main(int argc, char *argv[])
             dup(p1p0[1]);
             close(p1p0[1]);
 
-            execl("/usr/bin/grep", "grep", "-c", stringa, argv[1], (char *)0);
+            execl("/usr/bin/grep", "grep", stringa, argv[1], (char *)0);
             return -1;
         }
-        read(p1p0[0], cnt, sizeof(cnt));
-        printf("Il file ha %d '%s' \n", atoi(cnt), stringa);
-        cnttot += atoi(cnt);
+        read(p1p0[0], conta, sizeof(conta));
+        printf("Il file ha %d '%s' \n", atoi(conta), stringa);
+        contatot += atoi(conta);
     }
 
     return 0;
