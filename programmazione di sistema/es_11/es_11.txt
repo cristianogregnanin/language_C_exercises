@@ -1,4 +1,5 @@
-Si vuole scrivere un programma concorrente in linguaggio C che vuole cercare e mostrare uno specifico articolo della costituzione italiana.
+Si vuole scrivere un programma concorrente in linguaggio C che vuole cercare e
+mostrare uno specifico articolo della costituzione italiana.
 
 Esempio di costituzione: 
 $ cat costituzione.txt
@@ -22,19 +23,28 @@ ART. 3.
 
 
 
-Il programma deve istanziare un un processo figlio P1 il quale richiede una stringa in input e la invia al processo P2 che si occuperà di ricercare l’articolo all’interno del file “costituzione.txt” presente in argv[1]. Se l’articolo viene trovato P2 lo mostra a video.
+Il processo P0 richiede una stringa in input e la invia al processo P1 che si
+occuperà di ricercare l’articolo all’interno del file “costituzione.txt”
+presente in argv[1].
 
-Il processo P1 deve continuare a richiedere stringhe fino a quando non viene inserita una stringa “esci”.
+Se l’articolo viene trovato P1 lo invia a P0 il quale lo mostra a video. 
 
-Il processo P2 usa grep per cercare. 
+Il processo P0 deve continuare a richiedere stringhe fino a quando non viene
+inserita la stringa “esci”.
+
+Il processo P1 usa grep per cercare. 
 Grep deve essere parametrizzato in questo modo: 
 grep -z -o -P '(?<=articolo_iniziale)(?s).*(?=articolo_finale)' argv[1] 
 
-dove “articolo_iniziale” e “articolo_finale” sono due stringhe che rappresentano l’estremo superiore e l’estremo inferiore dell’intervallo di ricerca e devono rispettare il seguente pattern: ART. X. ART. X+1. 
+dove “articolo_iniziale” e “articolo_finale” sono due stringhe che
+rappresentano l’estremo superiore e l’estremo inferiore dell’intervallo
+di ricerca e devono rispettare il seguente pattern: ART. X. ART. X+1. 
 
-Si utilizzi la funzione sprintf() per comporre le stringhe articolo_iniziale e articolo_finale a partire dall’input inserito dall’utente. 
+Si utilizzi la funzione sprintf() per comporre le stringhe
+articolo_iniziale e articolo_finale a partire dall’input inserito dall’utente. 
 
-Si utilizzi sprintf per comporre il pattern di ricerca -P '(?<=articolo_iniziale)(?s).*(?=articolo_finale)'
+Si utilizzi sprintf per comporre il pattern di ricerca
+-P '(?<=articolo_iniziale)(?s).*(?=articolo_finale)'
 
 Si usi execl con questo pattern: 
 
@@ -53,7 +63,8 @@ Inserisci il numero dell’articolo che vuoi ricercare:
 Inserisci il numero dell’articolo che vuoi ricercare:
 1
 L'Italia è una Repubblica democratica, fondata sul lavoro.
-La sovranità appartiene al popolo, che la esercita nelle forme e nei limiti della Costituzione.
+La sovranità appartiene al popolo, che la esercita nelle forme
+e nei limiti della Costituzione.
 
 
 
