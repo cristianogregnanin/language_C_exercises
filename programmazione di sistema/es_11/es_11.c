@@ -73,7 +73,6 @@ int main(int argc, char *argv[])
     close(p2p0[1]);
 
     close(p1p2[0]);
-    close(p1p2[1]);
     wait(&pid);
     wait(&pid);
 
