@@ -78,5 +78,5 @@ int main(int argc, char *argv[])
 
     printf("Il file %s contiene %s vocali\n", argv[1], str_vocali);
 
-    return atoi(str_vocali);
+    return 0;
 }
