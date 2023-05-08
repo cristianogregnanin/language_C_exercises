@@ -49,11 +49,11 @@ int main(int argc, char *argv[])
     if (pid == 0)
     {
         int vocali = 0;
-        char buffer;
+        char carattere;
 
-        while (read(p1p2[0], &buffer, sizeof(buffer)) > 0)
+        while (read(p1p2[0], &carattere, sizeof(carattere)) > 0)
         {
-            if (vocale(buffer) == 0)
+            if (vocale(carattere) == 0)
             {
                 vocali++;
             }
