@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
         int vocali = 0;
         char buffer;
 
-        while (read(p1p2[0], &buffer, sizeof(buffer)))
+        while (read(p1p2[0], &buffer, sizeof(buffer)) > 0)
         {
             if (vocale(buffer) == 0)
             {
@@ -78,5 +78,5 @@ int main(int argc, char *argv[])
 
     printf("Il file %s contiene %s vocali\n", argv[1], str_vocali);
 
-    return 0;
+    return atoi(str_vocali);
 }
