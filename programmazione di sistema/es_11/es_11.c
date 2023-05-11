@@ -48,6 +48,8 @@ int main(int argc, char *argv[])
     pid = fork();
     if (pid == 0)
     {
+        close(p2p0[0]);
+
         int vocali = 0;
         char carattere;
 
@@ -59,6 +61,7 @@ int main(int argc, char *argv[])
             }
         }
 
+        close(p1p2[0]);
         sprintf(str_vocali, "%d", vocali);
 
         write(p2p0[1], str_vocali, strlen(str_vocali));
