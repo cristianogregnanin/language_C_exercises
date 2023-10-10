@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
 	memset((char *)&rem_indirizzo, 0, sizeof(rem_indirizzo));
 	rem_indirizzo.sin_family = AF_INET;
-	rem_indirizzo.sin_addr.s_addr = htonl(argv[1]);
+	rem_indirizzo.sin_addr.s_addr = inet_addr(argv[1]);
 	rem_indirizzo.sin_port = htons(SERVER_PORT);
 
 	socketfd = socket(AF_INET, SOCK_STREAM, 0);
