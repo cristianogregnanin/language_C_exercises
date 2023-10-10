@@ -12,10 +12,16 @@
 #include <unistd.h>
 
 #define DIMBUFF 512
-#define SERVER_PORT 1313
+#define SERVER_PORT 40000
 
 int main(int argc, char *argv[])
 {
+
+    if (argc != 4)
+    {
+        printf("Numero argomenti sbagliato\n");
+        exit(1);
+    }
 
 	struct sockaddr_in servizio;
 
@@ -25,8 +31,8 @@ int main(int argc, char *argv[])
 	memset((char *)&servizio, 0, sizeof(servizio));
 
 	servizio.sin_family = AF_INET;
-	servizio.sin_addr.s_addr = htonl(INADDR_ANY);
-	servizio.sin_port = htons(SERVER_PORT);
+	servizio.sin_port = htons(atoi(argv[3]));
+	servizio.sin_addr.s_addr = inet_addr(argv[2]);
 
 	socketfd = socket(AF_INET, SOCK_STREAM, 0);
 
