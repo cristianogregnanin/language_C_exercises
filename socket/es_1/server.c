@@ -29,11 +29,6 @@ int main(int argc, char *argv[])
 	servizio.sin_addr.s_addr = htonl(INADDR_ANY);
 	servizio.sin_port = htons(SERVER_PORT);
 
-	memset((char *)&rem_indirizzo, 0, sizeof(rem_indirizzo));
-	rem_indirizzo.sin_family = AF_INET;
-	rem_indirizzo.sin_addr.s_addr = inet_addr(argv[1]);
-	rem_indirizzo.sin_port = htons(SERVER_PORT);
-
 	socketfd = socket(AF_INET, SOCK_STREAM, 0);
 
 	// Bind
@@ -52,8 +47,7 @@ int main(int argc, char *argv[])
 		soa = accept(socketfd, (struct sockaddr *)&rem_indirizzo, &fromlen);
 
 		// risoluzione del client
-		host = gethostbyaddr((char *)&rem_indirizzo.sin_addr, sizeof(rem_indirizzo.sin_addr), AF_INET);
-		printf("\n\n Stabilita la connessione con il client %s", host->h_name);
+		printf("\n\n Stabilita la connessione con il client");
 
 		// ricevere i dati dal client
 		nread = read(soa, &carattere, sizeof(carattere));
