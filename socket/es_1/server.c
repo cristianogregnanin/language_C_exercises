@@ -11,7 +11,7 @@
 #include <unistd.h>
 #include <ctype.h>
 
-#define SERVER_PORT 1313
+#define SERVER_PORT 40000
 #define SOCKET_ERROR ((int)-1)
 #define DIMBUFF 512
 
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
 	listen(socketfd, 10);
 
-	// attensa del client
+	// attesa del client
 	for (;;)
 	{
 		printf("\n\nServer in ascolto...\n");
