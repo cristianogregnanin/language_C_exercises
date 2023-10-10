@@ -47,8 +47,7 @@ int main(int argc, char *argv[])
 		soa = accept(socketfd, (struct sockaddr *)&rem_indirizzo, &fromlen);
 
 		// risoluzione del client
-		host = gethostbyaddr((char *)&rem_indirizzo.sin_addr, sizeof(rem_indirizzo.sin_addr), AF_INET);
-		printf("\n\n Stabilita la connessione con il client %s", host->h_name);
+		printf("\n\n Stabilita la connessione con il client");
 
 		// ricevere i dati dal client
 		nread = read(soa, &carattere, sizeof(carattere));
