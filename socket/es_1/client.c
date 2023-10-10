@@ -3,6 +3,7 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <arpa/inet.h>
 #include <netdb.h>
 #include <string.h>
 #include <fcntl.h>
@@ -26,8 +27,8 @@ int main(int argc, char *argv[])
 	struct sockaddr_in servizio;
 
 	int nread, socketfd;
-	char carattere[strlen(argv[1])];
-
+	char carattere;
+	
 	memset((char *)&servizio, 0, sizeof(servizio));
 
 	servizio.sin_family = AF_INET;
@@ -38,11 +39,8 @@ int main(int argc, char *argv[])
 
 	connect(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
 
-	// scrittura del carattere all'interno della socket
-	// carattere = 'a';//argv[1];
-	strcpy(carattere, argv[1]);
 
-	write(socketfd, &carattere, sizeof(carattere));
+	write(socketfd, &argv[1][0], sizeof(argv[1][0]));
 
 	// ricevere i dati dal client
 	nread = read(socketfd, &carattere, sizeof(carattere));
@@ -50,7 +48,7 @@ int main(int argc, char *argv[])
 	// chiusura socket
 	close(socketfd);
 
-	printf("\n\n\t\tconvertito %s in %s\n\n", argv[1], carattere);
+	printf("\n\n\t\tconvertito %c in %c\n\n", argv[1][0], carattere);
 
 	return 0;
 }
