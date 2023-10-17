@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 			return -1;
 		}
 
-		close(socketfd);
+		close(soa);
 	}
 
 	return 0;
