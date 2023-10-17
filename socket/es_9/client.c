@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    char buff;
+    char buff[1];
     int nread, socketfd;
     struct sockaddr_in servizio;
     
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     printf("Connessione stabilita.\n");
 
     write(socketfd,argv[1],strlen(argv[1])); //invio nome del file da ricercare nel server
-    while(nread = read(socketfd,buff,sizeof(buff))>0)
+    while(nread = read(socketfd,buff,sizeof(buff))!=0)
     {
         write(1,buff,nread);//scrittura su STD_OUT dei dati ricevuti (contenuto del file richiesto)
     }
