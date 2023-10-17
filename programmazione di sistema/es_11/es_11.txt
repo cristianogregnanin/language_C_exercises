@@ -1,0 +1,12 @@
+Si vuole realizzare un software concorrente in linguaggio C che legga un file di testo da argv[1] e conteggi il numero di vocali presenti nel file.
+Una volta effettuato il conteggio il programma principale deve mostrarlo a video.
+
+Note operative:
+P0 genera P1 il quale legge il contenuto del file usando il comando cat. 
+P2 legge da pipe il flusso di caratteri e per ogni carattere verifica se è una vocale, in caso positivo aggiorna il conteggio. 
+P2 invia a P0 il totale 
+P0 stampa a video il totale.
+
+Esempio:
+$ ./a.out file.txt
+Nel file sono presenti 10 vocali. 

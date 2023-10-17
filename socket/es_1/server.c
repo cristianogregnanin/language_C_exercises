@@ -11,7 +11,7 @@
 #include <unistd.h>
 #include <ctype.h>
 
-#define SERVER_PORT 1313
+#define SERVER_PORT 40000
 #define SOCKET_ERROR ((int)-1)
 #define DIMBUFF 512
 
@@ -31,39 +31,38 @@ int main(int argc, char *argv[])
 
 	socketfd = socket(AF_INET, SOCK_STREAM, 0);
 
-	//Bind
+	// Bind
 	setsockopt(socketfd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
 	bind(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
 
 	listen(socketfd, 10);
 
-	//attensa del client
+	// attesa del client
 	for (;;)
 	{
 		printf("\n\nServer in ascolto...\n");
 		fflush(stdout);
 
-		//accept
+		// accept
 		soa = accept(socketfd, (struct sockaddr *)&rem_indirizzo, &fromlen);
 
-		//risoluzione del client
-		host = gethostbyaddr((char *)&rem_indirizzo.sin_addr, sizeof(rem_indirizzo.sin_addr), AF_INET);
-		printf("\n\n Stabilita la connessione con il client %s", host->h_name);
+		// risoluzione del client
+		printf("\n\n Stabilita la connessione con il client");
 
-		//ricevere i dati dal client
+		// ricevere i dati dal client
 		nread = read(soa, &carattere, sizeof(carattere));
 
 		printf("\n\tRicevuto: %c\n", carattere);
 		risposta = toupper(carattere);
 		printf("\tconvertito %c in %c\n\n\n", carattere, risposta);
 
-		//scrittura del carattere all'interno della socket
+		// scrittura del carattere all'interno della socket
 		write(soa, &risposta, sizeof(risposta));
 
-		//chiusura socket
+		// chiusura socket
 		close(soa);
 
-		//close(socketfd);
+		// close(socketfd);
 	}
 
 	return 0;

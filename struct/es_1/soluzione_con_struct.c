@@ -12,10 +12,10 @@ typedef struct
 int older(studente_t a[], int n)
 {
 
-	int i, max = a[0].eta, pos;
+	int max = a[0].eta, pos;
 	studente_t studente;
 
-	for (i = 1; i < n; i++)
+	for (int i = 1; i < n; i++)
 	{
 		studente = a[i];
 		if (studente.eta > max)

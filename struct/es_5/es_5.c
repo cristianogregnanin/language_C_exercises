@@ -14,13 +14,34 @@ typedef struct
 int cerca(char matricola[], studente_t studenti[])
 {
 
-	int i;
-	for (i = 0; i < DIM; i++)
+	for (int i = 0; i < DIM; i++)
 		if (strcmp(matricola, studenti[i].matricola) == 0)
 			return i;
 	return -1;
 }
+studente_t popola()
+{
+	studente_t studente;
+	printf("inserisci matricola: ");
+	scanf("%s", studente.matricola);
 
+	printf("inserisci nome: ");
+	scanf("%s", studente.nome);
+
+	printf("inserisci eta: ");
+	scanf("%d", &studente.eta);
+	return studente;
+}
+void modifica(studente_t studenti[], int pos)
+{
+	printf("inserisci il nuovo nome: ");
+	scanf("%s", studenti[pos].nome);
+
+	printf("inserisci la nuova eta: ");
+	scanf("%d", &studenti[pos].eta);
+
+	printf("studente modificato\n");
+}
 int main(int argc, char *argv[])
 {
 
@@ -30,15 +51,7 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < DIM; i++)
 	{
-
-		printf("inserisci matricola: ");
-		scanf("%s", studenti[i].matricola);
-
-		printf("inserisci nome: ");
-		scanf("%s", studenti[i].nome);
-
-		printf("inserisci eta: ");
-		scanf("%d", &studenti[i].eta);
+		studenti[i] = popola();
 	}
 
 	printf("inserisci matricola da modificare: ");
@@ -48,14 +61,13 @@ int main(int argc, char *argv[])
 
 	if (pos >= 0)
 	{
-
-		printf("inserisci il nuovo nome: ");
-		scanf("%s", studenti[pos].nome);
-
-		printf("inserisci la nuova eta: ");
-		scanf("%d", &studenti[pos].eta);
-
-		printf("studente modificato");
+		modifica(studenti, pos);
+		for (i = 0; i < DIM; i++)
+		{
+			printf("%s\n", studenti[i].matricola);
+			printf("%s\n", studenti[i].nome);
+			printf("%d\n\n", studenti[i].eta);
+		}
 	}
 	else
 	{
