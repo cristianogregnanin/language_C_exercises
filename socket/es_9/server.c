@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 
 		if (pid == 0)
 		{
-			char nome_file[20];
+			char nome_file[100];
 			close(socketfd);
 			read(soa, nome_file, sizeof(nome_file));
 			printf("invio nome file: %s\n", nome_file);
@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 			return -1;
 		}
 
-		close(socketfd);
+		close(soa);
 	}
 
 	return 0;
