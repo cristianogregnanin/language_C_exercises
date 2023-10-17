@@ -1,0 +1,1 @@
+L'esercizio non presenta errori di stampa sia nella codifica sia nella stampa

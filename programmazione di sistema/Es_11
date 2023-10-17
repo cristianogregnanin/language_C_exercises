@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <sys/wait.h>
+#include <sys/types.h>
+
+int main(int argc, char *argv[])
+{
+    int pid;
+    char ArtIn[20], ArtFin[20];
+    char ArtRicerca[100];
+    char ricerca[4];
+
+    pid = fork();
+    if (pid == 0) // processo 1
+    {
+        int p1p2[2];
+        pipe(p1p2); // pipe p1 p2
+        while (1)
+        {
+            printf("Inserisci numero articolo da ricercare : ");
+            scanf("%s", ricerca);
+            if (strcmp(ricerca, "esci") == 0) // se inserisco la stringa esci il programma termina chiudendo tutti i canali della pipe
+            {
+                close(p1p2[0]);
+                close(p1p2[1]);
+                printf("programma terminato.");
+                exit(0);
+            }
+            write(p1p2[1], ricerca, sizeof(ricerca)); // system call write per scrivere all'interno della pipe l'articolo da ricercare
+
+            pid = fork();
+            if (pid == 0) // processo 2
+            {
+                close(p1p2[1]);                              // chiusura canale di scrittura
+                read(p1p2[0], ricerca, sizeof(ricerca));     // leggo da pipe la stringa da ricercare
+                if (atoi(ricerca) < 1 || atoi(ricerca) > 32) // nel caso venga inserito un numero minore di 1 o maggiore di 32 esce dal processo
+                {
+                    printf("Articolo non esistente.");
+                    exit(1);
+                }
+                sprintf(ArtIn, "ART. %d.", atoi(ricerca));
+                sprintf(ArtFin, "ART. %d.", (atoi(ricerca) + 1));
+                sprintf(ArtRicerca, "-P '(?<=%s)(?s).*(?=%s)", ArtIn, ArtFin);
+                execl("/usr/bin/grep", "grep", "-z", "-o", ArtRicerca, argv[1], NULL); // execl con grep
+                return -1;
+            }
+        }
+    }
+    return 0;
+}

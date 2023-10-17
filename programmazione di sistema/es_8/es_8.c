@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     int p1p2[2], pid;
     char stringa[50];
 
-    pipe(p1p2);
+    pipe(p1p2); // pipe per processo p1 e p2
 
     pid = fork();
     if (pid == 0)
