@@ -23,12 +23,9 @@ int main(int argc, char *argv[])
         printf("Numero argomenti sbagliato\n");
         exit(1);
     }
-
 	struct sockaddr_in servizio;
-
 	int nread, socketfd;
 	char carattere;
-	
 	memset((char *)&servizio, 0, sizeof(servizio));
 
 	servizio.sin_family = AF_INET;
@@ -36,9 +33,8 @@ int main(int argc, char *argv[])
 	servizio.sin_addr.s_addr = inet_addr(argv[2]);
 
 	socketfd = socket(AF_INET, SOCK_STREAM, 0);
-
 	connect(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
-
+	printf("Stabilita la connessione con il server..\n");
 
 	write(socketfd, &argv[1][0], sizeof(argv[1][0]));
 
@@ -48,7 +44,7 @@ int main(int argc, char *argv[])
 	// chiusura socket
 	close(socketfd);
 
-	printf("\n\n\t\tconvertito %c in %c\n\n", argv[1][0], carattere);
+	printf("\n\t\tConvertito carattere %c in %c\n\n", argv[1][0], carattere);
 
 	return 0;
 }
