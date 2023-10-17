@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
 
 	struct sockaddr_in servizio, rem_indirizzo;
 	int pid, nread, soa, socketfd, client_len, fd, on = 1, fromlen = sizeof(servizio);
-	char risposta, nome_file[20];
 
 	memset((char *)&servizio, 0, sizeof(servizio));
 
@@ -42,23 +41,25 @@ int main(int argc, char *argv[])
 		printf("\n\nServer in ascolto...\n");
 		fflush(stdout);
 
-		// accept
 		soa = accept(socketfd, (struct sockaddr *)&rem_indirizzo, &fromlen);
 
 		pid = fork();
 
 		if (pid == 0)
 		{
+			char nome_file[20];
+			close(socketfd);
 			read(soa, nome_file, sizeof(nome_file));
-			printf("nome file: %s\n", nome_file);
+			printf("invio nome file: %s\n", nome_file);
 			fflush(stdout);
+			close(1);
+			dup(soa);
+			close(soa);
 			execl("/usr/bin/cat", "cat", nome_file, (char *)0);
 			return -1;
 		}
-		// risoluzione del client
-		// printf("\n\n Stabilita la connessione con il client");
 
-		// close(socketfd);
+		close(socketfd);
 	}
 
 	return 0;

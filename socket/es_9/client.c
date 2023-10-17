@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	}
 	struct sockaddr_in servizio;
 	int nread, socketfd;
-	char carattere;
+	char buff[1];
 	memset((char *)&servizio, 0, sizeof(servizio));
 
 	servizio.sin_family = AF_INET;
@@ -36,16 +36,14 @@ int main(int argc, char *argv[])
 	connect(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
 	printf("Stabilita la connessione con il server..\n");
 
-	printf("nome file: %s\n", argv[1]);
 	write(socketfd, argv[1], strlen(argv[1]));
 
-	// ricevere i dati dal client
-	// nread = read(socketfd, &carattere, sizeof(carattere));
-
-	// chiusura socket
+	while (nread = read(socketfd, buff, sizeof(buff)) > 0)
+	{
+		write(1, buff, nread);
+	}
+	printf("dopo il while ma prima della close");
 	close(socketfd);
-
-	// printf("\n\t\tConvertito carattere %c in %c\n\n", argv[1][0], carattere);
-
+	printf("dopo  della close");
 	return 0;
 }
