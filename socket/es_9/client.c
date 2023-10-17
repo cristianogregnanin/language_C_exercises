@@ -42,10 +42,10 @@ int main(int argc, char *argv[])
 	{
 		write(1, buff, nread);
 	}
-	//printf("\ndopo il while ma prima della close\n");
+	// printf("\ndopo il while ma prima della close\n");
 
 	close(socketfd);
 
-	//printf("dopo  della close");
+	// printf("dopo  della close");
 	return 0;
 }
