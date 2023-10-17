@@ -40,12 +40,11 @@ int main(int argc, char *argv[])
 	{
 		printf("\n\nServer in ascolto...\n");
 		fflush(stdout);
-
 		soa = accept(socketfd, (struct sockaddr *)&rem_indirizzo, &fromlen);
 
 		pid = fork();
 
-		if (pid == 0)
+		if(pid == 0)
 		{
 			char nome_file[20];
 			close(socketfd);
@@ -58,8 +57,9 @@ int main(int argc, char *argv[])
 			execl("/usr/bin/cat", "cat", nome_file, (char *)0);
 			return -1;
 		}
-
+		wait(&pid);
 		close(socketfd);
+		exit(0);
 	}
 
 	return 0;
