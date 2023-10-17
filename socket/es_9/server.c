@@ -6,6 +6,7 @@
 #include <netdb.h>
 #include <string.h>
 #include <fcntl.h>
+#include <sys/wait.h>
 #include <signal.h>
 #include <errno.h>
 #include <unistd.h>
@@ -58,9 +59,11 @@ int main(int argc, char *argv[])
 			execl("/usr/bin/cat", "cat", nome_file, (char *)0);
 			return -1;
 		}
+		wait(&pid);
+		
+		fflush(stdout);
 
-		close(socketfd);
 	}
-
+	close(socketfd);
 	return 0;
 }
