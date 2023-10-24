@@ -18,30 +18,29 @@
 int main(int argc, char *argv[])
 {
 
-	if (argc != 4)
-	{
-		printf("Numero argomenti sbagliato\n");
-		exit(1);
-	}
-	struct sockaddr_in servizio;
-	int nread, socketfd;
-	char buff[1];
-	memset((char *)&servizio, 0, sizeof(servizio));
+    if (argc != 4)
+    {
+        printf("Numero argomenti sbagliato\n");
+        exit(1);
+    }
+    struct sockaddr_in servizio;
+    int nread, socketfd;
+    char buff[1];
+    memset((char *)&servizio, 0, sizeof(servizio));
 
-	servizio.sin_family = AF_INET;
-	servizio.sin_port = htons(atoi(argv[3]));
-	servizio.sin_addr.s_addr = inet_addr(argv[2]);
+    servizio.sin_family = AF_INET;
+    servizio.sin_port = htons(atoi(argv[3]));
+    servizio.sin_addr.s_addr = inet_addr(argv[2]);
 
-	socketfd = socket(AF_INET, SOCK_STREAM, 0);
-	connect(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
-	printf("Stabilita la connessione con il server..\n");
+    socketfd = socket(AF_INET, SOCK_STREAM, 0);
+    connect(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
+    printf("Stabilita la connessione con il server..\n");
 
-	write(socketfd, argv[1], strlen(argv[1]));
+    write(socketfd, argv[1], strlen(argv[1]));
 
-
-	close(0);
-	dup(socketfd);
-	close(socketfd);
-	execl("/usr/bin/tee", "tee", "destination.txt", (char *)0);
-	return -1;
+    close(0);
+    dup(socketfd);
+    close(socketfd);
+    execl("/usr/bin/tee", "tee", "ricevuto.txt", (char *)0);
+    return -1;
 }

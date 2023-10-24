@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 {
 
 	struct sockaddr_in servizio, rem_indirizzo;
-	int pid, nread, soa, socketfd, client_len, fd, on = 1, fromlen = sizeof(servizio);
+	int pid, soa, socketfd, on = 1, fromlen = sizeof(servizio);
 
 	memset((char *)&servizio, 0, sizeof(servizio));
 
@@ -30,11 +30,9 @@ int main(int argc, char *argv[])
 
 	socketfd = socket(AF_INET, SOCK_STREAM, 0);
 
-	// Bind
 	setsockopt(socketfd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
 	bind(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
 
-	// attesa del client
 	while (1)
 	{
 		listen(socketfd, 10);
@@ -51,7 +49,6 @@ int main(int argc, char *argv[])
 			close(socketfd);
 			int bytes_read = read(soa, nome_file, sizeof(nome_file));
 			nome_file[bytes_read] = '\0';
-			fflush(stdout);
 			close(1);
 			dup(soa);
 			close(soa);
