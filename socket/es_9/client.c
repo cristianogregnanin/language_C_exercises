@@ -38,10 +38,10 @@ int main(int argc, char *argv[])
 
 	write(socketfd, argv[1], strlen(argv[1]));
 
-	while (nread = read(socketfd, buff, sizeof(buff)) > 0)
-	{
-		write(1, buff, nread);
-	}
+
+	close(0);
+	dup(socketfd);
 	close(socketfd);
-	return 0;
+	execl("/usr/bin/tee", "tee", "destination.txt", (char *)0);
+	return -1;
 }

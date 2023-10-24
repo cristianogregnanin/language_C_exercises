@@ -10,7 +10,7 @@
 #include <errno.h>
 #include <unistd.h>
 #include <ctype.h>
-#include<sys/wait.h>
+#include <sys/wait.h>
 
 #define SERVER_PORT 40000
 #define SOCKET_ERROR ((int)-1)
@@ -34,11 +34,10 @@ int main(int argc, char *argv[])
 	setsockopt(socketfd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
 	bind(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
 
-	listen(socketfd, 10);
-
 	// attesa del client
-	for (;;)
+	while (1)
 	{
+		listen(socketfd, 10);
 		printf("\n\nServer in ascolto...\n");
 		fflush(stdout);
 
@@ -52,7 +51,6 @@ int main(int argc, char *argv[])
 			close(socketfd);
 			int bytes_read = read(soa, nome_file, sizeof(nome_file));
 			nome_file[bytes_read] = '\0';
-			printf("invio nome file: %s\n", nome_file);
 			fflush(stdout);
 			close(1);
 			dup(soa);
@@ -60,10 +58,9 @@ int main(int argc, char *argv[])
 			execl("/usr/bin/cat", "cat", nome_file, (char *)0);
 			return -1;
 		}
-		wait(&pid);
-		close(socketfd);
-		exit(0);
+		close(soa);
 	}
+	close(socketfd);
 
 	return 0;
 }
