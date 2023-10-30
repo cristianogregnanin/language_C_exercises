@@ -10,57 +10,53 @@
 #include <errno.h>
 #include <ctype.h>
 #include <unistd.h>
+#include <arpa/inet.h>
+#include <sys/wait.h>
 
-#define DIMBUFF 512
-#define SERVER_PORT 1313
+#define DIMBUFF 4096
 
 int main(int argc, char *argv[])
 {
+	if (argc != 5)
+	{
+		printf("Numero argomenti sbagliato\n");
+		// exit(1);
+	}
 
 	struct sockaddr_in servizio;
 
-	int nread, socketfd;
-	char str[DIMBUFF], occorrenze[DIMBUFF];
-	char carattere[strlen(argv[2])];
-	strcpy(carattere, argv[2]);
-
-	FILE *fd;
-
-	// apro file
-	fd = fopen(argv[1], "r");
-
-	// leggo il file
-	fscanf(fd, "%s", str);
-
-	// chiudo il file
-	fclose(fd);
-
-	printf("il contenuto del file è: %s\n\n\n", str);
-	printf("il carattere da ricercare è: %s\n\n\n", carattere);
+	int socketfd, fd, pid;
+	ssize_t nread;
+	char occorrenze[DIMBUFF];
 
 	memset((char *)&servizio, 0, sizeof(servizio));
 
 	servizio.sin_family = AF_INET;
-	servizio.sin_addr.s_addr = htonl(INADDR_ANY);
-	servizio.sin_port = htons(SERVER_PORT);
+	servizio.sin_port = htons(atoi(argv[4]));
+	servizio.sin_addr.s_addr = inet_addr(argv[3]);
 
 	socketfd = socket(AF_INET, SOCK_STREAM, 0);
 
 	connect(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
 
-	// scrittura del carattere all'interno della socket
-	write(socketfd, str, strlen(str));
-	read(socketfd, &nread, sizeof(int));
+	write(socketfd, &argv[2][0], sizeof(argv[2][0]));
 
-	write(socketfd, carattere, sizeof(carattere));
+	pid = fork();
+	if (pid == 0)
+	{
+		close(1);
+		dup(socketfd);
+		close(socketfd);
+		execl("/usr/bin/cat", "cat", argv[1], NULL);
+		return -1;
+	}
 
-	// ricevere i dati dal client
-	read(socketfd, &occorrenze, sizeof(occorrenze));
+	// fin qua ok
 
-	// chiusura socket
+	read(socketfd, occorrenze, sizeof(occorrenze));
+
+	printf("\n\til carattere %s compare %s volte nel file %s\n\n", argv[2], occorrenze, argv[1]);
+
 	close(socketfd);
-
-	printf("\n\til carattere %s compare %s volte nella stringa %s\n\n", carattere, occorrenze, str);
-
 	return 0;
 }

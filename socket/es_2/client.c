@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 
 	struct sockaddr_in servizio;
 
-	int nread, socketfd;
+	int socketfd;
 	char str[DIMBUFF];
 
 	FILE *fd;
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 	write(socketfd, str, strlen(str));
 
 	// ricevere i dati dal client
-	nread = read(socketfd, str, sizeof(str));
+	read(socketfd, str, sizeof(str));
 
 	// chiusura socket
 	close(socketfd);

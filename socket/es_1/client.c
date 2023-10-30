@@ -18,13 +18,13 @@
 int main(int argc, char *argv[])
 {
 
-    if (argc != 4)
-    {
-        printf("Numero argomenti sbagliato\n");
-        exit(1);
-    }
+	if (argc != 4)
+	{
+		printf("Numero argomenti sbagliato\n");
+		exit(1);
+	}
 	struct sockaddr_in servizio;
-	int nread, socketfd;
+	int socketfd;
 	char carattere;
 	memset((char *)&servizio, 0, sizeof(servizio));
 
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 	write(socketfd, &argv[1][0], sizeof(argv[1][0]));
 
 	// ricevere i dati dal client
-	nread = read(socketfd, &carattere, sizeof(carattere));
+	read(socketfd, &carattere, sizeof(carattere));
 
 	// chiusura socket
 	close(socketfd);

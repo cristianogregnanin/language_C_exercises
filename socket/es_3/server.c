@@ -1,34 +1,24 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <unistd.h>
 #include <netinet/in.h>
 #include <netdb.h>
+#include <fcntl.h>
 
-#define SERVER_PORT 1313
+#define SERVER_PORT 40005
 #define SOCKET_ERROR ((int)-1)
 #define DIMBUFF 512
-
-void inverti(char str[], char newstr[], int n)
-{
-
-	int i, j = 0;
-	for (i = n - 1; i >= 0; i--)
-	{
-		newstr[j] = str[i];
-		j++;
-	}
-}
 
 int main(int argc, char *argv[])
 {
 
 	struct sockaddr_in servizio, rem_indirizzo;
 	struct hostent *host;
-	int nread, soa, socketfd, client_len, fd, on = 1, fromlen = sizeof(servizio);
-	char carattere, str[DIMBUFF] = "", buffer[DIMBUFF] = "";
-	int ct = 0, i, len;
+	int ct, nread, soa, socketfd, client_len, fd, on = 1, fromlen = sizeof(servizio);
+	char carattere, buffer[DIMBUFF];
 
 	memset((char *)&servizio, 0, sizeof(servizio));
 
@@ -48,41 +38,40 @@ int main(int argc, char *argv[])
 	for (;;)
 	{
 		ct = 0;
-		buffer[0] = '\0';
-		printf("\n\nServer in ascolto...");
+		printf("\nServer in ascolto...\n");
 
-		// accept
 		soa = accept(socketfd, (struct sockaddr *)&rem_indirizzo, &fromlen);
 
 		// risoluzione del client
 		host = gethostbyaddr((char *)&rem_indirizzo.sin_addr, sizeof(rem_indirizzo.sin_addr), AF_INET);
-		printf("\n\n Stabilita la connessione con il client %s", host->h_name);
-
-		// ricevere i dati dal client
-		nread = read(soa, &str, sizeof(str));
-
-		printf("\n\tRicevuta stringa %s dimensione: %d\n", str, nread);
-		write(soa, &nread, sizeof(nread));
+		printf("\n\tStabilita la connessione con il client %s", host->h_name);
 
 		nread = read(soa, &carattere, sizeof(carattere));
-		printf("\n\tRicevuto carattere %c dimensione: %d\n", carattere, nread);
+		printf("\n\tRicevuto carattere %c\n", carattere);
 
-		len = strlen(str);
-		for (i = 0; i < len; i++)
+		while ((nread = read(soa, buffer, sizeof(buffer))) > 0)
 		{
-			if (str[i] == carattere)
-				ct++;
+			for (int i = 0; i < strlen(buffer); i++)
+			{
+				if (buffer[i] == carattere)
+				{
+					ct++;
+				}
+			}
 		}
 
-		snprintf(buffer, DIMBUFF, "%d", ct);
+		char ct_string[DIMBUFF];
+		sprintf(ct_string, "%d\n", ct);
 
-		write(soa, buffer, strlen(buffer));
+		printf("\n\til carattere %c compare %s volte \n", carattere, ct_string);
 
-		printf("\n\tIl carattere %c compare %d volte in %s\n\n", carattere, ct, str);
+		// fin qua ok
 
-		// chiusura socket
+		write(soa, ct_string, strlen(ct_string));
+
 		close(soa);
 	}
 
+	close(socketfd);
 	return 0;
 }
