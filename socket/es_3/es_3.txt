@@ -1,8 +1,8 @@
 Si progetti in linguaggio C un applicazione client server cosi
 strutturata:
 il client legge una stringa e un carattere a piacere da argv.
-Il cliente al server il contenuto del file il cui nome è in argv[1] e
-il carattere presente in argv[3]
+Il cliente manda al server il contenuto del file il cui nome è in argv[1] e
+il carattere presente in argv[2]
 il server conta quante volte il carattere compare nel flusso di dati
 ricevuto in input e ritorna il risultato al client.
 
