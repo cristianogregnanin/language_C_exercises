@@ -24,17 +24,11 @@ void EliminaCarattere(char stringa[], char c)
 }
 void controllaParametri(int argc, char *argv[])
 {
-    if (argc != 3)
+    if (argc != 2)
     {
         printf("Non hai inserito i parametri necessari \n");
-        printf("Uso: $./server <server-ip> -p <porta>\n");
+        printf("Uso: $./server <porta>\n");
         exit(0);
-    }
-
-    if (strcmp(argv[1], "-p") != 0)
-    {
-        printf("Hai inserito i parametri in maniera errata \n");
-        exit(1);
     }
 }
 
@@ -60,7 +54,6 @@ int main(int argc, char *argv[])
     for (;;)
     {
         printf("\n Server in ascolto... \n");
-        fflush(stdout);
 
         soa = accept(socketfd, (struct sockaddr *)&rem_indirizzo, &fromlen);
         pid = fork();
@@ -73,10 +66,13 @@ int main(int argc, char *argv[])
 
             EliminaCarattere(stringa, car);
 
-            write(soa, stringa, sizeof(stringa));
+            write(soa, stringa, strlen(stringa));
 
             close(soa);
             exit(0);
         }
+        close(soa);
     }
+    close(socketfd);
+    return 0;
 }
