@@ -4,11 +4,11 @@ Il server deve inviare al client la stringa senza il carattere.
 Si controllino opportunamente argc e argv sia nel client che nel server
 
 Esempio
-$./server <server-ip> -p <porta>
-$./server 127.0.0.1 -p 50000
+$./server <porta>
+$./server 50000
 
-$./client <server-ip> -p <porta> <stringa> <carattere>
-$./client 192.168.2.75 -p 50000 tutti t
+$./client <server-ip> <porta> <stringa> <carattere>
+$./client 192.168.2.75 50000 tutti t
 
 
 Opzionale:
