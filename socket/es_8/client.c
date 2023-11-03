@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	controllaParametri(argc, argv);
 
 	struct sockaddr_in servizio;
-	char stringaint1[DIM], stringaout1[DIM], c;
+	char stringaint1[DIM], stringaout1[DIM], buff[DIM], c;
 	int socketfd;
 
 	strcpy(stringaint1, argv[4]);
@@ -46,7 +46,9 @@ int main(int argc, char *argv[])
 
 	connect(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
 
-	write(socketfd, stringaint1, sizeof(stringaint1));
+	write(socketfd, stringaint1, strlen(stringaint1));
+	read(socketfd, buff, sizeof(buff));
+
 	write(socketfd, &c, sizeof(c));
 
 	read(socketfd, stringaout1, sizeof(stringaout1));

@@ -6,7 +6,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#define DIM 20
+#define DIM 200
 
 void EliminaCarattere(char stringa[], char c)
 {
@@ -42,9 +42,10 @@ int main(int argc, char *argv[])
     char car, stringa[DIM], stringaout[DIM];
 
     memset((char *)&servizio, 0, sizeof(servizio));
+
     servizio.sin_family = AF_INET;
     servizio.sin_addr.s_addr = htonl(INADDR_ANY);
-    servizio.sin_port = htons(atoi(argv[2]));
+    servizio.sin_port = htons(atoi(argv[1]));
 
     socketfd = socket(AF_INET, SOCK_STREAM, 0);
     setsockopt(socketfd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
@@ -56,21 +57,19 @@ int main(int argc, char *argv[])
         printf("\n Server in ascolto... \n");
 
         soa = accept(socketfd, (struct sockaddr *)&rem_indirizzo, &fromlen);
-        pid = fork();
-        if (pid == 0)
-        {
-            close(socketfd);
 
-            read(soa, stringa, sizeof(stringa));
-            read(soa, &car, sizeof(car));
+        int nread = read(soa, stringa, sizeof(stringa));
+        printf("\tstringa: %s\n\n", stringa);
+        write(soa, &nread, sizeof(nread));
 
-            EliminaCarattere(stringa, car);
+        read(soa, &car, sizeof(car));
+        printf("\tcarattere: %c\n\n", car);
+        EliminaCarattere(stringa, car);
+        int lunghezza = strlen(stringa);
+        printf("\tLa stringa senza il carattere è %s, lunghezza: %d\n", stringa, lunghezza);
 
-            write(soa, stringa, strlen(stringa));
+        write(soa, stringa, strlen(stringa) + 1); // https://stackoverflow.com/a/18187293
 
-            close(soa);
-            exit(0);
-        }
         close(soa);
     }
     close(socketfd);
