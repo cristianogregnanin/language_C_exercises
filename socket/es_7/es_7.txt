@@ -3,11 +3,16 @@ dopo aver effettuato gli opportuni controlli, rispedisca al client 2 stringhe
 contenenti una le vocali e una le consonanti ottenute dalla stringa di partenza.
 
 esempio di invocazione del server:
-$./server -p 50000
+$ ./server -p 60000                                                           
+Server in ascolto...
+        stringa: ciao
+        vocali: iao
+        consonanti: c
 
 esempio di invocazione del client:
-$./client <ip-server> <porta-server> <stringa>
-$./client 192.168.2.75 50000 ciao
+$ ./client 192.168.1.4 60000 ciao     
+vocali: iao
+consonanti: c
 
 
 

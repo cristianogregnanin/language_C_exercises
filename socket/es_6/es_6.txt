@@ -1,0 +1,16 @@
+Creare un applicazione Client Server in cui il Client invia al server un file che contiene delle parole
+e una stringa.
+Il server riceve il file e la stringa, esegue quindi una ricerca della parola all'interno del flusso
+di dati ricevuto in input.
+
+
+Esempio:
+
+$ ./server -p 60051
+Server in ascolto...
+
+$ ./client 192.168.1.4 60051 file.txt lorem                                    
+La parola lorem e' presente 1 volte
+
+
+

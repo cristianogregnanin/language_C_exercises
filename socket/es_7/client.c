@@ -28,16 +28,12 @@ int main(int argc, char *argv[])
 
     connect(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
 
-    int dim = sizeof(argv[3]);
-    write(socketfd, &dim, sizeof(dim));
+    write(socketfd, argv[3], strlen(argv[3]));
 
-    write(socketfd, argv[3], sizeof(argv[3]));
-
-    read(socketfd, &dimconsonanti, sizeof(int));
-    read(socketfd, consonanti, dimconsonanti);
-
-    read(socketfd, &dimvocali, sizeof(int));
-    read(socketfd, vocali, dimvocali);
+    int nread = read(socketfd, consonanti, strlen(argv[3]));
+    consonanti[nread] = '\0';
+    nread = read(socketfd, vocali, strlen(argv[3]));
+    vocali[nread] = '\0';
 
     printf("vocali: %s\n", vocali);
     printf("consonanti: %s\n", consonanti);

@@ -1,5 +1,0 @@
-Si scriva un server in C che riceva in input 2 stringhe e le rispedisca al client 
-invertite.
-Ad esempio se il server riceve le stringe pippo pluto deve tornare otulp oppip.
-
-

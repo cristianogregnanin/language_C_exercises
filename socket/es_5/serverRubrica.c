@@ -24,7 +24,7 @@ void scambia(Contatto_t el1, Contatto_t el2)
 	el2 = tmp;
 }
 
-void ordinaRubrica(Contatto_t contatti[MAX_LENGHT], int n)
+void ordinaRubrica(Contatto_t contatti[], int n)
 {
 	int i, j;
 

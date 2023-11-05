@@ -15,31 +15,37 @@
 
 #define DIMBUFF 4096
 
-int main(int argc, char *argv[])
+void controllaParametri(int argc, char *argv[])
 {
 	if (argc != 5)
 	{
-		printf("Numero argomenti sbagliato\n");
-		// exit(1);
+		printf("Non hai inserito i parametri necessari \n");
+		printf("Uso: $./client <server-ip> <porta> <path> <carattere> \n");
+		exit(0);
 	}
+}
+
+int main(int argc, char *argv[])
+{
+
+	controllaParametri(argc, argv);
 
 	struct sockaddr_in servizio;
 
-	int socketfd, fd, pid;
-	ssize_t nread;
+	int socketfd, pid;
 	char occorrenze[DIMBUFF];
 
 	memset((char *)&servizio, 0, sizeof(servizio));
 
 	servizio.sin_family = AF_INET;
-	servizio.sin_port = htons(atoi(argv[4]));
-	servizio.sin_addr.s_addr = inet_addr(argv[3]);
+	servizio.sin_addr.s_addr = inet_addr(argv[1]);
+	servizio.sin_port = htons(atoi(argv[2]));
 
 	socketfd = socket(AF_INET, SOCK_STREAM, 0);
 
 	connect(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
 
-	write(socketfd, &argv[2][0], sizeof(argv[2][0]));
+	write(socketfd, &argv[4][0], sizeof(argv[4][0]));
 
 	pid = fork();
 	if (pid == 0)
@@ -47,15 +53,14 @@ int main(int argc, char *argv[])
 		close(1);
 		dup(socketfd);
 		close(socketfd);
-		execl("/usr/bin/cat", "cat", argv[1], NULL);
+
+		execl("/usr/bin/cat", "cat", argv[3], NULL);
 		return -1;
 	}
 
-	// fin qua ok
+	// read(socketfd, occorrenze, sizeof(occorrenze));
 
-	read(socketfd, occorrenze, sizeof(occorrenze));
-
-	printf("\n\til carattere %s compare %s volte nel file %s\n\n", argv[2], occorrenze, argv[1]);
+	printf("\n\til carattere %s compare %s volte nel file %s\n\n", argv[4], occorrenze, argv[3]);
 
 	close(socketfd);
 	return 0;
