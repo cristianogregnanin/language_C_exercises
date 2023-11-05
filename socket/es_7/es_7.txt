@@ -11,4 +11,7 @@ sia a video che in un file chiamato ricevuto.txt
 
 
 Esempio di utilizzo: 
+$ ./server 60115 
+$ ./client 192.168.1.4 60115 es_7.txt
+
 
