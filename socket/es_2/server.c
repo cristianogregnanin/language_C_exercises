@@ -11,8 +11,6 @@
 #include <ctype.h>
 #include <unistd.h>
 
-#define SERVER_PORT 1313
-#define SOCKET_ERROR ((int)-1)
 #define DIMBUFF 512
 
 void inverti(char str[], char newstr[], int n)
@@ -26,8 +24,20 @@ void inverti(char str[], char newstr[], int n)
 	}
 }
 
+void controllaParametri(int argc, char *argv[])
+{
+	if (argc != 2)
+	{
+		printf("Non hai inserito i parametri necessari \n");
+		printf("Uso: $./server <porta>\n");
+		exit(0);
+	}
+}
+
 int main(int argc, char *argv[])
 {
+
+	controllaParametri(argc, argv);
 
 	struct sockaddr_in servizio, rem_indirizzo;
 	struct hostent *host;
@@ -38,7 +48,7 @@ int main(int argc, char *argv[])
 
 	servizio.sin_family = AF_INET;
 	servizio.sin_addr.s_addr = htonl(INADDR_ANY);
-	servizio.sin_port = htons(SERVER_PORT);
+	servizio.sin_port = htons(atoi(argv[1]));
 
 	socketfd = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -48,10 +58,9 @@ int main(int argc, char *argv[])
 
 	listen(socketfd, 10);
 
-	// attensa del client
 	for (;;)
 	{
-		printf("\n\nServer in ascolto...");
+		printf("\n\nServer in ascolto...\n");
 
 		// accept
 		soa = accept(socketfd, (struct sockaddr *)&rem_indirizzo, &fromlen);
@@ -74,9 +83,10 @@ int main(int argc, char *argv[])
 		// scrittura dell stringa all'interno della socket
 		write(soa, newstr, sizeof(newstr));
 
-		// chiusura socket
 		close(soa);
 	}
+
+	close(socketfd);
 
 	return 0;
 }

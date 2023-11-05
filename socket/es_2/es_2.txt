@@ -3,6 +3,27 @@ strutturata:
 il client legge una stringa dal file testo.txt la invia al server il
 quale la inverte e la rimanda al client che la stampa a video.
 Ad esempio se il file testo.txt contiene la stringa "ciao", il client al
-termine dell'esecuzione dovrà visualizzare la string "oaic"
-Il nome del file deve essere inserito come argomento del client ovvero:
-$ ./client.out "testo.txt"
+termine dell'esecuzione dovrà visualizzare la string "oaic".
+
+Esempio:
+$ ./server 50016
+
+Server in ascolto...
+
+
+ Stabilita la connessione con il client debian-desktop
+        Ricevuta stringa ciao dimensione: 4
+
+        stringa invertita: oaic
+
+Server in ascolto...
+
+
+
+$ ./client 192.168.1.4 50016 testo.txt
+        il contenuto del file è: ciao
+        la string convertita è: oaic
+
+
+
+

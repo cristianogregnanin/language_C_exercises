@@ -3,6 +3,7 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <arpa/inet.h>
 #include <netdb.h>
 #include <string.h>
 #include <fcntl.h>
@@ -12,11 +13,21 @@
 #include <unistd.h>
 
 #define DIMBUFF 512
-#define SERVER_PORT 1313
+
+void controllaParametri(int argc, char *argv[])
+{
+	if (argc != 4)
+	{
+		printf("Non hai inserito i parametri necessari \n");
+		printf("Uso: $./client <server-ip> <porta> <path>\n");
+		exit(0);
+	}
+}
 
 int main(int argc, char *argv[])
 {
 
+	controllaParametri(argc, argv);
 	struct sockaddr_in servizio;
 
 	int socketfd;
@@ -25,7 +36,7 @@ int main(int argc, char *argv[])
 	FILE *fd;
 
 	// apro file
-	fd = fopen(argv[1], "r");
+	fd = fopen(argv[3], "r");
 
 	// leggo il file
 	fscanf(fd, "%s", str);
@@ -33,13 +44,13 @@ int main(int argc, char *argv[])
 	// chiudo il file
 	fclose(fd);
 
-	printf("il contenuto del file è: %s\n\n\n", str);
+	printf("\til contenuto del file è: %s\n", str);
 
 	memset((char *)&servizio, 0, sizeof(servizio));
 
 	servizio.sin_family = AF_INET;
-	servizio.sin_addr.s_addr = htonl(INADDR_ANY);
-	servizio.sin_port = htons(SERVER_PORT);
+	servizio.sin_addr.s_addr = inet_addr(argv[1]);
+	servizio.sin_port = htons(atoi(argv[2]));
 
 	socketfd = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -54,7 +65,7 @@ int main(int argc, char *argv[])
 	// chiusura socket
 	close(socketfd);
 
-	printf("\n\n\t\tla string convertita è: %s\n\n", str);
+	printf("\tla string convertita è: %s\n\n", str);
 
 	return 0;
 }
