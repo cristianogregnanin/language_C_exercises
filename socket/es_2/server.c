@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 
 	struct sockaddr_in servizio, rem_indirizzo;
 	struct hostent *host;
-	int nread, soa, socketfd, client_len, fd, on = 1, fromlen = sizeof(servizio);
+	int nread, soa, socketfd, fd, on = 1, fromlen = sizeof(servizio);
 	char str[DIMBUFF] = "";
 
 	memset((char *)&servizio, 0, sizeof(servizio));

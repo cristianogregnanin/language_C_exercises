@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     controllaInput(argc, argv);
 
     struct sockaddr_in server_addr, client_addr;
-    int soa, socketfd, on = 1, fromlen = sizeof(server_addr), dim;
+    int soa, socketfd, on = 1, fromlen = sizeof(server_addr);
 
     struct hostent *host;
     memset((char *)&server_addr, 0, sizeof(server_addr));

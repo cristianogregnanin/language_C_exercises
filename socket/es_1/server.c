@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	controllaParametri(argc, argv);
 
 	struct sockaddr_in servizio, rem_indirizzo;
-	int soa, socketfd, client_len, on = 1, fromlen = sizeof(servizio);
+	int soa, socketfd, on = 1, fromlen = sizeof(servizio);
 	char carattere, risposta;
 
 	memset((char *)&servizio, 0, sizeof(servizio));

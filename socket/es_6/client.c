@@ -23,12 +23,10 @@ int main(int argc, char *argv[])
 	controllaParametri(argc, argv);
 
 	struct sockaddr_in servizio;
-	char stringaint1[DIM], stringaout1[DIM], buff[DIM], c;
+	char stringaout1[strlen(argv[3])];
 	int socketfd;
 
-	strcpy(stringaint1, argv[3]);
-	strcpy(&c, argv[4]);
-	printf("Stringa %s carattere %c \n", stringaint1, c);
+	printf("Stringa %s carattere %c \n", argv[3], argv[4][0]);
 
 	memset((char *)&servizio, 0, sizeof(servizio));
 
@@ -40,14 +38,14 @@ int main(int argc, char *argv[])
 
 	connect(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
 
-	write(socketfd, stringaint1, strlen(stringaint1));
-	read(socketfd, buff, sizeof(buff));
+	write(socketfd, argv[3], strlen(argv[3]));
 
-	write(socketfd, &c, sizeof(c));
+	write(socketfd, &argv[4][0], sizeof(argv[4][0]));
 
 	read(socketfd, stringaout1, sizeof(stringaout1));
 
-	printf("La stringa senza il carattere %c e': %s\n", c, stringaout1);
+	printf("La stringa senza il carattere %c e': %s\n", argv[4][0], stringaout1);
 
 	close(socketfd);
+	return 0;
 }

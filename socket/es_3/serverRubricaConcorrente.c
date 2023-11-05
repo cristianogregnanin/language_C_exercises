@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     }
 
     struct sockaddr_in server_addr, client_addr;
-    int serverPort, n, soa, socketfd, clientlen = sizeof(client_addr), fd, on = 1;
+    int n, soa, socketfd, clientlen = sizeof(client_addr), fd, on = 1;
     Contatto_t contatti[MAX_LENGHT];
 
     memset((char *)&server_addr, 0, sizeof(server_addr));

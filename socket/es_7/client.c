@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     controllaParametri(argc, argv);
 
     struct sockaddr_in servizio;
-    int nread, socketfd;
+    int socketfd;
     memset((char *)&servizio, 0, sizeof(servizio));
 
     servizio.sin_family = AF_INET;

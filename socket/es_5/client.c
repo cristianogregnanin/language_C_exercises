@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
     struct sockaddr_in servizio;
-    int socketfd, dimvocali, dimconsonanti;
+    int socketfd;
     char consonanti[strlen(argv[3])];
     char vocali[strlen(argv[3])];
 

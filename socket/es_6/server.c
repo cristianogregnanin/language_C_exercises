@@ -38,8 +38,8 @@ int main(int argc, char *argv[])
     controllaParametri(argc, argv);
 
     struct sockaddr_in servizio, rem_indirizzo;
-    int soa, pid, socketfd, on = 1, fromlen = sizeof(servizio);
-    char car, stringa[DIM], stringaout[DIM];
+    int nread, soa, socketfd, on = 1, fromlen = sizeof(servizio);
+    char car, stringa[DIM];
 
     memset((char *)&servizio, 0, sizeof(servizio));
 
@@ -54,21 +54,26 @@ int main(int argc, char *argv[])
     listen(socketfd, 10);
     for (;;)
     {
+
         printf("\n Server in ascolto... \n");
 
         soa = accept(socketfd, (struct sockaddr *)&rem_indirizzo, &fromlen);
 
-        int nread = read(soa, stringa, sizeof(stringa));
+        char stringa[DIM];
+        nread = read(soa, stringa, sizeof(stringa));
+        stringa[nread] = '\0';
         printf("\tstringa: %s\n\n", stringa);
-        write(soa, &nread, sizeof(nread));
+        fflush(stdout);
 
         read(soa, &car, sizeof(car));
         printf("\tcarattere: %c\n\n", car);
+
         EliminaCarattere(stringa, car);
+
         int lunghezza = strlen(stringa);
         printf("\tLa stringa senza il carattere è %s, lunghezza: %d\n", stringa, lunghezza);
 
-        write(soa, stringa, strlen(stringa) + 1); // https://stackoverflow.com/a/18187293
+        write(soa, stringa, strlen(stringa)); // https://stackoverflow.com/a/18187293
 
         close(soa);
     }
