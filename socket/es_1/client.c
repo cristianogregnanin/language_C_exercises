@@ -12,39 +12,43 @@
 #include <ctype.h>
 #include <unistd.h>
 
-#define DIMBUFF 512
-#define SERVER_PORT 40000
+void controllaParametri(int argc, char *argv[])
+{
+	if (argc != 4)
+	{
+		printf("Non hai inserito i parametri necessari \n");
+		printf("Uso: $./client <server-ip> <porta> <carattere>\n");
+		exit(0);
+	}
+}
 
 int main(int argc, char *argv[])
 {
 
-	if (argc != 4)
-	{
-		printf("Numero argomenti sbagliato\n");
-		exit(1);
-	}
+	controllaParametri(argc, argv);
+
 	struct sockaddr_in servizio;
 	int socketfd;
 	char carattere;
 	memset((char *)&servizio, 0, sizeof(servizio));
 
 	servizio.sin_family = AF_INET;
-	servizio.sin_port = htons(atoi(argv[3]));
-	servizio.sin_addr.s_addr = inet_addr(argv[2]);
+	servizio.sin_addr.s_addr = inet_addr(argv[1]);
+	servizio.sin_port = htons(atoi(argv[2]));
 
 	socketfd = socket(AF_INET, SOCK_STREAM, 0);
 	connect(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
 	printf("Stabilita la connessione con il server..\n");
 
-	write(socketfd, &argv[1][0], sizeof(argv[1][0]));
+	write(socketfd, &argv[3][0], sizeof(argv[3][0]));
 
-	// ricevere i dati dal client
+	// ricevere i dati dal server
 	read(socketfd, &carattere, sizeof(carattere));
 
 	// chiusura socket
 	close(socketfd);
 
-	printf("\n\t\tConvertito carattere %c in %c\n\n", argv[1][0], carattere);
+	printf("\n\t\tConvertito carattere %c in %c\n\n", argv[3][0], carattere);
 
 	return 0;
 }

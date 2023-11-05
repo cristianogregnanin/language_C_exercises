@@ -1,0 +1,22 @@
+Si scriva un programma client-server in linguaggio C 
+dove il server riceve un carattere dal client, lo converte
+in maiuscolo e lo rimanda al client. 
+
+Il client stampa a video il carattere convertito. 
+
+Esempio: 
+$ ./server 50014                                                              
+Server in ascolto...
+
+        Ricevuto: h
+        convertito h in H
+
+
+$ ./client 192.168.1.4 50014 h               
+Stabilita la connessione con il server..
+
+        Convertito carattere h in H
+
+
+Il server deve essere acceso prima del client.
+I due processi devono essere lanciati su due shell diverse.
