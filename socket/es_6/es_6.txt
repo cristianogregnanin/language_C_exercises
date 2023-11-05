@@ -1,16 +1,15 @@
-Creare un applicazione Client Server in cui il Client invia al server un file che contiene delle parole
-e una stringa.
-Il server riceve il file e la stringa, esegue quindi una ricerca della parola all'interno del flusso
-di dati ricevuto in input.
+Si scriva un programma di tipo client server dove il server riceve una stringa 
+e un carattere. Il server rimuove quindi dalla stringa il carattere ogni volta che esso compare.
+Il server deve inviare al client la stringa senza il carattere.
+Si controllino opportunamente argc e argv sia nel client che nel server
+
+Esempio
+$./server <porta>
+$./server 50000
+
+$./client <server-ip> <porta> <stringa> <carattere>
+$./client 192.168.2.75 50000 tutti t
 
 
-Esempio:
-
-$ ./server -p 60051
-Server in ascolto...
-
-$ ./client 192.168.1.4 60051 file.txt lorem                                    
-La parola lorem e' presente 1 volte
-
-
-
+Opzionale:
+realizzare un server concorrente

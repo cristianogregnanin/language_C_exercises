@@ -1,69 +1,77 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/types.h>
+#include <sys/socket.h>
 #include <netdb.h>
 #include <string.h>
 #include <unistd.h>
 
-void contaOccorrenze(char testo[100][100], char stringa[], int *cnt, int numParole)
+#define DIM 200
+
+void EliminaCarattere(char stringa[], char c)
 {
-    for (int j = 0; j < numParole; j++)
+    for (int i = 0; i < DIM; i++)
     {
-        if (strcmp(testo[j], stringa) == 0)
-            (*cnt)++;
+        if (stringa[i] == c)
+        {
+            for (int j = i; j < DIM - i; j++)
+            {
+                stringa[j] = stringa[j + 1];
+            }
+            i--;
+        }
+    }
+}
+void controllaParametri(int argc, char *argv[])
+{
+    if (argc != 2)
+    {
+        printf("Non hai inserito i parametri necessari \n");
+        printf("Uso: $./server <porta>\n");
+        exit(0);
     }
 }
 
 int main(int argc, char *argv[])
 {
-    char stringa[20], testo[100][100];
-    int numParole = 0, cnt = 0;
 
-    if (argc != 3)
-    {
-        printf("Numero di argomenti errato\n");
-        exit(2);
-    }
+    controllaParametri(argc, argv);
 
-    if (strcmp(argv[1], "-p") != 0)
-    {
-        printf("Errore parametro\n");
-        exit(2);
-    }
-    struct sockaddr_in server_addr, client_addr;
-    int soa, socketfd, on = 1, fromlen = sizeof(server_addr);
+    struct sockaddr_in servizio, rem_indirizzo;
+    int soa, pid, socketfd, on = 1, fromlen = sizeof(servizio);
+    char car, stringa[DIM], stringaout[DIM];
 
-    struct hostent *host;
-    memset((char *)&server_addr, 0, sizeof(server_addr));
-    server_addr.sin_family = AF_INET;
-    server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
-    server_addr.sin_port = htons(atoi(argv[2]));
+    memset((char *)&servizio, 0, sizeof(servizio));
+
+    servizio.sin_family = AF_INET;
+    servizio.sin_addr.s_addr = htonl(INADDR_ANY);
+    servizio.sin_port = htons(atoi(argv[1]));
 
     socketfd = socket(AF_INET, SOCK_STREAM, 0);
     setsockopt(socketfd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
-    bind(socketfd, (struct sockaddr *)&server_addr, sizeof(server_addr));
+    bind(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
 
     listen(socketfd, 10);
     for (;;)
     {
-        printf("\n\nServer in ascolto...\n");
-        fflush(stdout);
-        cnt = 0;
+        printf("\n Server in ascolto... \n");
 
-        soa = accept(socketfd, (struct sockaddr *)&client_addr, &fromlen);
+        soa = accept(socketfd, (struct sockaddr *)&rem_indirizzo, &fromlen);
 
-        host = gethostbyaddr((char *)&client_addr.sin_addr, sizeof(client_addr.sin_addr), AF_INET);
-        printf("\n\nStabilita la connessione con il client %s \n", host->h_name);
+        int nread = read(soa, stringa, sizeof(stringa));
+        printf("\tstringa: %s\n\n", stringa);
+        write(soa, &nread, sizeof(nread));
 
-        read(soa, testo, sizeof(testo));
-        read(soa, &numParole, sizeof(numParole));
-        read(soa, stringa, sizeof(stringa));
+        read(soa, &car, sizeof(car));
+        printf("\tcarattere: %c\n\n", car);
+        EliminaCarattere(stringa, car);
+        int lunghezza = strlen(stringa);
+        printf("\tLa stringa senza il carattere è %s, lunghezza: %d\n", stringa, lunghezza);
 
-        contaOccorrenze(testo, stringa, &cnt, numParole);
-
-        write(soa, &cnt, sizeof(cnt));
+        write(soa, stringa, strlen(stringa) + 1); // https://stackoverflow.com/a/18187293
 
         close(soa);
     }
-
+    close(socketfd);
     return 0;
 }

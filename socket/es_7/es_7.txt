@@ -1,18 +1,14 @@
-Scrivere un programma client server in cui il server riceva in input 1 stringa e,
-dopo aver effettuato gli opportuni controlli, rispedisca al client 2 stringhe
-contenenti una le vocali e una le consonanti ottenute dalla stringa di partenza.
+Realizzare un programma di tipo client server con le seguenti specifiche: 
+il client manda al server un path che può essere relativo o assoluto presente in argv[1].
+Il server riceve la stringa che rappresenta il path e invia al client il contenuto del file che deve
+essere presente nel proprio file system.
 
-esempio di invocazione del server:
-$ ./server -p 60000                                                           
-Server in ascolto...
-        stringa: ciao
-        vocali: iao
-        consonanti: c
-
-esempio di invocazione del client:
-$ ./client 192.168.1.4 60000 ciao     
-vocali: iao
-consonanti: c
+Vincoli obbligatori:
+il server deve essere di tipo concorrente, ovvero la request deve essere soddisfatta da un processo figlio.
+il server utilizza il comando cat opportunamente redirezionato per inviare il contenuto del file al client.
+il client usa il comando tee opportunamente redirezionato per scrivere il contenuto del file ricevuto
+sia a video che in un file chiamato ricevuto.txt
 
 
+Esempio di utilizzo: 
 

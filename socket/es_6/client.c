@@ -1,56 +1,53 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <netdb.h>
+#include <sys/socket.h>
 #include <string.h>
 #include <unistd.h>
 #include <arpa/inet.h>
 
-void leggiFile(char nomeFile[], char testo[100][100], int *numParole)
-{
-    FILE *stream;
+#define DIM 20
 
-    if ((stream = fopen(nomeFile, "r")) == NULL)
-    {
-        printf("errore nell'apertura del file input\n");
-        exit(3);
-    }
-    for (numParole; !feof(stream); (*numParole)++)
-    {
-        fscanf(stream, "%s\n", testo[*numParole]);
-    }
-    fclose(stream);
+void controllaParametri(int argc, char *argv[])
+{
+	if (argc != 5)
+	{
+		printf("Non hai inserito i parametri necessari \n");
+		printf("Uso: $./client <server-ip> <porta> <stringa> <carattere>\n");
+		exit(0);
+	}
 }
 
 int main(int argc, char *argv[])
 {
-    struct sockaddr_in servizio;
-    char stringa[20], testo[100][100];
-    int cnt = 0, numParole = 0, socketfd;
 
-    if (argc != 5)
-    {
-        printf("Numero di argomenti errato\n");
-        exit(2);
-    }
+	controllaParametri(argc, argv);
 
-    memset((char *)&servizio, 0, sizeof(servizio));
+	struct sockaddr_in servizio;
+	char stringaint1[DIM], stringaout1[DIM], buff[DIM], c;
+	int socketfd;
 
-    servizio.sin_family = AF_INET;
-    servizio.sin_addr.s_addr = inet_addr(argv[1]);
-    servizio.sin_port = htons(atoi(argv[2]));
+	strcpy(stringaint1, argv[3]);
+	strcpy(&c, argv[4]);
+	printf("Stringa %s carattere %c \n", stringaint1, c);
 
-    socketfd = socket(AF_INET, SOCK_STREAM, 0);
+	memset((char *)&servizio, 0, sizeof(servizio));
 
-    leggiFile(argv[3], testo, &numParole);
-    connect(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
+	servizio.sin_family = AF_INET;
+	servizio.sin_addr.s_addr = inet_addr(argv[1]);
+	servizio.sin_port = htons(atoi(argv[2]));
 
-    strcpy(stringa, argv[4]);
-    write(socketfd, testo, sizeof(testo));
-    write(socketfd, &numParole, sizeof(numParole));
-    write(socketfd, stringa, sizeof(stringa));
-    read(socketfd, &cnt, sizeof(cnt));
-    printf("La parola %s e' presente %d volte\n", stringa, cnt);
-    close(socketfd);
+	socketfd = socket(AF_INET, SOCK_STREAM, 0);
 
-    return 0;
+	connect(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
+
+	write(socketfd, stringaint1, strlen(stringaint1));
+	read(socketfd, buff, sizeof(buff));
+
+	write(socketfd, &c, sizeof(c));
+
+	read(socketfd, stringaout1, sizeof(stringaout1));
+
+	printf("La stringa senza il carattere %c e': %s\n", c, stringaout1);
+
+	close(socketfd);
 }

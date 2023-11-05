@@ -1,40 +1,18 @@
-Creare un applicazione Client Server in cui il Client invia al server un file rubrica.txt
-che contiene il nome, cognome e numero di telefono di una serie di contatti.
-Il server riceve la rubrica, la ordina usando un algoritmo di ordinamento a piacere la re-invia al client.
+Scrivere un programma client server in cui il server riceva in input 1 stringa e,
+dopo aver effettuato gli opportuni controlli, rispedisca al client 2 stringhe
+contenenti una le vocali e una le consonanti ottenute dalla stringa di partenza.
+
+esempio di invocazione del server:
+$ ./server -p 60000                                                           
+Server in ascolto...
+        stringa: ciao
+        vocali: iao
+        consonanti: c
+
+esempio di invocazione del client:
+$ ./client 192.168.1.4 60000 ciao     
+vocali: iao
+consonanti: c
 
 
-Il client una volta ricevuta la rubrica ordinata la scrive su un nuovo file di testo.
 
-
-Esempio di
-invocazione del client:
-
-$./client 192.168.1.50 50000 rubrica.txt rubricaOrdinata.txt
-
-Dove 192.168.1.50 è l’ipotetico indirizzo ip del server e 50000 è la sua porta di
-ascolto.
-
-Il client deve controllare che argc e argv siano coerenti con il suo utilizzo.
-
-Esempio di invocazione del server:
-
-$./server -p 50000
-
-Dove 50000 è la porta di ascolto.
-
-
-Il server deve controllare che argc e argv siano coerenti con il suo utilizzo.
-
-Esempio di rubrica.txt:
-
-$ cat rubrica.txt
-giovanni padovani 3405245741
-cristiano gregnanin 3402585789
-
-Esempio di rubricaOrdinata.txt:
-$ cat rubricaOrdinata.txt
-
-cristiano gregnanin 3402585789
-giovanni padovani 3405245741
-
-Si ordini la rubrica per nome.
