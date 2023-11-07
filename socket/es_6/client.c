@@ -5,8 +5,6 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 
-#define DIM 20
-
 void controllaParametri(int argc, char *argv[])
 {
 	if (argc != 5)

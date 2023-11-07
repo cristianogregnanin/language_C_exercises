@@ -12,7 +12,6 @@
 #include <ctype.h>
 #include <unistd.h>
 
-#define DIMBUFF 512
 
 void controllaParametri(int argc, char *argv[])
 {

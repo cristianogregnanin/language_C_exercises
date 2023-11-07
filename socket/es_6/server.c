@@ -10,11 +10,11 @@
 
 void EliminaCarattere(char stringa[], char c)
 {
-    for (int i = 0; i < DIM; i++)
+    for (int i = 0; i < strlen(stringa); i++)
     {
         if (stringa[i] == c)
         {
-            for (int j = i; j < DIM - i; j++)
+            for (int j = i; j < strlen(stringa) - i; j++)
             {
                 stringa[j] = stringa[j + 1];
             }
