@@ -44,10 +44,10 @@ int main(int argc, char *argv[])
 
 	setsockopt(socketfd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
 	bind(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
+	listen(socketfd, 10);
 
-	while (1)
+	for (;;)
 	{
-		listen(socketfd, 10);
 		printf("\n\nServer in ascolto...\n");
 		fflush(stdout);
 
