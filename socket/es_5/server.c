@@ -84,6 +84,8 @@ int main(int argc, char *argv[])
         printf("\tconsonanti: %s\n", consonanti);
 
         write(soa, consonanti, strlen(consonanti));
+        read(soa, stringa, sizeof(stringa));
+
         write(soa, vocali, strlen(vocali));
 
         close(soa);

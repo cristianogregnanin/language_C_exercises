@@ -32,6 +32,9 @@ int main(int argc, char *argv[])
 
     int nread = read(socketfd, consonanti, strlen(argv[3]));
     consonanti[nread] = '\0';
+    
+    write(socketfd, &nread, sizeof(nread));
+
     nread = read(socketfd, vocali, strlen(argv[3]));
     vocali[nread] = '\0';
 
