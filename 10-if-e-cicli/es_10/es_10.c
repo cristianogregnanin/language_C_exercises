@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
     double importo, mediaBevande, mediaRistorazioni, sommaBevande = 0, sommaRistorazione = 0;
     int bevande = 0, ristorazione = 0;
 
-    do
+    while (1)
     {
         do
         {
@@ -15,10 +15,16 @@ int main(int argc, char *argv[])
             scanf("%s", tipologia);
         } while (strcmp("esci", tipologia) != 0 && strcmp(tipologia, "bevande") != 0 && strcmp(tipologia, "ristorazione") != 0);
 
+        if (strcmp("esci", tipologia) == 0)
+        {
+            printf("\nChiusura cassa");
+            break;
+        }
+
         do
         {
             printf("Inserisci l' importo: \n");
-            scanf("%f", &importo);
+            scanf("%lf", &importo); //%lf perchè altrimenti il valore letto non viene assegnato alla variabile double
         } while (importo <= 0);
 
         if (strcmp(tipologia, "bevande") == 0)
@@ -32,21 +38,40 @@ int main(int argc, char *argv[])
             ristorazione++;
             sommaRistorazione = sommaRistorazione + importo;
         }
-
-    } while (strcmp("esci", tipologia) != 0);
+    }
 
     if (ristorazione > bevande)
     {
-        printf("Sono state vendute più ristorazioni");
+        printf("\n\nSono state vendute più ristorazioni");
+    }
+    else if (bevande > ristorazione)
+    {
+        printf("\n\nSono state vendute più bevande");
     }
     else
     {
-        printf("Sono state vendute più bevande");
+        printf("\n\nSono state vendute tante bevande quante ristorazioni");
     }
 
-    mediaBevande = sommaBevande / (double)bevande;
-    mediaRistorazioni = sommaRistorazione / (double)ristorazione;
+    if (bevande > 0)
+    {
+        mediaBevande = sommaBevande / (double)bevande;
+        printf("\n\nLa media delle bevande è: %f", mediaBevande);
+    }
+    else
+    {
+        printf("\n\nMedia non disponibile. Nessuna bevanda acquistata");
+    }
 
-    printf("La media delle bevande è: %f\n", mediaBevande);
-    printf("La media delle ristorazioni è: %f\n", mediaRistorazioni);
+    if (ristorazione > 0)
+    {
+        mediaRistorazioni = sommaRistorazione / (double)ristorazione;
+        printf("\nLa media delle ristorazioni è: %f\n", mediaRistorazioni);
+    }
+    else
+    {
+        printf("\nMedia non disponibile. Nessuna ristorazione acquistata");
+    }
+
+    return 0;
 }

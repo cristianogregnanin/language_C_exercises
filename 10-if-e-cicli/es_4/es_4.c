@@ -15,18 +15,34 @@ int main(int argc, char *argv[])
 		scanf("%d", &b);
 
 		if (a < b)
+		{
+			if (a == 0)
+			{
+				printf("non si puo' dividere un numero per 0\n");
+				break;
+			}
 			r = (double)b / (double)a;
+		}
 		else
+		{
+			if (b == 0)
+			{
+				printf("non si puo' dividere un numero per 0\n");
+				break;
+			}
 			r = (double)a / (double)b;
+		}
 
-		if (r > 0)
+		if (r >= 0)
 		{
 			r = sqrt(r);
-			printf("radice quadrata del rapporto: %f\n\n", r);
+			printf("\n\nradice quadrata del rapporto: %f\n\n", r);
 		}
-	} while (r > 0);
-
-	printf("non è possibile calcolare la radice di un numero negativo\n\n");
+		else
+		{
+			printf("\n\nnon è possibile calcolare la radice di un numero negativo\n\n");
+		}
+	} while (r >= 0);
 
 	return 0;
 }
