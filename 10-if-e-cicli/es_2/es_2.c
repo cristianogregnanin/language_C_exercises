@@ -3,7 +3,7 @@
 int main(int argc, char *argv[])
 {
 
-	int a, b, p, somma = 0;
+	int a, b, prodotto, somma = 0;
 
 	do
 	{
@@ -12,10 +12,10 @@ int main(int argc, char *argv[])
 		printf("inserisci b\n");
 		scanf("%d", &b);
 
-		p = a * b;
-		printf("il prodotto è: %d\n\n", p);
+		prodotto = a * b;
+		printf("il prodotto è: %d\n\n", prodotto);
 
-		somma = somma + p;
+		somma = somma + prodotto;
 	} while (a != 0 && b != 0);
 
 	printf("la somma è: %d\n\n", somma);
