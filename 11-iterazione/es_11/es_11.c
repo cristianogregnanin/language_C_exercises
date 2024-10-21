@@ -1,6 +1,6 @@
 /**
  * @brief Dato N un numero intero positivo, calcolare e visualizzare la somma dei
-    primi N numeri dispari.
+ * primi N numeri dispari.
  */
 #include <stdio.h>
 
