@@ -1,3 +1,8 @@
+/**
+ * @brief Dati tre numeri interi esegue la differenza tra i primi due (a - b).
+ *        Ripete l'operazione finché la somma dei primi due numeri è maggiore o uguale al terzo.
+ *        Conta quante volte la differenza è nulla, pari o dispari.
+ */
 #include <stdio.h>
 
 int main(int argc, char *argv[])
