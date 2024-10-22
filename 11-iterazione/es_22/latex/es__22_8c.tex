@@ -1,0 +1,72 @@
+\hypertarget{es__22_8c}{}\doxysection{es\+\_\+22.\+c File Reference}
+\label{es__22_8c}\index{es\_22.c@{es\_22.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for es\+\_\+22.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=133pt]{es__22_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{es__22_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Dato un numero N calcolare e visualizzare tutte le coppie di numeri minori di N che danno per somma il numero stesso. Non considerare la proprietà commutativa. ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{es__22_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{es__22_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{es\_22.c@{es\_22.c}!main@{main}}
+\index{main@{main}!es\_22.c@{es\_22.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Dato un numero N calcolare e visualizzare tutte le coppie di numeri minori di N che danno per somma il numero stesso. Non considerare la proprietà commutativa. ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & che è il numero da inserire \\
+\hline
+{\em j} & che è inizializzato a 1 e serve per la somma dei numeri \\
+\hline
+{\em i} & viene inizializzato togliendo a 1 il numero inserito\\
+\hline
+\end{DoxyParams}
+il programma chiede l\textquotesingle{}inserimento del numero all\textquotesingle{}utente e poi successivamente calcola la somma dei numeri che possono dare il numeri inserito
+
+\begin{DoxyReturn}{Returns}
+returna 0 se il programma è corretto 
+\end{DoxyReturn}
+
+
+Definition at line 17 of file es\+\_\+22.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19     \textcolor{keywordtype}{int} n, j = 1, i;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keywordflow}{do}}
+\DoxyCodeLine{22     \{}
+\DoxyCodeLine{23         printf(\textcolor{stringliteral}{"{}Inserisci un numero > 0 : "{}});}
+\DoxyCodeLine{24         scanf(\textcolor{stringliteral}{"{}\%d"{}}, \&n);}
+\DoxyCodeLine{25     \} \textcolor{keywordflow}{while} (n < 0);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     i = n -\/ 1;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordflow}{do}}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         printf(\textcolor{stringliteral}{"{}\%d+\%d=\%d\(\backslash\)n"{}}, j, i, n);}
+\DoxyCodeLine{32         j++;}
+\DoxyCodeLine{33         i-\/-\/;}
+\DoxyCodeLine{34     \} \textcolor{keywordflow}{while} (j <= n);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
