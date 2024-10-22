@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[])
 {
-
+/**/
 	int n, j = 1, i;
 
 	do
