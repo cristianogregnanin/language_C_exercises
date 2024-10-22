@@ -1,5 +1,17 @@
 #include <stdio.h>
 
+/**
+ * @brief La funzione genera e visualizza in ordine crescente tutti i numeri dispari minori o uguali di un numero N.
+ * Nella funzione viene dichiarato un numero N; che successivamente viene chiesto in input all'utente. 
+ * Nel caso in cui l'utente inserisca un nunero minore di 0, viene fatto reinserire. 
+ * Viene stampato il messaggio che introduce l'elenco dei numeri dispari. 
+ * La variabile i parte da 1 e, in ogni iterazione del ciclo, viene stampata e incrementata 
+ * di 2 per passare al numero dispari successivo. Il ciclo continua finché i non supera n.
+ * @param argc Numero argomenti riga di comando
+ * @param argv Array di stringhe argomenti riga di comando
+ * @return La funzione restituisce sempre 0
+ */
+
 int main(int argc, char *argv[])
 {
 
