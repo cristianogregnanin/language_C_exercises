@@ -1,3 +1,11 @@
+/**
+ * @brief Calcola e visualizza tutte le coppie di numeri minori di N che danno per somma N.
+ * 
+ * Il programma chiede un numero intero positivo N e visualizza tutte le coppie di numeri j e i
+ * (dove j < N e i < N) tali che la loro somma è uguale a N, senza considerare la proprietà commutativa.
+ * 
+ * @return 0 in caso di successo.
+ */
 #include <stdio.h>
 
 int main(int argc, char *argv[])
