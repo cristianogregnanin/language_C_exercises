@@ -1,3 +1,19 @@
+/**
+ * @brief Stampa il valore minimo e massimo di terne di numeri.
+ *
+ * Il codice chiede terne di numeri (A, B, C) all'utente 
+ * finché tutti i valori sono non negativi. 
+ * Se uno è negativo, il programma termina. Le terne 
+ * vengono scartate se non rispettano A < B < C. 
+ * Per quelle valide, il programma aggiorna i valori massimo e 
+ * minimo, che vengono stampati prima di chiudere.
+ *
+ * @param argc Numero di argomenti inseriti da riga di comando 
+ * @param argv Array di stringhe contenente gli argomenti inseriti da riga di comando
+ *
+ * @return La funzione restituisce sempre 0.
+ */
+
 #include <stdio.h>
 #include <limits.h>
 
