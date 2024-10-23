@@ -1,6 +1,10 @@
 #include <stdio.h>
 /**
 * @brief Dato N un numero intero positivo, calcolare e visualizzare la somma dei primi N numeri pari.
+* 
+* @param argc, lunghezza del array argv
+* 
+* @param argv, array dove vengono inseriti dei dati da terminale
 */
 int main(int argc, char *argv[])
 {
