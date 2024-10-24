@@ -1,3 +1,13 @@
+/**
+ * @brief Dati tre numeri interi esegue la differenza tra i primi due (a - b).
+ *        Ripete l'operazione finché la somma dei primi due numeri è maggiore o uguale al terzo.
+ *        Conta quante volte la differenza è nulla, pari o dispari.
+ *
+ * @param argv Vettore di stringhe contenente gli argomenti passati attraverso la riga di comando
+ * @param argc Numero di argomenti  passati attraverso la riga di comando
+ *
+ * @return La funzione restituisce 0
+ */
 #include <stdio.h>
 
 int main(int argc, char *argv[])
