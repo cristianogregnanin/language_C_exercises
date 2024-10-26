@@ -1,3 +1,17 @@
+/**
+ * @brief Dato N un numero intero positivo, calcolare e visualizzare la somma dei primi N numeri pari.
+ *
+ * La funzione richiede all'utente di inserire un numero positivo, effettuando
+ * un controllo e un reinserimento in caso il valore sia minore di 0. 
+ * Successivamente viene calcolata la somma dei primi N (numero inserito) numeri pari.
+ * L’algoritmo, infine, stampa la somma calcolata.
+ *
+ * @param argv Vettore di stringhe (vettori di caratteri) contenente gli argomenti da riga di comando
+ * @param argc Numero di argomenti da riga di comando
+ *
+ * @return La funzione restituisce sempre 0.
+ */
+
 #include <stdio.h>
 
 int main(int argc, char *argv[])
