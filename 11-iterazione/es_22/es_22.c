@@ -2,14 +2,11 @@
 /**
  * 
  * @brief Dato un numero N calcolare e visualizzare tutte le coppie di numeri minori di N che
- * 	danno per somma il numero stesso. Non considerare la proprietà commutativa.  
+ *	danno per somma il numero stesso. Non considerare la proprietà commutativa. 
  * 
- * @param n che è il numero da inserire
- * @param j che è inizializzato a 1 e serve per la somma dei numeri 
- * @param i viene inizializzato togliendo a 1 il numero inserito
+ * @param argc Numero degli elementi passati da riga di comando.
+ * @param argv Array di stringhe degli argomenti passati da righa di comando.
  * 
- * @brief il programma chiede l'inserimento del numero all'utente e poi successivamente 
- * calcola la somma dei numeri che possono dare il numeri inserito
  * 
  * @return returna 0 se il programma è corretto
  */
