@@ -1,5 +1,16 @@
 #include <stdio.h>
 
+/**
+ * @brief Dato N un numero intero positivo, calcolare e visualizzare la somma dei primi N numeri interi. 
+ *
+ * Questo programma chiede all'utente di inserire un numero positivo,
+ * quindi calcola la somma di tutti i numeri interi da 1 fino a quel numero.
+ * 
+ * @param argc Numero di argomenti della riga di comando.
+ * @param argv Array di argomenti della riga di comando.
+ * @return Restituisce 0 se il programma termina correttamente.
+ */
+
 int main(int argc, char *argv[])
 {
 
