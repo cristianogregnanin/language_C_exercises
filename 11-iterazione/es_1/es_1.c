@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/**
+ * @brief Dato N un numero intero positivo, generare e visualizzare il numero successivo.
+ * 
+ * @param argc numero di argomenti passati da riga di comando
+ * @param argv argomenti passati da riga di comando
+ * 
+ * @return il programma ritorna sempre 0
+*/
 int main(int argc, char *argv[])
 {
 
