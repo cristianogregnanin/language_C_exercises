@@ -1,3 +1,16 @@
+/**
+* @brief Progettare un algoritmo che effettui le seguenti operazioni:
+*	• continui a leggere da tastiera due valori numerici, fermandosi quando uno dei due numeri è
+*	  0 (zero)
+*	• per ogni coppia di numeri letti:
+*		◦ calcoli il prodotto dei due numeri e ne stampi il valore
+*		◦ sommi il prodotto calcolato ad una variabile che memorizzi la somma di tutti i prodotti
+*	• all’uscita del ciclo, stampi il valore della somma
+* @param argv Array di stringhe contenente gli argomenti passati attraverso la riga di comando
+* @param argc Numero di argomenti passati attraverso la riga di comando
+* 
+* @return La funzione restituisce 0
+*/
 #include <stdio.h>
 
 int main(int argc, char *argv[])
