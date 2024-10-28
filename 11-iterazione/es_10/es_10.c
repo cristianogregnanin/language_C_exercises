@@ -1,4 +1,12 @@
 #include <stdio.h>
+/**
+ * @brief Dato N un numero intero positivo, calcolare e visualizzare la somma dei
+ * primi N numeri interi. 
+ * 
+ * @param argc Numero di argomenti da riga di comando (non utilizzato).
+ * @param argv Array di stringhe contenente gli argomenti da riga di comando (non utilizzato).
+ * @return Restituisce 0 se l'esecuzione del programma è andata a buon fine.
+ */
 
 int main(int argc, char *argv[])
 {
