@@ -1,5 +1,10 @@
 #include <stdio.h>
-
+/**
+ * @brief Dato N un numero intero positivo, generare e visualizzare in ordine
+ * decrescente i primi N numeri interi positivi.
+ * 
+ * @return Restituisce 0 se l'esecuzione ha successo.
+ */
 int main(int argc, char *argv[])
 {
 
