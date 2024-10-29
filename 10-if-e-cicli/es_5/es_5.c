@@ -1,7 +1,7 @@
 /**
  * @brief Dati tre numeri interi esegue la differenza tra i primi due (a - b).
- *        Ripete l'operazione finché la somma dei primi due numeri è maggiore o uguale al terzo.
- *        Conta quante volte la differenza è nulla, pari o dispari.
+ *        Ripete l'operazione finche' la somma dei primi due numeri e' maggiore o uguale al terzo.
+ *        Conta quante volte la differenza e' nulla, pari o dispari.
  *
  * @param argv Vettore di stringhe contenente gli argomenti passati attraverso la riga di comando
  * @param argc Numero di argomenti  passati attraverso la riga di comando
