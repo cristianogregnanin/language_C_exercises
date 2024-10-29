@@ -1,3 +1,17 @@
+/**
+ * @brief Una birreria a fine serata deve conteggiare l’incasso. La cassiera accende il software gestionale il quale le chiede di inserire una alla volta le consumazioni servite.
+ *Le consumazioni si dividono in bevande e ristorazione. La cassiera per ogni consumazione deve inserire la tipologia di consumazione e il suo importo.
+ *
+ *Quando la cassiera inserisce la stringa “esci” il software deve mostrare a video le seguenti informazioni:
+ *1.	La media dell’incasso delle bevande 
+ *2.	La media dell’incasso della ristorazione
+ *3.	Deve indicare se sono state vendute più bevande o più ristorazioni
+ * 
+ * @param argv Vettore di stringhe contenente gli argomenti passati attraverso la riga di comando
+ * @param argc Numero di argomenti  passati attraverso la riga di comando
+ * 
+ * @return la funzione restituisce 0
+ */
 #include <stdio.h>
 #include <string.h>
 
