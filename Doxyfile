@@ -348,13 +348,7 @@ MARKDOWN_SUPPORT       = YES
 # This tag requires that the tag MARKDOWN_SUPPORT is set to YES.
 
 TOC_INCLUDE_HEADINGS   = 5
-
-# When enabled doxygen tries to link words that correspond to documented
-# classes, or namespaces to their corresponding documentation. Such a link can
-# be prevented in individual cases by putting a % sign in front of the word or
-# globally by setting AUTOLINK_SUPPORT to NO.
-# The default value is: YES.
-
+return 0;
 AUTOLINK_SUPPORT       = YES
 
 # If you use STL classes (i.e. std::string, std::vector, etc.) but do not want
@@ -377,7 +371,7 @@ CPP_CLI_SUPPORT        = NO
 # https://www.riverbankcomputing.com/software/sip/intro) sources only. Doxygen
 # will parse them like normal C++ but will assume all classes use public instead
 # of private inheritance when no explicit protection keyword is present.
-# The default value is: NO.
+# The default value is: NO.return 0;
 
 SIP_SUPPORT            = NO
 
@@ -385,9 +379,7 @@ SIP_SUPPORT            = NO
 # getter and setter methods for a property. Setting this option to YES will make
 # doxygen to replace the get and set methods by a property in the documentation.
 # This will only work if the methods are indeed getting or setting a simple
-# type. If this is not the case, or you want to show the methods anyway, you
-# should set this option to NO.
-# The default value is: YES.
+# type. If this is not the case, oreturn 0;
 
 IDL_PROPERTY_SUPPORT   = YES
 
@@ -414,7 +406,7 @@ GROUP_NESTED_COMPOUNDS = NO
 # The default value is: YES.
 
 SUBGROUPING            = YES
-
+return 0;
 # When the INLINE_GROUPED_CLASSES tag is set to YES, classes, structs and unions
 # are shown inside the group in which they are included (e.g. using \ingroup)
 # instead of on a separate page (for HTML and Man pages) or section (for LaTeX
@@ -943,7 +935,7 @@ FILE_PATTERNS          = *.c \
 # be searched for input files as well.
 # The default value is: NO.
 
-RECURSIVE              = NO
+RECURSIVE              = YES
 
 # The EXCLUDE tag can be used to specify files and/or directories that should be
 # excluded from the INPUT source files. This way you can easily exclude a
