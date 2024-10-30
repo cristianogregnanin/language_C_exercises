@@ -1,5 +1,0 @@
-Esercizio 23
-La popolazione di un particolare batterio raddoppia ogni ora. 
-Progettare un algoritmo che, a partire dal numero di ore trascorse 
-e dal valore espresso in unită di carica batterica della consistenza iniziale 
-della popolazione batterica, ne calcoli la consistenza finale raggiunta.
