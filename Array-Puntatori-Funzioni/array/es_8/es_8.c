@@ -36,8 +36,10 @@ int main(int argc, char *argv[])
 	for (k = i - 1; k > 0; k--)
 	{
 
-		if (numeri[k] > media)
+		if (numeri[k] > media) 
+		{
 			printf("Il valore %d è maggiore della media %f\n", numeri[k], media);
+		}	
 	}
 
 	return 0;
