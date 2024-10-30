@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/**
+* @brief Dato N un numero intero positivo maggiore di 1, generare e visualizzare il numero precedente. 
+* 
+* @param argc intero che da la lunghezza dell'array argv
+* @param argv Array che salva i valori mandati in input dal terminale quando si runna il programma
+* 
+* @return se il programma funziona ritorna 0
+*/
 int main(int argc, char *argv[])
 {
 
