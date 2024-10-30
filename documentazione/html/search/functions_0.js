@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_6',['main',['../helloWord_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'helloWord.c']]]
+  ['addperson_223',['addPerson',['../es__6__documentato__inglese_8c.html#aa76aad60730e7b8e9eb3f3653d2e62d8',1,'es_6_documentato_inglese.c']]],
+  ['aggiungicontatto_224',['AggiungiContatto',['../file_2es__4_2es__4_8c.html#af729e44cce59b49261cf90b15b225d82',1,'es_4.c']]]
 ];

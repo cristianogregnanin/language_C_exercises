@@ -1,11 +1,20 @@
 #include <stdio.h>
 #include <math.h>
-
+/**
+* @biref Progettare un algoritmo che effettui la lettura da tastiera di una serie
+* di coppie di valori numerici reali (sia positivi che negativi che zero).
+* Per ciascuna coppia, l’algoritmo deve calcolare e stampare il valore
+* della radice quadrata del rapporto tra il valore maggiore e quello
+* minore dei due. Il programma termina quando vengono inseriti dei valori
+* che non permettono di svolgere il calcolo nel dominio dei numeri reali.
+* Prima di terminare si richiede di stampare un messaggio che indichi la
+* ragione per cui non è stato possibile svolgere il calcolo.
+*/
 int main(int argc, char *argv[])
 {
 
 	int a, b;
-	double r;
+	double rapporto;
 
 	do
 	{
@@ -21,7 +30,7 @@ int main(int argc, char *argv[])
 				printf("non si puo' dividere un numero per 0\n");
 				break;
 			}
-			r = (double)b / (double)a;
+			rapporto = (double)b / (double)a;
 		}
 		else
 		{
@@ -30,19 +39,20 @@ int main(int argc, char *argv[])
 				printf("non si puo' dividere un numero per 0\n");
 				break;
 			}
-			r = (double)a / (double)b;
+			rapporto = (double)a / (double)b;
 		}
 
-		if (r >= 0)
+		if (rapporto >= 0)
 		{
-			r = sqrt(r);
-			printf("\n\nradice quadrata del rapporto: %f\n\n", r);
+			rapporto = sqrt(rapporto);
+			printf("\n\nradice quadrata del rapporto: %f\n\n", rapporto);
 		}
 		else
 		{
 			printf("\n\nnon è possibile calcolare la radice di un numero negativo\n\n");
 		}
-	} while (r >= 0);
+	} while (rapporto >= 0);
 
 	return 0;
 }
+

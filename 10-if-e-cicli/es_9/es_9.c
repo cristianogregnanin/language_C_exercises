@@ -1,17 +1,17 @@
 /**
- * @brief Stampa il valore minimo e massimo di terne di numeri.
- *
- * Il codice chiede terne di numeri (A, B, C) all'utente 
- * finché tutti i valori sono non negativi. 
- * Se uno è negativo, il programma termina. Le terne 
- * vengono scartate se non rispettano A < B < C. 
- * Per quelle valide, il programma aggiorna i valori massimo e 
- * minimo, che vengono stampati prima di chiudere.
+ * @brief Progettare un algoritmo che risolva il seguente problema. Si richieda 
+ * all’utente di inserire una serie di terne di dati numerici (A, B, C). 
+ * Il programma deve terminare quando uno dei valori inseriti è minore di
+ * zero. Si scartino le terne nelle quali i valori non sono in ordine
+ * strettamente crescente, ovvero quelle terne per cui non valga A < B < C.
+ * Su tutte le terne non scartate si calcoli il massimo e il minimo dei
+ * valori inseriti. Si stampino a video tali valori massimi e minimi prima
+ * di terminare il programma.
  *
  * @param argc Numero di argomenti inseriti da riga di comando 
  * @param argv Array di stringhe contenente gli argomenti inseriti da riga di comando
  *
- * @return La funzione restituisce sempre 0.
+ * @return La funzione restituisce 0.
  */
 
 #include <stdio.h>
