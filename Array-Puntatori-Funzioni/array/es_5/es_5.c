@@ -1,6 +1,20 @@
 #include <stdio.h>
 #include <string.h>
 
+/**
+ * @brief Concatenazione di stringhe
+ * 
+ * Scrivere in C un programma che concatena in un unica stringa le stringhe
+ * chieste in input da riga di comando.
+ * Esempio:
+ * $./a.out ciao a tutti gli studenti
+ * ciao a tutti gli studenti
+ * 
+ * @param argc Numero degli elementi passati da riga di comando.
+ * @param argv Array di stringhe degli argomenti passati da righa di comando.
+ * 
+ * @return La funzione ritorna sempre 0.
+*/
 int main(int argc, char *argv[])
 {
 
