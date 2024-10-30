@@ -1,3 +1,16 @@
+/**
+* @brief Progettare un algoritmo che effettui le seguenti operazioni:
+*	 	• legga da tastiera una coppia di valori interi A e B con A<B;
+*		• continui a leggere da tastiera una serie di valori interi, terminando 
+*		  quando il valore letto è al di fuori dell’intervallo [A, B];
+*		• conteggi la media dei valori letti;
+*		• prima di terminare, stampi il valore calcolato.
+*  
+* @param argv Array di stringhe contenente gli argomenti passati attraverso la riga di comando
+* @param argc Numero di argomenti passati attraverso la riga di comando
+* 
+* @return La funzione restituisce 0
+*/
 #include <stdio.h>
 
 int main(int argc, char *argv[])
