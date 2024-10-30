@@ -2,18 +2,19 @@
 #include <math.h>  // Inclusione della libreria math
 
 /**
- * @file calcola_area.c
- * @brief Calcola l'area di un cerchio dato il raggio.
+ * 
+ * @brief Progettare un algoritmo che, letto il valore r del raggio, calcoli e scriva l'area del cerchio relativo
  *
- * Questo programma richiede all'utente di inserire il raggio di un cerchio
- * e poi calcola e stampa l'area corrispondente utilizzando la formula
- * A = π * r^2.
+ * 
+ * 
+ * 
  *
- * @param raggio Il raggio del cerchio fornito dall'utente.
- * @return L'area del cerchio calcolata.
+ * @param argc Numero di argomenti passati attraverso la riga di comando
+ * @param argv Array di stringhe contenente gli argomenti passati attraverso la riga di comando
+ * @return ritorna il valore 0 
  */
 
-int main() {
+int main(int argc, char *argv[]) {
     double raggio;  
     double area;    
 
