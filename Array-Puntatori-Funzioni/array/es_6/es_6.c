@@ -4,12 +4,12 @@
 /** 
  * @brief funzione
  * denominata palindroma che prenda in input una stringa e restituisca
- * 1 se la stringa è palindroma altrimenti -1
+ * 1 se la stringa Ã¨ palindroma altrimenti -1
  *  
- * @param char parola[] stringa di carattero
+ * @param char parola[] stringa di caratteri
  * 
- * @return La funzione restituisce 1 se la stringa � palindroma
- * @return La funzione restituisce -1 se la stringa non � palindroma
+ * @return La funzione restituisce 1 se la stringa è palindroma
+ * @return La funzione restituisce -1 se la stringa non è palindroma
  */
 
 int palindroma(char parola[])
@@ -29,13 +29,13 @@ int palindroma(char parola[])
 /**
  * @brief Si scriva un programma in linguaggio C che implementi una funzione
  * denominata palindroma che prenda in input una stringa e restituisca
- * 1 se la stringa è palindroma altrimenti -1
+ * 1 se la stringa Ã¨ palindroma altrimenti -1
  * esempio:
  * $ ./a.out anna
- * $ anna è una stringa palindroma
+ * $ anna Ã¨ una stringa palindroma
  * esempio:
  * $ ./a.out ciao
- * $ ciao non è una stringa palindroma
+ * $ ciao non Ã¨ una stringa palindroma
  *
  * @param argv Vettore di stringhe (vettori di caratteri) contenente gli argomenti da riga di comando
  * @param argc Numero di argomenti da riga di comando
@@ -52,9 +52,9 @@ int main(int argc, char *argv[])
 	}
 
 	if (palindroma(argv[1]) > 0)
-		printf("%s è una parola palindroma\n", argv[1]);
+		printf("%s Ã¨ una parola palindroma\n", argv[1]);
 	else
-		printf("%s non è una parola palindroma\n", argv[1]);
+		printf("%s non Ã¨ una parola palindroma\n", argv[1]);
 
 	return 0;
 }
