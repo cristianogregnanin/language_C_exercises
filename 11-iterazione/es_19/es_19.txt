@@ -1,0 +1,3 @@
+ Un'onda marina anomala dimezza la propria altezza ogni km percorso e scompare raggiungendo un'altezza pari a zero quando l'altezza scende al di sotto del metro.
+- Progettare un algoritmo che calcoli, a partire dai valori dell'altezza iniziale h e dal numero di km percorsi k, l'altezza raggiunta dall'onda.
+- Modificare l'algoritmo precedente in modo che, a partire dalla sola altezza iniziale dell'onda h, determini il numero di km necessario prima che essa scompaia.
