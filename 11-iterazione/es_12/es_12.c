@@ -6,7 +6,7 @@
  * Successivamente viene calcolata la somma dei primi N (numero inserito) numeri pari.
  * L’algoritmo, infine, stampa la somma calcolata.
  *
- * @param argv Vettore di stringhe (vettori di caratteri) contenente gli argomenti da riga di comando
+ * @param argv Array di stringhe (vettori di caratteri) contenente gli argomenti da riga di comando
  * @param argc Numero di argomenti da riga di comando
  *
  * @return La funzione restituisce sempre 0.
