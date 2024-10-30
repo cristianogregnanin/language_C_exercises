@@ -1,6 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+/**
+ * @brief Scrivi un programma che legge da argv[1] un numero intero positivo (N) e poi
+ * disegna a terminale un quadrato vuoto composto di asterischi (‘*’)
+ * con il lato lungo N:
+ *
+ * Per N pari a 3 il programma stampa:
+ *
+ * ***
+ * * *
+ * ***
+ * Per N pari a 5 il programma stampa:
+ *
+ * *****
+ * *   *
+ * *   *
+ * *   *
+ * *****
+ *
+ *
+ * @param argc argc numero di argomenti passati da riga di comando
+ * @param argv argv argomenti passati da riga di comando
+ *
+ * @return returna 0 se il programma è corretto
+ */
+
 int main(int argc, char *argv[])
 {
 
