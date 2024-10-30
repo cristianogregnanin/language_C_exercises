@@ -6,3 +6,5 @@ Scrivi un programma in linguaggio C che riceva in input una frase da linea di co
 
 VINCOLI:
 Il programma deve essere scritto in modo modulare, separando le diverse operazioni in funzioni distinte, ogni funzione deve avere uno scopo specifico.
+
+file/es_1/testo.txt         | 2 +-
