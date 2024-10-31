@@ -1,11 +1,11 @@
 /**
 * @brief Progettare un algoritmo per calcolare il costo di un abbonamento alla metropolitana in base a:
-*   • durata dell'abbonamento (settimanale, mensile o annuale)
-*   • tipo di zona (centrale, periferica o entrambe)
-*   • priorità (alta o bassa)
+*   durata dell'abbonamento (settimanale, mensile o annuale)
+*   tipo di zona (centrale, periferica o entrambe)
+*   priorita (alta o bassa)
 * 
 *   L'utente fornisce i dati sopra elencati e il programma calcola il costo 
-*   applicando uno sconto del 20% se la priorità è bassa.
+*   applicando uno sconto del 20% se la priorita bassa.
 * 
 * @param argc Numero di argomenti passati attraverso la riga di comando
 * @param argv Array di stringhe contenente gli argomenti passati attraverso la riga di comando
@@ -16,7 +16,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(int argc, char argv[]) {
     char durata, priorita;
     int tipo;
     double costo = 0.0;
@@ -33,32 +33,51 @@ int main() {
     } while (tipo < 1 || tipo > 3);
 
     do {
-        printf("Inserisci la priorità (A per alta, B per bassa): ");
+        printf("Inserisci la prioritï¿½ (A per alta, B per bassa): ");
         scanf(" %c", &priorita);
     } while (priorita != 'A' && priorita != 'B');
 
     // Calcolo del costo in base al tipo e alla durata
     if (tipo == 1) {
-        if (durata == 'S') costo = 10;
-        else if (durata == 'M') costo = 30;
-        else if (durata == 'A') costo = 250;
+        if (durata == 'S'){
+            costo = 10;
+        }        
+        else if (durata == 'M') {
+            costo = 30;}
+        else if (durata == 'A') {
+            costo = 250;
+        }        
     } else if (tipo == 2) {
-        if (durata == 'S') costo = 5;
-        else if (durata == 'M') costo = 20;
-        else if (durata == 'A') costo = 150;
+        if (durata == 'S') {
+            costo = 5;
+        }
+        
+        else if (durata == 'M') {
+            costo = 20;
+        }
+        
+        else if (durata == 'A') {
+            costo = 150;
+        }
+
     } else if (tipo == 3) {
-        if (durata == 'S') costo = 15;
-        else if (durata == 'M') costo = 40;
-        else if (durata == 'A') costo = 300;
+        if (durata == 'S') {
+            costo = 15;
+        }
+        else if (durata == 'M') {
+            costo = 40;
+        }
+        else if (durata == 'A') {
+            costo = 300;
+        }
     }
 
-    // Applica riduzione del 20% se priorità è bassa
     if (priorita == 'B') {
-        costo *= 0.8;
+        costo = costo*0.8;
     }
 
-    // Stampa il costo finale
-    printf("Il costo dell'abbonamento è: %.2f €\n", costo);
+
+    printf("Il costo dell'abbonamento risulta: %.2f\n", costo);
 
     return 0;
 }
