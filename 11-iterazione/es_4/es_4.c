@@ -1,5 +1,14 @@
 #include <stdio.h>
 
+/**
+ * @brief Dato N un numero intero positivo, generare e visualizzare in ordine crescente i numeri pari minori o uguali a N.
+ * 
+ * @param argc Numero di argomenti inseriti da riga di comando 
+ * @param argv Array di stringhe contenente gli argomenti inseriti da riga di comando
+ *
+ * @return La funzione restituisce sempre 0.
+ */
+
 int main(int argc, char *argv[])
 {
 
