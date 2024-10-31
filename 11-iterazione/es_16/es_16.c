@@ -36,7 +36,7 @@ int main(int argv,char *argc) {
     }
 
     int diff = arr[1] - arr[0];  // Differenza iniziale
-    int arimetico = 1;       // Flag per controllare se è una progressione aritmetica
+    int arimetico = 1;       // Serve per controllare se è una progressione aritmetica
     int max_diff = diff;         // Variabile per la differenza massima
 
     for (int i = 2; i < n; i++) {
