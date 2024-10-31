@@ -1,0 +1,2 @@
+Esercizio 32
+Progettare un algoritmo che visualizzi tutti i divisori di un numero intero N.
