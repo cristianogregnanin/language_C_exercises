@@ -19,25 +19,22 @@ int main(int argc, char *argv[]) {
     //il numero di mesi di crescita
     int mesi;              
 
-    //input dell'utente
     printf("Inserisci l'altezza iniziale della pianta: ");
     scanf("%lf", &altezzaIniziale);
     printf("Inserisci il numero di mesi: ");
     scanf("%d", &mesi);
 
-    //inizializza l'altezza finale
     double altezzaFinale = altezzaIniziale; 
     //crescita del primo mese
     double crescitaMensile = altezzaIniziale / 2.0; 
 
     for (int i = 0; i < mesi; i++) {
         //aggiunge la crescita mensile
-        altezzaFinale += crescitaMensile; 
+        altezzaFinale = altezzaFinale + crescitaMensile; 
         //crescita per il mese successivo è la metà di quella attuale
-        crescitaMensile /= 2.0; 
+        crescitaMensile = crescitaMensile / 2.0;
     }
 
-    //stampa l'altezza finale
     printf("L'altezza finale della pianta dopo %d mesi è: %.2f\n", mesi, altezzaFinale);
 
     return 0;
