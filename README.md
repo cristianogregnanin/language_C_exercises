@@ -17,3 +17,9 @@ to compile with standard filename a.out:
 to compile with standard filename a.out and execute in the same line:
 
 ```$ gcc exercise.c ; ./a.out```
+
+documentation:
+
+```$ documentazione/html```
+
+

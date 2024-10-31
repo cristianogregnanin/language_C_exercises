@@ -1,0 +1,7 @@
+Esercizio 29
+L'accrescimento della popolazione umana è guidato da una semplice legge matematica:
+l'incremento della popolazione tra un anno e il successivo è dato dal prodotto di una costante (il tasso di accrescimento) per la dimensione della popolazione. Realizzare l'algoritmo che consenta di simulare anno per anno i valori della dimensione della popolazione a partire:
+- dall'anno iniziale della simulazione;
+- dal valore della dimensione iniziale della popolazione;
+- dal valore del tasso di accrescimento;
+- dall'anno finale della simulazione.
