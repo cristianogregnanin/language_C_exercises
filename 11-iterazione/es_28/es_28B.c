@@ -10,19 +10,9 @@
  * @return La funzione ritorna sempre 0. 
  */
 
-int calcola_numero_laminatoi(double spessore_iniziale, double spessore_finale) {
-    int n = 0;
-
-    while (spessore_iniziale > spessore_finale) {
-        spessore_iniziale *= 0.9;
-        n++;
-    }
-
-    return n;
-}
-
 int main(int argc, char*argv[]) {
     double spessore_iniziale, spessore_finale;
+    int numero_laminatoi;
 
     printf("Inserisci lo spessore iniziale del semilavorato (in cm): ");
     scanf("%lf", &spessore_iniziale);
@@ -30,7 +20,10 @@ int main(int argc, char*argv[]) {
     printf("Inserisci lo spessore finale desiderato (in cm): ");
     scanf("%lf", &spessore_finale);
 
-    int numero_laminatoi = calcola_numero_laminatoi(spessore_iniziale, spessore_finale);
+    while (spessore_iniziale > spessore_finale) {
+        spessore_iniziale *= 0.9;
+        numero_laminatoi++;
+    }
 
     printf("Il numero di laminatoi necessari è: %d\n", numero_laminatoi);
 

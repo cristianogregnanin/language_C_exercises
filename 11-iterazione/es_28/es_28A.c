@@ -10,10 +10,6 @@
  * @return La funzione ritorna sempre 0. 
  */
 
-double calcola_spessore_finale(double spessore_iniziale, int n) {
-    return spessore_iniziale * pow(0.9, n);
-}
-
 int main(int argc, char* agrv[]) {
     double spessore_iniziale;
     int n;
@@ -24,7 +20,7 @@ int main(int argc, char* agrv[]) {
     printf("Inserisci il numero di laminatoi: ");
     scanf("%d", &n);
 
-    double spessore_finale = calcola_spessore_finale(spessore_iniziale, n);
+    double spessore_finale = spessore_iniziale * pow(0.9, n);
 
     printf("Lo spessore finale del laminato è: %.2f cm\n", spessore_finale);
 
