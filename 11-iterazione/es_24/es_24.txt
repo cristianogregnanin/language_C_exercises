@@ -1,17 +1,3 @@
-Funzione bernoulli
-@brief Funzione per il calcolo della somma dei numeri n alla potenza k
-e del numero di Bernoulli
-
-@param int n , numero di numeri (elevati alla costante k) da sommare 
-@param double k , potenza alla quale dovranno essere elevati i n numeri
-
-@return double somma , somma dei n^k
- 
-Funzione: main 
-@brief Funzione principale che, chiedendo all'utente n e k,
-calcola il numero di Bernoulli
- 
-@param argc Conteggio argomenti
-@param argv Indice dell'argomento
- 
-@return la funzione ritorna sempre 0
+Dato un valore numerico costante k (non necessariamente intero), I'n-esimo numero di Bernoulli 
+è dato dalla somma dei primi n numeri interi elevati alla potenza k; per esempio per n = 5: 1+2+3+4+5*
+Progettare un algoritmo che determini, a partire dai valori della costante k e del numero n, il nu- mero di Bernoulli relativo.
