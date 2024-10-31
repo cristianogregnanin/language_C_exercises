@@ -1,8 +1,7 @@
 #include <stdio.h>
 
 /**
-* @brief Dato N un numero intero positivo, generare e visualizzare in ordine crescente i numeri dispari
-*  		 minori o uguali a N.
+* @brief Dato N un numero intero positivo, generare e visualizzare in ordine crescente i numeri dispari minori o uguali a N.
 *
 * @param argc Numero argomenti riga di comando
 * @param argv Array di stringhe argomenti riga di comando
