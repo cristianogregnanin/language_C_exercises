@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h>
+#define M_PI 3.14159265358979323846
 
 /**
  *
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     printf("Inserisci il raggio del cerchio: ");
     scanf("%lf", &raggio);
 
-    area = M_PI * pow(raggio, 2); // Utilizza M_PI e pow per calcolare l'area
+    area = M_PI * (raggio * raggio);
 
     printf("L'area del cerchio con raggio %.2f è %.2f\n", raggio, area);
 
