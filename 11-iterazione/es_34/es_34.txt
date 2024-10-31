@@ -1,1 +1,0 @@
-Una pianta cresce ogni mese della metà di quanto è cresciuta il mese precedente (il primo mese cresce la metà dell' altezza iniziale). Progettare l' algoritmo che calcoli l' altezza finale della pianta a partire dall' altezza iniziale e dal numero di mesi.
