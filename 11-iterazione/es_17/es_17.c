@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
     for (int i = 1; i < n; i++)
     {
-        chicchiDiRiso += chicchiCasella;
+        chicchiDiRiso = chicchiDiRiso + chicchiCasella;
         chicchiCasella = chicchiCasella * 2;
     }
     printf("\nIl numero di chicchi di riso complessivo che spettano come ricompensa è : %.0f\n", chicchiDiRiso);
