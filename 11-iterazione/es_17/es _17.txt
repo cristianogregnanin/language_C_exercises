@@ -1,1 +1,6 @@
-Una leggenda orientale narra di un matematico che, in cambio di alcuni servigi resi al re, chiese la seguente ricompensa: <<un chicco di riso per la prima casella di una scacchiera , due chicchi di riso per la seconda casella di una scacchiera , quattro chicchi di riso per la terza casella... e così via per tutte le 64 caselle della scacchiera>>.Progettare un algoritmo che, a partire dal numero n di caselle che si intendono riempire, calcoli il numero complessivo di chicchi di riso che spettano come ricompensa.
+Una leggenda orientale narra di un matematico che, in cambio di alcuni servigi resi al re,
+chiese la seguente ricompensa: <<un chicco di riso per la prima casella di una scacchiera ,
+due chicchi di riso per la seconda casella di una scacchiera ,
+quattro chicchi di riso per la terza casella... e così via per tutte le 64 caselle della scacchiera>>.
+Progettare un algoritmo che, a partire dal numero n di caselle che si intendono riempire,
+calcoli il numero complessivo di chicchi di riso che spettano come ricompensa.
