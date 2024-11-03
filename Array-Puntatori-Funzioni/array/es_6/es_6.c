@@ -1,6 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 
+/** 
+ * @brief funzione
+ * denominata palindroma che prenda in input una stringa e restituisca
+ * 1 se la stringa é palindroma altrimenti -1
+ *  
+ * @param char parola[] stringa di caratteri
+ * 
+ * @return La funzione restituisce 1 se la stringa è palindroma
+ * @return La funzione restituisce -1 se la stringa non è palindroma
+ */
+
 int palindroma(char parola[])
 {
 	int i, k = strlen(parola) - 1;
@@ -14,6 +25,17 @@ int palindroma(char parola[])
 
 	return 1;
 }
+
+/** 
+ * @brief funzione
+ * denominata palindroma che prenda in input una stringa e restituisca
+ * 1 se la stringa é palindroma altrimenti -1
+ *  
+ * @param char parola[] stringa di caratteri
+ * 
+ * @return La funzione restituisce 1 se la stringa è palindroma
+ * @return La funzione restituisce -1 se la stringa non è palindroma
+ */
 
 int main(int argc, char *argv[])
 {
