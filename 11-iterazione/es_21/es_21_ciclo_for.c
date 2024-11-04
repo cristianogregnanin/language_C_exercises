@@ -1,5 +1,4 @@
 /**
- * @file es21_ciclo_for.c
  * @brief Dato un numero intero positivo N verificare se N è un numero primo.
  * Un numero è considerato primo solo se  è maggiore o uguale a 1, o se ha come divisori 1 e se stesso.
  * 
