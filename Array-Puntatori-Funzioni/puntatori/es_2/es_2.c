@@ -6,7 +6,7 @@
  * @param b Puntatore alla seconda variabile intera da scambiare.
  *
  * @return Nessun valore restituito. La funzione modifica direttamente i valori delle variabili passate tramite i puntatori.
-*/
+ */
 
 #include <stdio.h>
 
