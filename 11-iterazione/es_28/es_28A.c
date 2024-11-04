@@ -4,13 +4,14 @@
 /**
  * @brief Progettare un algoritmo per determinare lo spessore del laminato a partire dallo spessore del semilavorato grezzo e dal numero di laminatoi
     presenti nel processo di lavorazione.
- * 
+ *
  * @param argc Numero degli elementi passati da riga di comando.
  * @param argv Array di stringhe degli argomenti passati da righa di comando.
- * @return La funzione ritorna sempre 0. 
+ * @return La funzione ritorna sempre 0.
  */
 
-int main(int argc, char* agrv[]) {
+int main(int argc, char *agrv[])
+{
     double spessore_iniziale;
     int n;
 
