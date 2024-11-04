@@ -1,6 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * @brief Si crei un programma che nel momento dell'esecuzione popoli l'array
+ * argv[] con una serie di numeri. Esempio: $ ./a.out 1 5 9 6
+ * Il programma deve quindi chiedere in input un numero e deve cercarlo 
+ * all'interno dell'array argv.
+ * Se il numero è presente il programma deve dare un messaggio positivo
+ * e deve mostrare la posizione dell'elemento, altrimenti deve stampare a 
+ * video: "numero non presente"
+ * Suggerimento: si usi una funzione per ricercare la posizione dell'
+ * elemento. Tale funzione deve tornare la posizione oppure -1.
+ *
+ * @param argc Numero di argomenti inseriti da riga di comando 
+ * @param argv Array di stringhe contenente gli argomenti inseriti da riga di comando
+ * 
+ * @return La funzione restituisce 0.
+ */
+
 int ricerca_posizione(int n, char *argv[], int numero)
 {
 	int i;

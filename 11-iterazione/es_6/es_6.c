@@ -8,7 +8,7 @@
  * @param argc, Lunghezza dell'array argv
  *
  * @return 0 se il programma termina correttamente.
-*/
+ */
 
 int main(int argc, char *argv[])
 {
