@@ -1,13 +1,16 @@
 /**
- * @brief Dati tre numeri interi esegue la differenza tra i primi due (a - b).
- *        Ripete l'operazione finche' la somma dei primi due numeri e' maggiore o uguale al terzo.
- *        Conta quante volte la differenza e' nulla, pari o dispari.
+ * @brief Progettare un algoritmo che effettui le seguenti operazioni:
+ *	• continui a leggere da tastiera una serie di terne di valori interi A ,
+ *	B e C finchè non vengono inseriti dei valori tali per cui A + B < C
+ *	• conteggi il numero di volte in cui la differenza tra A e B è pari, dispari, e quando è nulla
+ *	• prima di terminare, visualizzi il valore dei valori conteggiati
  *
- * @param argv Vettore di stringhe contenente gli argomenti passati attraverso la riga di comando
- * @param argc Numero di argomenti  passati attraverso la riga di comando
+ * @param argv Array di stringhe contenente gli argomenti passati attraverso la riga di comando
+ * @param argc Numero di argomenti passati attraverso la riga di comando
  *
  * @return La funzione restituisce 0
  */
+
 #include <stdio.h>
 
 int main(int argc, char *argv[])

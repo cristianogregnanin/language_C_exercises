@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/**
+ * @brief Dato N un numero intero positivo, calcolare e visualizzare la somma dei primi N numeri pari.
+ *
+ * @param argv Array di stringhe contenente gli argomenti da riga di comando
+ * @param argc Numero di argomenti da riga di comando
+ *
+ * @return La funzione restituisce sempre 0.
+ */
 int main(int argc, char *argv[])
 {
 
