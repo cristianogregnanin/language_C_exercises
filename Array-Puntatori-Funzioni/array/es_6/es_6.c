@@ -26,15 +26,21 @@ int palindroma(char parola[])
 	return 1;
 }
 
-/** 
- * @brief funzione
+/**
+ * @brief Si scriva un programma in linguaggio C che implementi una funzione
  * denominata palindroma che prenda in input una stringa e restituisca
- * 1 se la stringa é palindroma altrimenti -1
- *  
- * @param char parola[] stringa di caratteri
- * 
- * @return La funzione restituisce 1 se la stringa è palindroma
- * @return La funzione restituisce -1 se la stringa non è palindroma
+ * 1 se la stringa è palindroma altrimenti -1
+ * esempio:
+ * $ ./a.out anna
+ * $ anna è una stringa palindroma
+ * esempio:
+ * $ ./a.out ciao
+ * $ ciao non è una stringa palindroma
+ *
+ * @param argv Vettore di stringhe (vettori di caratteri) contenente gli argomenti da riga di comando
+ * @param argc Numero di argomenti da riga di comando
+ *
+ * @return La funzione restituisce sempre 0.
  */
 
 int main(int argc, char *argv[])
