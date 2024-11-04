@@ -12,7 +12,10 @@
  * @param argc Numero di argomenti da riga di comando
  * @param argv Array di stringhe contenente gli argomenti da riga di comando
  * 
- * @return la funzione restituisce sempre 0
+ * @return la funzione main non restituisce esplicitamente un valore, 
+ * perchè nel codice non è presente un'istruzione di return. I puntatori 
+ * sono delle variabili che contengono l'indirizzo di memoria di un'altra variabile. 
+ * Quindi i puntatori consentono di modificare direttamente i valori delle variabili passate.
  */
 
 #include <stdio.h>
