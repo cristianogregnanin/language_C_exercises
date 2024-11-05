@@ -1,22 +1,23 @@
 /**
- * @brief La popolazione di un particolare batterio raddoppia ogni ora. 
- * Progettare un algoritmo che, a partire dal numero di ore trascorse e 
- * dal valore espresso in unită di carica batterica della consistenza iniziale 
+ * @brief La popolazione di un particolare batterio raddoppia ogni ora.
+ * Progettare un algoritmo che, a partire dal numero di ore trascorse e
+ * dal valore espresso in unită di carica batterica della consistenza iniziale
  * della popolazione batterica, ne calcoli la consistenza finale raggiunta.
- * 
- * 
- * 
+ *
+ *
+ *
  * @param argc Numero di argomenti inseriti da riga di comando
  * @param argv Array di stringhe contenente gli argomenti inseriti da riga di comando
- * 
+ *
  * @return La funzione restituisce 0.
  */
 
 #include <stdio.h>
 #include <math.h>
 
-int main(int argc, char *argv[]) {
-    
+int main(int argc, char *argv[])
+{
+
     int ore;
     double consistenza_iniziale;
     double consistenza_finale;

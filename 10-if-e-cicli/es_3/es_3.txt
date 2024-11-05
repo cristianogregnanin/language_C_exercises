@@ -1,0 +1,1 @@
+Progettare un algoritmo che, letto il valore di r del raggio, calcoli e sciva l'area del cerchio relativo.

@@ -1,5 +1,4 @@
 /**
- * @file main.c
  * @brief Dato un numero intero positivo N verificare se N è un numero primo.
  * Un numero è considerato primo solo se  è maggiore o uguale a 1, o se ha come divisori 1 e se stesso.
  * 
@@ -8,6 +7,7 @@
  * 
  * @return la funzione restituisce sempre 0
  */
+
 #include <stdio.h>
 
 int main(int argc, char *argv[])
