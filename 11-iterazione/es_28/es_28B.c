@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
     while (spessore_iniziale > spessore_finale)
     {
-        spessore_iniziale *= 0.9;
+        spessore_iniziale = spessore_iniziale * 0.9;
         numero_laminatoi++;
     }
 
