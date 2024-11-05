@@ -47,8 +47,7 @@ int main(int argc, char *argv[]) {
       rapporto = sqrt(rapporto);
       printf("\n\nradice quadrata del rapporto: %f\n\n", rapporto);
     } else {
-      printf(
-          "\n\nnon è possibile calcolare la radice di un numero negativo\n\n");
+      printf("\n\nnon è possibile calcolare la radice di un numero negativo\n\n");
     }
   } while (rapporto >= 0);
 
