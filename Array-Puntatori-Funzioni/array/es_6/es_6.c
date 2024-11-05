@@ -24,11 +24,16 @@ int palindroma(char parola[])
 	return 1;
 }
 /**
- * @brief Funzione principale del programma.
+ * @brief Si scriva un programma in linguaggio C che implementi una funzione
+ * denominata palindroma che prenda in input una stringa e restituisca
+ * 1 se la stringa è palindroma altrimenti -1
+ * esempio:
+ *	$ ./a.out anna
+ *	$ anna è una stringa palindroma
  *
- * Questa funzione controlla il numero di argomenti passati. Se il numero è corretto,
- * verifica se la parola passata come argomento è palindroma.
- *
+ *	esempio:
+ *	$ ./a.out ciao
+ *	$ ciao non è una stringa palindroma
  * @param argc Numero di argomenti.
  * @param argv Array di argomenti passati al programma.
  * @return Restituisce 0 in caso di successo, -1 in caso di errore.
