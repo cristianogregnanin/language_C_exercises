@@ -1,22 +1,22 @@
 /**
  * @brief In c gli array vengono passati come parametri alle funzioni 
-			per riferimento e non per copia. Cio implica che se una funzione
-			modifica l'array allora anche l'array originale sarà modificato.
-			Inoltre, in linguaggio C il nome dell'array coincide con l'indirizzo
-			del primo elemento dell'array.
-			Quindi in C dato un array vale che: 
-			int A[DIM];
-			A == &A == &A[0]
+ * per riferimento e non per copia. Cio implica che se una funzione
+ * modifica l'array allora anche l'array originale sarà modificato.
+ * Inoltre, in linguaggio C il nome dell'array coincide con l'indirizzo
+ * del primo elemento dell'array.
+ * Quindi in C dato un array vale che:
  * 
- * La funzione principale inizializza un array di interi e assegna valori ai suoi elementi usando l'indicizzazione classica.
- * Stampa gli indirizzi dell'array `numeri` e degli elementi dell'array. Infine, stampa i valori degli elementi
- * dell'array utilizzando la notazione dei puntatori per accedere ai valori.
+ * int A[DIM];
+ * A == &A == &A[0].
  * 
- * @param argc Numero argomenti riga di comando
- * @param argv Array di stringhe argomenti riga di comando
- * @return La funzione restituisce sempre 0
+ * @param argc Numero di argomenti da riga di comando
+ * @param argv Array di stringhe contenente gli argomenti da riga di comando
+ * 
+ * @return la funzione main non restituisce esplicitamente un valore, 
+ * perchè nel codice non è presente un'istruzione di return. I puntatori 
+ * sono delle variabili che contengono l'indirizzo di memoria di un'altra variabile. 
+ * Quindi i puntatori consentono di modificare direttamente i valori delle variabili passate.
  */
-
 
 #include <stdio.h>
 
@@ -43,6 +43,6 @@ int main(int argc, char *argv[])
     {
         printf("numeri[%d]: %d\n", i, *(numeri + i));
     }
-
+  
     return 0;
 }
