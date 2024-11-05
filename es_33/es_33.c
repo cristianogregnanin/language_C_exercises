@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- * @brief Progettare un algoritmo che, a partire da un numero naturale N, determini
-    se esso è perfetto o meno.
+ * @brief Un numero naturale N definito perfetto se è la somma di tutti i suoi divisori compresa l'unità (per esempio 6 è perfetto perché 
+ * è la somma dei suoi tre divisori(1, 2 e 3). Progettare un algoritmo che, a partire da un numero naturale N, determini se esso è perfetto o meno.
  *
  * @param argc Numero degli elementi passati da riga di comando.
  * @param argv Array di stringhe degli argomenti passati da righa di comando.
@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
             somma += i;
         }
     }
-    if (somma==N) {
+    if (somma == N) {
         printf("%d è un numero perfetto.\n", N);
     } else {
         printf("%d non è un numero perfetto.\n", N);
