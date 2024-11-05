@@ -8,8 +8,6 @@
  *
  * @param a Puntatore alla prima variabile intera da scambiare.
  * @param b Puntatore alla seconda variabile intera da scambiare.
- * 
- * @return Questa funzione è di tipo void e non restituisce alcun valore.
  */
 void scambia(int *a, int *b)
 {
@@ -19,6 +17,8 @@ void scambia(int *a, int *b)
 }
 
 /**
+ * @file es_2.c
+ * 
  * @brief Funzione principale che esegue un esempio di scambio tra due numeri.
  *
  * La funzione `main` inizializza due variabili intere, chiama la funzione `scambia`
@@ -33,7 +33,6 @@ int main(int argc, char *argv[])
 {
     int a = 10, b = 15;
 
-    // Chiamata alla funzione per scambiare i valori di a e b
     scambia(&a, &b);
 
     printf("dopo lo scambio a vale: %d\n", a);
