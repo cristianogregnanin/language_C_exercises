@@ -9,7 +9,7 @@
 *asfalto ghiacciato      0,1
 *Progettare un algoritmo che calcoli lo spazio di frenata a partire dalla velocità v e dalla
 *condizione dell'asfalto (ruvido, liscio, ecc.).
-*@param argc Numeri di argomenti da riga di comando
+*@param argc Numero di argomenti da riga di comando
 *@param argv Array di stringhe (vettori di caratteri) contenente gli argomenti da riga di comando
 *@return La funzione ritorna sempre 0
 */
