@@ -1,0 +1,2 @@
+Dati n valori numerici in ordine crescente, progettare un algoritmo che scriva se i numeri forniti a partire dal secondo differiscono ognuno da precedente di un valore costante.
+In caso affermativo l'algoritmo deve scrivere il valore della differenza, in caso negativo l'algoritmo deve scrivere il valore massimo delle differenze.
