@@ -1,0 +1,6 @@
+Il filosofo Zenone di Elea motivava il fatto che il moto è solo un'illusione 
+con la seguente argomentazione: «dovendo percorrere una certa distanza si dovra coprire con un primo spostamento meta della distanza,
+con un secondo spostamento metà della distanza rimanente, 
+con un terzo spostamento metà della distanza ancora rimanente e cosi via 
+senza arrivare mai a destinazione». 
+Progettare un algoritmo che, data la distanza da percorrere e il numero di spostamenti effettuati, calcoli la distanza effettivamente coperta.
