@@ -1,3 +1,15 @@
+/**
+ * @brief Chiedere in input 5 interi e inserirli in un array. Stampare a video l'array al contrario. Esempio: input 5 6 9 11 12 output 12 11 9 6 5
+ *
+ * La funzione richiede all'utente di inserire 5 numeri interi, con cui andrà a popolare un array.
+ * Successivamente, l’algoritmo stampa i valori dell'array, dall'ultimo al primo.
+ *
+ * @param argv Array di stringhe (array di caratteri) contenente gli argomenti da riga di comando
+ * @param argc Numero di argomenti da riga di comando
+ *
+ * @return La funzione restituisce sempre 0.
+ */
+
 #include <stdio.h>
 #define DIM 4
 
