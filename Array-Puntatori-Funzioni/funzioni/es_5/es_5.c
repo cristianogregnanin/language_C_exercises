@@ -1,55 +1,6 @@
 #include <stdio.h>
 
 /**
- * @brief Ricerca un prodotto dato il codice
- *
- * @param prodotti Array di interi contenente i codici dei prodotti.
- * @param n Numero di prodotti attualmente nel magazzino.
- * @param codice Il codice del prodotto da ricercare.
- * @return La funzione restituisce la posizione (indice) del prodotto nell'array se trovato, altrimenti -1.
- */
-
-int ricerca(int prodotti[], int n, int codice)
-{
-
-    for (int k = 0; k < n; k++)
-    {
-
-        if (prodotti[k] == codice)
-        {
-            return k;
-        }
-    }
-    return -1;
-}
-
-/**
- * @brief Popola l'array con nuovi prodotti
- *
- * @param prodotti Array di interi in cui verranno inseriti i codici dei prodotti.
- *
- * @return La funzione restituisce il numero di prodotti.
- */
-
-int popola(int prodotti[])
-{
-    int codice, n = 0;
-    while (1)
-    {
-        printf("Inserisci il codice del prodotto: (digita -1 per terminare)\n");
-        scanf("%d", &codice);
-
-        if (codice == -1)
-        {
-            return n;
-        }
-        prodotti[n] = codice;
-        n++;
-    }
-}
-
-
-/**
  * @brief Ricerca un prodotto dato il codice.
  *
  * @param prodotti Array di interi contenente i codici dei prodotti.
@@ -73,6 +24,7 @@ int ricerca(int prodotti[], int n, int codice)
  * @brief Popola l'array con nuovi codici di prodotto inseriti dall'utente.
  *
  * @param prodotti Array di interi in cui verranno inseriti i codici dei prodotti.
+ *
  * @return Il numero di prodotti inseriti nell'array.
  */
 int popola(int prodotti[])
