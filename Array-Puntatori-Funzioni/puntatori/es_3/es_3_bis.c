@@ -43,4 +43,6 @@ int main(int argc, char *argv[])
     {
         printf("numeri[%d]: %d\n", i, *(numeri + i));
     }
+  
+    return 0;
 }

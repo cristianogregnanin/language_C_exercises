@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 
 /**
@@ -13,10 +12,10 @@
  */
 int verifica_input(int valore)
 {
-	if (valore > 0)
-		return valore;
-	else
-		return -1;
+    if (valore > 0)
+        return valore;
+    else
+        return -1;
 }
 
 /**
@@ -27,9 +26,10 @@ int verifica_input(int valore)
  * @return Restituisce la somma tra n1 e n2
  * 
  */
+
 int calcola_somma(int n1, int n2)
 {
-	return n1 + n2;
+    return n1 + n2;
 }
 
 /**
@@ -39,26 +39,26 @@ int calcola_somma(int n1, int n2)
  * @param argv argomenti che prende da riga di comando
  * @return Restituisce 0 se l'esecuzione ha successo.
  */
+
 int main(int argc, char *argv[])
 {
+    int a, b, somma;
 
-	int a, b, somma;
+    do
+    {
+        printf("Inserisci a: ");
+        scanf("%d", &a);
+    } while (verifica_input(a) < 0);
 
-	do
-	{
-		printf("Inserisci a: ");
-		scanf("%d", &a);
-	} while (verifica_input(a) < 0);
+    do
+    {
+        printf("Inserisci b: ");
+        scanf("%d", &b);
+    } while (verifica_input(b) < 0);
 
-	do
-	{
-		printf("Inserisci b: ");
-		scanf("%d", &b);
-	} while (verifica_input(b) < 0);
+    somma = calcola_somma(a, b);
 
-	somma = calcola_somma(a, b);
+    printf("la somma è: %d\n", somma);
 
-	printf("la somma è: %d\n", somma);
-
-	return 0;
+    return 0;
 }

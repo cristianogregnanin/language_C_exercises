@@ -1,4 +1,69 @@
+/**
+ * @brief La ditta coders.io sta realizzando un modulo software per la gestione di un
+ * magazzino composto da massimo 100 prodotti. Si vuole progettare e implementare
+ * una funzionalità atta a tenere traccia dei prodotti presenti, in particolare
+ * si scriva un programma in linguaggio C che chieda in input una serie di codici
+ * di prodotti (uno per volta) e li inserisca in una lista, per terminare
+ * l’inserimento si utilizzi il codice -1. 
+ * Al termine dell’inserimento si vuole poter eliminare un prodotto
+ * preventivamente ricercato e quindi stampare la lista a video.
+ * Se il prodotto ricercato non esiste stampare a video un messaggio di errore.
+ *
+ * Esempio di utilizzo:
+ * $ ./es.out                                                             
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * 20
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * 30
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * 40
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * 50
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * -1
+ * Inserisci il codice del prodotto che vuoi eliminare: 
+ * 40
+ * prodotto: 20
+ * prodotto: 30
+ * prodotto: 50
+ *
+ * Esempio di utilizzo:
+ * $ ./es.out                                                             
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * 20
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * 30
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * 40
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * 50
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * -1
+ * Inserisci il codice del prodotto che vuoi eliminare: 
+ * 100
+ * Prodotto non esistente 
+ * 
+ * @param argc elementi inseriti da riga di comando
+ * @param argv insieme degli elementi inseriti da riga di comando
+ * @param prodotti insieme dei prodotti nel magazzino
+ * @param n contatore 
+ * @param codice numero identificativo del prodotto
+ * @param posizione indica la posizione del prodotto all'interno del magazzino
+ * 
+ * 
+ * @return la funzione restituisce 0
+ */
+
 #include <stdio.h>
+
+/**
+ * @brief Ricerca un prodotto dato il codice
+ * 
+ * @param argv Array di stringhe (array di caratteri) contenente gli argomenti da riga di comando
+ * @param argc Numero di argomenti da riga di comando
+ *
+ * @return La funzione restituisce o la posizione in cui si trova se è presente o -1 se non è presente nell'array.
+ */
 
 int ricerca(int prodotti[], int n, int codice)
 {
@@ -13,6 +78,15 @@ int ricerca(int prodotti[], int n, int codice)
     }
     return -1;
 }
+
+/**
+ * @brief Popola l'array con nuovi prodotti
+ * 
+ * @param argv Array di stringhe (array di caratteri) contenente gli argomenti da riga di comando
+ * @param argc Numero di argomenti da riga di comando
+ *
+ * @return La funzione restituisce il numero di prodotti.
+ */
 
 int popola(int prodotti[])
 {
@@ -31,6 +105,15 @@ int popola(int prodotti[])
     }
 }
 
+/**
+ * @brief Ricerca la posizione del prodotto da eliminare
+ * 
+ * @param argv Array di stringhe (array di caratteri) contenente gli argomenti da riga di comando
+ * @param argc Numero di argomenti da riga di comando
+ *
+ * @return La funzione restituisce la posizione dei prodotti.
+ */
+
 int elimina(int prodotti[], int *n, int posizione)
 {
 
@@ -42,6 +125,15 @@ int elimina(int prodotti[], int *n, int posizione)
     return posizione;
 }
 
+/**
+ * @brief Stampa i prodotti dell'array
+ * 
+ * @param argv Array di stringhe (array di caratteri) contenente gli argomenti da riga di comando
+ * @param argc Numero di argomenti da riga di comando
+ *
+ * @return La funzione non restituisce nulla.
+ */
+
 void stampa(int prodotti[], int n)
 {
     for (int i = 0; i < n; i++)
@@ -49,6 +141,57 @@ void stampa(int prodotti[], int n)
         printf("prodotto: %d\n", prodotti[i]);
     }
 }
+
+/**
+ * @brief La ditta coders.io sta realizzando un modulo software per la gestione di un
+ * magazzino composto da massimo 100 prodotti. Si vuole progettare e implementare
+ * una funzionalità atta a tenere traccia dei prodotti presenti, in particolare
+ * si scriva un programma in linguaggio C che chieda in input una serie di codici
+ * di prodotti (uno per volta) e li inserisca in una lista, per terminare
+ * l’inserimento si utilizzi il codice -1. 
+ * Al termine dell’inserimento si vuole poter eliminare un prodotto
+ * preventivamente ricercato e quindi stampare la lista a video.
+ * Se il prodotto ricercato non esiste stampare a video un messaggio di errore.
+
+ * Esempio di utilizzo:
+ * $ ./es.out                                                             
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * 20
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * 30
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * 40
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * 50
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * -1
+ * Inserisci il codice del prodotto che vuoi eliminare: 
+ * 40
+ * prodotto: 20
+ * prodotto: 30
+ * prodotto: 50
+
+ * Esempio di utilizzo:
+ * $ ./es.out                                                             
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * 20
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * 30
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * 40
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * 50
+ * Inserisci il codice del prodotto: (digita -1 per terminare)
+ * -1
+ * Inserisci il codice del prodotto che vuoi eliminare: 
+ * 100
+ * Prodotto non esistente
+ *
+ * @param argv Array di stringhe (array di caratteri) contenente gli argomenti da riga di comando
+ * @param argc Numero di argomenti da riga di comando
+ *
+ * @return La funzione restituisce sempre 0.
+ */
 
 int main(int argc, char *argv[])
 {

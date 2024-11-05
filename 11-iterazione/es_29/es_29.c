@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
     for (int i = anno_iniziale; i <= anno_finale; i++)
     {
         printf("%d      %.2f\n", i, popolazione_attuale);
-        popolazione_attuale += popolazione_attuale * tasso_accrescimento;
+        popolazione_attuale = popolazione_attuale + popolazione_attuale * tasso_accrescimento;
     }
 
     return 0;
