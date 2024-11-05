@@ -33,7 +33,7 @@ int main(int argc, char argv[]) {
     } while (tipo < 1 || tipo > 3);
 
     do {
-        printf("Inserisci la priorit� (A per alta, B per bassa): ");
+        printf("Inserisci la priorità (A per alta, B per bassa): ");
         scanf(" %c", &priorita);
     } while (priorita != 'A' && priorita != 'B');
 
