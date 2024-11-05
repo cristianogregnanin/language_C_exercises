@@ -25,7 +25,7 @@ int massimo(int argc, char *argv[])
 *
 * @param argv Array di stringhe contenente gli argomenti passati attraverso la riga di comando
 * @param argc Numero di argomenti passati attraverso la riga di comando
-* @param int pari[] Array di interi che andrà riempito con i numeri pari trovati
+* @param pari Array di interi che andrà riempito con i numeri pari trovati
 * volta che ne viene inserito
 */
 
@@ -66,7 +66,7 @@ int pari(int argc, char *argv[], int pari[])
 * Suggerimento: per convertire una stringa in numero intero usare
 * la funzione atoi:
 *
-* #include <stdlib.h>
+* 
 * int numero = atoi("10");
 *
 * @param argc argc numero di argomenti passati da riga di comando
