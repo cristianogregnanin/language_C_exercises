@@ -8,11 +8,10 @@
 *	 [3,3,4,5] => dispari
 *	 [1,2,1,2] => pari
 *
-* @param a[] Array di interi
-* @param n Numero di numeri presenti nell'array
+* @param argv Array di interi
+* @param argc Numero di numeri presenti nell'array
 * 
-* @return La funzione restituisce 0 se l'array è pari
-* @return La funzione restituisce 1 se l'array è dispari
+* @return La funzione restituisce sempre 0
 */
 int main(int argc, char *argv[])
 {

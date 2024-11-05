@@ -1,12 +1,3 @@
-/**
- * @file es_24.c
- * @brief Calcolo del numero di Bernoulli
- *
- * Funzione bernoulli che calcola la somma dei 
- * primi n numeri interi elevati alla potenza k. 
- * Funzione main dialogo con l'utente
- */
-
 #include <stdio.h>
 #include <math.h>
 
@@ -16,8 +7,8 @@
  * Questa funzione calcola il numero di Bernoulli sommando i primi n numeri
  * interi elevati alla potenza k.
  *
- * @param n Numero di numeri da sommare.
- * @param k Potenza alla quale elevare i numeri.
+ * @param argc Numero di numeri da sommare.
+ * @param argv Potenza alla quale elevare i numeri.
  *
  * @return La somma dei primi n numeri interi elevati alla potenza k.
  */
