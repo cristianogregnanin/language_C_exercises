@@ -6,7 +6,7 @@
 /**
  * @brief Calcola la lunghezza di una stringa.
  *
- * @param stringa[] striga di cui calcolare la lunghezza.
+ * @param stringa stringa di cui calcolare la lunghezza.
  *
  * @return La lunghezza della stringa
  */
@@ -18,7 +18,7 @@ int calcolo_lunghezza(char stringa[])
 /**
  * @brief Ricerca le consonanti in una stringa.
  *
- * @param stringa[] striga di cui calcolare il numero di consonanti.
+ * @param stringa stringa di cui calcolare il numero di consonanti.
  *
  * @return Il numero di consonanti della stringa.
  */
@@ -40,7 +40,7 @@ int ricerca_consonanti_in_stringa(char stringa[])
 /**
  * @brief Ricerca le vocali in una stringa.
  *
- * @param stringa[] striga di cui calcolare il numero di vocali.
+ * @param stringa stringa di cui calcolare il numero di vocali.
  *
  * @return Il numero di vocali della stringa.
  */
@@ -63,7 +63,7 @@ int ricerca_vocali_in_stringa(char stringa[])
  * @brief Ricerca le vocali nell'intera frase.
  *
  * @param argc dimesione di argv.
- * @param argv[] array di stringhe.
+ * @param argv array di stringhe.
  *
  * @return Il numero di vocali nella frase.
  */
@@ -81,7 +81,7 @@ int conteggio_vocali(int argc, char *argv[])
  * @brief Ricerca le consonanti nell'intera frase.
  *
  * @param argc dimesione di argv.
- * @param argv[] array di stringhe.
+ * @param argv array di stringhe.
  *
  * @return Il numero di consonanti nella frase.
  */
@@ -111,7 +111,7 @@ int conteggio_spazi_bianchi(int argc)
 /**
  * @brief Ricerca quante volte compare un carattere in una stringa.
  *
- * @param stringa[] stringa in cui ricercare il carattere.
+ * @param stringa stringa in cui ricercare il carattere.
  * @param carattere carattere da ricercare.
  *
  * @return numero di volte che compare un carattere nella stringa.
@@ -134,7 +134,7 @@ int ricerca_carattere(char stringa[], char carattere)
  * @brief Ricerca quante volte compare un carattere in una frase.
  *
  * @param argc dimensione di argv[]
- * @param argv[] array di stringhe.
+ * @param argv array di stringhe.
  * @param carattere carattere da ricercare.
  *
  * @return numero di volte che compare un carattere nella frase.
