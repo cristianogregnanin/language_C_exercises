@@ -15,10 +15,12 @@
 
 #include <stdio.h>
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
   int a, b, c, diff, nulli = 0, pari = 0, dispari = 0;
 
-  do {
+  do
+  {
     printf("\ninserisci a\n");
     scanf("%d", &a);
     printf("inserisci b\n");
@@ -27,13 +29,17 @@ int main(int argc, char *argv[]) {
     scanf("%d", &c);
     diff = a - b;
 
-    if (diff == 0) {
+    if (diff == 0)
+    {
       nulli++;
     }
 
-    if (diff % 2 == 0) {
+    if (diff % 2 == 0)
+    {
       pari++;
-    } else {
+    }
+    else
+    {
       dispari++;
     }
 
