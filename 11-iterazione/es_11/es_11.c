@@ -1,16 +1,17 @@
 /**
- * @brief Dato N un numero intero positivo, calcolare e visualizzare la somma dei
- * primi N numeri dispari.
- * @param argv Array di stringhe contenente gli argomenti da riga di comando
- * @param argc Numero di argomenti da riga di comando
- * @return La funzione restituisce sempre 0.
+ * @brief Dato N un numero intero positivo, calcolare e visualizzare la somma dei primi N numeri dispari.
+ *
+ * @param argc Numero di argomenti da riga di comando (non utilizzato in questo programma).
+ * @param argv Array di argomenti da riga di comando (non utilizzato in questo programma).
+ *
+ * @return 0 Se il programma termina correttamente.
  */
+
 #include <stdio.h>
 
 int main(int argc, char *argv[])
 {
-
-    int n, i, somma;
+    int n, i = 1, somma = 0;
     do
     {
         printf("Inserisci un numero positivo: \n");
@@ -18,8 +19,6 @@ int main(int argc, char *argv[])
 
     } while (n < 0);
 
-    somma = 0;
-    i = 1;
     do
     {
         somma = somma + i;
