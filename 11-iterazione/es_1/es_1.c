@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * @brief Dato N un numero intero positivo, calcolare e visualizzare la somma dei primi N numeri pari.
+ * @brief Dato N un numero intero positivo, generare e visualizzare il numero successivo.
  *
  * @param argv Array di stringhe contenente gli argomenti da riga di comando
  * @param argc Numero di argomenti da riga di comando
