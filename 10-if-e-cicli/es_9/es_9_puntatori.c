@@ -1,20 +1,9 @@
-/**
- * @brief Progettare un algoritmo che risolva il seguente problema. Si richieda 
- * all’utente di inserire una serie di terne di dati numerici (A, B, C). 
- * Il programma deve terminare quando uno dei valori inseriti è minore di
- * zero. Si scartino le terne nelle quali i valori non sono in ordine
- * strettamente crescente, ovvero quelle terne per cui non valga A < B < C.
- * Su tutte le terne non scartate si calcoli il massimo e il minimo dei
- * valori inseriti. Si stampino a video tali valori massimi e minimi prima
- * di terminare il programma.
- *
- * @param argc Numero di argomenti inseriti da riga di comando 
- * @param argv Array di stringhe contenente gli argomenti inseriti da riga di comando
- *
- * @return La funzione restituisce 0.
- */
 #include <stdio.h>
 #include <limits.h>
+
+/**
+ *  @brief Cal
+ */
 
 void calcola_min_max(int a, int b, int c, int *min, int *max)
 {
@@ -31,6 +20,22 @@ void calcola_min_max(int a, int b, int c, int *min, int *max)
 		printf("terna non valida\n");
 	}
 }
+
+/**
+ * @brief Progettare un algoritmo che risolva il seguente problema. Si richieda 
+ * all’utente di inserire una serie di terne di dati numerici (A, B, C). 
+ * Il programma deve terminare quando uno dei valori inseriti è minore di
+ * zero. Si scartino le terne nelle quali i valori non sono in ordine
+ * strettamente crescente, ovvero quelle terne per cui non valga A < B < C.
+ * Su tutte le terne non scartate si calcoli il massimo e il minimo dei
+ * valori inseriti. Si stampino a video tali valori massimi e minimi prima
+ * di terminare il programma.
+ *
+ * @param argc Numero di argomenti inseriti da riga di comando 
+ * @param argv Array di stringhe contenente gli argomenti inseriti da riga di comando
+ *
+ * @return La funzione restituisce 0.
+ */
 
 int main(int argc, char *argv[])
 {
