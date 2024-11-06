@@ -2,22 +2,19 @@
 #define DIM 10
 
 /**
- * 
  * @brief Chiedere in input 10 interi e inserirli in un array.
- * Stampare a video prima tutti i numeri pari e 
+ * Stampare a video prima tutti i numeri pari e
  * in seguito tutti i numeri dispari
- * 
- * Esempio: 
+ * Esempio:
  * input 5 6 9 11 12 13 14 10 8 21
  * output
  * 6 12 14 10 8
  * 5 9 11 13 21
- * 
+ *
  * @param argc Numero degli elementi passati da riga di comando.
  * @param argv Array di stringhe degli argomenti passati da righa di comando.
- * 
- * 
- * @return returna 0 se il programma è corretto
+ *
+ * @return returna 0 se il programma viene eseguito correttamente
  */
 int main(int argc, char *argv[])
 {
