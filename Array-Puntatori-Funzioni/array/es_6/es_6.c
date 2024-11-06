@@ -6,7 +6,7 @@
  * denominata palindroma che prenda in input una stringa e restituisca
  * 1 se la stringa é palindroma altrimenti -1
  *  
- * @param parola parola[] stringa di caratteri
+ * @param parola array di caratteri
  * 
  * @return La funzione restituisce 1 se la stringa è palindroma
  * @return La funzione restituisce -1 se la stringa non è palindroma
@@ -37,7 +37,7 @@ int palindroma(char parola[])
  * $ ./a.out ciao
  * $ ciao non è una stringa palindroma
  *
- * @param argv Vettore di char contenente gli argomenti da riga di comando
+ * @param argv Array di char contenente gli argomenti da riga di comando
  * @param argc Numero di argomenti da riga di comando
  *
  * @return La funzione restituisce sempre 0.
