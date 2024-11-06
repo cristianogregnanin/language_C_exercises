@@ -1,3 +1,6 @@
+#include <stdio.h>
+#define DIM 100
+
 /**
  * @brief Progettare un algoritmo che effettui la lettura da tastiera di una serie di valori numerici. Il
  * programma termina quando il dato immesso è pari a zero. Calcolare e stampare la media dei valori
@@ -9,9 +12,6 @@
  *
  * @return La funzione restituisce 0.
 */
-#include <stdio.h>
-#define DIM 100
-
 int main(int argc, char *argv[])
 {
 
