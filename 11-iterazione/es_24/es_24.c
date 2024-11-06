@@ -1,21 +1,11 @@
-/**
- * @file es_24.c
- * @brief Calcolo del numero di Bernoulli
- *
- * Funzione bernoulli che calcola la somma dei 
- * primi n numeri interi elevati alla potenza k. 
- * Funzione main dialogo con l'utente
- */
 
 #include <stdio.h>
 #include <math.h>
 
 /**
- * @brief Calcola la somma dei primi n numeri interi elevati alla potenza k.
- *
- * Questa funzione calcola il numero di Bernoulli sommando i primi n numeri
- * interi elevati alla potenza k.
- *
+ * @brief Dato un valore numerico costante k (non necessariamente intero), I'n-esimo numero di Bernoulli 
+ * è dato dalla somma dei primi n numeri interi elevati alla potenza k; per esempio per n = 5: 1+2+3+4+5*
+ * Progettare un algoritmo che determini, a partire dai valori della costante k e del numero n, il nu- mero di Bernoulli relativo.
  * @param n Numero di numeri da sommare.
  * @param k Potenza alla quale elevare i numeri.
  *
@@ -24,12 +14,12 @@
 
 int main(int argc, char *argv[])
 {
-    // Dichiarazione delle variabili
-    int n;            // numero di n, i quali indici saranno moltiplicati per k
-    double k;         // potenza
-    double risultato; // numero di Bernoulli
+ 
+    int n;            
+    double k;       
+    double risultato; 
 
-    // Inserimento dell'utente
+   
     printf("Inserisci il numero di n: ");
     scanf("%d", &n);
 
@@ -40,7 +30,7 @@ int main(int argc, char *argv[])
     for (int i = 1; i <= n; i++)
         somma += pow(i, k);
 
-    // Calcolo del risultato
+    
     risultato = somma;
     printf("Il numero di Bernoulli e': %f\n", risultato);
 
