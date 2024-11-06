@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /**
 * @brief Scrivere un programma in linguaggio C che dato un array di interi mostri
 *	 in output se l'array è pari.
@@ -8,11 +9,10 @@
 *	 [3,3,4,5] => dispari
 *	 [1,2,1,2] => pari
 *
-* @param a[] Array di interi
-* @param n Numero di numeri presenti nell'array
+* @param argc Dimensione di argv.
+* @param argv Array di stringhe degli argomenti passati da righa di comando.
 * 
-* @return La funzione restituisce 0 se l'array è pari
-* @return La funzione restituisce 1 se l'array è dispari
+* @return La funzione restituisce sempre 0.
 */
 int main(int argc, char *argv[])
 {
