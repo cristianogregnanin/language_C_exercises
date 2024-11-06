@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <string.h>
+
 /**
  * @brief Una birreria a fine serata deve conteggiare l’incasso. La cassiera accende il software gestionale il quale le chiede di inserire una alla volta le consumazioni servite.
  * Le consumazioni si dividono in bevande e ristorazione. La cassiera per ogni consumazione deve inserire la tipologia di consumazione e il suo importo.
@@ -12,8 +15,6 @@
  * 
  * @return la funzione restituisce 0
  */
-#include <stdio.h>
-#include <string.h>
 
 int main(int argc, char *argv[])
 {

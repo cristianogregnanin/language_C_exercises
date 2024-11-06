@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <limits.h>
+
 /**
  * @brief Progettare un algoritmo che risolva il seguente problema. Si richieda 
  * all’utente di inserire una serie di terne di dati numerici (A, B, C). 
@@ -13,8 +16,6 @@
  *
  * @return La funzione restituisce 0.
  */
-#include <stdio.h>
-#include <limits.h>
 
 void calcola_min_max(int a, int b, int c, int *min, int *max)
 {

@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /**
  * @brief II seguente algoritmo determina il giorno della settimana corrispondente a una data successiva al 15 ottobre 1582 ed espressa mediante tre valori numerici che rappresentano rispettivamente il giorno (G), il mese (M) e l'anno (A):
  * • il valore di M deve essere diminuito di 2;
@@ -16,7 +18,6 @@
  *
  * @return La funzione restituisce sempre 0.
  */
-#include <stdio.h>
 
 int main(int argc, char *argv[])
 {
