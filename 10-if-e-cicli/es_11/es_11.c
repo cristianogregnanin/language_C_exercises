@@ -1,8 +1,8 @@
 /**
  * @brief II seguente algoritmo determina il giorno della settimana corrispondente a una data successiva al 15 ottobre 1582 ed espressa mediante tre valori numerici che rappresentano rispettivamente il giorno (G), il mese (M) e l'anno (A):
- * • il valore di M deve essere diminuito di 2;
- * • se il valore di M è negativo allora al valore di A deve essere sottratto 1 e al valore di M deve essere sommato 12;
- * • il giorno della settimana è dato dal resto della divisione per 7 del risultato della seguente somma algebrica:
+ * - il valore di M deve essere diminuito di 2;
+ * - se il valore di M è negativo allora al valore di A deve essere sottratto 1 e al valore di M deve essere sommato 12;
+ * - il giorno della settimana è dato dal resto della divisione per 7 del risultato della seguente somma algebrica:
  * - valore di G;
  * - valore di A;
  * - parte intera di A/4;
