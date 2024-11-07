@@ -19,10 +19,12 @@ void scambia(int *a, int *b)
 }
 
 /**
+ * @file es_2.c
+ * 
  * @brief Funzione principale che esegue un esempio di scambio tra due numeri.
  *
- * La funzione `main` inizializza due variabili intere, chiama la funzione `scambia`
- * per scambiarne i valori, e poi stampa i risultati.
+ * Dati due numeri si scriva in linguaggio C una funzione di tipo void denominata scambia,
+ * che dati in input 2 numeri li scambi.
  *
  * @param argc Numero di argomenti passati da linea di comando (non utilizzato in questo caso).
  * @param argv Array di stringhe che rappresentano gli argomenti passati da linea di comando (non utilizzato in questo caso).
@@ -32,12 +34,9 @@ void scambia(int *a, int *b)
 int main(int argc, char *argv[])
 {
     int a = 10, b = 15;
-
-    // Chiamata alla funzione per scambiare i valori di a e b
     scambia(&a, &b);
 
     printf("dopo lo scambio a vale: %d\n", a);
     printf("dopo lo scambio b vale: %d\n", b);
-
     return 0;
 }
