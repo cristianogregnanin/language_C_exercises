@@ -1,30 +1,30 @@
+#include <stdio.h>
+#define DIM 5
+
 /**
- * @brief Chiedere in input 5 interi e inserirli in un array. Stampare a video l'array al contrario. Esempio: input 5 6 9 11 12 output 12 11 9 6 5
+ * @brief Chiede in input 5 numeri interi, li inserisce in un array e li stampa in ordine inverso.
  *
- * La funzione richiede all'utente di inserire 5 numeri interi, con cui andrà a popolare un array.
- * Successivamente, l’algoritmo stampa i valori dell'array, dall'ultimo al primo.
- *
- * @param argv Array di stringhe (array di caratteri) contenente gli argomenti da riga di comando
- * @param argc Numero di argomenti da riga di comando
+ * La funzione richiede all'utente di inserire 5 numeri interi, che vengono memorizzati in un array.
+ * 
+ * Successivamente, i valori dell'array sono stampati dall'ultimo al primo.
  *
  * @return La funzione restituisce sempre 0.
  */
 
-#include <stdio.h>
-#define DIM 4
-
-int main(int argc, char *argv[])
+int main()
 {
-
 	int i;
 	int a[DIM];
 
+	// Inserimento dei numeri nell'array
 	for (i = 0; i < DIM; i++)
 	{
-		printf("Inserisci un numero :");
+		printf("Inserisci un numero: ");
 		scanf("%d", &a[i]);
 	}
 
+	// Stampa dell'array in ordine inverso
+	printf("Array al contrario:\n");
 	for (i = DIM - 1; i >= 0; i--)
 	{
 		printf("il numero in posizione %d è: %d\n", i, a[i]);
