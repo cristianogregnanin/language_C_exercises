@@ -8,6 +8,7 @@
  * inserisce il valore -1.
  *
  * @param numeri Array in cui vengono inseriti i numeri.
+ * 
  * @return Il numero di elementi effettivamente inseriti nell'array.
  */
 int popola(int numeri[])
@@ -29,7 +30,7 @@ int popola(int numeri[])
 
 /**
  * @brief Stampa i valori di un array.
- *
+ * 
  * La funzione stampa tutti i valori presenti nell'array in ordine crescente.
  *
  * @param array Array di interi da stampare.
@@ -45,9 +46,9 @@ void stampa(int array[], int n)
 
 /**
  * @brief Stampa i valori di un array in ordine inverso.
- *
+ * 
  * La funzione stampa tutti i valori presenti nell'array in ordine inverso, partendo dall'ultimo elemento.
- *
+ * 
  * @param array Array di interi da stampare.
  * @param n Numero di elementi validi nell'array.
  */
@@ -61,11 +62,12 @@ void stampa_inversa(int array[], int n)
 
 /**
  * @brief Trova il massimo valore in un array.
- *
+ * 
  * La funzione esamina tutti gli elementi dell'array e restituisce il valore massimo.
  *
  * @param array Array di interi da esaminare.
  * @param n Numero di elementi validi nell'array.
+ * 
  * @return Il valore massimo nell'array.
  */
 int massimo(int array[], int n)
@@ -84,12 +86,13 @@ int massimo(int array[], int n)
 
 /**
  * @brief Ricerca un valore nell'array.
- *
+ * 
  * La funzione cerca un valore nell'array e restituisce la sua posizione se trovato, altrimenti restituisce -1.
  *
  * @param array Array in cui eseguire la ricerca.
  * @param n Numero di elementi validi nell'array.
  * @param valore Valore da cercare.
+ * 
  * @return La posizione dell'elemento se trovato, -1 se non trovato.
  */
 int ricerca(int array[], int n, int valore)
@@ -107,13 +110,14 @@ int ricerca(int array[], int n, int valore)
 
 /**
  * @brief Inserisce un valore in una posizione specifica dell'array.
- *
- * La funzione sposta gli elementi a partire dalla posizione in avanti, per fare spazio al nuovo valore.
+ * 
+ *La funzione sposta gli elementi a partire dalla posizione in avanti, per fare spazio al nuovo valore.
  *
  * @param array Array in cui inserire il valore.
  * @param n Puntatore al numero di elementi validi nell'array.
  * @param posizione Posizione in cui inserire il nuovo valore.
  * @param valore Il valore da inserire.
+ * 
  * @return La posizione in cui è stato inserito il valore.
  */
 int inserisci_in_posizione(int array[], int *n, int posizione, int valore)
@@ -129,12 +133,13 @@ int inserisci_in_posizione(int array[], int *n, int posizione, int valore)
 
 /**
  * @brief Inserisce un valore alla fine dell'array.
- *
+ * 
  * La funzione aggiunge un nuovo valore alla fine dell'array e incrementa la lunghezza dell'array.
  *
  * @param array Array in cui inserire il valore.
  * @param n Puntatore al numero di elementi validi nell'array.
  * @param numero Il numero da inserire.
+ * 
  * @return La nuova dimensione dell'array.
  */
 int inserisci_in_coda(int array[], int *n, int numero)
@@ -146,12 +151,13 @@ int inserisci_in_coda(int array[], int *n, int numero)
 
 /**
  * @brief Modifica un valore nell'array in una posizione specifica.
- *
+ * 
  * La funzione sostituisce il valore nell'array alla posizione specificata.
  *
  * @param array Array in cui modificare il valore.
  * @param posizione Posizione in cui modificare il valore.
  * @param valore Il nuovo valore da inserire.
+ * 
  * @return La posizione in cui è stato modificato il valore.
  */
 int modifica(int array[], int posizione, int valore)
@@ -168,6 +174,7 @@ int modifica(int array[], int posizione, int valore)
  * @param array Array da cui eliminare il valore.
  * @param n Puntatore al numero di elementi validi nell'array.
  * @param posizione Posizione dell'elemento da eliminare.
+ * 
  * @return La posizione dell'elemento eliminato.
  */
 int elimina(int array[], int *n, int posizione)
@@ -310,26 +317,32 @@ int menu()
 }
 
 /**
- * @brief Programma che gestisce un array di numeri interi con operazioni di inserimento, modifica, eliminazione e ricerca.
- * Questo programma consente di gestire un array di numeri con diverse operazioni tra cui:
- * - Visualizzare l'array
- * - Aggiungere un elemento in coda
- * - Modificare un elemento
- * - Eliminare un elemento
- * - Ricercare un elemento
- * - Aggiungere un elemento in una posizione specifica
- * - Mostrare l'array in ordine inverso
- * - Trovare il massimo dell'array
- *
- * L'utente può interagire con il programma tramite un menu testuale.
- *
- * @brief Funzione principale che avvia il programma.
- *
- * La funzione principale gestisce il ciclo di esecuzione del programma, chiamando il menu e le operazioni selezionate
- * dall'utente.
+ * @brief Dato un array di dimensione massima pari a SHRT_MAX,
+ * inserire in input un numero arbitrario di interi positivi.
+ * L'inserimento termina quando viene inserito il valore -1.
+ * 
+ * Si mostri quindi un menu cosi strutturato:
+ * premere 1 per mostrare il contenuto dell'array
+ * premere 2 per inserire un elemento in coda
+ * premere 3 per modificare un elemento, se presente
+ * premere 4 per eliminare un elemento, se presente
+ * premere 5 per ricercare un elemento
+ * premere 6 per inserire un elemento in una certa posizione
+ * premere 7 per mostrare il contenuto dell'array all'invers
+ * premere 8 per mostrare il valore massimo dell'array
+ * premere 0 per terminare
+ * 
+ * dopo ogni operazione il menu deve essere nuovamente mostrato
+ * 
+ * osservazione
+ * SHRT_MAX è dichiarata in limits.
+ * 
+ * Vincolo:
+ * è obbligatorio strutturare il programma in funzioni
  *
  * @param argc Numero di argomenti passati al programma.
  * @param argv Array di stringhe contenenti gli argomenti passati al programma.
+ * 
  * @return 0 se il programma termina correttamente.
  */
 int main(int argc, char *argv[])
@@ -347,4 +360,6 @@ int main(int argc, char *argv[])
         }
         esegui_operazione(scelta, numeri, &n);
     }
+
+    return 0;
 }
