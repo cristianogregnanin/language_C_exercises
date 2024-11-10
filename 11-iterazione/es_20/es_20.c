@@ -28,7 +28,7 @@ int main() {
     anni = 0;
     double massa_residua = massa_iniziale;
     while (massa_residua >= 1) {
-        massa_residua *= (1 - costante_decay);
+        massa_residua = massa_residua * (1 - costante_decay);
         anni++;
     }
     printf("Numero di anni necessari affinché la massa sia inferiore a 1 grammo: %d\n", anni);
