@@ -2,13 +2,15 @@
 #include <string.h>
 
 /**
- * @brief Scrivere in C un programma che concatena in un unica stringa le stringhe
+ * @brief Scrivere in C un programma che concatena in un'unica stringa le stringhe
  * chieste in input da riga di comando.
+ * 
  * Esempio:
  * $./a.out ciao a tutti gli studenti
+ * 
  * ciao a tutti gli studenti
  *
- * 
+ *
  * @param argc Numero degli elementi passati da riga di comando.
  * @param argv Array di stringhe degli argomenti passati da righa di comando.
  *
