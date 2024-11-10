@@ -1,12 +1,12 @@
 /**
- * @brief In c gli array vengono passati come parametri alle funzioni 
-			per riferimento e non per copia. Cio implica che se una funzione
-			modifica l'array allora anche l'array originale sarà modificato.
-			Inoltre, in linguaggio C il nome dell'array coincide con l'indirizzo
-			del primo elemento dell'array.
-			Quindi in C dato un array vale che: 
-			int A[DIM];
-			A == &A == &A[0]
+ * @brief In C gli array vengono passati come parametri alle funzioni 
+ * per riferimento e non per copia. Cio' implica che se una funzione
+ * modifica l'array allora anche l'array originale sarà modificato.
+ * Inoltre, in linguaggio C il nome dell'array coincide con l'indirizzo
+ * del primo elemento dell'array.
+ * Quindi in C dato un array vale che: 
+ * int A[DIM];
+ * A == &A == &A[0]
  * 
  * La funzione principale inizializza un array di interi e assegna valori ai suoi elementi usando la notazione dei puntatori.
  * Stampa gli indirizzi dell'array `numeri` e degli elementi dell'array. Infine, stampa i valori degli elementi
@@ -15,6 +15,7 @@
  * 
  * @param argc Numero argomenti riga di comando
  * @param argv Array di stringhe argomenti riga di comando
+ * 
  * @return La funzione restituisce sempre 0
  */
 
