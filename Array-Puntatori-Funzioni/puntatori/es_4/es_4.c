@@ -360,4 +360,6 @@ int main(int argc, char *argv[])
         }
         esegui_operazione(scelta, numeri, &n);
     }
+
+    return 0;
 }
