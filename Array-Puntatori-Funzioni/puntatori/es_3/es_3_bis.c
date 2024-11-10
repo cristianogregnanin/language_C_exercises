@@ -1,6 +1,6 @@
 /**
- * @brief In c gli array vengono passati come parametri alle funzioni 
- * per riferimento e non per copia. Cio implica che se una funzione
+ * @brief In C gli array vengono passati come parametri alle funzioni 
+ * per riferimento e non per copia. Cio' implica che se una funzione
  * modifica l'array allora anche l'array originale sarà modificato.
  * Inoltre, in linguaggio C il nome dell'array coincide con l'indirizzo
  * del primo elemento dell'array.
@@ -12,10 +12,7 @@
  * @param argc Numero di argomenti da riga di comando
  * @param argv Array di stringhe contenente gli argomenti da riga di comando
  * 
- * @return la funzione main non restituisce esplicitamente un valore, 
- * perchè nel codice non è presente un'istruzione di return. I puntatori 
- * sono delle variabili che contengono l'indirizzo di memoria di un'altra variabile. 
- * Quindi i puntatori consentono di modificare direttamente i valori delle variabili passate.
+ * @return La funzione restituisce sempre 0.
  */
 
 #include <stdio.h>
