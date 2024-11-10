@@ -1,0 +1,1 @@
+Esempio dell'utilizzo dei puntatori in linguaggio C.
