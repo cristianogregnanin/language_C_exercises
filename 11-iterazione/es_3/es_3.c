@@ -2,8 +2,8 @@
 
 /**
  * @brief Dato N un numero intero positivo, generare e visualizzare in ordine crescente i numeri dispari minori o uguali a N.
- * Nella funzione viene dichiarato un numero N; che successivamente viene chiesto in input all'utente. 
- * Nel caso in cui l'utente inserisca un nunero minore di 0, viene fatto reinserire. 
+ * Nella funzione viene dichiarato un numero N, che successivamente viene chiesto in input all'utente. 
+ * Nel caso in cui l'utente inserisca un numero minore di 0, viene fatto reinserire. 
  * Viene stampato il messaggio che introduce l'elenco dei numeri dispari. 
  * La variabile i parte da 1 e, in ogni iterazione del ciclo, viene stampata e incrementata 
  * di 2 per passare al numero dispari successivo. Il ciclo continua finché i non supera n.
