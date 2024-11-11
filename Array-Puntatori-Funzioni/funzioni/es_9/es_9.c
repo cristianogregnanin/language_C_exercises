@@ -1,23 +1,12 @@
 #include <stdio.h>
 #include <string.h>
-
-/**
- * @brief Funzione che calcola la lunghezza di una stringa
- *
- * @param stringa La stringa di cui si vuole calcolare la lunghezza
- * 
- * @return numero di caratteri che compongono la stringa
- */
-int calcolo_lunghezza(char stringa[])
-{
-    return strlen(stringa);
-}
+#include <stdlib.h>
 
 /**
  * @brief Funzione che conta il numero di consonanti in una stringa
  *
  * @param stringa stringa in cui si cercano le consonanti
- * 
+ *
  * @return Il numero di consonanti presenti nella stringa
  */
 int ricerca_consonanti_in_stringa(char stringa[])
@@ -39,7 +28,7 @@ int ricerca_consonanti_in_stringa(char stringa[])
  * @brief Funzione che conta il numero di vocali in una stringa
  *
  * @param stringa stringa in cui si cercano le vocali
- * 
+ *
  * @return Il numero di vocali presenti nella stringa
  */
 int ricerca_vocali_in_stringa(char stringa[])
@@ -58,13 +47,11 @@ int ricerca_vocali_in_stringa(char stringa[])
 }
 
 /**
- * @brief Funzione che conta quante volte un carattere specificato appare in ciascun
- * argomento della riga di comando.
+ * @brief Funzione che conta quante volte un carattere specificato appare in una stringa.
  *
- * @param argc numero di argomenti passati da riga di comando
- * @param argv array di stringhe contenente gli argomenti passati da riga di comando
+ * @param stringa L'array di caratteri in cui cercare il carattere
  * @param carattere Il carattere da cercare
- * 
+ *
  * @return Il numero totale di occorrenze del carattere in tutte le stringhe
  */
 int ricerca_carattere(char stringa[], char carattere)
@@ -72,9 +59,9 @@ int ricerca_carattere(char stringa[], char carattere)
     int contatore = 0;
     for (int i = 0; i < strlen(stringa); i++)
     {
-        if(stringa[i] == carattere)
+        if (stringa[i] == carattere)
         {
-            carattere++;
+            contatore++;
         }
     }
 
@@ -87,17 +74,17 @@ int ricerca_carattere(char stringa[], char carattere)
  *
  * @param argc numero di argomenti passati da riga di comando
  * @param argv array di stringhe contenente gli argomenti passati da riga di comando
- * 
+ *
  * @return La somma totale delle vocali tra tutti gli argomenti
  */
 int conteggio_vocali(int argc, char *argv[])
 {
-    int somma = 0;
+    int somma_vocali = 0;
     for (int i = 1; i < argc; i++)
     {
-        somma = somma + ricerca_vocali_in_stringa(argv[i]);
+        somma_vocali = somma_vocali + ricerca_vocali_in_stringa(argv[i]);
     }
-    return somma;
+    return somma_vocali;
 }
 
 /**
@@ -106,7 +93,7 @@ int conteggio_vocali(int argc, char *argv[])
  *
  * @param argc numero di argomenti passati da riga di comando
  * @param argv array di stringhe contenente gli argomenti passati da riga di comando
- * 
+ *
  * @return La somma totale delle consonanti tra tutti gli argomenti
  */
 int conteggio_consonanti(int argc, char *argv[])
@@ -114,7 +101,7 @@ int conteggio_consonanti(int argc, char *argv[])
     int somma_consonanti = 0;
     for (int i = 1; i < argc; i++)
     {
-        somma_consonanti = somma_consonanti + ricerca_consonanti(argv[i]);
+        somma_consonanti = somma_consonanti + ricerca_consonanti_in_stringa(argv[i]);
     }
     return somma_consonanti;
 }
@@ -126,7 +113,7 @@ int conteggio_consonanti(int argc, char *argv[])
  * @param argc numero di argomenti passati da riga di comando
  * @param argv array di stringhe contenente gli argomenti passati da riga di comando
  * @param carattere Il carattere da cercare
- * 
+ *
  * @return Il numero totale di occorrenze del carattere in tutte le stringhe
  */
 int cerca_carattere(int argc, char *argv[], char carattere)
@@ -143,45 +130,105 @@ int cerca_carattere(int argc, char *argv[], char carattere)
 
 /**
  * @brief Conta il numero di lettere doppie presenti in ogni parola degli argomenti passati da riga di comando
- * 
+ *
  * @param argc numero di argomenti passati da riga di comando
  * @param argv array di stringhe contenente gli argomenti passati da riga di comando, contenente anche la stringa e il carattere da contare
  * @param doppie Puntatore alla variabile in cui memorizzare il numero totale di doppie
  * @param quantita_doppie Puntatore alla variabile in cui memorizzare il numero di parole contenenti almeno una doppia
-*/
+ */
 void conteggio_doppie(int argc, char *argv[], int *doppie, int *quantita_doppie)
 {
+    *doppie = 0;
+    *quantita_doppie = 0;
+
+    for (int j = 0; j < argc; j++)
+    {
+        int doppie_parola_corrente = 0;
+
+        for (int i = 0; i < strlen(argv[j]); i++)
+        {
+            /* Se un carattere precedente esiste ed
+             * il carattere corrente e' uguale ad esso,
+             * una doppia e' stata trovata.
+             */
+            if (i > 0 && argv[j][i] == argv[j][i - 1])
+            {
+                (*doppie)++;
+                doppie_parola_corrente++;
+            }
+        }
+
+        if (doppie_parola_corrente > 0)
+        {
+            (*quantita_doppie)++;
+        }
+    }
+}
+
+/**
+ * @brief Controlla se la stringa passata e' palindroma o meno
+ *
+ * @param stringa la stringa da controllare
+ *
+ * @return 1 se la stringa e' palindroma, 0 se non lo e'
+ */
+int palindroma(char stringa[])
+{
+    int lunghezza = strlen(stringa);
+
+    for (int i = 0; i < lunghezza; i++)
+    {
+        /*Se viene trovato un carattere della
+         * stringa non invertibile la stringa
+         * non e' palindroma.
+         */
+        if (stringa[i] != stringa[lunghezza - i - 1])
+        {
+            return 0;
+        }
+    }
+
+    return 1;
 }
 
 /**
  * @brief Conta il numero di parole palindrome
- * 
+ *
  * @param argc numero di argomenti passati da riga di comando
  * @param argv array di stringhe contenente gli argomenti passati da riga di comando, contenente anche la stringa e il carattere da contare
- * 
+ *
  * @return la funzione ritorna il numero di parole palindrome
-*/
+ */
 int conteggio_palindrome(int argc, char *argv[])
 {
     int palindrome = 0;
+
+    for (int i = 0; i < argc; i++)
+    {
+        palindrome += palindroma(argv[i]);
+    }
 
     return palindrome;
 }
 
 /**
  * @brief Funzione principale del programma
- * 
+ *
  * @param argc numero di argomenti passati da riga di comando
  * @param argv array di stringhe contenente gli argomenti passati da riga di comando, contenente anche la stringa e il carattere da contare
- * 
+ *
  * @return la funzione ritorna sempre 0
-*/
+ */
 int main(int argc, char *argv[])
 {
+    if(argc < 2) {
+        exit(0);
+    }
+
     char carattere;
 
-    int lunghezza = calcolo_lunghezza(argv[1]);
-    printf("La lunghezza è: %d\n", lunghezza);
+    int lunghezza = strlen(argv[1]);
+    printf("La lunghezza della prima parola è: %d\n", lunghezza);
 
     int consonanti = conteggio_consonanti(argc, argv);
     printf("il numero delle consonanti è: %d\n", consonanti);
