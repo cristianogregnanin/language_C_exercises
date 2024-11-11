@@ -1,3 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define DIM_ANNO 4
+#define DIM_GIORNO 2
+#define DIM_MESE 2
+
 /**
  * @brief Si scriva un programma che legga da riga di comando una stringa di 8 numeri
  *        che rappresenta la data di nascita di uno studente, si verifichi che gli 8 numeri
@@ -6,20 +13,11 @@
  *        e i restanti 4 caratteri non devono essere maggiori dell'anno corrente.
  *        Si stampi a video la data nel seguente formato: %d/%m/%Y
  *
- * @param argc Numero di argomenti passati da riga di comando.
- * @param argv Array di stringhe contenente gli argomenti da riga di comando.
+ * @param argc Numero di argomenti inseriti da riga di comando 
+ * @param argv Array di stringhe contenente gli argomenti inseriti da riga di comando
  *
- * @return 0 Se il programma è eseguito con successo.
- * @return -1 In caso di errore.
+ * @return La funzione restituisce 0.
  */
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#define DIM_ANNO 4
-#define DIM_GIORNO 2
-#define DIM_MESE 2
-
 int main(int argc, char *argv[])
 {
     if (argc != 2)
