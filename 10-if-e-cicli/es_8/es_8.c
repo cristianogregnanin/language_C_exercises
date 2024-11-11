@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <math.h>
-
 /**
  * @brief Calcolo somma radici quadrate
  *
@@ -16,6 +13,9 @@
  * 
  * @return il programma ritorna sempre 0
  */
+#include <stdio.h>
+#include <math.h>
+
 int main(int argc, char *argv[])
 
 {
