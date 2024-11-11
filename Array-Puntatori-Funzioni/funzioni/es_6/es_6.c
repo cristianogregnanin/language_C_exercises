@@ -28,7 +28,7 @@ int massimo(int argc, char *argv[])
 *
 * @param argv Array di stringhe contenente gli argomenti passati attraverso la riga di comando
 * @param argc Numero di argomenti passati attraverso la riga di comando
-* @param pari pari[] Array di interi che andrà riempito con i numeri pari trovati
+* @param pari pari Array di interi che andrà riempito con i numeri pari trovati
 * @param dim_numeri_pari *dim_numeri_pari Puntatore intero che incrementa la dimensione dell'array ogni volta che ne viene inserito
 */
 
