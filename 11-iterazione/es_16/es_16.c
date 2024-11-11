@@ -1,19 +1,14 @@
 #include <stdio.h>
 
 /**
- *
- * @brief Funzione principale del programma.
- *
- * Questa funzione legge un numero `n` di valori interi in ordine crescente,
- * verifica se la sequenza è una progressione aritmetica, e calcola la differenza
- * massima tra gli elementi consecutivi se non è una progressione.
- *
- * @param argv Array di stringhe contenente gli argomenti passati attraverso la riga di comando
- * @param argc Numero di argomenti passati attraverso la riga di comando
- *
- * @return 0 se il programma termina correttamente, 1 se ci sono errori.
- *
- */
+* @brief Dati n valori numerici in ordine crescente, progettare un algoritmo che scriva se i numeri forniti a partire dal secondo differiscono ognuno da precedente di un valore costante.
+*        In caso affermativo l'algoritmo deve scrivere il valore della differenza, in caso negativo l'algoritmo deve scrivere il valore massimo delle differenze.
+*
+* @param argv Array di stringhe contenente gli argomenti passati attraverso la riga di comando
+* @param argc Numero di argomenti passati attraverso la riga di comando
+*
+* @return 0 se il programma termina correttamente, 1 se ci sono errori.
+*/
 
 int main(int argv, char *argc)
 {

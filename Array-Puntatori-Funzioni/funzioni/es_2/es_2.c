@@ -2,13 +2,12 @@
 #include <stdlib.h>
 
 /**
- * @brief funzione denominata somma che prenda in input una array di caratteri e il numero
+ * @brief funzione denominata somma che prenda in input un array di caratteri e il numero
  * dei caratteri presenti nell'array, calcola la somma dei numeri presenti nell'array
  *
  * @param n Numero di argomenti da riga di comando
  * @param argv stringa di caratteri
- *
- * @return La funzione restituisce somma
+ * @return La funzione restituisce la somma
  */
 
 int calcola_somma(int n, char *argv[])
