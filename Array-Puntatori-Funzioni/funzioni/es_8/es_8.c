@@ -149,7 +149,7 @@ int cerca_carattere(int argc, char *argv[], char carattere)
 }
 
 /**
- * @brief Scrivi un programma in linguaggio C che riceva in input una frase da linea di comando e fornica il seguente output:
+ * @brief Scrivi un programma in linguaggio C che riceva in input una frase da linea di comando e fornisca il seguente output:
  * -1) Calcolo della lunghezza della prima parola della stringa.
  * -2) Conteggio del numero delle consonanti presenti in tutta la frase.
  * -3) Conteggio degli spazi bianchi e delle vocali presenti nella frase.
