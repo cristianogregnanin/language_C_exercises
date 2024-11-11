@@ -3,10 +3,10 @@
 
 /**
  * @brief Modificare l'algoritmo precedente in modo che determini il numero di laminatoi necessari nel processo di lavorazione per ottenere un laminato di
-        spessore definito a partie dallo spessore del semilavorato.
+        spessore definito a partire dallo spessore del semilavorato.
  *
  * @param argc Numero degli elementi passati da riga di comando.
- * @param argv Array di stringhe degli argomenti passati da righa di comando.
+ * @param argv Array di stringhe degli argomenti passati da riga di comando.
  * @return La funzione ritorna sempre 0.
  */
 
