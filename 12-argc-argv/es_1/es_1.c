@@ -6,11 +6,13 @@
  * disegna a terminale un quadrato vuoto composto di asterischi (‘*’)
  * con il lato lungo N:
  *
+ * @verbatim
  * Per N pari a 3 il programma stampa:
  *
  * ***
  * * *
  * ***
+ * 
  * Per N pari a 5 il programma stampa:
  *
  * *****
@@ -18,12 +20,12 @@
  * *   *
  * *   *
  * *****
- *
+ * @endverbatim
  *
  * @param argc argc numero di argomenti passati da riga di comando
  * @param argv argv argomenti passati da riga di comando
  *
- * @return returna 0 se il programma è corretto
+ * @return ritorna 0 se il programma è corretto
  */
 
 int main(int argc, char *argv[])
