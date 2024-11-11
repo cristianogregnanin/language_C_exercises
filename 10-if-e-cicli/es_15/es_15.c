@@ -2,14 +2,16 @@
 
 /**
  * @brief Un professore assegna i livelli di valutazione (A,B,C,D,E) ai propri studenti in base alla seguente tabella dei punteggi:
- *       0-40    E
+ *        0 - 40 E
  *       41 - 60 D
  *       61 - 70 C
  *       71 - 85 B
  *       86 - 100 A
  * Progettare un algoritmo che consenta di determinare il livello di valutazione a partire dal punteggio.
+ *
  * @param argc Numero di argomenti della riga di comando (non utilizzato).
  * @param argv Array di stringhe contenente gli argomenti (non utilizzato).
+ *
  * @return ritorna zero.
  */
 

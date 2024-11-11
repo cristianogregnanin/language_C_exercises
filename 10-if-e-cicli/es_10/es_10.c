@@ -7,7 +7,7 @@
  * 2.	La media dell’incasso della ristorazione
  * 3.	Deve indicare se sono state vendute più bevande o più ristorazioni
  * 
- * @param argv Vettore di stringhe contenente gli argomenti passati attraverso la riga di comando
+ * @param argv Array di stringhe contenente gli argomenti passati attraverso la riga di comando
  * @param argc Numero di argomenti  passati attraverso la riga di comando
  * 
  * @return la funzione restituisce 0
