@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
     double somma = 0.0;
     for (int i = 1; i <= n; i++)
-        somma += pow(i, k);
+        somma = somma + pow(i, k);
 
     risultato = somma;
     printf("Il numero di Bernoulli e': %f\n", risultato);
