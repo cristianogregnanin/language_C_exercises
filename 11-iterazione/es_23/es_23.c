@@ -4,8 +4,6 @@
  * dal valore espresso in unită di carica batterica della consistenza iniziale
  * della popolazione batterica, ne calcoli la consistenza finale raggiunta.
  *
- *
- *
  * @param argc Numero di argomenti inseriti da riga di comando
  * @param argv Array di stringhe contenente gli argomenti inseriti da riga di comando
  *
