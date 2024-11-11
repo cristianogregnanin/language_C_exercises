@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
     int somma = 0;
     for (int i = 1; i <= N / 2; i++) {
         if (N % i == 0) {
-            somma += i;
+            somma = somma + i;
         }
     }
     if (somma == N) {
