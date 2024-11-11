@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/**
+ * @brief Popolare un array di interi di dimensione 4, stamparne a video il contenuto.
+ *
+ * @param argc Numero di argomenti da riga di comando
+ * @param argv Array di stringhe contenente gli argomenti da riga di comando
+ *
+ * @return la funzione restituisce sempre 0
+ */
 int main(int argc, char *argv[])
 {
 

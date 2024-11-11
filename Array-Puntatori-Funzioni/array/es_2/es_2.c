@@ -1,6 +1,14 @@
 #include <stdio.h>
 #define DIM 4
 
+/**
+ * @brief Chiedere in input 5 interi e inserirli in un array. Stampare a video l'array al contrario. Esempio: input 5 6 9 11 12 output 12 11 9 6 5
+ *
+ * @param argv Array di stringhe (array di caratteri) contenente gli argomenti da riga di comando
+ * @param argc Numero di argomenti da riga di comando
+ *
+ * @return La funzione restituisce 0 se il programma viene eseguito correttamente.
+ */
 int main(int argc, char *argv[])
 {
 
