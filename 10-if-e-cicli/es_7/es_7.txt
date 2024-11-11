@@ -1,2 +1,2 @@
 Una terna pitagorica è un insieme di 3 numeri naturali a < b < c tali che a^2 + b^2 = c^2.
- Progettare un algoritmo che, a partire dai valori di tre numeri naturali, determini se essi costituiscono o meno una terna pitagorica. 
+Progettare un algoritmo che, a partire dai valori di tre numeri naturali, determini se essi costituiscono o meno una terna pitagorica. 
