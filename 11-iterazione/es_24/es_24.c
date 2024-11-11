@@ -3,7 +3,7 @@
 
 /**
  * @brief Dato un valore numerico costante k (non necessariamente intero), I'n-esimo numero di Bernoulli
- * è dato dalla somma dei primi n numeri interi elevati alla potenza k; per esempio per n = 5: 1+2+3+4+5*\n
+ * è dato dalla somma dei primi n numeri interi elevati alla potenza k; per esempio per n = 5: 1+2+3+4+5*
  * Progettare un algoritmo che determini, a partire dai valori della costante k e del numero n, il numero di Bernoulli relativo.
  *
  * @param argc Numero di argomenti da riga di comando.
