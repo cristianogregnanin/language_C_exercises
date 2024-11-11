@@ -3,13 +3,13 @@
 
 /**
  * @brief Calcola la media geometrica di un insieme di numeri forniti dall'utente.
- *
  * Questo programma richiede all'utente di inserire un numero positivo che rappresenta
  * quanti numeri verranno forniti. Per ciascun numero, l'utente deve inserire solo valori
  * positivi. Alla fine, il programma calcola e mostra la media geometrica.
  *
  * @param argc Numero di argomenti da riga di comando.
  * @param argv Array di stringhe degli argomenti da riga di comando.
+ *
  * @return il programma restituisce sempre 0.
  */
 int main(int argc, char *argv[])
@@ -36,12 +36,12 @@ int main(int argc, char *argv[])
             scanf("%d", &x);
         } while (x <= 0); 
 
-        prodotto =prodotto*x; 
+        prodotto = prodotto * x; 
     }
 
 
     media = pow(prodotto, 1.0 / n);
     printf("Media: %.2f", media); 
 
-return 0;
+    return 0;
 }
