@@ -1,19 +1,29 @@
+#include <stdio.h>
+
 /**
- * @brief Progettare un algoritmo per calcolare il costo di un abbonamento alla metropolitana in base a:
- *   durata dell'abbonamento (settimanale, mensile o annuale)
- *   tipo di zona (centrale, periferica o entrambe)
- *   priorita (alta o bassa)
+ * @brief Gli abbonamenti alla metropolitana di Roma possono essere settimanali (S),
+ * mensili (M) o annuali (A) e valgono per la sola zona centrale (tipo 1), 
+ * per la sola zona periferica (tipo 2) o per entrambe le zone (tipo 3). 
+ * I costi sono quelli indicati nella seguente tabella:
+ * 
+ * | Tipo | Settimanale | Mensile | Annuale |
+ * |------|-------------|---------|---------|
+ * | 1    | 10 €        | 30 €    | 250 €   |
+ * | 2    | 5 €         | 20 €    | 150 €   |
+ * | 3    | 15 €        | 40 €    | 300 €   |
+ * 
+ * Gli abbonamenti che non consentono di viaggiare nelle ore di punta (bassa priorità) hanno una riduzione del 20%.
  *
- *   L'utente fornisce i dati sopra elencati e il programma calcola il costo
- *   applicando uno sconto del 20% se la priorita bassa.
+ * Progettare un algoritmo che calcoli il costo dell'abbonamento a partire dalla durata, dal tipo e dalla priorità.
+ *
+ * L'utente fornisce i dati sopra elencati e il programma calcola il costo
+ * applicando uno sconto del 20% se la priorita bassa.
  *
  * @param argc Numero di argomenti passati attraverso la riga di comando
  * @param argv Array di stringhe contenente gli argomenti passati attraverso la riga di comando
  *
  * @return La funzione restituisce 0 al termine dell'esecuzione
  */
-
-#include <stdio.h>
 
 int main(int argc, char argv[])
 {

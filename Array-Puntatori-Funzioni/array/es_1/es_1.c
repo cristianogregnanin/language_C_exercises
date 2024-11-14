@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /**
  * @brief Popolare un array di interi di dimensione 4, stamparne a video il contenuto.
  *
@@ -6,9 +8,6 @@
  *
  * @return la funzione restituisce sempre 0
  */
-
-#include <stdio.h>
-
 int main(int argc, char *argv[])
 {
 

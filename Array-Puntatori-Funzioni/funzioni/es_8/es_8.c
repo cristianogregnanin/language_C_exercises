@@ -1,5 +1,3 @@
-
-
 #include <stdio.h>
 #include <string.h>
 
@@ -165,7 +163,6 @@ int cerca_carattere(int argc, char *argv[], char carattere)
  *
  * @return La funzione ritorna sempre 0.
  */
-
 int main(int argc, char *argv[])
 {
     char carattere;

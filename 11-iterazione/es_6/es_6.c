@@ -4,10 +4,10 @@
  * @brief Dato N un numero intero positivo, generare e visualizzare in ordine
  * crescente i numeri compresi maggiori uguali di -N e minori uguali di N.
  *
- * @param argv array con all'interno i valori che vengono passati da terminale
- * @param argc Lunghezza dell'array argv
+ * @param argc Lunghezza dell'array argv (numero di argomenti passati da riga di comando)
+ * @param argv array di stringhe contenente gli argomenti passati da riga di comando
  *
- * @return 0 se il programma termina correttamente.
+ * @return la funzione ritorna sempre 0
  */
 
 int main(int argc, char *argv[])

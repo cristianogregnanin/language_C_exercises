@@ -1,13 +1,13 @@
+#include <stdio.h>
+
 /**
  * @brief Dato N un numero intero positivo, calcolare e visualizzare la somma dei primi N numeri dispari.
  *
- * @param argc Numero di argomenti da riga di comando (non utilizzato in questo programma).
- * @param argv Array di argomenti da riga di comando (non utilizzato in questo programma).
+ * @param argc Numero di argomenti da riga di comando (non utilizzato).
+ * @param argv Array di argomenti da riga di comando (non utilizzato).
  *
- * @return 0 Se il programma termina correttamente.
+ * @return Se il programma termina correttamente restituisce 0.
  */
-
-#include <stdio.h>
 
 int main(int argc, char *argv[])
 {

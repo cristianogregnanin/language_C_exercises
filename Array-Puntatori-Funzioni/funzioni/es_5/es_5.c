@@ -53,7 +53,6 @@ int popola(int prodotti[])
  *
  * @return La funzione restituisce la posizione dei prodotti.
  */
-
 int elimina(int prodotti[], int *n, int posizione)
 {
 
@@ -72,7 +71,6 @@ int elimina(int prodotti[], int *n, int posizione)
  * @param n Numero di prodotti attualmente nel magazzino.
  *
  */
-
 void stampa(int prodotti[], int n)
 {
     for (int i = 0; i < n; i++)
@@ -131,7 +129,6 @@ void stampa(int prodotti[], int n)
  *
  * @return La funzione restituisce sempre 0.
  */
-
 int main(int argc, char *argv[])
 {
 
