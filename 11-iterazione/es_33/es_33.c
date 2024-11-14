@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 /**
- * @brief Un numero naturale N definito perfetto se è la somma di tutti i suoi divisori compresa l'unità (per esempio 6 è perfetto perché
- * è la somma dei suoi tre divisori(1, 2 e 3). Progettare un algoritmo che, a partire da un numero naturale N, determini se esso è perfetto o meno.
+ * @brief Un numero naturale N e' definito perfetto se e' la somma di tutti i suoi divisori compresa l'unita' (per esempio 6 e' perfetto perche'
+ * e' la somma dei suoi tre divisori(1, 2 e 3)). Progettare un algoritmo che, a partire da un numero naturale N, determini se esso e' perfetto o meno.
  *
  * @param argc Numero degli elementi passati da riga di comando.
- * @param argv Array di stringhe degli argomenti passati da righa di comando.
+ * @param argv Array di stringhe degli argomenti passati da riga di comando.
  * 
  * @return La funzione ritorna sempre 0.
  */
@@ -21,17 +21,17 @@ int main(int argc, char *argv[])
     {
         if (N % i == 0)
         {
-            somma += i;
+            somma = somma + i;
         }
     }
     if (somma == N)
     {
-        printf("%d è un numero perfetto.\n", N);
+        printf("%d e' un numero perfetto.\n", N);
     }
     else
     {
-        printf("%d non è un numero perfetto.\n", N);
+        printf("%d non e' un numero perfetto.\n", N);
     }
-
+    
     return 0;
 }
