@@ -9,9 +9,16 @@
 
 #include <stdio.h>
 
+/**
+ * @brief Esercizio esercitazione puntatori
+ * 
+ * @param argc Numero di argomenti da riga di comando
+ * @param argv Array di stringhe contenente gli argomenti da riga di comando
+ * 
+ * @return La funzione ritorna sempre 0
+ */
 int main(int argc, char *argv[])
 {
-
 	int m = 11;
 	int *p;
 

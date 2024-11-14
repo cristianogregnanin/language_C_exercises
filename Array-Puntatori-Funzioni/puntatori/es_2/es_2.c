@@ -3,13 +3,11 @@
 /**
  * @brief Scambia i valori di due variabili intere.
  *
- * Questa funzione prende in input due puntatori a interi e scambia i valori 
+ * Questa funzione prende in input due puntatori a interi e scambia i valori
  * delle variabili cui i puntatori fanno riferimento.
  *
  * @param a Puntatore alla prima variabile intera da scambiare.
  * @param b Puntatore alla seconda variabile intera da scambiare.
- * 
- * @return Questa funzione è di tipo void e non restituisce alcun valore.
  */
 void scambia(int *a, int *b)
 {
@@ -19,16 +17,12 @@ void scambia(int *a, int *b)
 }
 
 /**
- * @file es_2.c
- * 
- * @brief Funzione principale che esegue un esempio di scambio tra due numeri.
- *
- * Dati due numeri si scriva in linguaggio C una funzione di tipo void denominata scambia,
+ * @brief Dati due numeri si scriva in linguaggio C una funzione di tipo void denominata scambia,
  * che dati in input 2 numeri li scambi.
  *
  * @param argc Numero di argomenti passati da linea di comando (non utilizzato in questo caso).
  * @param argv Array di stringhe che rappresentano gli argomenti passati da linea di comando (non utilizzato in questo caso).
- * 
+ *
  * @return Restituisce 0 per indicare che il programma è terminato correttamente.
  */
 int main(int argc, char *argv[])

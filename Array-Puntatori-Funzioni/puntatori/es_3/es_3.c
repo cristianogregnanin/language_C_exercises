@@ -1,3 +1,6 @@
+#include <stdio.h>
+#define DIM 20
+
 /**
  * @brief In C gli array vengono passati come parametri alle funzioni 
  * per riferimento e non per copia. Cio' implica che se una funzione
@@ -8,6 +11,7 @@
  * int A[DIM];
  * A == &A == &A[0]
  * 
+ *
  * La funzione principale stampa gli indirizzi dell'array `a` in diversi modi:
  * - Come nome dell'array
  * - Come indirizzo dell'array
@@ -15,16 +19,12 @@
  *
  * Questi indirizzi sono identici, il che implica che quando un array viene passato
  * a una funzione, le modifiche a quell'array avranno effetto sull'array originale.
- * 
+ *
  * @param argc Numero argomenti riga di comando
  * @param argv Array di stringhe argomenti riga di comando
  * 
  * @return La funzione restituisce sempre 0
  */
-
-#include <stdio.h>
-#define DIM 20
-
 int main(int argc, char *argv[])
 {
 	int a[DIM];

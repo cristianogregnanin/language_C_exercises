@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /**
  * @brief In C gli array vengono passati come parametri alle funzioni 
  * per riferimento e non per copia. Cio' implica che se una funzione
@@ -14,9 +16,6 @@
  * 
  * @return La funzione restituisce sempre 0.
  */
-
-#include <stdio.h>
-
 int main(int argc, char *argv[])
 {
 
