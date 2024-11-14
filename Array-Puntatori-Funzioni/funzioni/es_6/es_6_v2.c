@@ -21,12 +21,12 @@ int massimo(int argc, char *argv[])
 }
 
 /**
-* @brief Funzione void che popola l'array di numeri pari,
+* @brief Funzione void che popola l'array di numeri pari
 *
 * @param argv Array di stringhe contenente gli argomenti passati attraverso la riga di comando
 * @param argc Numero di argomenti passati attraverso la riga di comando
-* @param pari pari[] Array di interi che andrà riempito con i numeri pari trovati
-* volta che ne viene inserito
+* @param pari Array di interi che andra' riempito con i numeri pari trovati ogni volta che viene inserito
+* @return La funzione ritorna la quantita' di numeri pari
 */
 
 int pari(int argc, char *argv[], int pari[])
@@ -49,12 +49,12 @@ int pari(int argc, char *argv[], int pari[])
 * argv 10 numeri interi non negativi.
 * Scrivere quindi le seguenti funzioni che saranno richiamate nel
 * main:
-* 1) massimo: torna in output la posizione del numero più grande
+* 1) massimo: torna in output la posizione del numero piu' grande
 * 2) pari: torna in output un array contenente i numeri pari
 *
 * Esempio di utilizzo:
 * $ ./compito 15 20 33 40 55 60 75 80 95 100
-* Il numero più grande è: 100
+* Il numero più grande e': 100
 *
 * I numeri pari sono: 
 * 20
@@ -77,7 +77,7 @@ int pari(int argc, char *argv[], int pari[])
 int main(int argc, char *argv[])
 {
     int max = massimo(argc, argv);
-    printf("Il numero più grande è: %d\n\n", max);
+    printf("Il numero più grande e': %d\n\n", max);
 
     int numeri_pari[argc];
     int dim_numeri_pari = pari(argc, argv, numeri_pari);
