@@ -1,3 +1,12 @@
+/**
+ * @brief Esempio dell'utilizzo dei puntatori in linguaggio C.
+ * 
+ * @param argc Numero argomenti riga di comando
+ * @param argv Array di stringhe argomenti riga di comando
+ * 
+ * @return La funzione restituisce sempre 0.
+ */
+
 #include <stdio.h>
 
 /**
