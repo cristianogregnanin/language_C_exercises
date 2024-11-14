@@ -8,7 +8,7 @@
  * senza arrivare mai a destinazione».
  * Progettare un algoritmo che, data la distanza da percorrere e il numero di spostamenti effettuati, calcoli la distanza effettivamente coperta.
  *
- * @param argv Array di stringhe (vettori di caratteri) contenente gli argomenti da riga di comando
+ * @param argv Array di stringhe  contenente gli argomenti da riga di comando
  * @param argc Numero di argomenti da riga di comando
  *
  * @return  La funzione restituisce sempre 0.

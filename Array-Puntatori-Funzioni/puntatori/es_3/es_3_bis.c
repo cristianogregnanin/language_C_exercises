@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /**
  * @brief In c gli array vengono passati come parametri alle funzioni 
  * per riferimento e non per copia. Cio implica che se una funzione
@@ -17,9 +19,6 @@
  * sono delle variabili che contengono l'indirizzo di memoria di un'altra variabile. 
  * Quindi i puntatori consentono di modificare direttamente i valori delle variabili passate.
  */
-
-#include <stdio.h>
-
 int main(int argc, char *argv[])
 {
 

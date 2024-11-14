@@ -27,14 +27,12 @@ int main(int argc, char *argv[])
 	int i;
 	int a[DIM];
 
-	// Inserimento dei numeri nell'array
 	for (i = 0; i < DIM; i++)
 	{
 		printf("Inserisci un numero: ");
 		scanf("%d", &a[i]);
 	}
 
-	// Stampa dei numeri pari
 	printf("Numeri pari:\n");
 	for (i = 0; i < DIM; i++)
 	{
@@ -43,7 +41,6 @@ int main(int argc, char *argv[])
 	}
 	printf("\n");
 
-	// Stampa dei numeri dispari
 	printf("Numeri dispari:\n");
 	for (i = 0; i < DIM; i++)
 	{

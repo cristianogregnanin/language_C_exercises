@@ -2,15 +2,15 @@
 #include <math.h>
 
 /**
- * @brief Funzione principale del programma.
- * 
- * Il programma chiede all'utente di inserire la massa iniziale, la costante di decadimento e il numero di anni.
- * Calcola la massa residua dopo un certo numero di anni (parte A).
- * Calcola il numero di anni necessari per ridurre la massa sotto 1 grammo (parte B).
- * 
+ * @brief 29. Nella disintegrazione atomica dei materiali radioattivi la massa perduta nel periodo di un anno è data dal prodotto della massa residua per una costante di decadimento caratteristica del tipo di materiale.
+ * A. Progettare un algoritmo che calcoli, a partire dai valori della massa iniziale espressa in grammi, della costante di decadimento e del numero di anni trascorsi, la massa residua di materiale.
+ * B. Modificare l’algoritmo precedente in modo che, a partire dalla massa iniziale espressa in grammi e dalla costante di decadimento, determini il numero di anni necessario prima che la massa residua di materiale sia inferiore a 1 g.
+ *
  * @return int 0 se il programma termina correttamente.
  */
-int main() {
+
+int main()
+{
     double massa_iniziale, costante_decay;
     int anni;
 
@@ -27,7 +27,8 @@ int main() {
 
     anni = 0;
     double massa_residua = massa_iniziale;
-    while (massa_residua >= 1) {
+    while (massa_residua >= 1)
+    {
         massa_residua *= (1 - costante_decay);
         anni++;
     }

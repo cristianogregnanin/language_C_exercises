@@ -4,8 +4,8 @@
  * decrescente i primi N numeri interi positivi.
  * 
  * @param argc dimensione dell'array argv
- * @param argv argomenti che prende da riga di comando
- * @return Restituisce 0 se l'esecuzione ha successo.
+ * @param argv array di stringhe con gli argomenti presi da riga di comando
+ * @return Restituisce 0
  */
 int main(int argc, char *argv[])
 {
