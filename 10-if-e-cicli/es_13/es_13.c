@@ -1,14 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+
 /**
- * @brief Progettare un algoritmo che calcoli la temperatura percepita a partire dalla temperatura reale
-   e dalla velocità del vento.
+ * @brief E' esperienza comune che la presenza di vento fa percepire una temperatura
+ * inferiore a quella reale. La seguente formula, messa a punto da scienziati
+ * americani durante la seconda guerra mondiale, consente di calcolare la temperatura
+ * t percepita a partire dalla temperatura T reale e dalla velocità v del vento:
+ *
+ * t = 33 + (0,45 + 0,29 • √v - 0,02 • v) • (T - 33)
+ *
+ * Le temperature sono espresse in °C e la velocità del vento in miglia per ora (mph);
+ * la formula è valida solo per velocità del vento superiori a 5 mph, al di sotto della quale t é uguale a T.
+ * Progettare un algoritmo che calcoli la temperatura percepita a partire dalla temperatura reale
+ * e dalla velocità del vento..
  *
  * @param argc Numero degli elementi passati da riga di comando.
  * @param argv Array di stringhe degli argomenti passati da righa di comando.
+ *
  * @return La funzione ritorna sempre 0.
  */
-
-#include <stdio.h>
-#include <math.h>
 
 int main(int argc, char *argv[])
 {

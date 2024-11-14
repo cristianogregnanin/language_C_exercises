@@ -36,8 +36,8 @@ int ricerca_posizione(int n, char *argv[], int numero)
  * Suggerimento: si usi una funzione per ricercare la posizione dell'
  * elemento. Tale funzione deve tornare la posizione oppure -1.
  *
- * @param argc Numero di argomenti inseriti da riga di comando
- * @param argv Array di stringhe contenente gli argomenti inseriti da riga di comando
+ * @param argc Array di stringhe (array di caratteri) contenente gli argomenti da riga di comando
+ * @param argc Numero di argomenti da riga di comando
  *
  * @return La funzione restituisce 0.
  */

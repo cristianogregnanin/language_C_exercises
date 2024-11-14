@@ -1,18 +1,20 @@
 #include <stdio.h>
+
 /**
- * @brief Scrivere un programma in linguaggio C che dato un array di interi mostri
- *	 in output se l'array è pari.
- *	 Esempio:
- *	 [1,1,2,1,2,1,2,2] => è pari
- *	 [1,1,2] => dispari
- *	 [3,3,4,5] => dispari
- *	 [1,2,1,2] => pari
- *
- * @param argc Numero di argomenti da riga di comando.
- * @param argv Array di stringhe contenente gli argomenti da riga di comando.
- *
- * @return La funzione restituisce 0.
- */
+* @brief Scrivere un programma in linguaggio C che dato un array di interi mostri
+*	 in output se l'array è pari.
+*	 Esempio:
+*	 [1,1,2,1,2,1,2,2] => è pari
+*	 [1,1,2] => dispari
+*	 [3,3,4,5] => dispari
+*	 [1,2,1,2] => pari
+*
+* @param argc Dimensione di argv.
+* @param argv Array di stringhe degli argomenti passati da righa di comando.
+* 
+* @return La funzione restituisce sempre 0.
+*/
+
 int main(int argc, char *argv[])
 {
     int pari[4];
