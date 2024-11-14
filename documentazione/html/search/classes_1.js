@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['giocatore_5ft_0',['Giocatore_t',['../structGiocatore__t.html',1,'']]]
+  ['giocatore_5ft_186',['Giocatore_t',['../structGiocatore__t.html',1,'']]]
 ];

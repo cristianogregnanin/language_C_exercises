@@ -1,17 +1,18 @@
 /**
 *@brief Lo spazio s espresso in metri di frenata di un'automobile - supposto essere di 1 secondo
-il tempo di reazione del guidatore - è stimato mediante la seguente formula: s = v^2 / 250*f
-dove v è la velocità in km/h ed f un coefficente relativo alle condizioni stradali:
-Condizioni stradali     f
-asfalto ruvido          0,6
-asfalto liscio          0,5
-asfalto bagnato         0,4
-asfalto ghiacciato      0,1
-Progettare un algoritmo che calcoli lo spazio di frenata a partire dalla velocità v e dalla
-condizione dell'asfalto (ruvido, liscio, ecc.).
-*@param argc, numeri do argomenti da riga di comando
-*@param argv, array di stringhe (vettori di caratteri) contenente gli argomenti da riga di comando
-*@return, la funzione ritorna sempre 0
+*il tempo di reazione del guidatore - è stimato mediante la seguente formula: s = v^2 / 250*f
+*dove v è la velocità in km/h ed f un coefficente relativo alle condizioni stradali:
+* - Condizioni stradali     f
+* - asfalto ruvido          0,6
+* - asfalto liscio          0,5
+* - asfalto bagnato         0,4
+* - asfalto ghiacciato      0,1
+*
+*Progettare un algoritmo che calcoli lo spazio di frenata a partire dalla velocità v e dalla
+*condizione dell'asfalto (ruvido, liscio, ecc.).
+*@param argc Numero di argomenti da riga di comando
+*@param argv Array di stringhe (vettori di caratteri) contenente gli argomenti da riga di comando
+*@return La funzione ritorna sempre 0
 */
 
 #include <stdio.h>

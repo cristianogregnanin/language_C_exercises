@@ -4,7 +4,7 @@
  * @brief Verifica se un valore intero è positivo.
  *
  * Questa funzione controlla se il valore passato come parametro è maggiore di zero.
- * Se il valore è positivo, la funzione restituisce il valore stesso; altrimenti, 
+ * Se il valore è positivo, la funzione restituisce il valore stesso; altrimenti,
  * restituisce -1.
  *
  * @param valore Il valore intero da verificare.
@@ -19,12 +19,12 @@ int verifica_input(int valore)
 }
 
 /**
- * @brief calcola la somma di due numeri  
- * 
+ * @brief calcola la somma di due numeri
+ *
  * @param n1 primo numero
- * @param n2 secondo numero 
+ * @param n2 secondo numero
  * @return Restituisce la somma tra n1 e n2
- * 
+ *
  */
 
 int calcola_somma(int n1, int n2)
@@ -33,10 +33,10 @@ int calcola_somma(int n1, int n2)
 }
 
 /**
- * @brief Leggere in input da tastiera due numeri maggiori di 0 e farne la somma. 
- * 
- * @param argc dimensione dell'array argv
- * @param argv argomenti che prende da riga di comando
+ * @brief Leggere in input da tastiera due numeri maggiori di 0 e farne la somma.
+ *
+ * @param argc Array di stringhe (array di caratteri) contenente gli argomenti da riga di comando
+ * @param argc Numero di argomenti da riga di comando
  * @return Restituisce 0 se l'esecuzione ha successo.
  */
 
