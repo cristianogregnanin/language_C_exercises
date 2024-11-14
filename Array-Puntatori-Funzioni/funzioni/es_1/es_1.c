@@ -35,7 +35,7 @@ int calcola_somma(int n1, int n2)
 /**
  * @brief Leggere in input da tastiera due numeri maggiori di 0 e farne la somma.
  *
- * @param argc Array di stringhe (array di caratteri) contenente gli argomenti da riga di comando
+ * @param argv Array di stringhe (array di caratteri) contenente gli argomenti da riga di comando
  * @param argc Numero di argomenti da riga di comando
  * @return Restituisce 0 se l'esecuzione ha successo.
  */
