@@ -14,7 +14,6 @@ int main()
     double massa_iniziale, costante_decay;
     int anni;
 
-    // Inserimento dei dati per la parte A
     printf("Inserisci la massa iniziale (in grammi): ");
     scanf("%lf", &massa_iniziale);
     printf("Inserisci la costante di decadimento: ");
@@ -27,9 +26,9 @@ int main()
 
     anni = 0;
     double massa_residua = massa_iniziale;
-    while (massa_residua >= 1)
-    {
-        massa_residua *= (1 - costante_decay);
+
+    while (massa_residua >= 1) {
+        massa_residua = massa_residua * (1 - costante_decay);
         anni++;
     }
     printf("Numero di anni necessari affinché la massa sia inferiore a 1 grammo: %d\n", anni);
