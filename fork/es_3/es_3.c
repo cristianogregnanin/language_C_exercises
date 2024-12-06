@@ -19,16 +19,18 @@ void converti(char str[])
 
 int main(int argc, char *argv[])
 {
-
-	char str[strlen(argv[1])];
+	if (argc != 2)
+	{
+		printf("Numero di argomenti inseriti non valido");
+		exit(0);
+	}
 
 	int pid = fork();
 
 	if (pid == 0)
 	{
-		strcpy(str, argv[1]);
-		converti(str);
-		printf("la stringa in maiuscolo è: %s\n\n", str);
+		converti(argv[1]);
+		printf("la stringa in maiuscolo è: %s\n\n", argv[1]);
 		sleep(5);
 		exit(2);
 	}
