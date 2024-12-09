@@ -9,9 +9,8 @@
 #include <string.h>
 
 void converti(char str[])
-{
-	int i, n = strlen(str);
-	for (i = 0; i < n; i++)
+{	
+	for (int i = 0; i < strlen(str); i++)
 	{
 		str[i] = toupper(str[i]);
 	}
