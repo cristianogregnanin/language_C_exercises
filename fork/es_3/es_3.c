@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 {
 	if (argc != 2)
 	{
-		printf("Numero di argomenti inseriti non valido");
+		printf("Numero di argomenti inseriti non valido\n");
 		exit(0);
 	}
 
