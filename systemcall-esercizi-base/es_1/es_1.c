@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
    char buff;
 
    fd = open(argv[1], O_RDONLY);
-   while (nread = read(fd, &buff, sizeof(buff)) > 0)
+   while ((nread = read(fd, &buff, sizeof(buff))) > 0)
    {
       write(1, &buff, nread);
    }
