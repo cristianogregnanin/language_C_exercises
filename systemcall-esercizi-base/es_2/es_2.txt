@@ -1,2 +1,9 @@
 Scrivere un programma in linguaggio C che scriva l'alfabeto su un file 
 il cui nome deve essere letto da argv[1]
+
+Esempio di utilizzo:
+
+$ ./a.out /tmp/alfabeto
+$ cat /tmp/alfabeto
+abcdefghijklmnopqrstuvz
+
