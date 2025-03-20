@@ -17,8 +17,6 @@ void scambia(int *a, int *b)
 }
 
 /**
- * @brief Dati due numeri si scriva in linguaggio C una funzione di tipo void denominata scambia,
- * che dati in input 2 numeri li scambi.
  *
  * @param argc Numero di argomenti passati da linea di comando (non utilizzato in questo caso).
  * @param argv Array di stringhe che rappresentano gli argomenti passati da linea di comando (non utilizzato in questo caso).
