@@ -1,5 +1,5 @@
 Si vuole realizzare in linguaggio C un software monoprocesso che implementi il seguente comando:
-$ cat file1.txt file2.txt file3.txt | grep “c”
+$ cat file1.txt file2.txt file3.txt | grep "c"
 
 Dove file[N].txt con N maggiore uguale a 1 sono una serie di files e il carattere "c" è a scopo esemplificativo e potrebbe essere
 qualsiasi carattere.
