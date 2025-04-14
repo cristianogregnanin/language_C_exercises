@@ -2,13 +2,14 @@
 #include <limits.h>
 
 /**
- * @brief Popola un array con numeri inseriti dall'utente.
+ * @brief Popola un array con numeri inseriti dall'utente
  *
- * Il programma chiede all'utente di inserire dei valori interi. L'inserimento termina quando l'utente
- * inserisce il valore -1.
+ * Il programma chiede all'utente di inserire dei valori interi,
+ * L'inserimento termina quando l'utente inserisce il valore -1
  *
- * @param numeri Array in cui vengono inseriti i numeri.
- * @return Il numero di elementi effettivamente inseriti nell'array.
+ * @param numeri Array in cui vengono inseriti i numeri
+ *
+ * @return Il numero di elementi effettivamente inseriti nell'array
  */
 int popola(int numeri[])
 {
@@ -28,12 +29,10 @@ int popola(int numeri[])
 }
 
 /**
- * @brief Stampa i valori di un array.
+ * @brief Funzione che stampa tutti i valori presenti nell'array in ordine crescente
  *
- * La funzione stampa tutti i valori presenti nell'array in ordine crescente.
- *
- * @param array Array di interi da stampare.
- * @param n Numero di elementi validi nell'array.
+ * @param array Array di interi da stampare
+ * @param n Numero di elementi validi nell'array
  */
 void stampa(int array[], int n)
 {
@@ -44,12 +43,10 @@ void stampa(int array[], int n)
 }
 
 /**
- * @brief Stampa i valori di un array in ordine inverso.
+ * @brief Funzione che stampa tutti i valori presenti nell'array in ordine inverso, partendo dall'ultimo elemento
  *
- * La funzione stampa tutti i valori presenti nell'array in ordine inverso, partendo dall'ultimo elemento.
- *
- * @param array Array di interi da stampare.
- * @param n Numero di elementi validi nell'array.
+ * @param array Array di interi da stampare
+ * @param n Numero di elementi validi nell'array
  */
 void stampa_inversa(int array[], int n)
 {
@@ -60,13 +57,12 @@ void stampa_inversa(int array[], int n)
 }
 
 /**
- * @brief Trova il massimo valore in un array.
+ * @brief La funzione esamina tutti gli elementi dell'array e restituisce il valore massimo
  *
- * La funzione esamina tutti gli elementi dell'array e restituisce il valore massimo.
+ * @param array Array di interi da esaminare
+ * @param n Numero di elementi validi nell'array
  *
- * @param array Array di interi da esaminare.
- * @param n Numero di elementi validi nell'array.
- * @return Il valore massimo nell'array.
+ * @return Il valore massimo nell'array
  */
 int massimo(int array[], int n)
 {
@@ -83,14 +79,13 @@ int massimo(int array[], int n)
 }
 
 /**
- * @brief Ricerca un valore nell'array.
+ * @brief La funzione cerca un valore nell'array e restituisce la sua posizione se trovato, altrimenti restituisce -1
  *
- * La funzione cerca un valore nell'array e restituisce la sua posizione se trovato, altrimenti restituisce -1.
+ * @param array Array in cui eseguire la ricerca
+ * @param n Numero di elementi validi nell'array
+ * @param valore Valore da cercare
  *
- * @param array Array in cui eseguire la ricerca.
- * @param n Numero di elementi validi nell'array.
- * @param valore Valore da cercare.
- * @return La posizione dell'elemento se trovato, -1 se non trovato.
+ * @return La posizione dell'elemento se trovato, -1 se non trovato
  */
 int ricerca(int array[], int n, int valore)
 {
@@ -106,15 +101,15 @@ int ricerca(int array[], int n, int valore)
 }
 
 /**
- * @brief Inserisce un valore in una posizione specifica dell'array.
+ * @brief Funzione che sposta gli elementi a destra a partire dalla posizione di inserimento
+ * Dopo l'inserimento, il numero di elementi nell'array viene aggiornato
  *
- * La funzione sposta gli elementi a partire dalla posizione in avanti, per fare spazio al nuovo valore.
+ * @param array Array in cui inserire il valore
+ * @param n Puntatore al numero di elementi validi nell'array
+ * @param posizione Posizione in cui inserire il nuovo valore
+ * @param valore Il valore da inserire
  *
- * @param array Array in cui inserire il valore.
- * @param n Puntatore al numero di elementi validi nell'array.
- * @param posizione Posizione in cui inserire il nuovo valore.
- * @param valore Il valore da inserire.
- * @return La posizione in cui è stato inserito il valore.
+ * @return La posizione in cui è stato inserito il valore, o -1 se la posizione è invalida
  */
 int inserisci_in_posizione(int array[], int *n, int posizione, int valore)
 {
@@ -128,14 +123,13 @@ int inserisci_in_posizione(int array[], int *n, int posizione, int valore)
 }
 
 /**
- * @brief Inserisce un valore alla fine dell'array.
+ * @brief Funzione che aggiunge un nuovo valore alla fine dell'array e incrementa la lunghezza dell'array
  *
- * La funzione aggiunge un nuovo valore alla fine dell'array e incrementa la lunghezza dell'array.
+ * @param array Array in cui inserire il valore
+ * @param n Puntatore al numero di elementi validi nell'array
+ * @param numero Il numero da inserire
  *
- * @param array Array in cui inserire il valore.
- * @param n Puntatore al numero di elementi validi nell'array.
- * @param numero Il numero da inserire.
- * @return La nuova dimensione dell'array.
+ * @return La nuova dimensione dell'array
  */
 int inserisci_in_coda(int array[], int *n, int numero)
 {
@@ -145,14 +139,13 @@ int inserisci_in_coda(int array[], int *n, int numero)
 }
 
 /**
- * @brief Modifica un valore nell'array in una posizione specifica.
+ * @brief Funzione che sostituisce  un valore nell'array in una posizione specifica
  *
- * La funzione sostituisce il valore nell'array alla posizione specificata.
+ * @param array Array in cui modificare il valore
+ * @param posizione Posizione in cui modificare il valore
+ * @param valore Il nuovo valore da inserire
  *
- * @param array Array in cui modificare il valore.
- * @param posizione Posizione in cui modificare il valore.
- * @param valore Il nuovo valore da inserire.
- * @return La posizione in cui è stato modificato il valore.
+ * @return La posizione in cui è stato modificato il valore
  */
 int modifica(int array[], int posizione, int valore)
 {
@@ -161,14 +154,13 @@ int modifica(int array[], int posizione, int valore)
 }
 
 /**
- * @brief Elimina un valore nell'array.
+ * @brief Funzione che rimuove un elemento dall'array e sposta tutti gli elementi successivi di una posizone
  *
- * La funzione rimuove un elemento dall'array e sposta tutti gli elementi successivi per colmare il vuoto.
+ * @param array Array da cui eliminare il valore
+ * @param n Puntatore al numero di elementi validi nell'array
+ * @param posizione Posizione dell'elemento da eliminare
  *
- * @param array Array da cui eliminare il valore.
- * @param n Puntatore al numero di elementi validi nell'array.
- * @param posizione Posizione dell'elemento da eliminare.
- * @return La posizione dell'elemento eliminato.
+ * @return La posizione dell'elemento eliminato
  */
 int elimina(int array[], int *n, int posizione)
 {
@@ -181,13 +173,11 @@ int elimina(int array[], int *n, int posizione)
 }
 
 /**
- * @brief Esegue l'operazione selezionata dal menu.
+ * @brief Funzione che esegue l'operazione selezionata dall'utente dal menù
  *
- * In base alla scelta dell'utente, esegue una delle operazioni sugli array.
- *
- * @param s La scelta dell'utente.
- * @param numeri L'array di numeri su cui eseguire l'operazione.
- * @param n Puntatore al numero di elementi validi nell'array.
+ * @param s La scelta dell'utente
+ * @param numeri L'array di numeri su cui eseguire l'operazione
+ * @param n Puntatore al numero di elementi validi nell'array
  */
 void esegui_operazione(int s, int numeri[], int *n)
 {
@@ -284,11 +274,9 @@ void esegui_operazione(int s, int numeri[], int *n)
 }
 
 /**
- * @brief Mostra il menu delle operazioni disponibili.
+ * @brief Funzione che mostra un menu interattivo che consente all'utente di scegliere un'operazione da eseguire
  *
- * Mostra un menu interattivo che consente all'utente di scegliere un'operazione da eseguire.
- *
- * @return La scelta dell'utente.
+ * @return La scelta dell'utente
  */
 int menu()
 {
@@ -310,27 +298,33 @@ int menu()
 }
 
 /**
- * @brief Programma che gestisce un array di numeri interi con operazioni di inserimento, modifica, eliminazione e ricerca.
- * Questo programma consente di gestire un array di numeri con diverse operazioni tra cui:
- * - Visualizzare l'array
- * - Aggiungere un elemento in coda
- * - Modificare un elemento
- * - Eliminare un elemento
- * - Ricercare un elemento
- * - Aggiungere un elemento in una posizione specifica
- * - Mostrare l'array in ordine inverso
- * - Trovare il massimo dell'array
+ * @brief Dato un array di dimensione massima pari a SHRT_MAX,
+ * inserire in input un numero arbitrario di interi positivi.
+ * L'inserimento termina quando viene inserito il valore -1.
+ * 
+ * Si mostri quindi un menu cosi strutturato:
+ * premere 1 per mostrare il contenuto dell'array
+ * premere 2 per inserire un elemento in coda
+ * premere 3 per modificare un elemento, se presente
+ * premere 4 per eliminare un elemento, se presente
+ * premere 5 per ricercare un elemento
+ * premere 6 per inserire un elemento in una certa posizione
+ * premere 7 per mostrare il contenuto dell'array all'invers
+ * premere 8 per mostrare il valore massimo dell'array
+ * premere 0 per terminare
+ * 
+ * dopo ogni operazione il menu deve essere nuovamente mostrato
+ * 
+ * osservazione
+ * SHRT_MAX è dichiarata in limits.
+ * 
+ * Vincolo:
+ * è obbligatorio strutturare il programma in funzioni
  *
- * L'utente può interagire con il programma tramite un menu testuale.
- *
- * @brief Funzione principale che avvia il programma.
- *
- * La funzione principale gestisce il ciclo di esecuzione del programma, chiamando il menu e le operazioni selezionate
- * dall'utente.
- *
- * @param argc Numero di argomenti passati al programma.
- * @param argv Array di stringhe contenenti gli argomenti passati al programma.
- * @return 0 se il programma termina correttamente.
+ * @param argc numero di argomenti passati da riga di comando
+ * @param argv array di stringhe contenente gli argomenti passati da riga di comando
+ * 
+ * @return 0 se il programma termina correttamente
  */
 int main(int argc, char *argv[])
 {
@@ -347,4 +341,6 @@ int main(int argc, char *argv[])
         }
         esegui_operazione(scelta, numeri, &n);
     }
+
+    return 0;
 }
