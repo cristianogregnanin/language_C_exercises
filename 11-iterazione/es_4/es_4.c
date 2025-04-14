@@ -1,4 +1,13 @@
 #include <stdio.h>
+/**
+ * @brief Dato N un numero intero positivo, generare e visualizzare in ordine
+ * crescente i numeri pari minori o uguali a N.
+ * 
+ * @param argc elementi presi da riga di comando
+ * @param argv insieme degli elementi presi da riga di comando
+ * 
+ * @return la funzione restituisce 0 
+ */
 
 /**
  * @brief Dato N un numero intero positivo, generare e visualizzare in ordine crescente i numeri pari minori o uguali a N.
